@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>HTTPS n’aura plus de secret pour vous</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen.css">
+</head>
+<body class="list">
+	<header class="caption">
+        <h1>HTTPS n’aura plus de secret pour vous</h1>
+		<p>Grégory Paul</p>
+	</header>
+	<section class="slide cover" id="Cover"><div>
+        <h2>HTTPS n’aura plus de secret pour vous</h2>
+		<p>par <a href="http://paulgreg.me">Grégory Paul</a></p>
+		<img src="pictures/cables.jpg" alt="">
+		<style>
+
+            #Cover * {
+                color: #FFF;
+            }
+            #Cover h2 {
+                margin:30px 0 0;
+                background-color: rgba(0, 0, 0, .5);
+                text-align:center;
+                font-size:70px;
+            }
+            #Cover p {
+                margin:10px 0 0;
+                text-align:center;
+                background-color: rgba(0, 0, 0, .5);
+                font-style:italic;
+                font-size:20px;
+            }
+		</style>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Objectif</h2>
+        <p>Chiffrement mais aussi authentification<p>
+    </section>
+	<section class="slide"><div>
+		<h2>SSL 1.0, 2.0, 3.0</h2>
+    </section>
+	<section class="slide"><div>
+		<h2>TLS 1.0, 1.1, 1.2</h2>
+    </section>
+	<section class="slide"><div>
+		<h2>TLS 1.3 (draft)</h2>
+    </section>
+	<section class="slide"><div>
+		<h2>Personnages</h2>
+        <ul>
+            <li>Adam Langley's Weblog, <a href="https://www.imperialviolet.org/">ImperialViolet</a>,
+            <li>Bruce Schneier <a href="https://www.schneier.com/">Schneier on Security</a>,
+            <li>Matthew Green, <a href="http://blog.cryptographyengineering.com/">A Few Thoughts on Cryptographic Engineering</a>,
+        </ul>
+    </section>
+	<section class="slide"><div>
+		<h2>Chiffrement</h2>
+        <ul>
+            <li>Snowden responded: “Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on. Unfortunately, endpoint security is so terrifically weak that NSA can frequently find ways around it.”
+            <li>http://techcrunch.com/2013/06/17/encrypting-your-email-works-says-nsa-whistleblower-edward-snowden/
+            <li>https://security.stackexchange.com/questions/4518/how-to-estimate-the-time-needed-to-crack-rsa-encryption
+            <li>http://arstechnica.com/security/2013/09/of-course-nsa-can-crack-crypto-anyone-can-the-question-is-how-much/
+            <li>récupèrer les infos lorsqu’elle ne sont pas chiffrées ou les clés en clair,
+            <li>Exploiter des failles connues (random sur debian,https://www.schneier.com/blog/archives/2008/05/random_number_b.html), open ssl / goto fail, Dual_EC_DRBG par la RSA, Encrypt then mac (cf https://www.bortzmeyer.org/7366.html)
+            <li>Side channel attacks http://www.forbes.com/sites/timworstall/2013/12/21/researchers-break-rsa-4096-encryption-with-just-a-microphone-and-a-couple-of-emails/
+            <li>Brute force, Quantum computer, bon courage...
+        </ul>
+    </section>
+	<section class="slide"><div>
+		<h2>ECDHE-RSA-AES256-GCM-SHA512</h2>
+    </section>
+	<section class="slide"><div>
+		<h2>Autorité de certification</h2>
+    </section>
+	<section class="slide"><div>
+		<h2>Domain, Organization et Extended Validation</h2>
+    </section>
+	<section class="slide"><div>
+		<h2>Let’s encrypt</h2>
+    </section>
+	<section class="slide"><div>
+		<h2>Perfect Forward Secrecy</h2>
+    </section>
+	<section class="slide"><div>
+		<h2>SNI</h2>
+    </section>
+	<section class="slide"><div>
+		<h2>révoquation, CRL, OCSP</h2>
+    </section>
+	<section class="slide"><div>
+		<h2>Attaques : Rogue certificate, Rogue authority, Certificate pinning</h2>
+        <ul>
+            <li>MITM : affaiblir le chiffrement d’où <a href="https://securityheaders.com/http-strict-transport-security.php">HTTP Strict Transport Security</a>, <a href="https://securityheaders.com/content-security-policy.php">Content Security Policy</a> intéressant en passant
+            <li>Faux certicat ou fausse autorité
+            <li>Chrome, l’ANSSI la main dans le sac : http://googleonlinesecurity.blogspot.fr/2013/12/further-improving-digital-certificate.html
+            <li>http://www.internetsociety.org/deploy360/blog/2015/05/new-rfc-7469-on-certificate-pinning-http-public-key-pinning-hpkp/
+        </ul>
+    </section>
+	<section class="slide"><div>
+		<h2>Attaques : </h2>
+        <ul>
+            <li>MITM sans chiffrement,
+            <li>MD5 https://www.win.tue.nl/hashclash/rogue-ca/
+            <li>BEAST
+            <li>BREACH
+            <li>CRIME
+        </ul>
+    </section>
+	<section class="slide"><div>
+		<h2>Heartbleed</h2>
+    </section>
+	<section class="slide"><div>
+		<h2>Google et le SHA-256</h2>
+    </section>
+	<section class="slide"><div>
+		<h2>HSTS</h2>
+    </section>
+	<section class="slide"><div>
+		<h2>DANE</h2>
+        <p>https://www.imperialviolet.org/2015/01/17/notdane.html</p>
+    </section>
+	<section class="slide"><div>
+		<h2>SPDY, HTTP 2.0</h2>
+    </section>
+	<section class="slide"><div>
+		<h2>optim</h2>
+        <p>False start https://technotes.googlecode.com/git/falsestart.html, jump start https://www.ietf.org/id/draft-vkrasnov-tls-jumpstart-00.txt<p>
+    </section>
+	<section class="slide"><div>
+		<h2>Resources</h2>
+		<ul>
+			<li>Conférence de Benjamin Sonntag : http://data.confs.fr/ssl-tls-sonntag/
+            <li>https://www.feistyduck.com/library/openssl-cookbook/
+            <li>https://mozilla.github.io/server-side-tls/ssl-config-generator/?1
+            <li>https://www.ssllabs.com/ : tests client et serveur
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Références</h2>
+		<ul>
+			<li>Images de serveur depuis https://www.google.com/about/datacenters/gallery</li>
+		</ul>
+	</div></section>
+	<p class="badge"><a href="https://github.com/shower/shower">Fork me on Github</a></p>
+	<div class="progress"><div></div></div>
+	<script src="node_modules/shower-core/shower.min.js"></script>
+</body>
+</html>
