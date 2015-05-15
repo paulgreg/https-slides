@@ -1,0 +1,11 @@
+{
+  "name": "https-slides",
+  "version": "1.0.0",
+  "description": "Présentation sur HTTPS/TLS",
+  "author": "Grégory Paul",
+  "license": "GPL 3.0",
+  "devDependencies": {
+    "shower-core": "^1.0.7",
+    "shower-ribbon": "^1.0.11"
+  }
+}
