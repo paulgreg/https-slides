@@ -41,6 +41,14 @@
         <p>Chiffrement mais aussi authentification<p>
     </section>
 	<section class="slide"><div>
+		<h2>Pourquoi ?</h2>
+        <ul>
+            <li><a href=">http://googleonlinesecurity.blogspot.fr/2014/08/https-as-ranking-signal_6.html">HTTPS as a ranking signal</a>
+            <li><a href="https://blog.mozilla.org/security/2015/04/30/deprecating-non-secure-http/">Deprecating Non-Secure HTTP</a>
+            <li><a href="https://citizenlab.org/2015/04/chinas-great-cannon/">Great canon</a>
+        </ul>
+    </section>
+	<section class="slide"><div>
 		<h2>SSL 1.0, 2.0, 3.0</h2>
     </section>
 	<section class="slide"><div>
@@ -71,7 +79,10 @@
         </ul>
     </section>
 	<section class="slide"><div>
-		<h2>ECDHE-RSA-AES256-GCM-SHA512</h2>
+		<h2>Combinaisons d’algo</h2>
+        <ul>
+            <li>https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#tls-parameters-4
+        </ul>
     </section>
 	<section class="slide"><div>
 		<h2>Autorité de certification</h2>
@@ -92,12 +103,19 @@
 		<h2>révoquation, CRL, OCSP</h2>
     </section>
 	<section class="slide"><div>
-		<h2>Attaques : Rogue certificate, Rogue authority, Certificate pinning</h2>
+		<h2>Attaques : Rogue certificate, Rogue authority</h2>
         <ul>
             <li>MITM : affaiblir le chiffrement d’où <a href="https://securityheaders.com/http-strict-transport-security.php">HTTP Strict Transport Security</a>, <a href="https://securityheaders.com/content-security-policy.php">Content Security Policy</a> intéressant en passant
             <li>Faux certicat ou fausse autorité
             <li>Chrome, l’ANSSI la main dans le sac : http://googleonlinesecurity.blogspot.fr/2013/12/further-improving-digital-certificate.html
             <li>http://www.internetsociety.org/deploy360/blog/2015/05/new-rfc-7469-on-certificate-pinning-http-public-key-pinning-hpkp/
+            <li><a href="https://xkcd.com/538/"><img src="https://imgs.xkcd.com/comics/security.png"/></a>
+        </ul>
+    </section>
+	<section class="slide"><div>
+		<h2>Certificate pinning</h2>
+        <ul>
+            <li>https://noncombatant.org/2015/05/01/about-http-public-key-pinning/
         </ul>
     </section>
 	<section class="slide"><div>
@@ -121,7 +139,10 @@
     </section>
 	<section class="slide"><div>
 		<h2>DANE</h2>
-        <p>https://www.imperialviolet.org/2015/01/17/notdane.html</p>
+        <ul>
+            <li>https://www.imperialviolet.org/2015/01/17/notdane.html
+            <li>https://ripe70.ripe.net/presentations/183-dane-ripe.pdf
+        </ul>
     </section>
 	<section class="slide"><div>
 		<h2>SPDY, HTTP 2.0</h2>
@@ -145,7 +166,7 @@
 			<li>Images de serveur depuis https://www.google.com/about/datacenters/gallery</li>
 		</ul>
 	</div></section>
-	<p class="badge"><a href="https://github.com/shower/shower">Fork me on Github</a></p>
+	<p class="badge"><a href="https://github.com/paulgreg/https-slides">Fork me on Github</a></p>
 	<div class="progress"><div></div></div>
 	<script src="node_modules/shower-core/shower.min.js"></script>
 </body>
