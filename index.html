@@ -46,6 +46,7 @@
             <li><a href=">http://googleonlinesecurity.blogspot.fr/2014/08/https-as-ranking-signal_6.html">HTTPS as a ranking signal</a>
             <li><a href="https://blog.mozilla.org/security/2015/04/30/deprecating-non-secure-http/">Deprecating Non-Secure HTTP</a>
             <li><a href="https://citizenlab.org/2015/04/chinas-great-cannon/">Great canon</a>
+            <li>http://blog.philippheckel.com/2013/07/01/how-to-use-mitmproxy-to-read-and-modify-https-traffic-of-your-phone/
         </ul>
     </section>
 	<section class="slide"><div>
@@ -75,6 +76,8 @@
             <li>récupèrer les infos lorsqu’elle ne sont pas chiffrées ou les clés en clair,
             <li>Exploiter des failles connues (random sur debian,https://www.schneier.com/blog/archives/2008/05/random_number_b.html), open ssl / goto fail, Dual_EC_DRBG par la RSA, Encrypt then mac (cf https://www.bortzmeyer.org/7366.html)
             <li>Side channel attacks http://www.forbes.com/sites/timworstall/2013/12/21/researchers-break-rsa-4096-encryption-with-just-a-microphone-and-a-couple-of-emails/
+            <li>FREAK
+            <li><a href="http://www.nextinpact.com/news/94144-logjam-apres-freak-nouvelle-faille-dans-chiffrement-connexions.htm">Logjam</a>
             <li>Brute force, Quantum computer, bon courage...
         </ul>
     </section>
@@ -108,13 +111,13 @@
             <li>MITM : affaiblir le chiffrement d’où <a href="https://securityheaders.com/http-strict-transport-security.php">HTTP Strict Transport Security</a>, <a href="https://securityheaders.com/content-security-policy.php">Content Security Policy</a> intéressant en passant
             <li>Faux certicat ou fausse autorité
             <li>Chrome, l’ANSSI la main dans le sac : http://googleonlinesecurity.blogspot.fr/2013/12/further-improving-digital-certificate.html
-            <li>http://www.internetsociety.org/deploy360/blog/2015/05/new-rfc-7469-on-certificate-pinning-http-public-key-pinning-hpkp/
             <li><a href="https://xkcd.com/538/"><img src="https://imgs.xkcd.com/comics/security.png"/></a>
         </ul>
     </section>
 	<section class="slide"><div>
 		<h2>Certificate pinning</h2>
         <ul>
+            <li>http://www.internetsociety.org/deploy360/blog/2015/05/new-rfc-7469-on-certificate-pinning-http-public-key-pinning-hpkp/
             <li>https://noncombatant.org/2015/05/01/about-http-public-key-pinning/
         </ul>
     </section>
@@ -146,10 +149,17 @@
     </section>
 	<section class="slide"><div>
 		<h2>SPDY, HTTP 2.0</h2>
+        <ul>
+            <li><a href="https://www.bortzmeyer.org/7540.html">RFC 7540: Hypertext Transfer Protocol version 2</a>
+            <li><a href="https://ma.ttias.be/architecting-websites-http2-era/#tls">it looks like major browsers (Firefox & Chrome) may be limiting the HTTP/2 support for TLS connections only, in order to push for a more secure web (SSL/TLS everywhere).</a>
+        </ul>
     </section>
 	<section class="slide"><div>
 		<h2>optim</h2>
-        <p>False start https://technotes.googlecode.com/git/falsestart.html, jump start https://www.ietf.org/id/draft-vkrasnov-tls-jumpstart-00.txt<p>
+        <ul>
+            <li>False start https://technotes.googlecode.com/git/falsestart.html, jump start https://www.ietf.org/id/draft-vkrasnov-tls-jumpstart-00.txt
+            <li>https://noncombatant.org/2014/11/23/tls-all-the-things/
+        </ul>
     </section>
 	<section class="slide"><div>
 		<h2>Resources</h2>
