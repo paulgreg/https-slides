@@ -37,17 +37,23 @@
 		</style>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Objectif</h2>
-        <p>Chiffrement mais aussi authentification<p>
-    </section>
+		<h2>Démo</h2>
+	</div></section>
 	<section class="slide"><div>
 		<h2>Pourquoi ?</h2>
         <ul>
-            <li><a href=">http://googleonlinesecurity.blogspot.fr/2014/08/https-as-ranking-signal_6.html">HTTPS as a ranking signal</a>
-            <li><a href="https://blog.mozilla.org/security/2015/04/30/deprecating-non-secure-http/">Deprecating Non-Secure HTTP</a>
-            <li><a href="https://citizenlab.org/2015/04/chinas-great-cannon/">Great canon</a>
-            <li>http://blog.philippheckel.com/2013/07/01/how-to-use-mitmproxy-to-read-and-modify-https-traffic-of-your-phone/
+            <li>Écoute : <a href="http://codebutler.com/firesheep/?c=1">Firesheep</a>
+            <li>Modification de contenu : <a href="http://www.webrankinfo.com/dossiers/webmastering/blocage-publicite-free">Blocage des pubs Google par Free</a>,
+                <a href="http://arstechnica.com/tech-policy/2014/09/why-comcasts-javascript-ad-injections-threaten-security-net-neutrality/">ajout de pub</a> 
+                ou <a href="https://www.eff.org/fr/deeplinks/2014/11/verizon-x-uidh">ajout de cookie de tracking</a>.
+            <li>Attaque : <a href="https://citizenlab.org/2015/04/chinas-great-cannon/">Great canon</a>
+            <li>SEO : <a href=">http://googleonlinesecurity.blogspot.fr/2014/08/https-as-ranking-signal_6.html">HTTPS as a ranking signal</a>
+            <li>Firefox : <a href="https://blog.mozilla.org/security/2015/04/30/deprecating-non-secure-http/">Deprecating Non-Secure HTTP</a>
         </ul>
+    </section>
+	<section class="slide"><div>
+		<h2>Objectifs</h2>
+        <p>Chiffrement, authentification, intégrité<p>
     </section>
 	<section class="slide"><div>
 		<h2>SSL 1.0, 2.0, 3.0</h2>
@@ -77,7 +83,7 @@
             <li>Exploiter des failles connues (random sur debian,https://www.schneier.com/blog/archives/2008/05/random_number_b.html), open ssl / goto fail, Dual_EC_DRBG par la RSA, Encrypt then mac (cf https://www.bortzmeyer.org/7366.html)
             <li>Side channel attacks http://www.forbes.com/sites/timworstall/2013/12/21/researchers-break-rsa-4096-encryption-with-just-a-microphone-and-a-couple-of-emails/
             <li>FREAK
-            <li><a href="http://www.nextinpact.com/news/94144-logjam-apres-freak-nouvelle-faille-dans-chiffrement-connexions.htm">Logjam</a>
+            <li><a href="http://www.nextinpact.com/news/94144-logjam-apres-freak-nouvelle-faille-dans-chiffrement-connexions.htm">Logjam</a>, <a href="https://blog.cloudflare.com/logjam-the-latest-tls-vulnerability-explained/">explained</a>, <a href="http://blog.cryptographyengineering.com/2015/05/attack-of-week-logjam.html">one more explanation</a>
             <li>Brute force, Quantum computer, bon courage...
         </ul>
     </section>
@@ -89,6 +95,14 @@
     </section>
 	<section class="slide"><div>
 		<h2>Autorité de certification</h2>
+        <ul>
+            <li><a href="http://www.infoworld.com/article/2623829/authentication/weaknesses-in-ssl-certification-exposed-by-comodo-security-breach.html">Comodo breach</a>
+            <li><a href="https://threatpost.com/final-report-diginotar-hack-shows-total-compromise-ca-servers-103112/77170">Diginotar breach</a>
+            <li><a href="http://googleonlinesecurity.blogspot.fr/2013/12/further-improving-digital-certificate.html">l’ANSSI la main dans le sac</a>
+            <li><a href="http://www.fierceitsecurity.com/story/google-drop-chinas-cnnic-root-certificate-chrome-browser/2015-04-02">Google to drop China's CNNIC</a>
+            <li><a href="http://www.reuters.com/article/2015/04/02/us-china-google-iduskbn0mt09v20150402">CNNIC denounces Google rejection</a>
+            <li>Choix : https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/
+        </ul>
     </section>
 	<section class="slide"><div>
 		<h2>Domain, Organization et Extended Validation</h2>
@@ -110,22 +124,14 @@
         <ul>
             <li>MITM : affaiblir le chiffrement d’où <a href="https://securityheaders.com/http-strict-transport-security.php">HTTP Strict Transport Security</a>, <a href="https://securityheaders.com/content-security-policy.php">Content Security Policy</a> intéressant en passant
             <li>Faux certicat ou fausse autorité
-            <li>Chrome, l’ANSSI la main dans le sac : http://googleonlinesecurity.blogspot.fr/2013/12/further-improving-digital-certificate.html
             <li><a href="https://xkcd.com/538/"><img src="https://imgs.xkcd.com/comics/security.png"/></a>
-        </ul>
-    </section>
-	<section class="slide"><div>
-		<h2>Certificate pinning</h2>
-        <ul>
-            <li>http://www.internetsociety.org/deploy360/blog/2015/05/new-rfc-7469-on-certificate-pinning-http-public-key-pinning-hpkp/
-            <li>https://noncombatant.org/2015/05/01/about-http-public-key-pinning/
         </ul>
     </section>
 	<section class="slide"><div>
 		<h2>Attaques : </h2>
         <ul>
             <li>MITM sans chiffrement,
-            <li>MD5 https://www.win.tue.nl/hashclash/rogue-ca/
+            <li><a href="https://www.win.tue.nl/hashclash/rogue-ca/">Collision de MD5</a>
             <li>BEAST
             <li>BREACH
             <li>CRIME
@@ -135,16 +141,40 @@
 		<h2>Heartbleed</h2>
     </section>
 	<section class="slide"><div>
-		<h2>Google et le SHA-256</h2>
+		<h2>Freack & Logjam</h2>
     </section>
 	<section class="slide"><div>
 		<h2>HSTS</h2>
+    </section>
+	<section class="slide"><div>
+		<h2>Certificate public key pinning</h2>
+        <ul>
+            <li><a href="https://www.imperialviolet.org/2011/05/04/pinning.html">Public key pinning (04 May 2011)</a> dans Chrome
+            <li><a href="https://wiki.mozilla.org/SecurityEngineering/Public_Key_Pinning">dans Firefox aussi</a>
+            <li>http://www.internetsociety.org/deploy360/blog/2015/05/new-rfc-7469-on-certificate-pinning-http-public-key-pinning-hpkp/
+            <li>https://noncombatant.org/2015/05/01/about-http-public-key-pinning/
+            <li>https://timtaubert.de/blog/2014/10/http-public-key-pinning-explained/
+        </ul>
+    </section>
+	<section class="slide"><div>
+		<h2>Google et le SHA-256</h2>
+        <a href="http://googleonlinesecurity.blogspot.fr/2014/09/gradually-sunsetting-sha-1.html">Gradually sunsetting SHA-1</a>
+        <a href="https://blog.filippo.io/the-unofficial-chrome-sha1-faq/">The unofficial Chrome SHA1 deprecation FAQ</a>
+    </section>
+	<section class="slide"><div>
+		<h2>Interception</h2>
+        <a href="http://blog.philippheckel.com/2013/07/01/how-to-use-mitmproxy-to-read-and-modify-https-traffic-of-your-phone/">mitmproxy</a>
+        <a href="http://www.cnil.fr/linstitution/actualite/article/article/analyse-de-flux-https-bonnes-pratiques-et-questions/">CNIL : Analyse de flux https : bonnes pratiques et questions</a>
     </section>
 	<section class="slide"><div>
 		<h2>DANE</h2>
         <ul>
             <li>https://www.imperialviolet.org/2015/01/17/notdane.html
             <li>https://ripe70.ripe.net/presentations/183-dane-ripe.pdf
+            <li>http://www.bortzmeyer.org/6698.html
+            <li>https://wiki.mozilla.org/Security/DNSSEC-TLS-details
+            <li>https://addons.mozilla.org/en-US/firefox/addon/dnssec-validator/
+            <li>https://www.chromium.org/Home/chromium-security/security-faq#TOC-How-does-key-pinning-interact-with-local-proxies-and-filters-
         </ul>
     </section>
 	<section class="slide"><div>
@@ -152,11 +182,13 @@
         <ul>
             <li><a href="https://www.bortzmeyer.org/7540.html">RFC 7540: Hypertext Transfer Protocol version 2</a>
             <li><a href="https://ma.ttias.be/architecting-websites-http2-era/#tls">it looks like major browsers (Firefox & Chrome) may be limiting the HTTP/2 support for TLS connections only, in order to push for a more secure web (SSL/TLS everywhere).</a>
+            <li><a href="http://daniel.haxx.se/blog/2015/03/06/tls-in-http2/">TLS in HTTP/2</a>
         </ul>
     </section>
 	<section class="slide"><div>
-		<h2>optim</h2>
+		<h2>Performances / optimisation</h2>
         <ul>
+            <li>"In our production frontend machines, SSL/TLS accounts for less than 1% of the CPU load, less than 10KB of memory per connection and less than 2% of network overhead"... <a href="https://www.imperialviolet.org/2010/06/25/overclocking-ssl.html">Overclocking SSL</a>
             <li>False start https://technotes.googlecode.com/git/falsestart.html, jump start https://www.ietf.org/id/draft-vkrasnov-tls-jumpstart-00.txt
             <li>https://noncombatant.org/2014/11/23/tls-all-the-things/
         </ul>
@@ -164,10 +196,13 @@
 	<section class="slide"><div>
 		<h2>Resources</h2>
 		<ul>
-			<li>Conférence de Benjamin Sonntag : http://data.confs.fr/ssl-tls-sonntag/
-            <li>https://www.feistyduck.com/library/openssl-cookbook/
-            <li>https://mozilla.github.io/server-side-tls/ssl-config-generator/?1
-            <li>https://www.ssllabs.com/ : tests client et serveur
+            <li><a href="http://data.confs.fr/ssl-tls-sonntag/">Conférence de Benjamin Sonntag</a>
+            <li><a href="https://www.feistyduck.com/library/openssl-cookbook/">openssl cookbook</a>
+            <li><a href="https://mozilla.github.io/server-side-tls/ssl-config-generator/">ssl config generator</a>
+            <li><a href="https://www.ssllabs.com/">SSLLabs : tests client et serveur</a>
+            <li><a href="https://lescastcodeurs.com/2015/05/25/lcc-125-interview-sur-https-avec-tom-delmas-partie-1/">épisode de podcast des Castcodeurs</a>
+            <li><a href="https://www.grc.com/sn/past/2013.htm">Episode #412 "SSL & Perfect Forward Secrecy" | 10 Jul 2013 | 95 min.</a>
+            <li><a href="https://www.grc.com/fingerprints.htm">GRC fingerprint</a>
 		</ul>
 	</div></section>
 	<section class="slide"><div>
