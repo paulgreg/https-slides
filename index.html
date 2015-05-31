@@ -6,6 +6,11 @@
 	<meta name="viewport" content="width=792, user-scalable=no">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen.css">
+    <style>
+        .slide h2    { margin: 0px 0px 20px}
+        img.svg      { max-width: 110%; }
+        .slide > div { padding: 80px 80px 0px; height: 555px; width: 800px; }
+    </style>
 </head>
 <body class="list">
 	<header class="caption">
@@ -17,7 +22,6 @@
 		<p>par <a href="http://paulgreg.me">Grégory Paul</a></p>
 		<img src="pictures/cables.jpg" alt="">
 		<style>
-
             #Cover * {
                 color: #FFF;
             }
@@ -36,34 +40,64 @@
             }
 		</style>
 	</div></section>
-	<section class="slide"><div>
-		<h2>Démo</h2>
+	<section class="slide shout"><div>
+		<h2>Pourquoi ?</h2>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Pourquoi ?</h2>
+		<h2>Démo</h2>
+        <img src="pictures/https_network.svg" class="svg" alt="Réseau normal" />
+	</div></section>
+	<section class="slide"><div>
+		<h2>Démo avec un point d’accès malveillant</h2>
+        <div style="width: 100%; text-align: center;"><kbd>donotbeevil</kbd></div>
+        <img src="pictures/https_rogue_ap.svg" class="svg" alt="Réseau anormal au niveau du point d’accès" />
+	</div></section>
+	<section class="slide"><div>
+		<h2>Démo avec un point d’accès malveillant</h2>
+        <img src="pictures/https_raspberry.svg" class="svg" alt="Fonctionnement de l’interception" />
+	</div></section>
+	<section class="slide"><div>
+		<h2>Capture des cookies avec <a href="http://codebutler.com/firesheep/">Firesheep</a></h2>
+        <img src="pictures/firesheep.png" alt="Logiciel Firesheep" />
+	</div></section>
+	<section class="slide"><div>
+        <h2><abbr title="Fournisseur d’Accès Internet">FAI</abbr> malveillant</h2>
+        <img src="pictures/https_fai_injection.svg" class="svg" alt="Réseau anormal au niveau du FAI" />
+	</div></section>
+	<section class="slide"><div>
+        <h2><abbr title="Fournisseur d’Accès Internet">FAI</abbr> malveillant</h2>
         <ul>
-            <li>Écoute : <a href="http://codebutler.com/firesheep/?c=1">Firesheep</a>
-            <li>Modification de contenu : <a href="http://www.webrankinfo.com/dossiers/webmastering/blocage-publicite-free">Blocage des pubs Google par Free</a>,
-                <a href="http://arstechnica.com/tech-policy/2014/09/why-comcasts-javascript-ad-injections-threaten-security-net-neutrality/">ajout de pub</a> 
-                ou <a href="https://www.eff.org/fr/deeplinks/2014/11/verizon-x-uidh">ajout de cookie de tracking</a>.
-            <li>Attaque : <a href="https://citizenlab.org/2015/04/chinas-great-cannon/">Great canon</a>
+            <li><a href="http://www.webrankinfo.com/dossiers/webmastering/blocage-publicite-free">Blocage des pubs Google par Free</a>,
+            <li><a href="http://arstechnica.com/tech-policy/2014/09/why-comcasts-javascript-ad-injections-threaten-security-net-neutrality/">Ajout de pub par Comcast</a>
+                (<a href="http://www.pcworld.com/article/2604480/malicious-advertising-hits-amazon-youtube-and-yahoo-cisco-says.html">et des pubs malicieuses ont déjà été vues sur Amazon, Youtube et yahoo</a>),
+            <li><a href="https://www.eff.org/fr/deeplinks/2014/11/verizon-x-uidh">Ajout de cookie de tracking par Verizon</a>.
+        </ul>
+    </div></section>
+	<section class="slide"><div>
+        <h2>Le <a href="https://citizenlab.org/2015/04/chinas-great-cannon/">Grand Cannon Chinois</a></h2>
+        <img src="pictures/https_great_cannon.svg" class="svg" alt="réseau normal"/>
+	</div></section>
+	<section class="slide"><div>
+        <h2>Google, Mozilla</h2>
+        <ul>
             <li>SEO : <a href=">http://googleonlinesecurity.blogspot.fr/2014/08/https-as-ranking-signal_6.html">HTTPS as a ranking signal</a>
+            <li>https://konklone.com/post/were-deprecating-http-and-its-going-to-be-okay
             <li>Firefox : <a href="https://blog.mozilla.org/security/2015/04/30/deprecating-non-secure-http/">Deprecating Non-Secure HTTP</a>
         </ul>
-    </section>
+    </div></section>
 	<section class="slide"><div>
 		<h2>Objectifs</h2>
         <p>Chiffrement, authentification, intégrité<p>
-    </section>
+    </div></section>
 	<section class="slide"><div>
 		<h2>SSL 1.0, 2.0, 3.0</h2>
-    </section>
+    </div></section>
 	<section class="slide"><div>
 		<h2>TLS 1.0, 1.1, 1.2</h2>
-    </section>
+    </div></section>
 	<section class="slide"><div>
 		<h2>TLS 1.3 (draft)</h2>
-    </section>
+    </div></section>
 	<section class="slide"><div>
 		<h2>Personnages</h2>
         <ul>
@@ -71,7 +105,7 @@
             <li>Bruce Schneier <a href="https://www.schneier.com/">Schneier on Security</a>,
             <li>Matthew Green, <a href="http://blog.cryptographyengineering.com/">A Few Thoughts on Cryptographic Engineering</a>,
         </ul>
-    </section>
+    </div></section>
 	<section class="slide"><div>
 		<h2>Chiffrement</h2>
         <ul>
@@ -86,13 +120,13 @@
             <li><a href="http://www.nextinpact.com/news/94144-logjam-apres-freak-nouvelle-faille-dans-chiffrement-connexions.htm">Logjam</a>, <a href="https://blog.cloudflare.com/logjam-the-latest-tls-vulnerability-explained/">explained</a>, <a href="http://blog.cryptographyengineering.com/2015/05/attack-of-week-logjam.html">one more explanation</a>
             <li>Brute force, Quantum computer, bon courage...
         </ul>
-    </section>
+    </div></section>
 	<section class="slide"><div>
 		<h2>Combinaisons d’algo</h2>
         <ul>
             <li>https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#tls-parameters-4
         </ul>
-    </section>
+    </div></section>
 	<section class="slide"><div>
 		<h2>Autorité de certification</h2>
         <ul>
@@ -103,22 +137,22 @@
             <li><a href="http://www.reuters.com/article/2015/04/02/us-china-google-iduskbn0mt09v20150402">CNNIC denounces Google rejection</a>
             <li>Choix : https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/
         </ul>
-    </section>
+    </div></section>
 	<section class="slide"><div>
 		<h2>Domain, Organization et Extended Validation</h2>
-    </section>
+    </div></section>
 	<section class="slide"><div>
 		<h2>Let’s encrypt</h2>
-    </section>
+    </div></section>
 	<section class="slide"><div>
 		<h2>Perfect Forward Secrecy</h2>
-    </section>
+    </div></section>
 	<section class="slide"><div>
 		<h2>SNI</h2>
-    </section>
+    </div></section>
 	<section class="slide"><div>
 		<h2>révoquation, CRL, OCSP</h2>
-    </section>
+    </div></section>
 	<section class="slide"><div>
 		<h2>Attaques : Rogue certificate, Rogue authority</h2>
         <ul>
@@ -126,7 +160,7 @@
             <li>Faux certicat ou fausse autorité
             <li><a href="https://xkcd.com/538/"><img src="https://imgs.xkcd.com/comics/security.png"/></a>
         </ul>
-    </section>
+    </div></section>
 	<section class="slide"><div>
 		<h2>Attaques : </h2>
         <ul>
@@ -136,16 +170,16 @@
             <li>BREACH
             <li>CRIME
         </ul>
-    </section>
+    </div></section>
 	<section class="slide"><div>
 		<h2>Heartbleed</h2>
-    </section>
+    </div></section>
 	<section class="slide"><div>
 		<h2>Freack & Logjam</h2>
-    </section>
+    </div></section>
 	<section class="slide"><div>
 		<h2>HSTS</h2>
-    </section>
+    </div></section>
 	<section class="slide"><div>
 		<h2>Certificate public key pinning</h2>
         <ul>
@@ -155,17 +189,17 @@
             <li>https://noncombatant.org/2015/05/01/about-http-public-key-pinning/
             <li>https://timtaubert.de/blog/2014/10/http-public-key-pinning-explained/
         </ul>
-    </section>
+    </div></section>
 	<section class="slide"><div>
 		<h2>Google et le SHA-256</h2>
         <a href="http://googleonlinesecurity.blogspot.fr/2014/09/gradually-sunsetting-sha-1.html">Gradually sunsetting SHA-1</a>
         <a href="https://blog.filippo.io/the-unofficial-chrome-sha1-faq/">The unofficial Chrome SHA1 deprecation FAQ</a>
-    </section>
+    </div></section>
 	<section class="slide"><div>
 		<h2>Interception</h2>
         <a href="http://blog.philippheckel.com/2013/07/01/how-to-use-mitmproxy-to-read-and-modify-https-traffic-of-your-phone/">mitmproxy</a>
         <a href="http://www.cnil.fr/linstitution/actualite/article/article/analyse-de-flux-https-bonnes-pratiques-et-questions/">CNIL : Analyse de flux https : bonnes pratiques et questions</a>
-    </section>
+    </div></section>
 	<section class="slide"><div>
 		<h2>DANE</h2>
         <ul>
@@ -176,7 +210,7 @@
             <li>https://addons.mozilla.org/en-US/firefox/addon/dnssec-validator/
             <li>https://www.chromium.org/Home/chromium-security/security-faq#TOC-How-does-key-pinning-interact-with-local-proxies-and-filters-
         </ul>
-    </section>
+    </div></section>
 	<section class="slide"><div>
 		<h2>SPDY, HTTP 2.0</h2>
         <ul>
@@ -184,7 +218,7 @@
             <li><a href="https://ma.ttias.be/architecting-websites-http2-era/#tls">it looks like major browsers (Firefox & Chrome) may be limiting the HTTP/2 support for TLS connections only, in order to push for a more secure web (SSL/TLS everywhere).</a>
             <li><a href="http://daniel.haxx.se/blog/2015/03/06/tls-in-http2/">TLS in HTTP/2</a>
         </ul>
-    </section>
+    </div></section>
 	<section class="slide"><div>
 		<h2>Performances / optimisation</h2>
         <ul>
@@ -192,7 +226,7 @@
             <li>False start https://technotes.googlecode.com/git/falsestart.html, jump start https://www.ietf.org/id/draft-vkrasnov-tls-jumpstart-00.txt
             <li>https://noncombatant.org/2014/11/23/tls-all-the-things/
         </ul>
-    </section>
+    </div></section>
 	<section class="slide"><div>
 		<h2>Resources</h2>
 		<ul>
@@ -208,7 +242,9 @@
 	<section class="slide"><div>
 		<h2>Références</h2>
 		<ul>
-			<li>Images de serveur depuis https://www.google.com/about/datacenters/gallery</li>
+            <li>Images de cable réseau : <a href="https://www.google.com/about/datacenters/gallery">google.com/about/datacenters/gallery</a>,
+            <li>Source de l’image Firesheep : <a href="http://www.genbeta.com/navegadores/firesheep-hackea-con-un-click-cuentas-de-facebook-google-twitter">genbeta.com</a>,
+            <li>Diagramme construit sur <a href="https://www.gliffy.com/">gliffy.com</a>.
 		</ul>
 	</div></section>
 	<p class="badge"><a href="https://github.com/paulgreg/https-slides">Fork me on Github</a></p>
