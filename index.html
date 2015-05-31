@@ -9,7 +9,8 @@
     <style>
         .slide h2    { margin: 0px 0px 20px}
         img.svg      { max-width: 110%; }
-        .slide > div { padding: 80px 80px 0px; height: 555px; width: 800px; }
+        video        { max-width: 90%; }
+        .slide > div { padding: 80px 80px 0px; height: 555px; width: 865px; }
     </style>
 </head>
 <body class="list">
@@ -18,26 +19,13 @@
 		<p>Grégory Paul</p>
 	</header>
 	<section class="slide cover" id="Cover"><div>
-        <h2>HTTPS n’aura plus de secret pour vous</h2>
-		<p>par <a href="http://paulgreg.me">Grégory Paul</a></p>
+        <h2>HTTPS n’aura plus de secret<br/>pour vous</h2>
+		<p>par <a href="http://paulgreg.me/">Grégory Paul</a></p>
 		<img src="pictures/cables.jpg" alt="">
 		<style>
-            #Cover * {
-                color: #FFF;
-            }
-            #Cover h2 {
-                margin:30px 0 0;
-                background-color: rgba(0, 0, 0, .5);
-                text-align:center;
-                font-size:70px;
-            }
-            #Cover p {
-                margin:10px 0 0;
-                text-align:center;
-                background-color: rgba(0, 0, 0, .5);
-                font-style:italic;
-                font-size:20px;
-            }
+            #Cover *  { color: #FFF; }
+            #Cover h2 { margin:30px 0 0; background-color: rgba(0, 0, 0, .5); text-align:center; font-size:70px; }
+            #Cover p  { margin:10px 0 0; text-align:center; background-color: rgba(0, 0, 0, .5); font-style:italic; font-size:20px; }
 		</style>
 	</div></section>
 	<section class="slide shout"><div>
@@ -54,7 +42,15 @@
 	</div></section>
 	<section class="slide"><div>
 		<h2>Démo avec un point d’accès malveillant</h2>
+        <video controls preload="metadata" src="videos/mitm-http.webm"></video>
+	</div></section>
+	<section class="slide"><div>
+		<h2>HTTP avec un point d’accès malveillant</h2>
         <img src="pictures/https_raspberry.svg" class="svg" alt="Fonctionnement de l’interception" />
+	</div></section>
+	<section class="slide"><div>
+		<h2>HTTPS avec un point d’accès malveillant</h2>
+        <video controls preload="metadata" src="videos/mitm-https.webm"></video>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Capture des cookies avec <a href="http://codebutler.com/firesheep/">Firesheep</a></h2>
