@@ -28,40 +28,40 @@
             #Cover p  { margin:10px 0 0; text-align:center; background-color: rgba(0, 0, 0, .5); font-style:italic; font-size:20px; }
 		</style>
 	</div></section>
+
 	<section class="slide shout"><div>
 		<h2>Pourquoi ?</h2>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Démo</h2>
+		<h2>Dans un réseau typique...</h2>
         <img src="pictures/https_network.svg" class="svg" alt="Réseau normal" />
 	</div></section>
 	<section class="slide"><div>
-		<h2>Démo avec un point d’accès malveillant</h2>
+		<h2>Pour éviter l’interception de traffic</h2>
         <div style="width: 100%; text-align: center;"><kbd>donotbeevil</kbd></div>
         <img src="pictures/https_rogue_ap.svg" class="svg" alt="Réseau anormal au niveau du point d’accès" />
 	</div></section>
 	<section class="slide"><div>
-		<h2>Démo avec un point d’accès malveillant</h2>
+		<h2>Pour éviter l’interception de traffic</h2>
         <video controls preload="metadata" src="videos/mitm-http.webm"></video>
 	</div></section>
 	<section class="slide"><div>
-		<h2>HTTP avec un point d’accès malveillant</h2>
+		<h2>Fonctionnement de l’attaque</h2>
         <img src="pictures/https_raspberry.svg" class="svg" alt="Fonctionnement de l’interception" />
 	</div></section>
 	<section class="slide"><div>
-		<h2>HTTPS avec un point d’accès malveillant</h2>
-        <video controls preload="metadata" src="videos/mitm-https.webm"></video>
+		<h2>Pour éviter de se faire voler ses cookies</h2>
+        <figure>
+            <img src="pictures/firesheep.png" alt="Logiciel Firesheep" />
+            <figcaption><a href="http://codebutler.com/firesheep/">Firesheep</a></figcaption>
+        </figure>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Capture des cookies avec <a href="http://codebutler.com/firesheep/">Firesheep</a></h2>
-        <img src="pictures/firesheep.png" alt="Logiciel Firesheep" />
-	</div></section>
-	<section class="slide"><div>
-        <h2><abbr title="Fournisseur d’Accès Internet">FAI</abbr> malveillant</h2>
+        <h2>Pour se protéger des <abbr title="Fournisseur d’Accès Internet">FAI</abbr> malveillant</h2>
         <img src="pictures/https_fai_injection.svg" class="svg" alt="Réseau anormal au niveau du FAI" />
 	</div></section>
 	<section class="slide"><div>
-        <h2><abbr title="Fournisseur d’Accès Internet">FAI</abbr> malveillant</h2>
+        <h2>Pour se protéger des <abbr title="Fournisseur d’Accès Internet">FAI</abbr> malveillant</h2>
         <ul>
             <li><a href="http://www.webrankinfo.com/dossiers/webmastering/blocage-publicite-free">Blocage des pubs Google par Free</a>,
             <li><a href="http://arstechnica.com/tech-policy/2014/09/why-comcasts-javascript-ad-injections-threaten-security-net-neutrality/">Ajout de pub par Comcast</a>
@@ -70,21 +70,40 @@
         </ul>
     </div></section>
 	<section class="slide"><div>
-        <h2>Le <a href="https://citizenlab.org/2015/04/chinas-great-cannon/">Grand Cannon Chinois</a></h2>
+        <h2>Pour éviter les attaques du <a href="https://citizenlab.org/2015/04/chinas-great-cannon/">Grand Cannon Chinois</a></h2>
         <img src="pictures/https_great_cannon.svg" class="svg" alt="réseau normal"/>
 	</div></section>
 	<section class="slide"><div>
-        <h2>Google, Mozilla</h2>
+		<h2>Pour bénéficier de <a href="https://www.bortzmeyer.org/7540.html" title="RFC 7540: Hypertext Transfer Protocol version 2">HTTP/2.0</a></h2>
         <ul>
-            <li>SEO : <a href=">http://googleonlinesecurity.blogspot.fr/2014/08/https-as-ranking-signal_6.html">HTTPS as a ranking signal</a>
-            <li>https://konklone.com/post/were-deprecating-http-and-its-going-to-be-okay
-            <li>Firefox : <a href="https://blog.mozilla.org/security/2015/04/30/deprecating-non-secure-http/">Deprecating Non-Secure HTTP</a>
+            <li><a href="https://ma.ttias.be/architecting-websites-http2-era/#tls">it looks like major browsers (Firefox & Chrome) may be limiting the HTTP/2 support for TLS connections only, in order to push for a more secure web (SSL/TLS everywhere).</a>
+            <li><a href="http://daniel.haxx.se/blog/2015/03/06/tls-in-http2/">TLS in HTTP/2</a>
         </ul>
     </div></section>
 	<section class="slide"><div>
-		<h2>Objectifs</h2>
-        <p>Chiffrement, authentification, intégrité<p>
+        <h2>Pour utiliser HTML5 &amp; améliorer son référencement</h2>
+        <ul>
+            <li>Geolocalisation bientôt seulement en HTTPS : <a href="https://blog.mozilla.org/security/2015/04/30/deprecating-non-secure-http/">Deprecating Non-Secure HTTP</a>
+            <li>https://konklone.com/post/were-deprecating-http-and-its-going-to-be-okay
+            <li>Meilleur référencement sur Google : <a href=">http://googleonlinesecurity.blogspot.fr/2014/08/https-as-ranking-signal_6.html">HTTPS as a ranking signal</a>
+        </ul>
     </div></section>
+
+	<section class="slide shout"><div>
+		<h2>Objectifs</h2>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Objectifs</h2>
+        <ul>
+            <li>Chiffrement,
+            <li>authentification,
+            <li>intégrité
+        </ul>
+    </div></section>
+
+	<section class="slide shout"><div>
+		<h2>Versions</h2>
+	</div></section>
 	<section class="slide"><div>
 		<h2>SSL 1.0, 2.0, 3.0</h2>
     </div></section>
@@ -102,6 +121,10 @@
             <li>Matthew Green, <a href="http://blog.cryptographyengineering.com/">A Few Thoughts on Cryptographic Engineering</a>,
         </ul>
     </div></section>
+
+	<section class="slide shout"><div>
+		<h2>Chiffrement &amp; intégrité</h2>
+	</div></section>
 	<section class="slide"><div>
 		<h2>Chiffrement</h2>
         <ul>
@@ -125,6 +148,10 @@
             <li>https://wiki.mozilla.org/Security/Server_Side_TLS
         </ul>
     </div></section>
+
+	<section class="slide shout"><div>
+		<h2>Authentification</h2>
+	</div></section>
 	<section class="slide"><div>
 		<h2>Autorité de certification</h2>
         <ul>
@@ -151,10 +178,13 @@
 	<section class="slide"><div>
 		<h2>révoquation, CRL, OCSP</h2>
     </div></section>
+
+	<section class="slide shout"><div>
+		<h2>Attaques</h2>
+	</div></section>
 	<section class="slide"><div>
 		<h2>Attaques : Rogue certificate, Rogue authority</h2>
         <ul>
-            <li>MITM : affaiblir le chiffrement d’où <a href="https://securityheaders.com/http-strict-transport-security.php">HTTP Strict Transport Security</a>, <a href="https://securityheaders.com/content-security-policy.php">Content Security Policy</a> intéressant en passant
             <li>Faux certicat ou fausse autorité
             <li><a href="https://xkcd.com/538/"><img src="https://imgs.xkcd.com/comics/security.png"/></a>
         </ul>
@@ -162,12 +192,30 @@
 	<section class="slide"><div>
 		<h2>Attaques : </h2>
         <ul>
-            <li>MITM sans chiffrement,
+            <li>MITM sans chiffrement, SSLStrip,
             <li><a href="https://www.win.tue.nl/hashclash/rogue-ca/">Collision de MD5</a>
-            <li>BEAST
-            <li>BREACH
-            <li>CRIME
+            <li><a href="https://sites.google.com/site/itstheshappening/">Oct 8: The SHAppening: freestart collisions for SHA-1</a>
+            <li><a href="http://googleonlinesecurity.blogspot.fr/2014/09/gradually-sunsetting-sha-1.html">Gradually sunsetting SHA-1</a>
+            <li><a href="https://blog.filippo.io/the-unofficial-chrome-sha1-faq/">The unofficial Chrome SHA1 deprecation FAQ</a>
         </ul>
+    </div></section>
+	<section class="slide"><div>
+		<h2>Avec un point d’accès malveillant (HTTPS)</h2>
+        <video controls preload="metadata" src="videos/mitm-https.webm"></video>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Interception</h2>
+        <a href="http://blog.philippheckel.com/2013/07/01/how-to-use-mitmproxy-to-read-and-modify-https-traffic-of-your-phone/">mitmproxy</a>
+        <a href="http://www.cnil.fr/linstitution/actualite/article/article/analyse-de-flux-https-bonnes-pratiques-et-questions/">CNIL : Analyse de flux https : bonnes pratiques et questions</a>
+    </div></section>
+	<section class="slide"><div>
+		<h2>BEAST</h2>
+    </div></section>
+	<section class="slide"><div>
+		<h2>BREACH</h2>
+    </div></section>
+	<section class="slide"><div>
+		<h2>CRIME</h2>
     </div></section>
 	<section class="slide"><div>
 		<h2>Heartbleed</h2>
@@ -175,8 +223,15 @@
 	<section class="slide"><div>
 		<h2>Freack & Logjam</h2>
     </div></section>
+
+	<section class="slide shout"><div>
+		<h2>Après HTTPS</h2>
+	</div></section>
 	<section class="slide"><div>
 		<h2>HSTS</h2>
+        <ul>
+            <li>MITM : affaiblir le chiffrement d’où <a href="https://securityheaders.com/http-strict-transport-security.php">HTTP Strict Transport Security</a>, <a href="https://securityheaders.com/content-security-policy.php">Content Security Policy</a> intéressant en passant
+        </ul>
     </div></section>
 	<section class="slide"><div>
 		<h2>Certificate public key pinning</h2>
@@ -189,15 +244,17 @@
         </ul>
     </div></section>
 	<section class="slide"><div>
-		<h2>Google et le SHA-256</h2>
-        <a href="http://googleonlinesecurity.blogspot.fr/2014/09/gradually-sunsetting-sha-1.html">Gradually sunsetting SHA-1</a>
-        <a href="https://blog.filippo.io/the-unofficial-chrome-sha1-faq/">The unofficial Chrome SHA1 deprecation FAQ</a>
+		<h2>Content Security Policy</h2>
+        </ul>
     </div></section>
 	<section class="slide"><div>
-		<h2>Interception</h2>
-        <a href="http://blog.philippheckel.com/2013/07/01/how-to-use-mitmproxy-to-read-and-modify-https-traffic-of-your-phone/">mitmproxy</a>
-        <a href="http://www.cnil.fr/linstitution/actualite/article/article/analyse-de-flux-https-bonnes-pratiques-et-questions/">CNIL : Analyse de flux https : bonnes pratiques et questions</a>
+		<h2>Subresource integrity</h2>
+        </ul>
     </div></section>
+
+	<section class="slide shout"><div>
+		<h2>Alternatives aux CA</h2>
+	</div></section>
 	<section class="slide"><div>
 		<h2>DANE</h2>
         <ul>
@@ -209,14 +266,9 @@
             <li>https://www.chromium.org/Home/chromium-security/security-faq#TOC-How-does-key-pinning-interact-with-local-proxies-and-filters-
         </ul>
     </div></section>
-	<section class="slide"><div>
-		<h2>SPDY, HTTP 2.0</h2>
-        <ul>
-            <li><a href="https://www.bortzmeyer.org/7540.html">RFC 7540: Hypertext Transfer Protocol version 2</a>
-            <li><a href="https://ma.ttias.be/architecting-websites-http2-era/#tls">it looks like major browsers (Firefox & Chrome) may be limiting the HTTP/2 support for TLS connections only, in order to push for a more secure web (SSL/TLS everywhere).</a>
-            <li><a href="http://daniel.haxx.se/blog/2015/03/06/tls-in-http2/">TLS in HTTP/2</a>
-        </ul>
-    </div></section>
+	<section class="slide shout"><div>
+		<h2>Performances</h2>
+	</div></section>
 	<section class="slide"><div>
 		<h2>Performances / optimisation</h2>
         <ul>
