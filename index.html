@@ -15,12 +15,15 @@
         .slide dd                      { padding: 0; font-size: 20px; color: #666; line-height: 120%; margin-bottom: .5em; }
         .slide dt                      { margin-top: 0; }
         .slide a                       { color: #333; }
+        .slide a.clear                 { background: none; }
         .slide i.fa                    { font-style: normal; margin-right: 6px; }
         .slide ul.inner                { padding-left: 2em; }
         .slide ul.icons li:before      { content: ""; }
         .slide ul.icons li i           { margin: 0 -25px 0 25px; }
         .slide.tell h2                 { position: absolute; top: 50%; left: 0px; width: 100%; text-align: center; line-height: 1; font-size: 100px; transform: translateY(-50%); }
-        .slide pre                     { margin-bottom: .8em; }
+        .slide pre                     { margin-bottom: 1em;  }
+        .slide pre code                { line-height: 175%; }
+        .slide pre.small code          { line-height: 110%; font-size: 12px; }
         .slide small                   { font-size: 80%; color: #666; }
         .slide small a                 { color: #666; }
         .slide p                       { margin-bottom: .25em; }
@@ -32,7 +35,6 @@
         .slide ul.numbered             { text-align: left; width: 110%; }
         .slide ul.numbered li          { line-height: 100%; }
         .slide ul.numbered li:before   { content: ""; }
-        .slide pre code                { line-height: 110%; font-size: 12px; }
     </style>
 </head>
 <body class="list">
@@ -353,6 +355,15 @@
         </ul>
 	</div></section>
 
+	<section class="slide"><div>
+		<h2>Perfect Forward Secrecy</h2>
+        <figure class="center">
+            <img src="pictures/diffie-Hellman_key_exchange.png" alt="Algorithme de Diffie Hellman">
+            <figcaption></figcaption>
+        </figure>
+        <a href="http://vincent.bernat.im/en/blog/2011-ssl-perfect-forward-secrecy.html">SSL/TLS &amp; Perfect Forward Secrecy</a>, <small>DHE-RSA-AES128-SHA, ECDHE-RSA-AES128-SHA</small>
+    </div></section>
+
 	<section id="doutes" class="slide"><div>
 		<h2>Le chiffrement, c’est solide ?</h2>
         <figure>
@@ -373,22 +384,28 @@
 	<section id="ca" class="slide"><div>
         <h2>Infrastructure de clé publique (<abbr title="Public key infrastructure">PKI</abbr>)</h2>
         <figure class="sidebyside">
-            <img src="pictures/ca-hierarchy.gif" alt=""/>
+            <img src="pictures/ca-hierarchy.gif" alt="" />
             <figcaption>
                 <dl>
-                    <dt><i class="fa fa-hospital-o"></i>Autorité de certification racine (root CA)
-                    <dd>Certificat auto-signé, présent dans les navigateurs &amp; <abbr title="Operating System">OS</abbr> ; au coffre-fort !
+                    <dt><i class="fa fa-hospital-o"></i>Autorité de certification racine (root <abbr title="Certificate authority">CA</abbr>)
+                    <dd>Certificat auto-signé, clés privés au coffre-fort !<br>
+                        Présent dans les navigateurs &amp; <abbr title="Operating System">OS</abbr> s’ils remplissent les critères de
+                        <a href="https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/">Mozilla</a>,
+                        <a href="https://www.apple.com/certificateauthority/ca_program.html">Apple</a>,
+                        <a href="http://social.technet.microsoft.com/wiki/contents/articles/31633.microsoft-trusted-root-program-requirements.aspx">Microsoft</a> ou
+                        <a href="https://www.chromium.org/Home/chromium-security/root-ca-policy">Google</a>.
                     <dt><i class="fa fa-building"></i>Autorité intermédiaire (intermediate/policy CA)
                     <dd>Utilisé pour signer les autorités d’enregistrements
                     <dt><i class="fa fa-building-o"></i>Autorité d’enregistrement (RA)
                     <dd>Bureau permettant de signer des certificats au "grand public" (Gandi, etc)
+                </dl>
             <figcaption>
         </figure>
     </div></section>
 
 	<section id="certificat-x509" class="slide"><div>
         <h2><i class="fa fa-certificate"></i>Un certificat <a href="https://openssl.org/docs/manmaster/apps/x509v3_config.html">X.509</a></h2>
-        <pre>
+        <pre class="small">
             <code>$ openssl x509 -in <a href="https://www.gandi.net/static/CAs/GandiStandardSSLCA2.pem">GandiStandardSSLCA2.pem</a> -inform pem -noout -text</code>
             <code>Certificate:</code>
             <code>Data:</code>
@@ -427,34 +444,47 @@
         </pre>
 	</div></section>
 
-	<section class="slide"><div>
+	<section id="type-certificats" class="slide"><div>
+        <style scoped>
+            img { display: block; margin: 1em auto 0 auto; }
+        </style>
 		<h2>Domain, Organization et Extended Validation</h2>
+        <dl>
+            <dt><i class="fa fa-certificate"></i>Domain validation
+            <dd>Simple vérification sur l’appartenance du domaine
+            <dt><i class="fa fa-building"></i>Organization validation
+            <dd>Vérification de l’identité du propriétaire (carte d’identité, SIRET, etc)
+            <dt><i class="fa fa-star"></i>Extended validation
+            <dd>Enquête sur le propriétaire (coup de téléphone, vérification des status juridiques, etc), permet l’affichage du propriétaire dans la barre d’adresse : <img src="pictures/greenbar.png" alt="barre verte" />
+        </dl>
     </div></section>
 
 	<section id="ca-breach" class="slide"><div>
-		<h2>Autorité de certification</h2>
+        <h2>La vie des CA n’est pas un long fleuve tranquille...</h2>
         <ul>
-            <li><a href="http://www.infoworld.com/article/2623829/authentication/weaknesses-in-ssl-certification-exposed-by-comodo-security-breach.html">Comodo breach</a>
-            <li><a href="https://threatpost.com/final-report-diginotar-hack-shows-total-compromise-ca-servers-103112/77170">Diginotar breach</a>
-            <li><a href="http://googleonlinesecurity.blogspot.fr/2013/12/further-improving-digital-certificate.html">l’ANSSI la main dans le sac</a>
-            <li><a href="http://www.fierceitsecurity.com/story/google-drop-chinas-cnnic-root-certificate-chrome-browser/2015-04-02">Google to drop China's CNNIC</a>
-            <li><a href="http://www.reuters.com/article/2015/04/02/us-china-google-iduskbn0mt09v20150402">CNNIC denounces Google rejection</a>
-            <li>Choix : https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/
+            <li>en 2011, <a href="https://www.comodo.com/Comodo-Fraud-Incident-2011-03-23.html">Comodo</a> signe 9 certificats incluant  mail.google.com, login.yahoo.com, login.skype.com, addons.mozilla.org, login.live.com,
+            <li>en 2011, <a href="https://www.vasco.com/company/about_vasco/press_room/news_archive/2011/news_diginotar_reports_security_incident.aspx">Diginotar</a> signe des certificats utilisés pour intercepter le trafic gmail en Iran ; l’entreprise <a href="https://www.vasco.com/company/about_vasco/press_room/news_archive/2011/news_vasco_announces_bankruptcy_filing_by_diginotar_bv.aspx">ferme</a> quelques jours après,
+            <li>en 2013, l’<a href="http://googleonlinesecurity.blogspot.fr/2013/12/further-improving-digital-certificate.html">ANSSI</a> génère des certificats pour des domaines de google ; ils sont détectés aussitôt par Chrome,
+            <li>en 2015, <a href="https://googleonlinesecurity.blogspot.sg/2015/03/maintaining-digital-certificate-security.html">Google</a> exclue les certificats signés par l’AC Chinoise <a href="https://en.wikipedia.org/wiki/China_Internet_Network_Information_Center">CNNIC</a> car ils ont signés des certificats Google, le <a href="http://www1.cnnic.cn/AU/MediaC/Announcement/201504/t20150402_52049.htm">CNNIC répond</a>.
         </ul>
     </div></section>
 
+	<section class="slide"><div>
+        <style scoped>
+            img { padding: 0 80px 0 0; }
+        </style>
+        <h2><a href="https://letsencrypt.org/" class="clear"><img src="pictures/letsencrypt.svg" alt="Let’s encrypt" width="300"></a></h2>
+        <p>système automatique via un agent Open Source sur votre serveur, qui valide le domaine, installe et renouvelle automatiquement un certificat gratuit (domain validation).</p>
+        <a href="https://www.mozilla.org/" class="clear"><img src="pictures/mozilla-logo.png" width="100" height="60"></a>
+        <a href="http://www.akamai.com/" class="clear"><img src="pictures/akamai-logo.png" width="100" height="60"></a>
+        <a href="http://www.cisco.com/" class="clear"><img src="pictures/cisco-logo.png" width="100" height="60"></a>
+        <a href="https://www.eff.org/" class="clear"><img src="pictures/eff-logo.png" width="100" height="60"></a>
+        <a href="https://www.identrustssl.com/" class="clear"><img src="pictures/identrust-logo.png" width="100" height="60"></a>
+        <a href="https://www.internetsociety.org/" class="clear"><img src="pictures/isoc.png" width="100" height="60"></a>
+        <a href="https://automattic.com/" class="clear"><img src="pictures/automattic-logo.png" width="100" height="60"></a>
+        <p><a href="https://letsencrypt.org/2015/10/19/lets-encrypt-is-trusted.html">Supporté</a> par les principaux navigateurs depuis octobre 2015.</p>
+    </div></section>
 
-	<section class="slide"><div>
-		<h2>Let’s encrypt</h2>
-    </div></section>
-	<section class="slide"><div>
-		<h2>Perfect Forward Secrecy</h2>
-        <figure class="center">
-            <img src="pictures/diffie-Hellman_key_exchange.png" alt="Algorithme de Diffie Hellman">
-            <figcaption></figcaption>
-        </figure>
-        <a href="http://vincent.bernat.im/en/blog/2011-ssl-perfect-forward-secrecy.html">SSL/TLS &amp; Perfect Forward Secrecy</a>, <small>DHE-RSA-AES128-SHA, ECDHE-RSA-AES128-SHA</small>
-    </div></section>
 	<section class="slide"><div>
 		<h2>SNI</h2>
     </div></section>
