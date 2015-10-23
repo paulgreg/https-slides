@@ -12,7 +12,8 @@
         .slide img.svg                 { max-width: 110%; }
         .slide video                   { max-width: 90%; }
         .slide > div                   { padding: 80px 80px 0px; height: 555px; width: 865px; }
-        .slide dd                      { padding: 0 0 1em 2em; font-size: 20px; color: #666; }
+        .slide dd                      { padding: 0; font-size: 20px; color: #666; line-height: 120%; margin-bottom: .5em; }
+        .slide dt                      { margin-top: 0; }
         .slide a                       { color: #333; }
         .slide i.fa                    { font-style: normal; margin-right: 6px; }
         .slide ul.inner                { padding-left: 2em; }
@@ -27,9 +28,11 @@
         .slide li                      { line-height: 150%; margin-bottom: .5em; }
         .slide blockquote + figcaption { margin-top: 0; }
         .slide figure.center           { text-align: center; }
+        .slide figure.sidebyside       { display: flex; }
         .slide ul.numbered             { text-align: left; width: 110%; }
         .slide ul.numbered li          { line-height: 100%; }
         .slide ul.numbered li:before   { content: ""; }
+        .slide pre code                { line-height: 110%; font-size: 12px; }
     </style>
 </head>
 <body class="list">
@@ -140,6 +143,14 @@
             <figcaption><a href="https://ma.ttias.be/architecting-websites-http2-era/#tls">Architecting Websites For The HTTP/2 Era</a>, <a href="http://daniel.haxx.se/blog/2015/03/06/tls-in-http2/">TLS in HTTP/2</a></figcaption>
         </figure>
     </div></section>
+	<section id="droit-vie-prive" class="slide"><div>
+		<h2>Pour défendre le droit à la vie privée</h2>
+        <figure>
+            <blockquote><p>Dire que vous vous n'en avez rien à faire de la vie privée parce que vous n'avez rien à cacher, c'est comme dire que vous n'en avez rien à faire de la liberté d'expression parce que vous n'avez rien à dire.</p></blockquote>
+            <figcaption>Edward Snowden : <a href="https://www.youtube.com/watch?v=bpO3GeXTceM">Edward Snowden about Privacy</a></figcaption>
+        </figure>
+	</div></section>
+
 	<section id="convaincu" class="slide tell"><div>
 		<h2>Convaincu ?</h2>
 	</div></section>
@@ -150,12 +161,16 @@
 	<section id="objectifs-https-details" class="slide"><div>
 		<h2>Objectifs</h2>
         <dl>
-            <dt><i class="fa fa-lock"></i>Chiffrement :
+            <dt><i class="fa fa-lock"></i>Confidentialité :
             <dd>Les données échangées sont chiffrées par une clé et ne peuvent être déchiffrées que par les 2 parties.
             <dt><i class="fa fa-users"></i>Authentification :
-            <dd>Le client vérifie que le serveur à qui il s’adresse est bien celui qu’il prétend être (évite les <a href="https://fr.wikipedia.org/wiki/Attaque_de_l'homme_du_milieu">attaques d’homme du milieu</a>).
-            <dt><i class="fa fa-check"></i>Intégrité :
+            <dd>Le client vérifie que le serveur à qui il s’adresse est bien celui qu’il prétend être (évite les <a href="https://fr.wikipedia.org/wiki/Attaque_de_l'homme_du_milieu">attaques d’homme du milieu</a>). Éventuellement, le client peut s’authentifier auprès du serveur.
+            <dt><i class="fa fa-balance-scale"></i>Intégrité :
             <dd>Les parties vérifient que les données reçues n’ont pas été altérées.
+            <dt><i class="fa fa-diamond"></i>Transparence :
+            <dd>Aucun changement nécessaire dans le protocole applicatif englobé
+            <dt><i class="fa fa-bolt"></i>Spontanéité :
+            <dd>Un client peut spontannément se connecter à un serveur (pas de pré-requis)
         </dl>
     </div></section>
 
@@ -226,12 +241,12 @@
         </ul>
 	</div></section>
 
-	<section id="chiffrement-integrite" class="slide shout"><div>
-		<h2>Chiffrement &amp; intégrité</h2>
+	<section id="fonctionnement" class="slide shout"><div>
+		<h2>Fonctionnement</h2>
 	</div></section>
 
 	<section id="handshake" class="slide"><div>
-        <h2>Poignée de main <small>(handshake)</small></h2>
+        <h2>Poignée de main <small>(<a href="http://www.moserware.com/2009/06/first-few-milliseconds-of-https.html">handshake</a>)</small></h2>
         <figure class="center">
             <img src="pictures/handshake.png" alt="poignée de main" height="250">
             <figcaption>
@@ -240,7 +255,7 @@
                 </li><li><span style="color: blue;">2.</span> Server hello : chiffrement &amp; certificat <small>(le client vérifie le certificat et la chaîne de confiance)</small>,
                 </li><li><span style="color: red;">3.</span> Pré-clé chiffrée avec la clé publique du serveur
                 </li><li><span>4.</span> Négociation terminée, calcul de la clé secrête symétrique
-                </li><li><span style="color: green;">5.</span> Échanges HTTP chiffrés avec la clé symétrique
+                </li><li><span style="color: green;">5.</span> Échanges HTTP chiffrés avec la clé symétrique et vérifié par MAC/HMAC
             </li></ul>
             </figcaption>
             </figure>
@@ -251,7 +266,7 @@
             ul { column-count: 4; -moz-column-count: 4; -webkit-column-count: 4; font-size: 12px; font-family: monospace; }
             ul li { margin: 0; }
         </style>
-        <h2>Suites de chiffrement <small>(cipher suites)</small></h2>
+        <h2>Suites de chiffrement <small>(<a href="https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#tls-parameters-4">cipher suites</a>)</small></h2>
         <p>Authentication <small>(asymétrique)</small>, chiffrement <small>(symétrique)</small>, MAC/HMAC et échange de clé</p>
         <ul>
             <li>ECDHE-RSA-AES256-GCM-SHA384
@@ -338,35 +353,85 @@
         </ul>
 	</div></section>
 
-
-	<section class="slide"><div>
-		<h2>Chiffrement</h2>
-        <ul>
-            <li>Snowden responded: “Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on. Unfortunately, endpoint security is so terrifically weak that NSA can frequently find ways around it.”
-            <li>http://techcrunch.com/2013/06/17/encrypting-your-email-works-says-nsa-whistleblower-edward-snowden/
-            <li>https://security.stackexchange.com/questions/4518/how-to-estimate-the-time-needed-to-crack-rsa-encryption
-            <li>http://arstechnica.com/security/2013/09/of-course-nsa-can-crack-crypto-anyone-can-the-question-is-how-much/
-            <li>récupèrer les infos lorsqu’elle ne sont pas chiffrées ou les clés en clair,
-            <li>Exploiter des failles connues (random sur debian,https://www.schneier.com/blog/archives/2008/05/random_number_b.html), open ssl / goto fail, Dual_EC_DRBG par la RSA, Encrypt then mac (cf https://www.bortzmeyer.org/7366.html)
-            <li>Side channel attacks http://www.forbes.com/sites/timworstall/2013/12/21/researchers-break-rsa-4096-encryption-with-just-a-microphone-and-a-couple-of-emails/
-            <li>FREAK
-            <li><a href="http://www.nextinpact.com/news/94144-logjam-apres-freak-nouvelle-faille-dans-chiffrement-connexions.htm">Logjam</a>, <a href="https://blog.cloudflare.com/logjam-the-latest-tls-vulnerability-explained/">explained</a>, <a href="http://blog.cryptographyengineering.com/2015/05/attack-of-week-logjam.html">one more explanation</a>
-            <li>Brute force, Quantum computer, bon courage...
-        </ul>
-    </div></section>
-	<section class="slide"><div>
-		<h2>Combinaisons d’algo</h2>
-        <ul>
-            <li>https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#tls-parameters-4
-            <li>http://www.moserware.com/2009/06/first-few-milliseconds-of-https.html
-            <li>https://wiki.mozilla.org/Security/Server_Side_TLS
-        </ul>
+	<section id="doutes" class="slide"><div>
+		<h2>Le chiffrement, c’est solide ?</h2>
+        <figure>
+            <blockquote><p>Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on. Unfortunately, endpoint security is so terrifically weak that NSA can frequently find ways around it.</p></blockquote>
+            <figcaption>Edward Snowden : <a href="http://techcrunch.com/2013/06/17/encrypting-your-email-works-says-nsa-whistleblower-edward-snowden/">Encrypting Your Email Works</a></figcaption>
+        </figure>
+        <figure>
+            <blockquote><p>Can the NSA break AES? My guess is that they can't.</p></blockquote>
+            <blockquote><p>Still, I trust the mathematics.</p></blockquote>
+            <figcaption>Bruce Schneier : <a href="https://www.schneier.com/blog/archives/2012/03/can_the_nsa_bre.html">Can the NSA Break AES?</a>, <a href="https://www.schneier.com/blog/archives/2013/09/the_nsas_crypto_1.html">The NSA's Cryptographic Capabilities</a></figcaption>
+        </figure>
     </div></section>
 
-	<section class="slide shout"><div>
+	<section id="authentification" class="slide shout"><div>
 		<h2>Authentification</h2>
 	</div></section>
+
+	<section id="ca" class="slide"><div>
+        <h2>Infrastructure de clé publique (<abbr title="Public key infrastructure">PKI</abbr>)</h2>
+        <figure class="sidebyside">
+            <img src="pictures/ca-hierarchy.gif" alt=""/>
+            <figcaption>
+                <dl>
+                    <dt><i class="fa fa-hospital-o"></i>Autorité de certification racine (root CA)
+                    <dd>Certificat auto-signé, présent dans les navigateurs &amp; <abbr title="Operating System">OS</abbr> ; au coffre-fort !
+                    <dt><i class="fa fa-building"></i>Autorité intermédiaire (intermediate/policy CA)
+                    <dd>Utilisé pour signer les autorités d’enregistrements
+                    <dt><i class="fa fa-building-o"></i>Autorité d’enregistrement (RA)
+                    <dd>Bureau permettant de signer des certificats au "grand public" (Gandi, etc)
+            <figcaption>
+        </figure>
+    </div></section>
+
+	<section id="certificat-x509" class="slide"><div>
+        <h2><i class="fa fa-certificate"></i>Un certificat <a href="https://openssl.org/docs/manmaster/apps/x509v3_config.html">X.509</a></h2>
+        <pre>
+            <code>$ openssl x509 -in <a href="https://www.gandi.net/static/CAs/GandiStandardSSLCA2.pem">GandiStandardSSLCA2.pem</a> -inform pem -noout -text</code>
+            <code>Certificate:</code>
+            <code>Data:</code>
+            <code>    <strong>Version</strong>: 3 (0x2)</code>
+            <code>    <strong>Serial Number</strong>: 05:e4:dc:3b:94:38:ab:3b:85:97:cb:a6:a1:98:50:e3</code>
+            <code><strong>Signature Algorithm</strong>: sha384WithRSAEncryption</code>
+            <code>    <strong>Issuer</strong>: C=US, ST=New Jersey, L=Jersey City, O=The USERTRUST Network, CN=USERTrust RSA Certification Authority</code>
+            <code>    <strong>Validity</strong> Not Before: Sep 12 00:00:00 2014 GMT   Not After : Sep 11 23:59:59 2024 GMT</code>
+            <code>    <strong>Subject</strong>: C=FR, ST=Paris, L=Paris, O=Gandi, CN=Gandi Standard SSL CA 2</code>
+            <code>    Subject Public Key Info:</code>
+            <code>        <strong>Public Key Algorithm</strong>: rsaEncryption</code>
+            <code>            <strong>Public-Key</strong>: (2048 bit)</code>
+            <code>            <strong>Modulus</strong>: 00:94:04:2d:a6:79:95:74:ff:d5:00:3c:f5:ae:d8:...</code>
+            <code>            <strong>Exponent</strong>: 65537 (0x10001)</code>
+            <code>    X509v3 <strong>extensions</strong>:</code>
+            <code>        X509v3 <strong>Authority Key Identifier</strong>:</code>
+            <code>            keyid:53:79:BF:5A:AA:2B:4A:CF:54:80:E1:D8:9B:C0:9D:F2:B2:03:66:CB</code>
+            <code>        X509v3 <strong>Subject Key Identifier</strong>:</code>
+            <code>            B3:90:A7:D8:C9:AF:4E:CD:61:3C:9F:7C:AD:5D:7F:41:FD:69:30:EA</code>
+            <code>        X509v3 <strong>Key Usage</strong>: critical</code>
+            <code>            <strong>Digital Signature, Certificate Sign, CRL Sign</strong></code>
+            <code>        X509v3 Basic Constraints: critical</code>
+            <code>            CA:TRUE, pathlen:0</code>
+            <code>        X509v3 <strong>Extended Key Usage</strong>:</code>
+            <code>            TLS Web Server Authentication, TLS Web Client Authentication</code>
+            <code>        X509v3 Certificate Policies:</code>
+            <code>            Policy: 1.3.6.1.4.1.6449.1.2.2.26</code>
+            <code>            Policy: 2.23.140.1.2.1</code>
+            <code>        X509v3 <strong>CRL Distribution Points</strong>:</code>
+            <code>            Full Name: URI:http://crl.usertrust.com/USERTrustRSACertificationAuthority.crl</code>
+            <code>        Authority Information Access:</code>
+            <code>            CA Issuers - URI:http://crt.usertrust.com/USERTrustRSAAddTrustCA.crt</code>
+            <code>            <strong>OCSP</strong> - URI:http://ocsp.usertrust.com</code>
+            <code><strong>Signature Algorithm</strong>: sha384WithRSAEncryption</code>
+            <code>     58:67:fd:72:b2:6a:d7:7c:61:96:19:7e:d9:43:46:d1:26:7d:...</code>
+        </pre>
+	</div></section>
+
 	<section class="slide"><div>
+		<h2>Domain, Organization et Extended Validation</h2>
+    </div></section>
+
+	<section id="ca-breach" class="slide"><div>
 		<h2>Autorité de certification</h2>
         <ul>
             <li><a href="http://www.infoworld.com/article/2623829/authentication/weaknesses-in-ssl-certification-exposed-by-comodo-security-breach.html">Comodo breach</a>
@@ -377,14 +442,18 @@
             <li>Choix : https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/
         </ul>
     </div></section>
-	<section class="slide"><div>
-		<h2>Domain, Organization et Extended Validation</h2>
-    </div></section>
+
+
 	<section class="slide"><div>
 		<h2>Let’s encrypt</h2>
     </div></section>
 	<section class="slide"><div>
 		<h2>Perfect Forward Secrecy</h2>
+        <figure class="center">
+            <img src="pictures/diffie-Hellman_key_exchange.png" alt="Algorithme de Diffie Hellman">
+            <figcaption></figcaption>
+        </figure>
+        <a href="http://vincent.bernat.im/en/blog/2011-ssl-perfect-forward-secrecy.html">SSL/TLS &amp; Perfect Forward Secrecy</a>, <small>DHE-RSA-AES128-SHA, ECDHE-RSA-AES128-SHA</small>
     </div></section>
 	<section class="slide"><div>
 		<h2>SNI</h2>
@@ -411,6 +480,14 @@
             <li><a href="https://sites.google.com/site/itstheshappening/">Oct 8: The SHAppening: freestart collisions for SHA-1</a>
             <li><a href="http://googleonlinesecurity.blogspot.fr/2014/09/gradually-sunsetting-sha-1.html">Gradually sunsetting SHA-1</a>
             <li><a href="https://blog.filippo.io/the-unofficial-chrome-sha1-faq/">The unofficial Chrome SHA1 deprecation FAQ</a>
+            <li>https://security.stackexchange.com/questions/4518/how-to-estimate-the-time-needed-to-crack-rsa-encryption
+            <li>http://arstechnica.com/security/2013/09/of-course-nsa-can-crack-crypto-anyone-can-the-question-is-how-much/
+            <li>récupèrer les infos lorsqu’elle ne sont pas chiffrées ou les clés en clair,
+            <li>Exploiter des failles connues (random sur debian,https://www.schneier.com/blog/archives/2008/05/random_number_b.html), open ssl / goto fail, Dual_EC_DRBG par la RSA, Encrypt then mac (cf https://www.bortzmeyer.org/7366.html)
+            <li>Side channel attacks http://www.forbes.com/sites/timworstall/2013/12/21/researchers-break-rsa-4096-encryption-with-just-a-microphone-and-a-couple-of-emails/
+            <li>FREAK
+            <li><a href="http://www.nextinpact.com/news/94144-logjam-apres-freak-nouvelle-faille-dans-chiffrement-connexions.htm">Logjam</a>, <a href="https://blog.cloudflare.com/logjam-the-latest-tls-vulnerability-explained/">explained</a>, <a href="http://blog.cryptographyengineering.com/2015/05/attack-of-week-logjam.html">one more explanation</a>
+            <li>Brute force, Quantum computer, bon courage...
         </ul>
     </div></section>
 	<section class="slide"><div>
@@ -443,6 +520,7 @@
 	</div></section>
 	<section id="HSTS" class="slide"><div>
 		<h2>HSTS : Http Strict Transport Security</h2>
+        <code>Strict-Transport-Security: max-age=16070400; includeSubDomains</code>
         <ul>
             <li>MITM : affaiblir le chiffrement d’où <a href="https://securityheaders.com/http-strict-transport-security.php">HTTP Strict Transport Security</a>, <a href="https://securityheaders.com/content-security-policy.php">Content Security Policy</a> intéressant en passant
         </ul>
@@ -503,9 +581,10 @@
 		<h2>Resources</h2>
 		<ul>
             <li><a href="http://data.confs.fr/ssl-tls-sonntag/">Conférence de Benjamin Sonntag</a>,
-            <li><a href="https://www.feistyduck.com/library/openssl-cookbook/">openssl cookbook</a>,
-            <li><a href="https://mozilla.github.io/server-side-tls/ssl-config-generator/">ssl config generator</a>,
-            <li><a href="https://www.ssllabs.com/">SSLLabs</a> pour tester son navigateur et sa configuration serveur,
+            <li><a href="https://www.feistyduck.com/library/openssl-cookbook/">Openssl cookbook</a>,
+            <li><a href="https://mozilla.github.io/server-side-tls/ssl-config-generator/">TLS config generator</a> par Mozilla,
+            <li><a href="https://wiki.mozilla.org/Security/Server_Side_TLS">Guide sur TLS</a> sur le wiki de Mozilla,
+            <li><a href="https://github.com/drwetter/testssl.sh">github.com/testssl.sh</a> ou <a href="https://www.ssllabs.com/">SSLLabs</a> pour tester sa configuration,
             <li><a href="https://www.grc.com/sn/past/2013.htm">Episode #412 "SSL &amp; Perfect Forward Secrecy" | 10 Jul 2013</a>,
             <li>un interview de Tom Delmas par les Castcodeurs sur HTTPS en <a href="https://lescastcodeurs.com/2015/05/25/lcc-125-interview-sur-https-avec-tom-delmas-partie-1/">2</a> <a href="https://lescastcodeurs.com/2015/06/24/lcc-127-interview-sur-https-avec-tom-delmas-partie-2/">parties</a>,
             <li><a href="https://www.grc.com/fingerprints.htm">GRC fingerprint</a>,
