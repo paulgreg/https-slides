@@ -136,10 +136,13 @@
         </figure>
 	</div></section>
 	<section id="html5-seo" class="slide"><div>
+        <style scoped>
+            p { margin-top: 2em; }
+        </style>
         <h2>Pour le <abbr title="Search engine optimization">SEO</abbr> et pour HTML5</h2>
         <p><i class="fa fa-google"></i><a href="http://googleonlinesecurity.blogspot.fr/2014/08/https-as-ranking-signal_6.html">Google préférera un site en HTTPS</a>.</p>
-        <p><i class="fa fa-html5"></i>Sans HTTPS, <a href="https://blog.mozilla.org/security/2015/04/30/deprecating-non-secure-http/">Firefox</a> et <a href="https://sites.google.com/a/chromium.org/dev/Home/chromium-security/deprecating-powerful-features-on-insecure-origins">Chrome</a> bloqueront certaines API JavaScript :</p>
-        <ul class="inner">
+        <p class="next"><i class="fa fa-html5"></i>Sans HTTPS, <a href="https://blog.mozilla.org/security/2015/04/30/deprecating-non-secure-http/">Firefox</a> et <a href="https://sites.google.com/a/chromium.org/dev/Home/chromium-security/deprecating-powerful-features-on-insecure-origins">Chrome</a> bloqueront certaines API JavaScript :</p>
+        <ul class="inner next">
             <li><code>device motion / orientation</code>,
             <li><code>encrypted Media Extensions</code>,
             <li><code>fullscreen</code>,
@@ -158,7 +161,7 @@
 		<h2>Pour défendre le droit à la vie privée</h2>
         <figure>
             <blockquote><p>Dire que vous vous n'en avez rien à faire de la vie privée parce que vous n'avez rien à cacher, c'est comme dire que vous n'en avez rien à faire de la liberté d'expression parce que vous n'avez rien à dire.</p></blockquote>
-            <figcaption>Edward Snowden : <a href="https://www.youtube.com/watch?v=bpO3GeXTceM">Edward Snowden about Privacy</a></figcaption>
+            <figcaption>Edward Snowden : <a href="https://www.youtube.com/watch?v=bpO3GeXTceM">about Privacy</a></figcaption>
         </figure>
 	</div></section>
 
@@ -174,14 +177,14 @@
         <dl>
             <dt><i class="fa fa-lock"></i>Confidentialité :
             <dd>Les données échangées sont chiffrées par une clé et ne peuvent être déchiffrées que par les 2 parties.
-            <dt><i class="fa fa-users"></i>Authentification :
-            <dd>Le client vérifie que le serveur à qui il s’adresse est bien celui qu’il prétend être (évite les <a href="https://fr.wikipedia.org/wiki/Attaque_de_l'homme_du_milieu">attaques d’homme du milieu</a>). Éventuellement, le client peut s’authentifier auprès du serveur.
-            <dt><i class="fa fa-balance-scale"></i>Intégrité :
-            <dd>Les parties vérifient que les données reçues n’ont pas été altérées.
-            <dt><i class="fa fa-diamond"></i>Transparence :
-            <dd>Aucun changement nécessaire dans le protocole applicatif englobé
-            <dt><i class="fa fa-bolt"></i>Spontanéité :
-            <dd>Un client peut spontannément se connecter à un serveur (pas de pré-requis)
+            <dt class="next"><i class="fa fa-users"></i>Authentification :
+            <dd class="next">Le client vérifie que le serveur à qui il s’adresse est bien celui qu’il prétend être (évite les <a href="https://fr.wikipedia.org/wiki/Attaque_de_l'homme_du_milieu">attaques d’homme du milieu</a>). Éventuellement, le client peut s’authentifier auprès du serveur.
+            <dt class="next"><i class="fa fa-balance-scale"></i>Intégrité :
+            <dd class="next">Les parties vérifient que les données reçues n’ont pas été altérées.
+            <dt class="next"><i class="fa fa-diamond"></i>Transparence :
+            <dd class="next">Aucun changement nécessaire dans le protocole applicatif englobé
+            <dt class="next"><i class="fa fa-bolt"></i>Spontanéité :
+            <dd class="next">Un client peut spontannément se connecter à un serveur (pas de pré-requis)
         </dl>
     </div></section>
 
@@ -211,7 +214,7 @@
             <blockquote><p>Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on. Unfortunately, endpoint security is so terrifically weak that NSA can frequently find ways around it.</p></blockquote>
             <figcaption>Edward Snowden : <a href="http://techcrunch.com/2013/06/17/encrypting-your-email-works-says-nsa-whistleblower-edward-snowden/">Encrypting Your Email Works</a></figcaption>
         </figure>
-        <figure>
+        <figure class="next">
             <blockquote><p>Can the NSA break AES? My guess is that they can't.</p></blockquote>
             <blockquote><p>Still, I trust the mathematics.</p></blockquote>
             <figcaption>Bruce Schneier : <a href="https://www.schneier.com/blog/archives/2012/03/can_the_nsa_bre.html">Can the NSA Break AES?</a>, <a href="https://www.schneier.com/blog/archives/2013/09/the_nsas_crypto_1.html">The NSA's Cryptographic Capabilities</a></figcaption>
@@ -227,14 +230,14 @@
             <code>$ sha1sum ubuntu-12.04.3-desktop-amd64.iso</code>
             <code><mark>0c06d876dabb4403cede1245e3b0bf1d81afd497</mark></code>
        </pre>
-       <p>
+       <p class="next">
            <a href="https://fr.wikipedia.org/wiki/MD4">MD4</a>,
            <a href="https://fr.wikipedia.org/wiki/MD5">MD5</a>,
            <a href="https://fr.wikipedia.org/wiki/SHA-1">SHA-1</a>,
            <a href="https://fr.wikipedia.org/wiki/SHA-2">SHA-2</a> <small>(SHA-224, SHA-256, SHA-384 et SHA-512)</small>,
            <a href="https://fr.wikipedia.org/wiki/SHA-3">SHA3</a>.
        </p>
-       <p>
+       <p class="next">
         <a href="https://fr.wikipedia.org/wiki/Message_Authentication_Code">MAC</a> /
         <a href="https://fr.wikipedia.org/wiki/Keyed-Hash_Message_Authentication_Code">HMAC</a> : influencée par une clé, permet de vérifier simultanément l'intégrité et l'authenticité d’un message.
        </p>
@@ -254,13 +257,13 @@
 		<h2>Versions</h2>
         <ul class="icons">
             <li><i class="fa fa-code-fork"></i><abbr title="Secure Socket Layer">SSL</abbr> 1.0 (jamais publié),
-            <li><i class="fa fa-code-fork"></i>SSL 2.0 en 1995, <small>déprécié en 2011 par la <a href="https://tools.ietf.org/html/rfc6176"><abbr title="Request for comment">RFC</abbr> 6176</a></small>.
-            <li><i class="fa fa-code-fork"></i>SSL 3.0 / <a href="https://tools.ietf.org/html/rfc6101">RFC 6101</a> en 1996 <small>(refonte)</small>, <small>déprécié en 2015 par la <a href="https://tools.ietf.org/html/rfc7568">RFC 7568</a></small>,
-            <li><i class="fa fa-code-fork"></i><abbr title="Transport Layerr Security">TLS</abbr> 1.0 / <a href="https://tools.ietf.org/html/rfc2246">RFC 2246</a> en 1999 <small>(modifications mineures)</small>,
-            <li><i class="fa fa-code-fork"></i>TLS 1.1 / <a href="https://tools.ietf.org/html/rfc4346">RFC 4346</a> en 2006 <small>(protections contre les attaques sur <abbr title="Cipher Block Chaining">CBC</abbr>)</small>,
-            <li><i class="fa fa-code-fork"></i>TLS 1.2 / <a href="https://tools.ietf.org/html/rfc5246">RFC 5246</a> en 2008 <small>(nombreuses améliorations de sécurité)</small>,
-            <li><i class="fa fa-code-fork"></i>Mise à jour sur TLS 1.2 en 2011/ <a href="https://tools.ietf.org/html/rfc6176">RFC 6176</a> <small>(suppression compatibilité SSL)</small>,
-            <li><i class="fa fa-code-fork"></i>TLS 1.3 / <a href="https://tools.ietf.org/html/draft-ietf-tls-tls13-10">brouillon</a> en cours <small>(suppression de la compression, de la renégociation, de MD5, SHA-224, SSL, RC4, optimisation réseau)</small>.
+            <li class="next"><i class="fa fa-code-fork"></i>SSL 2.0 en 1995, <small>déprécié en 2011 par la <a href="https://tools.ietf.org/html/rfc6176"><abbr title="Request for comment">RFC</abbr> 6176</a></small>.
+            <li class="next"><i class="fa fa-code-fork"></i>SSL 3.0 / <a href="https://tools.ietf.org/html/rfc6101">RFC 6101</a> en 1996 <small>(refonte)</small>, <small>déprécié en 2015 par la <a href="https://tools.ietf.org/html/rfc7568">RFC 7568</a></small>,
+            <li class="next"><i class="fa fa-code-fork"></i><abbr title="Transport Layerr Security">TLS</abbr> 1.0 / <a href="https://tools.ietf.org/html/rfc2246">RFC 2246</a> en 1999 <small>(modifications mineures)</small>,
+            <li class="next"><i class="fa fa-code-fork"></i>TLS 1.1 / <a href="https://tools.ietf.org/html/rfc4346">RFC 4346</a> en 2006 <small>(protections contre les attaques sur <abbr title="Cipher Block Chaining">CBC</abbr>)</small>,
+            <li class="next"><i class="fa fa-code-fork"></i>TLS 1.2 / <a href="https://tools.ietf.org/html/rfc5246">RFC 5246</a> en 2008 <small>(nombreuses améliorations de sécurité)</small>,
+            <li class="next"><i class="fa fa-code-fork"></i>Mise à jour sur TLS 1.2 en 2011/ <a href="https://tools.ietf.org/html/rfc6176">RFC 6176</a> <small>(suppression compatibilité SSL)</small>,
+            <li class="next"><i class="fa fa-code-fork"></i>TLS 1.3 / <a href="https://tools.ietf.org/html/draft-ietf-tls-tls13-10">brouillon</a> en cours <small>(suppression de la compression, de la renégociation, de MD5, SHA-224, SSL, RC4, optimisation réseau)</small>.
         </ul>
 	</div></section>
 
@@ -452,10 +455,10 @@
                         <a href="https://www.apple.com/certificateauthority/ca_program.html">Apple</a>,
                         <a href="http://social.technet.microsoft.com/wiki/contents/articles/31633.microsoft-trusted-root-program-requirements.aspx">Microsoft</a> ou
                         <a href="https://www.chromium.org/Home/chromium-security/root-ca-policy">Google</a>.
-                    <dt><i class="fa fa-building"></i>Autorité de certification intermédiaire (intermediate CA)
-                    <dd>Utilisé pour signer les autorités d’enregistrements, "cold storage"
-                    <dt><i class="fa fa-building-o"></i>Autorité d’enregistrement (issuing CA)
-                    <dd>Bureau signant les certificats au "grand public"
+                    <dt class="next"><i class="fa fa-building"></i>Autorité de certification intermédiaire (intermediate CA)
+                    <dd class="next">Utilisé pour signer les autorités d’enregistrements, "cold storage"
+                    <dt class="next"><i class="fa fa-building-o"></i>Autorité d’enregistrement (issuing CA)
+                    <dd class="next">Bureau signant les certificats au "grand public"
                 </dl>
             <figcaption>
         </figure>
@@ -469,10 +472,10 @@
         <dl>
             <dt><i class="fa fa-certificate"></i>Domain validation
             <dd>Simple vérification sur l’appartenance du domaine
-            <dt><i class="fa fa-building"></i>Organization validation
-            <dd>Vérification de l’identité du propriétaire (carte d’identité, SIRET, etc)
-            <dt><i class="fa fa-star"></i>Extended validation
-            <dd>Enquête sur le propriétaire (<a href="https://www.verisign.com/en_US/domain-names/web-presence/website-optimization/ssl-certificates/index.xhtml?loc=en_US#a7">vérification d’une précense physique, opérationnelle et juridique</a>), permet l’affichage du propriétaire dans la barre d’adresse : <img src="pictures/greenbar.png" alt="barre verte" />
+            <dt class="next"><i class="fa fa-building"></i>Organization validation
+            <dd class="next">Vérification de l’identité du propriétaire (carte d’identité, SIRET, etc)
+            <dt class="next"><i class="fa fa-star"></i>Extended validation
+            <dd class="next">Enquête sur le propriétaire (<a href="https://www.verisign.com/en_US/domain-names/web-presence/website-optimization/ssl-certificates/index.xhtml?loc=en_US#a7">vérification d’une précense physique, opérationnelle et juridique</a>), permet l’affichage du propriétaire dans la barre d’adresse : <img src="pictures/greenbar.png" alt="barre verte" />
         </dl>
     </div></section>
 
@@ -521,9 +524,9 @@
         <h2>La vie des CA n’est pas un long fleuve tranquille...</h2>
         <ul>
             <li>en 2011, <a href="https://www.comodo.com/Comodo-Fraud-Incident-2011-03-23.html">Comodo</a> signe 9 certificats incluant  mail.google.com, login.yahoo.com, login.skype.com, addons.mozilla.org, login.live.com,
-            <li>en 2011, <a href="https://www.vasco.com/company/about_vasco/press_room/news_archive/2011/news_diginotar_reports_security_incident.aspx">Diginotar</a> signe des certificats utilisés pour intercepter le trafic gmail en Iran ; l’entreprise <a href="https://www.vasco.com/company/about_vasco/press_room/news_archive/2011/news_vasco_announces_bankruptcy_filing_by_diginotar_bv.aspx">ferme</a> quelques jours après,
-            <li>en 2013, l’<a href="http://googleonlinesecurity.blogspot.fr/2013/12/further-improving-digital-certificate.html">ANSSI</a> génère des certificats pour des domaines de google ; ils sont détectés aussitôt par Chrome,
-            <li>en 2015, <a href="https://googleonlinesecurity.blogspot.sg/2015/03/maintaining-digital-certificate-security.html">Google</a> exclue les certificats signés par l’AC Chinoise <a href="https://en.wikipedia.org/wiki/China_Internet_Network_Information_Center">CNNIC</a> car ils ont signés des certificats Google, le <a href="http://www1.cnnic.cn/AU/MediaC/Announcement/201504/t20150402_52049.htm">CNNIC répond</a>.
+            <li class="next">en 2011, <a href="https://www.vasco.com/company/about_vasco/press_room/news_archive/2011/news_diginotar_reports_security_incident.aspx">Diginotar</a> signe des certificats utilisés pour intercepter le trafic gmail en Iran ; l’entreprise <a href="https://www.vasco.com/company/about_vasco/press_room/news_archive/2011/news_vasco_announces_bankruptcy_filing_by_diginotar_bv.aspx">ferme</a> quelques jours après,
+            <li class="next">en 2013, l’<a href="http://googleonlinesecurity.blogspot.fr/2013/12/further-improving-digital-certificate.html">ANSSI</a> génère des certificats pour des domaines de google ; ils sont détectés aussitôt par Chrome,
+            <li class="next">en 2015, <a href="https://googleonlinesecurity.blogspot.sg/2015/03/maintaining-digital-certificate-security.html">Google</a> exclue les certificats signés par l’AC Chinoise <a href="https://en.wikipedia.org/wiki/China_Internet_Network_Information_Center">CNNIC</a> car ils ont signés des certificats Google, le <a href="http://www1.cnnic.cn/AU/MediaC/Announcement/201504/t20150402_52049.htm">CNNIC répond</a>.
         </ul>
     </div></section>
 
