@@ -8,33 +8,39 @@
 	<link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen.css">
 	<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <style>
-        .slide h2                      { margin: 0px 0px 20px}
-        .slide img.svg                 { max-width: 110%; }
-        .slide video                   { max-width: 90%; }
-        .slide > div                   { padding: 80px 80px 0px; height: 555px; width: 865px; }
-        .slide dd                      { padding: 0; font-size: 20px; color: #666; line-height: 120%; margin-bottom: .5em; }
-        .slide dt                      { margin-top: 0; }
-        .slide a                       { color: #333; }
-        .slide a.clear                 { background: none; }
-        .slide i.fa                    { font-style: normal; margin-right: 6px; }
-        .slide ul.inner                { padding-left: 2em; }
-        .slide ul.icons li:before      { content: ""; }
-        .slide ul.icons li i           { margin: 0 -25px 0 25px; }
-        .slide.tell h2                 { position: absolute; top: 50%; left: 0px; width: 100%; text-align: center; line-height: 1; font-size: 100px; transform: translateY(-50%); }
-        .slide pre                     { margin-bottom: 1em;  }
-        .slide pre code                { line-height: 175%; }
-        .slide pre.small code          { line-height: 110%; font-size: 12px; }
-        .slide small                   { font-size: 80%; color: #666; }
-        .slide small a                 { color: #666; }
-        .slide p                       { margin-bottom: .25em; }
+        .slide h2                              { margin: 0px 0px 20px}
+        .slide img.svg                         { max-width: 110%; }
+        .slide video                           { max-width: 90%; }
+        .slide > div                           { padding: 80px 80px 0px; height: 555px; width: 865px; }
+        .slide dd                              { padding: 0; font-size: 20px; color: #666; line-height: 120%; margin-bottom: .5em; }
+        .slide dt                              { margin-top: 0; }
+        .slide a                               { color: #333; }
+        .slide a.clear                         { background: none; }
+        .slide i.fa                            { font-style: normal; margin-right: 6px; }
+        .slide ul.inner                        { padding-left: 2em; }
+        .slide ul.icons li:before              { content: ""; }
+        .slide ul.icons li i                   { margin: 0 -25px 0 25px; }
+        .slide.tell h2                         { position: absolute; top: 50%; left: 0px; width: 100%; text-align: center; line-height: 1; font-size: 100px; transform: translateY(-50%); }
+        .slide pre                             { margin-bottom: 1em;  }
+        .slide pre code                        { line-height: 175%; }
+        .slide pre.small code                  { line-height: 110%; font-size: 12px; }
+        .slide small                           { font-size: 80%; color: #666; }
+        .slide small a                         { color: #666; }
+        .slide p                               { margin-bottom: .25em; }
         .slide p,
-        .slide li                      { line-height: 150%; margin-bottom: .5em; }
-        .slide blockquote + figcaption { margin-top: 0; }
-        .slide figure.center           { text-align: center; }
-        .slide figure.sidebyside       { display: flex; }
-        .slide ul.numbered             { text-align: left; width: 110%; }
-        .slide ul.numbered li          { line-height: 100%; }
-        .slide ul.numbered li:before   { content: ""; }
+        .slide li                              { line-height: 150%; margin-bottom: .5em; }
+        .slide blockquote + figcaption         { margin-top: 0; }
+        .slide figure img                      { max-height: 470px; }
+        .slide figure.center                   { text-align: center; }
+        .slide figure.sidebyside figcaption,
+        .slide figure.sidebyside > img,
+        .slide figure.sidebyside figcaption    { display: inline-block; }
+        .slide figure.sidebyside figcaption    { vertical-align: top; }
+        .slide ul.numbered                     { text-align: left; width: 110%; }
+        .slide ul.numbered li                  { line-height: 100%; }
+        .slide ul.numbered li:before           { content: ""; }
+        .slide figure.handshake > img          { max-width: 450px; border: 1px solid #666; }
+        .slide figure.handshake figcaption img { width: 350px; }
     </style>
 </head>
 <body class="list">
@@ -243,24 +249,64 @@
         </ul>
 	</div></section>
 
-	<section id="fonctionnement" class="slide shout"><div>
-		<h2>Fonctionnement</h2>
+	<section id="handshake-title" class="slide tell"><div>
+        <h2>Poignée de main (<a href="http://www.moserware.com/2009/06/first-few-milliseconds-of-https.html">handshake</a>)</h2>
 	</div></section>
 
-	<section id="handshake" class="slide"><div>
-        <h2>Poignée de main <small>(<a href="http://www.moserware.com/2009/06/first-few-milliseconds-of-https.html">handshake</a>)</small></h2>
-        <figure class="center">
-            <img src="pictures/handshake.png" alt="poignée de main" height="250">
-            <figcaption>
-            <ul class="numbered">
-                <li><span style="color: blue;">1.</span> Client hello : version de TLS &amp; liste d’algorithmes supportés ordonnés,
-                </li><li><span style="color: blue;">2.</span> Server hello : chiffrement &amp; certificat <small>(le client vérifie le certificat et la chaîne de confiance)</small>,
-                </li><li><span style="color: red;">3.</span> Pré-clé chiffrée avec la clé publique du serveur
-                </li><li><span>4.</span> Négociation terminée, calcul de la clé secrête symétrique
-                </li><li><span style="color: green;">5.</span> Échanges HTTP chiffrés avec la clé symétrique et vérifié par MAC/HMAC
-            </li></ul>
-            </figcaption>
-            </figure>
+	<section id="handshake-client-hello" class="slide"><div>
+            <h2>1. Client hello (<small>TCP 443</small>)</h2>
+        <figure class="sidebyside handshake">
+            <figcaption><img src="pictures/1-handshake.png" alt="handshake : client hello" /></figcaption>
+            <img src="pictures/1-client-hello.png" alt="wireshark : client hello" />
+        </figure>
+	</div></section>
+
+	<section id="handshake-server-hello" class="slide"><div>
+        <h2>2. Server hello</h2>
+        <figure class="sidebyside handshake">
+            <figcaption><img src="pictures/2-handshake.png" alt="handshake : server hello" /></figcaption>
+            <img src="pictures/2-server-hello.png" alt="server hello" />
+        </figure>
+	</div></section>
+
+	<section id="handshake-certificate" class="slide"><div>
+        <h2>2. Server hello (certificats)</h2>
+        <figure class="sidebyside handshake">
+            <figcaption><img src="pictures/2-handshake.png" alt="handshake : server certificates" /></figcaption>
+            <img src="pictures/3-certificates.png" alt="server certificates" />
+        </figure>
+	</div></section>
+
+	<section id="handshake-server-hello-done" class="slide"><div>
+        <h2>2. Server hello done</h2>
+        <figure class="sidebyside handshake">
+            <figcaption><img src="pictures/2-handshake.png" alt="handshake : server hello done" /></figcaption>
+            <img src="pictures/4-server-hello-done.png" alt="server hello done" />
+        </figure>
+	</div></section>
+
+	<section id="handshake-key-exchange" class="slide"><div>
+        <h2>3. Pré-clé chiffré avec la clé publique du serveur</h2>
+        <figure class="sidebyside handshake">
+            <figcaption><img src="pictures/3-handshake.png" alt="handshake : key exchange" /></figcaption>
+            <img src="pictures/5-key-exchange.png" alt="key exchange">
+        </figure>
+	</div></section>
+
+	<section id="handshake-change-cipher-spec" class="slide"><div>
+        <h2>4. Échange terminé</h2>
+        <figure class="sidebyside handshake">
+            <figcaption><img src="pictures/6-handshake.png" alt="handshake : key exchange" /></figcaption>
+            <img src="pictures/6-change-cipher-spec.png" alt="change cipher spec">
+        </figure>
+	</div></section>
+
+	<section id="handshake-encrypted-data" class="slide"><div>
+        <h2>5. Place au trafic chiffré</h2>
+        <figure class="sidebyside handshake">
+            <figcaption><img src="pictures/7-handshake.png" alt="poignée de main"></figcaption>
+            <img src="pictures/7-encrypted-data.png" alt="encrypted data">
+        </figure>
 	</div></section>
 
 	<section id="cipher-suite" class="slide"><div>
@@ -485,9 +531,6 @@
         <p><a href="https://letsencrypt.org/2015/10/19/lets-encrypt-is-trusted.html">Supporté</a> par les principaux navigateurs depuis octobre 2015.</p>
     </div></section>
 
-	<section class="slide"><div>
-		<h2>SNI</h2>
-    </div></section>
 	<section class="slide"><div>
 		<h2>révoquation, CRL, OCSP</h2>
     </div></section>
