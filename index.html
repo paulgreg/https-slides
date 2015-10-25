@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen.css">
 	<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <style>
+        .slide.shout h2                        { font-size: 135px; }
         .slide h2                              { margin: 0px 0px 20px}
         .slide img.svg                         { max-width: 110%; }
         .slide video                           { max-width: 90%; }
@@ -62,7 +63,7 @@
 	</div></section>
 
 	<section id="pourquoi-https" class="slide shout"><div>
-		<h2>Pourquoi HTTPS ?</h2>
+        <h2>Pourquoi<br>HTTPS <i class="fa fa-question-circle"></i></h2>
 	</div></section>
 
 	<section id="reseau-typique" class="slide"><div>
@@ -162,11 +163,11 @@
 	</div></section>
 
 	<section id="convaincu" class="slide tell"><div>
-		<h2>Convaincu ?</h2>
+		<h2>Convaincu <i class="fa fa-question-circle"></i></h2>
 	</div></section>
 
 	<section id="objectifs-https" class="slide shout"><div>
-		<h2>Objectifs de HTTPS</h2>
+		<h2><i class="fa fa-paper-plane"></i> Objectifs d’HTTPS</h2>
 	</div></section>
 	<section id="objectifs-https-details" class="slide"><div>
 		<h2>Objectifs</h2>
@@ -185,7 +186,7 @@
     </div></section>
 
 	<section id="rappels-cryptographiques" class="slide tell"><div>
-		<h2>Quelques rappels cryptographiques...</h2>
+		<h2><i class="fa fa-lock"></i> Quelques rappels cryptographiques...</h2>
 	</div></section>
     <section id="chiffrement-symetrique" class="slide symetric"><div>
         <style scoped>
@@ -202,6 +203,18 @@
         <figure class="center">
             <img src="./pictures/asymmetric-cipher.png" alt="chiffrement asymétrique" />
             <figcaption>2 familles : nombres premiers (<a href="https://fr.wikipedia.org/wiki/Chiffrement_RSA">RSA</a>) et courbes elliptiques (<a href="https://fr.wikipedia.org/wiki/Cryptographie_sur_les_courbes_elliptiques">EC</a>)</figcaption>
+        </figure>
+    </div></section>
+	<section id="doutes" class="slide"><div>
+		<h2>Le chiffrement, c’est solide ?</h2>
+        <figure>
+            <blockquote><p>Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on. Unfortunately, endpoint security is so terrifically weak that NSA can frequently find ways around it.</p></blockquote>
+            <figcaption>Edward Snowden : <a href="http://techcrunch.com/2013/06/17/encrypting-your-email-works-says-nsa-whistleblower-edward-snowden/">Encrypting Your Email Works</a></figcaption>
+        </figure>
+        <figure>
+            <blockquote><p>Can the NSA break AES? My guess is that they can't.</p></blockquote>
+            <blockquote><p>Still, I trust the mathematics.</p></blockquote>
+            <figcaption>Bruce Schneier : <a href="https://www.schneier.com/blog/archives/2012/03/can_the_nsa_bre.html">Can the NSA Break AES?</a>, <a href="https://www.schneier.com/blog/archives/2013/09/the_nsas_crypto_1.html">The NSA's Cryptographic Capabilities</a></figcaption>
         </figure>
     </div></section>
     <section id="fonction-hachage" class="slide"><div>
@@ -235,7 +248,7 @@
     </div></section>
 
 	<section id="version" class="slide tell"><div>
-		<h2>Versions</h2>
+		<h2><i class="fa fa-code-fork"></i> Versions</h2>
 	</div></section>
 	<section id="versions-details" class="slide"><div>
 		<h2>Versions</h2>
@@ -252,7 +265,7 @@
 	</div></section>
 
 	<section id="handshake-title" class="slide tell"><div>
-        <h2><i class="fa fa-thumbs-o-up"></i> Poignée de main (<a href="http://www.moserware.com/2009/06/first-few-milliseconds-of-https.html">handshake</a>)</h2>
+        <h2><i class="fa fa-exchange"></i> Poignée de main (<a href="http://www.moserware.com/2009/06/first-few-milliseconds-of-https.html">handshake</a>)</h2>
 	</div></section>
 
 	<section id="handshake-client-hello" class="slide"><div>
@@ -422,47 +435,49 @@
         <a href="http://vincent.bernat.im/en/blog/2011-ssl-perfect-forward-secrecy.html">SSL/TLS &amp; Perfect Forward Secrecy</a>, <small>DHE-RSA-AES128-SHA, ECDHE-RSA-AES128-SHA</small>
     </div></section>
 
-	<section id="doutes" class="slide"><div>
-		<h2>Le chiffrement, c’est solide ?</h2>
-        <figure>
-            <blockquote><p>Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on. Unfortunately, endpoint security is so terrifically weak that NSA can frequently find ways around it.</p></blockquote>
-            <figcaption>Edward Snowden : <a href="http://techcrunch.com/2013/06/17/encrypting-your-email-works-says-nsa-whistleblower-edward-snowden/">Encrypting Your Email Works</a></figcaption>
-        </figure>
-        <figure>
-            <blockquote><p>Can the NSA break AES? My guess is that they can't.</p></blockquote>
-            <blockquote><p>Still, I trust the mathematics.</p></blockquote>
-            <figcaption>Bruce Schneier : <a href="https://www.schneier.com/blog/archives/2012/03/can_the_nsa_bre.html">Can the NSA Break AES?</a>, <a href="https://www.schneier.com/blog/archives/2013/09/the_nsas_crypto_1.html">The NSA's Cryptographic Capabilities</a></figcaption>
-        </figure>
-    </div></section>
-
 	<section id="authentification" class="slide shout"><div>
-		<h2>Authentification</h2>
+		<h2><i class="fa fa-key"></i> Authentification</h2>
 	</div></section>
 
 	<section id="ca" class="slide"><div>
         <h2>Infrastructure de clé publique (<abbr title="Public key infrastructure">PKI</abbr>)</h2>
-        <figure class="sidebyside">
-            <img src="pictures/ca-hierarchy.gif" alt="" />
+        <figure>
+            <img src="pictures/ca-hierarchy.png" alt="Hiérarchie des Autorités de Certifications" height="150" />
             <figcaption>
                 <dl>
                     <dt><i class="fa fa-hospital-o"></i>Autorité de certification racine (root <abbr title="Certificate authority">CA</abbr>)
-                    <dd>Certificat auto-signé, clés privés au coffre-fort !<br>
+                    <dd>Certificat auto-signé, "cold storage"<br>
                         Présent dans les navigateurs &amp; <abbr title="Operating System">OS</abbr> s’ils remplissent les critères de
                         <a href="https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/">Mozilla</a>,
                         <a href="https://www.apple.com/certificateauthority/ca_program.html">Apple</a>,
                         <a href="http://social.technet.microsoft.com/wiki/contents/articles/31633.microsoft-trusted-root-program-requirements.aspx">Microsoft</a> ou
                         <a href="https://www.chromium.org/Home/chromium-security/root-ca-policy">Google</a>.
-                    <dt><i class="fa fa-building"></i>Autorité intermédiaire (intermediate/policy CA)
-                    <dd>Utilisé pour signer les autorités d’enregistrements
-                    <dt><i class="fa fa-building-o"></i>Autorité d’enregistrement (RA)
-                    <dd>Bureau permettant de signer des certificats au "grand public" (Gandi, etc)
+                    <dt><i class="fa fa-building"></i>Autorité de certification intermédiaire (intermediate CA)
+                    <dd>Utilisé pour signer les autorités d’enregistrements, "cold storage"
+                    <dt><i class="fa fa-building-o"></i>Autorité d’enregistrement (issuing CA)
+                    <dd>Bureau signant les certificats au "grand public"
                 </dl>
             <figcaption>
         </figure>
     </div></section>
 
+	<section id="type-certificats" class="slide"><div>
+        <style scoped>
+            img { display: block; margin: 1em auto 0 auto; }
+        </style>
+		<h2>Domain, Organization et Extended Validation</h2>
+        <dl>
+            <dt><i class="fa fa-certificate"></i>Domain validation
+            <dd>Simple vérification sur l’appartenance du domaine
+            <dt><i class="fa fa-building"></i>Organization validation
+            <dd>Vérification de l’identité du propriétaire (carte d’identité, SIRET, etc)
+            <dt><i class="fa fa-star"></i>Extended validation
+            <dd>Enquête sur le propriétaire (<a href="https://www.verisign.com/en_US/domain-names/web-presence/website-optimization/ssl-certificates/index.xhtml?loc=en_US#a7">vérification d’une précense physique, opérationnelle et juridique</a>), permet l’affichage du propriétaire dans la barre d’adresse : <img src="pictures/greenbar.png" alt="barre verte" />
+        </dl>
+    </div></section>
+
 	<section id="certificat-x509" class="slide"><div>
-        <h2><i class="fa fa-certificate"></i>Un certificat <a href="https://openssl.org/docs/manmaster/apps/x509v3_config.html">X.509</a></h2>
+        <h2>Un certificat <a href="https://openssl.org/docs/manmaster/apps/x509v3_config.html">X.509</a></h2>
         <pre class="small">
             <code>$ openssl x509 -in <a href="https://www.gandi.net/static/CAs/GandiStandardSSLCA2.pem">GandiStandardSSLCA2.pem</a> -inform pem -noout -text</code>
             <code>Certificate:</code>
@@ -502,21 +517,6 @@
         </pre>
 	</div></section>
 
-	<section id="type-certificats" class="slide"><div>
-        <style scoped>
-            img { display: block; margin: 1em auto 0 auto; }
-        </style>
-		<h2>Domain, Organization et Extended Validation</h2>
-        <dl>
-            <dt><i class="fa fa-certificate"></i>Domain validation
-            <dd>Simple vérification sur l’appartenance du domaine
-            <dt><i class="fa fa-building"></i>Organization validation
-            <dd>Vérification de l’identité du propriétaire (carte d’identité, SIRET, etc)
-            <dt><i class="fa fa-star"></i>Extended validation
-            <dd>Enquête sur le propriétaire (<a href="https://www.verisign.com/en_US/domain-names/web-presence/website-optimization/ssl-certificates/index.xhtml?loc=en_US#a7">vérification d’une précense physique, opérationnelle et juridique</a>), permet l’affichage du propriétaire dans la barre d’adresse : <img src="pictures/greenbar.png" alt="barre verte" />
-        </dl>
-    </div></section>
-
 	<section id="ca-breach" class="slide"><div>
         <h2>La vie des CA n’est pas un long fleuve tranquille...</h2>
         <ul>
@@ -547,8 +547,20 @@
 		<h2>révoquation, CRL, OCSP</h2>
     </div></section>
 
+	<section id="DANE" class="slide"><div>
+		<h2>DANE, une alternative aux CA</h2>
+        <ul>
+            <li>https://www.imperialviolet.org/2015/01/17/notdane.html
+            <li>https://ripe70.ripe.net/presentations/183-dane-ripe.pdf
+            <li>http://www.bortzmeyer.org/6698.html
+            <li>https://wiki.mozilla.org/Security/DNSSEC-TLS-details
+            <li>https://addons.mozilla.org/en-US/firefox/addon/dnssec-validator/
+            <li>https://www.chromium.org/Home/chromium-security/security-faq#TOC-How-does-key-pinning-interact-with-local-proxies-and-filters-
+        </ul>
+    </div></section>
+
 	<section class="slide shout"><div>
-		<h2>Attaques</h2>
+		<h2><i class="fa fa-bomb"></i> Attaques</h2>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Attaques : Rogue certificate, Rogue authority</h2>
@@ -601,14 +613,12 @@
     </div></section>
 
 	<section id="apres-HTTPS" class="slide shout"><div>
-		<h2>Après HTTPS</h2>
+		<h2><i class="fa fa-cogs"></i> Après HTTPS</h2>
 	</div></section>
 	<section id="HSTS" class="slide"><div>
 		<h2>HSTS : Http Strict Transport Security</h2>
-        <code>Strict-Transport-Security: max-age=16070400; includeSubDomains</code>
-        <ul>
-            <li>MITM : affaiblir le chiffrement d’où <a href="https://securityheaders.com/http-strict-transport-security.php">HTTP Strict Transport Security</a>, <a href="https://securityheaders.com/content-security-policy.php">Content Security Policy</a> intéressant en passant
-        </ul>
+        <pre><code>Strict-Transport-Security: max-age=16070400; includeSubDomains</code></pre>
+        <p>MITM : affaiblir le chiffrement d’où <a href="https://securityheaders.com/http-strict-transport-security.php">HTTP Strict Transport Security</a>
     </div></section>
 	<section id="certificate-public-key-pinning" class="slide"><div>
 		<h2>Certificate public key pinning</h2>
@@ -622,27 +632,14 @@
     </div></section>
 	<section id="CSP" class="slide"><div>
 		<h2>CSP : Content Security Policy</h2>
+        <p><a href="https://securityheaders.com/content-security-policy.php">Content Security Policy</a>
     </div></section>
 	<section id="subresource-integrity" class="slide"><div>
 		<h2>Subresource integrity</h2>
     </div></section>
 
-	<section id="alternatives-CA" class="slide shout"><div>
-		<h2>Alternatives aux CA</h2>
-	</div></section>
-	<section id="DANE" class="slide"><div>
-		<h2>DANE</h2>
-        <ul>
-            <li>https://www.imperialviolet.org/2015/01/17/notdane.html
-            <li>https://ripe70.ripe.net/presentations/183-dane-ripe.pdf
-            <li>http://www.bortzmeyer.org/6698.html
-            <li>https://wiki.mozilla.org/Security/DNSSEC-TLS-details
-            <li>https://addons.mozilla.org/en-US/firefox/addon/dnssec-validator/
-            <li>https://www.chromium.org/Home/chromium-security/security-faq#TOC-How-does-key-pinning-interact-with-local-proxies-and-filters-
-        </ul>
-    </div></section>
 	<section id="performances" class="slide shout"><div>
-		<h2>Performances</h2>
+		<h2><i class="fa fa-tachometer"></i> Performances</h2>
 	</div></section>
 	<section id="performances-details" class="slide"><div>
 		<h2>Performances / optimisation</h2>
@@ -653,26 +650,22 @@
         </ul>
     </div></section>
 
-	<section id="personnages" class="slide"><div>
-		<h2>Personnages</h2>
-        <ul>
-            <li>Adam Langley's Weblog, <a href="https://www.imperialviolet.org/">ImperialViolet</a>,
-            <li>Bruce Schneier <a href="https://www.schneier.com/">Schneier on Security</a>,
-            <li>Matthew Green, <a href="http://blog.cryptographyengineering.com/">A Few Thoughts on Cryptographic Engineering</a>,
-        </ul>
-    </div></section>
-
 	<section id="resources" class="slide"><div>
+        <style scoped>
+            li { font-size: 24px; line-height: 100%; }
+        </style>
 		<h2>Resources</h2>
-		<ul>
+        <ul>
+            <li><a href="https://www.imperialviolet.org/">ImperialViolet</a>, le blog Adam Langley (Google),
+            <li><a href="https://www.schneier.com/">Schneier on Security</a>, le blog de Bruce Schneier,
+            <li><a href="http://blog.cryptographyengineering.com/">A Few Thoughts on Cryptographic Engineering</a>, le blog de Matthew Green,
             <li><a href="http://data.confs.fr/ssl-tls-sonntag/">Conférence de Benjamin Sonntag</a>,
-            <li><a href="https://www.feistyduck.com/library/openssl-cookbook/">Openssl cookbook</a>,
+            <li><a href="https://www.feistyduck.com/library/openssl-cookbook/">Openssl cookbook</a>, <a href="https://wiki.mozilla.org/Security/Server_Side_TLS">Guide sur TLS</a> sur le wiki de Mozilla,
             <li><a href="https://mozilla.github.io/server-side-tls/ssl-config-generator/">TLS config generator</a> par Mozilla,
-            <li><a href="https://wiki.mozilla.org/Security/Server_Side_TLS">Guide sur TLS</a> sur le wiki de Mozilla,
             <li><a href="https://github.com/drwetter/testssl.sh">github.com/testssl.sh</a> ou <a href="https://www.ssllabs.com/">SSLLabs</a> pour tester sa configuration,
-            <li><a href="https://www.grc.com/sn/past/2013.htm">Episode #412 "SSL &amp; Perfect Forward Secrecy" | 10 Jul 2013</a>,
-            <li>un interview de Tom Delmas par les Castcodeurs sur HTTPS en <a href="https://lescastcodeurs.com/2015/05/25/lcc-125-interview-sur-https-avec-tom-delmas-partie-1/">2</a> <a href="https://lescastcodeurs.com/2015/06/24/lcc-127-interview-sur-https-avec-tom-delmas-partie-2/">parties</a>,
-            <li><a href="https://www.grc.com/fingerprints.htm">GRC fingerprint</a>,
+            <li>Security Now, <a href="https://www.grc.com/sn/past/2013.htm">épisode 412 "SSL &amp; Perfect Forward Secrecy"</a>, juillet 2013,
+            <li>un interview de Tom Delmas par les Castcodeurs sur HTTPS (partie <a href="https://lescastcodeurs.com/2015/05/25/lcc-125-interview-sur-https-avec-tom-delmas-partie-1/">1</a> &amp; <a href="https://lescastcodeurs.com/2015/06/24/lcc-127-interview-sur-https-avec-tom-delmas-partie-2/">2</a>),
+            <li><a href="https://www.grc.com/fingerprints.htm">GRC fingerprint</a>, pour vérifier les empreintes des certificats,
             <li>Mes flux RSS sur <a href="https://rsstodolist.appspot.com/?n=https&amp;l=100">HTTPS</a>, <a href="https://rsstodolist.appspot.com/?n=tls&amp;l=100">TLS</a> &amp; <a href="https://rsstodolist.appspot.com/?n=ssl&amp;l=100">SSL</a>,
             <li><a href="https://valtechtechno.github.io/cours-du-soir-http/">Si vous voulez creuser HTTP</a>.
 		</ul>
@@ -682,8 +675,10 @@
 		<ul>
             <li>Images de cable réseau : <a href="https://www.google.com/about/datacenters/gallery">google.com/about/datacenters/gallery</a>,
             <li>Source de l’image Firesheep : <a href="http://www.genbeta.com/navegadores/firesheep-hackea-con-un-click-cuentas-de-facebook-google-twitter">genbeta.com</a>,
+            <li>Échange de clé Diffie-Hellman : <a href="https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange">wikipedia.org</a>,
+            <li><a href="https://xkcd.com/538/">XKCD</a>,
             <li>L’idée d’insérer des licornes vient de &quot;<a href="https://www.youtube.com/watch?v=i_qE1iAmjFg">10 Things I Learned from the jQuery Source</a>&quot; par Paul Irish,
-            <li>Diagramme construit sur <a href="https://www.gliffy.com/">gliffy.com</a>.
+            <li>Schémas construits sur <a href="https://www.gliffy.com/">gliffy.com</a>.
 		</ul>
 	</div></section>
 	<p class="badge"><a href="https://github.com/paulgreg/https-slides">Fork me on Github</a></p>
