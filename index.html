@@ -40,7 +40,9 @@
         .slide ul.numbered li                  { line-height: 100%; }
         .slide ul.numbered li:before           { content: ""; }
         .slide figure.handshake > img          { max-width: 450px; border: 1px solid #666; }
+        .slide figure.handshake figcaption     { width: 350px; }
         .slide figure.handshake figcaption img { width: 350px; }
+        .slide figure.handshake code           { }
     </style>
 </head>
 <body class="list">
@@ -250,13 +252,16 @@
 	</div></section>
 
 	<section id="handshake-title" class="slide tell"><div>
-        <h2>Poignée de main (<a href="http://www.moserware.com/2009/06/first-few-milliseconds-of-https.html">handshake</a>)</h2>
+        <h2><i class="fa fa-thumbs-o-up"></i> Poignée de main (<a href="http://www.moserware.com/2009/06/first-few-milliseconds-of-https.html">handshake</a>)</h2>
 	</div></section>
 
 	<section id="handshake-client-hello" class="slide"><div>
-            <h2>1. Client hello (<small>TCP 443</small>)</h2>
+            <h2>1. Client hello</h2>
         <figure class="sidebyside handshake">
-            <figcaption><img src="pictures/1-handshake.png" alt="handshake : client hello" /></figcaption>
+            <figcaption>
+                <img src="pictures/1-handshake.png" alt="handshake : client hello" />
+                <code>TCP 443</code>
+            </figcaption>
             <img src="pictures/1-client-hello.png" alt="wireshark : client hello" />
         </figure>
 	</div></section>
@@ -270,10 +275,14 @@
 	</div></section>
 
 	<section id="handshake-certificate" class="slide"><div>
+        <style scoped>
+            img.store { display: block; margin: auto; }
+        </style>
         <h2>2. Server hello (certificats)</h2>
         <figure class="sidebyside handshake">
             <figcaption><img src="pictures/2-handshake.png" alt="handshake : server certificates" /></figcaption>
             <img src="pictures/3-certificates.png" alt="server certificates" />
+            <img src="pictures/ca-store.png" alt="browser CA store" class="store" />
         </figure>
 	</div></section>
 
@@ -296,7 +305,10 @@
 	<section id="handshake-change-cipher-spec" class="slide"><div>
         <h2>4. Échange terminé</h2>
         <figure class="sidebyside handshake">
-            <figcaption><img src="pictures/6-handshake.png" alt="handshake : key exchange" /></figcaption>
+            <figcaption>
+                <img src="pictures/6-handshake.png" alt="handshake : key exchange" />
+                <code>master_secret = PRF(pre_master_secret, "master secret", ClientHello.random + ServerHello.random)</code>
+            </figcaption>
             <img src="pictures/6-change-cipher-spec.png" alt="change cipher spec">
         </figure>
 	</div></section>
@@ -501,7 +513,7 @@
             <dt><i class="fa fa-building"></i>Organization validation
             <dd>Vérification de l’identité du propriétaire (carte d’identité, SIRET, etc)
             <dt><i class="fa fa-star"></i>Extended validation
-            <dd>Enquête sur le propriétaire (coup de téléphone, vérification des status juridiques, etc), permet l’affichage du propriétaire dans la barre d’adresse : <img src="pictures/greenbar.png" alt="barre verte" />
+            <dd>Enquête sur le propriétaire (<a href="https://www.verisign.com/en_US/domain-names/web-presence/website-optimization/ssl-certificates/index.xhtml?loc=en_US#a7">vérification d’une précense physique, opérationnelle et juridique</a>), permet l’affichage du propriétaire dans la barre d’adresse : <img src="pictures/greenbar.png" alt="barre verte" />
         </dl>
     </div></section>
 
