@@ -18,6 +18,7 @@
         .slide a                               { color: #333; }
         .slide a.clear                         { background: none; }
         .slide i.fa                            { font-style: normal; margin-right: 8px; }
+        .slide ul                              { margin-bottom: .5em; }
         .slide ul.inner                        { padding-left: 2em; }
         .slide ul.icons li:before              { content: ""; }
         .slide ul.icons li i                   { margin: 0 -25px 0 25px; }
@@ -43,7 +44,7 @@
         .slide figure.handshake > img          { max-width: 450px; border: 1px solid #666; }
         .slide figure.handshake figcaption     { width: 350px; }
         .slide figure.handshake figcaption img { width: 350px; }
-        .slide figure.handshake code           { }
+        .slide h3                              { color: #666; font-size: 32px; }
     </style>
 </head>
 <body class="list">
@@ -571,21 +572,43 @@
             <dd class="next">Requête par certificat ; seulement pour les <abbr title="Extended validation">EV</abbr> ;  inutile si DOS sur le service (navigateur accepte alors)
             <dt class="next"><i class="fa fa-bolt"></i>OSCP Stampling :
             <dd class="next">Le serveur joint une validation OSCP valable pour quelques minutes à chaque connexion TLS ; TLS 1.2 seulement ; Pas compatible sur tous les navigateurs
-            <dt class="next"><i class="fa fa-ban"></i>Chrome CRLSet :
+            <dt class="next"><i class="fa fa-ban"></i>Google Chrome CRLSet :
             <dd class="next">Liste de 256 Ko de n° de certificat invalide ; régulièrement mise à jour par Chrome ; ne contient qu’une infime partie des certificats révoqués...
         </dl>
     </div></section>
 
-	<section id="DANE" class="slide"><div>
-		<h2>DANE, une alternative aux CA</h2>
+	<section id="certificate-transparency" class="slide"><div>
+        <h2>Certificate Transparency</h2>
+        <h3>Problèmes :</h3>
         <ul>
-            <li>https://www.imperialviolet.org/2015/01/17/notdane.html
-            <li>https://ripe70.ripe.net/presentations/183-dane-ripe.pdf
-            <li>http://www.bortzmeyer.org/6698.html
-            <li>https://wiki.mozilla.org/Security/DNSSEC-TLS-details
-            <li>https://addons.mozilla.org/en-US/firefox/addon/dnssec-validator/
-            <li>https://www.chromium.org/Home/chromium-security/security-faq#TOC-How-does-key-pinning-interact-with-local-proxies-and-filters-
+            <li class="next">des <a href="https://mozillacaprogram.secure.force.com/CA/IncludedCACertificateReport">centaines de CA</a> dans nos magasins (entreprises, gouvernements),
+            <li class="next">n’importe quel CA peut signer un certificat pour n’importe quel domaine,
+            <li class="next">les CA, des cibles de choix (rogue CA).
         </ul>
+        <h3 class="next">Une réponse : <a href="http://www.certificate-transparency.org/">certificate transparency</a></h3>
+        <ul>
+            <li class="next">Projet initié par Google, <abbr title="Open Source Software">OSS</abbr> : <a href="https://github.com/google/certificate-transparency">github.com/google/certificate-transparency</a>,
+            <li class="next">Base de données permettant de savoir qui a signé quoi,
+            <li class="next">Système opéré par Google (3 noeuds), Digicert et Symantec,
+            <li class="next">Imposé pour les CA par Google Chome pour les EV.
+        </ul>
+    </div></section>
+
+
+	<section id="DANE" class="slide"><div>
+        <h2>DNS-based Authentication of Named Entities (<a href="http://www.bortzmeyer.org/6698.html">DANE</a>)</h2>
+        <ul>
+            <li>Certificat publié dans un enregistrement <a href="http://www.dnssec.net/">DNSSEC</a> (obligatoire) de type <code>TLSA</code>,
+            <li class="next">Support très limité (rien pour <a href="https://www.imperialviolet.org/2015/01/17/notdane.html">Google Chrome</a>, <a href="https://www.dnssec-validator.cz/">Addon</a> pour Firefox),
+            <li class="next">Permet de <a href="https://ripe70.ripe.net/presentations/183-dane-ripe.pdf">sécuriser SMTP, OpenPGP, S/MIME</a>,...
+        </ul>
+        <h3 class="next"><a href="https://www.iana.org/assignments/dane-parameters/dane-parameters.xml#certificate-usages">4 types</a> :</h3>
+        <ol>
+            <li class="next">PKIX-TA/ CA constraint : seule cette CA peut signer le certificat (complément),
+            <li class="next">PKIX-EE/ Service certificate constraint : force un certificat (complément),
+            <li class="next">DANE-TA/ Trust anchor assertion : certificat d’un CA (CA "maison"),
+            <li class="next">DANE-EE/ Domain-issued certificate : certificat pour un domaine (auto-signé).
+        </ol>
     </div></section>
 
 	<section class="slide shout"><div>
@@ -668,6 +691,7 @@ https://googleonlinesecurity.blogspot.com.au/2015/10/simplifying-page-security-i
             <li>http://www.internetsociety.org/deploy360/blog/2015/05/new-rfc-7469-on-certificate-pinning-http-public-key-pinning-hpkp/
             <li>https://noncombatant.org/2015/05/01/about-http-public-key-pinning/
             <li>https://timtaubert.de/blog/2014/10/http-public-key-pinning-explained/
+           https://www.chromium.org/Home/chromium-security/security-faq#TOC-How-does-key-pinning-interact-with-local-proxies-and-filters-
         </ul>
     </div></section>
 	<section id="CSP" class="slide"><div>
