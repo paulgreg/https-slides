@@ -17,7 +17,7 @@
         .slide dt                              { margin-top: 0; }
         .slide a                               { color: #333; }
         .slide a.clear                         { background: none; }
-        .slide i.fa                            { font-style: normal; margin-right: 6px; }
+        .slide i.fa                            { font-style: normal; margin-right: 8px; }
         .slide ul.inner                        { padding-left: 2em; }
         .slide ul.icons li:before              { content: ""; }
         .slide ul.icons li i                   { margin: 0 -25px 0 25px; }
@@ -53,17 +53,24 @@
 	</header>
 	<section id="cover" class="slide cover"><div>
 		<style scoped>
-            *  { color: #FFF; }
-            h2 { margin:30px 0 0; background-color: rgba(0, 0, 0, .5); text-align:center; font-size:70px; }
-            p  { margin:10px 0 0; text-align:center; background-color: rgba(0, 0, 0, .5); font-style:italic; font-size:20px; }
+            *          { color: #FFF; }
+            h2         { margin:30px 0 0; background-color: rgba(0, 0, 0, .5); text-align:center; font-size:70px; }
+            p          { margin:10px 0 0; text-align:center; background-color: rgba(0, 0, 0, .5); font-style:italic; font-size:20px; }
+            p.link     { display: inline-block; float: right; margin-top: 8em; }
+            p.link img { width: 100px; position: relative; z-index: 10; margin: .5em .5em 0 .5em; }
+            p.link a   { display: block;  margin: .25em .5em .5em .5em; }
 		</style>
-        <h2>HTTPS n’aura plus de secret<br/>pour vous</h2>
+        <h2><abbr title="HyperText Transfer Protocol Secure">HTTPS</abbr> n’aura plus de secret<br/>pour vous</h2>
 		<p>par <a href="http://paulgreg.me/">Grégory Paul</a></p>
 		<img src="pictures/cables.jpg" alt="" />
+        <p class="link">
+            <img src="pictures/qrcode.svg" alt="" />
+            <a href="http://paulgreg.me/https-slides/">http://paulgreg.me/https-slides/</a>
+        </p>
 	</div></section>
 
 	<section id="pourquoi-https" class="slide shout"><div>
-        <h2>Pourquoi<br>HTTPS <i class="fa fa-question-circle"></i></h2>
+            <h2>Pourquoi<br>HTTPS <i class="fa fa-question-circle"></i></h2>
 	</div></section>
 
 	<section id="reseau-typique" class="slide"><div>
@@ -543,8 +550,8 @@
         <style scoped>
             img { padding: 0 80px 0 0; }
         </style>
-        <h2><a href="https://letsencrypt.org/" class="clear"><img src="pictures/letsencrypt.svg" alt="Let’s encrypt" width="300"></a></h2>
-        <p>système automatique via un agent Open Source sur votre serveur, qui valide le domaine, installe et renouvelle automatiquement un certificat gratuit (domain validation).</p>
+        <h2><a href="https://letsencrypt.org/" class="clear"><img src="pictures/letsencrypt.svg" alt="Let’s encrypt" /></a></h2>
+        <p>Système automatique qui, via un agent Open Source sur votre serveur, valide le domaine, installe et renouvelle automatiquement un certificat gratuit (domain validation).</p>
         <a href="https://www.mozilla.org/" class="clear"><img src="pictures/mozilla-logo.png" width="100" height="60"></a>
         <a href="http://www.akamai.com/" class="clear"><img src="pictures/akamai-logo.png" width="100" height="60"></a>
         <a href="http://www.cisco.com/" class="clear"><img src="pictures/cisco-logo.png" width="100" height="60"></a>
