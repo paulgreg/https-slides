@@ -35,7 +35,7 @@
         .slide figure.center                   { text-align: center; }
         .slide figure.sidebyside figcaption,
         .slide figure.sidebyside > img,
-        .slide figure.sidebyside figcaption    { display: inline-block; }
+        .slide figure.sidebyside figcaption    { display: inline-block; max-width: 60%; padding-right: 1em; line-height: 1.6; }
         .slide figure.sidebyside figcaption    { vertical-align: top; }
         .slide ul.numbered                     { text-align: left; width: 110%; }
         .slide ul.numbered li                  { line-height: 100%; }
@@ -117,7 +117,7 @@
         <ul>
             <li><a href="http://www.webrankinfo.com/dossiers/webmastering/blocage-publicite-free">Blocage des pubs Google par Free</a> en mai 2013,
             <li class="next"><a href="http://arstechnica.com/tech-policy/2014/09/why-comcasts-javascript-ad-injections-threaten-security-net-neutrality/">Ajout de pub par Comcast</a> en septembre 2014,
-            <li class="next">des pubs malicieuses ont déjà été servies depuis
+            <li class="next">depuis 2009, des pubs malicieuses ont déjà été servies depuis
                 <a href="http://www.pcworld.com/article/2604480/malicious-advertising-hits-amazon-youtube-and-yahoo-cisco-says.html">Amazon</a>,
                 <a href="http://www.techworm.net/2014/10/youtube-malvertising.html">Youtube</a>,
                 <a href="https://finance.yahoo.com/news/malvertising-yahoo-affects-users-172836199.html">Yahoo</a>,
@@ -125,8 +125,7 @@
                 <a href="https://zeltser.com/malvertising-malicious-ad-campaigns/">The Onion</a>,
                 <a href="http://www.darkreading.com/attacks-breaches/zero-day-malvertising-attack-went-undetected-for-two-months/d/d-id/1320092">Dailymotion</a>,
                 etc,
-            <li class="next"><a href="https://www.eff.org/fr/deeplinks/2014/11/verizon-x-uidh">Ajout de cookie de tracking par Verizon</a> en novembre 2014.
-            <li>http://www.bortzmeyer.org/enrichir-qui.html
+                <li class="next">Ajout de <a href="https://www.eff.org/fr/deeplinks/2014/11/verizon-x-uidh">cookie par Verizon</a> en novembre 2014, d’<a href="http://www.bortzmeyer.org/enrichir-qui.html">identifiant par Orange Jordanie, Vodafone Afrique du Sud</a> ou encore d’<a href="http://www.bortzmeyer.org/enrichir-qui.html">entêtes techniques par SFR ou Bouygues</a> en 2015.
         </ul>
     </div></section>
 	<section id="grand-cannon" class="slide"><div>
@@ -196,14 +195,14 @@
         <style scoped>
             figure { margin-top: 100px; }
         </style>
-        <h2>Chiffrement symétrique</h2>
+        <h2><i class="fa fa-key" style="color: green;"></i> Chiffrement symétrique</h2>
         <figure class="center">
             <img src="./pictures/symmetric-cipher.png" alt="chiffrement symétrique" />
             <figcaption></figcaption>
         </figure>
     </div></section>
     <section id="chiffrement-asymetrique" class="slide asymetric"><div>
-        <h2>Chiffrement asymétrique</h2>
+        <h2><i class="fa fa-key" style="color: blue;"></i><i class="fa fa-key" style="color: orange"></i>  Chiffrement asymétrique</h2>
         <figure class="center">
             <img src="./pictures/asymmetric-cipher.png" alt="chiffrement asymétrique" />
             <figcaption>2 familles : nombres premiers (<a href="https://fr.wikipedia.org/wiki/Chiffrement_RSA">RSA</a>) et courbes elliptiques (<a href="https://fr.wikipedia.org/wiki/Cryptographie_sur_les_courbes_elliptiques">EC</a>)</figcaption>
@@ -222,7 +221,7 @@
         </figure>
     </div></section>
     <section id="fonction-hachage" class="slide"><div>
-        <h2>Fonction de hachage</h2>
+        <h2><i class="fa fa-cutlery"></i> Fonction de hachage</h2>
         <pre>
             <code>$ echo -n "Hello World" | sha1sum</code>
             <code><mark>0a4d55a8d778e5022fab701977c5d840bbc486d0</mark></code>
@@ -244,7 +243,7 @@
        </p>
     </div></section>
     <section id="signature-numerique" class="slide signature"><div>
-        <h2>Signature numérique</h2>
+        <h2><i class="fa fa-certificate"></i> Signature numérique</h2>
         <figure class="center">
             <img src="./pictures/signature.png" alt="signature numérique" />
             <figcaption></figcaption>
@@ -346,16 +345,16 @@
         <h2>Suites de chiffrement <small>(<a href="https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#tls-parameters-4">cipher suites</a>)</small></h2>
         <p>Authentication <small>(asymétrique)</small>, chiffrement <small>(symétrique)</small>, MAC/HMAC et échange de clé</p>
         <ul>
-            <li>ECDHE-RSA-AES256-GCM-SHA384
-            <li>ECDHE-ECDSA-AES256-GCM-SHA384
+            <li><abbr title="Elliptic Curve Ephemeral Diffie-Hellman">ECDHE</abbr>-<abbr title="du nom des créateurs : Ronald Rivest, Adi Shamir et Leonard Adleman">RSA</abbr>-<abbr title="Advanced Encryption Standard">AES</abbr>256-<abbr title="Galois/Counter Mode">GCM</abbr>-<abbr title="Secure Hash Algorithm">SHA</abbr>384
+            <li>ECDHE-<abbr title="Elliptic Curve Digital Signature Algorithm">ECDSA</abbr>-AES256-GCM-SHA384
             <li>ECDHE-RSA-AES256-SHA384
             <li>ECDHE-ECDSA-AES256-SHA384
             <li>ECDHE-RSA-AES256-SHA
             <li>ECDHE-ECDSA-AES256-SHA
-            <li>SRP-DSS-AES-256-CBC-SHA
+            <li><abbr title="Secure Remote Password">SRP</abbr>-<abbr title="Digital Signature Standard">DSS</abbr>-AES-256-<abbr title="Cipher Block Chaining ">CBC</abbr>-SHA
             <li>SRP-RSA-AES-256-CBC-SHA
             <li>SRP-AES-256-CBC-SHA
-            <li>DHE-DSS-AES256-GCM-SHA384
+            <li><abbr title="Ephemeral Diffie-Hellman">DHE</abbr>-DSS-AES256-GCM-SHA384
             <li>DHE-RSA-AES256-GCM-SHA384
             <li>DHE-RSA-AES256-SHA256
             <li>DHE-DSS-AES256-SHA256
@@ -373,8 +372,8 @@
             <li>AES256-SHA256
             <li>AES256-SHA
             <li>CAMELLIA256-SHA
-            <li>PSK-AES256-CBC-SHA
-            <li>ECDHE-RSA-DES-CBC3-SHA
+            <li><abbr title="Pre-shared key">PSK</abbr>-AES256-CBC-SHA
+            <li>ECDHE-RSA-<abbr title="Data Encryption Standard">DES</abbr>-CBC3-SHA
             <li>ECDHE-ECDSA-DES-CBC3-SHA
             <li>SRP-DSS-3DES-EDE-CBC-SHA
             <li>SRP-RSA-3DES-EDE-CBC-SHA
@@ -416,7 +415,7 @@
             <li>SEED-SHA
             <li>CAMELLIA128-SHA
             <li>PSK-AES128-CBC-SHA
-            <li>ECDHE-RSA-RC4-SHA
+            <li>ECDHE-RSA-<abbr title="Rivest Cipher 4">RC4</abbr>-SHA
             <li>ECDHE-ECDSA-RC4-SHA
             <li>ECDH-RSA-RC4-SHA
             <li>ECDH-ECDSA-RC4-SHA
@@ -431,13 +430,23 @@
 	</div></section>
 
 	<section class="slide"><div>
-		<h2>Perfect Forward Secrecy</h2>
-        <figure class="center">
+        <style scoped>
+            img { max-height: 380px; }
+        </style>
+        <h2><i class="fa fa-user-secret"></i> Confidentialité persistante parfaite (<a href="http://vincent.bernat.im/en/blog/2011-ssl-perfect-forward-secrecy.html"><abbr tilte="Perfect Forward Secrecy">PFS</abbr></a>)</h2>
+        <figure class="sidebyside">
+            <figcaption>
+                La conversation reste secrête même si la clé privée a fuitée grâce à l’<a href="https://fr.wikipedia.org/wiki/%C3%89change_de_cl%C3%A9s_Diffie-Hellman">échange de clés Diffie-Hellman</a>.
+                <br/>
+                Suites "Ephemeral Diffie-Hellman" :
+                <small><strong>DHE</strong>-RSA-AES128-SHA</small>,
+                <small><strong>EDH</strong>-RSA-DES-CBC-SHA</small>,
+                <small>EC<strong>DHE</strong>-RSA-AES128-SHA</small>,
+                ...
+            </figcaption>
             <img src="pictures/diffie-Hellman_key_exchange.png" alt="Algorithme de Diffie Hellman">
-            <figcaption></figcaption>
         </figure>
-        <a href="http://vincent.bernat.im/en/blog/2011-ssl-perfect-forward-secrecy.html">SSL/TLS &amp; Perfect Forward Secrecy</a>, <small>DHE-RSA-AES128-SHA, ECDHE-RSA-AES128-SHA</small>
-    </div></section>
+    </div></section>a
 
 	<section id="authentification" class="slide shout"><div>
 		<h2><i class="fa fa-key"></i> Authentification</h2>
@@ -450,14 +459,13 @@
             <figcaption>
                 <dl>
                     <dt><i class="fa fa-hospital-o"></i>Autorité de certification racine (root <abbr title="Certificate authority">CA</abbr>)
-                    <dd>Certificat auto-signé, "cold storage"<br>
-                        Présent dans les navigateurs &amp; <abbr title="Operating System">OS</abbr> s’ils remplissent les critères de
+                    <dd>Certificat auto-signé ; "cold storage" ; 200~400 CA présentes dans les navigateurs &amp; <abbr title="Operating System">OS</abbr> s’ils remplissent les critères de
                         <a href="https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/">Mozilla</a>,
                         <a href="https://www.apple.com/certificateauthority/ca_program.html">Apple</a>,
                         <a href="http://social.technet.microsoft.com/wiki/contents/articles/31633.microsoft-trusted-root-program-requirements.aspx">Microsoft</a> ou
                         <a href="https://www.chromium.org/Home/chromium-security/root-ca-policy">Google</a>.
                     <dt class="next"><i class="fa fa-building"></i>Autorité de certification intermédiaire (intermediate CA)
-                    <dd class="next">Utilisé pour signer les autorités d’enregistrements, "cold storage"
+                    <dd class="next">Utilisé pour signer les autorités d’enregistrements ; "cold storage"
                     <dt class="next"><i class="fa fa-building-o"></i>Autorité d’enregistrement (issuing CA)
                     <dd class="next">Bureau signant les certificats au "grand public"
                 </dl>
@@ -531,7 +539,7 @@
         </ul>
     </div></section>
 
-	<section class="slide"><div>
+	<section id="lets-encrypt" class="slide"><div>
         <style scoped>
             img { padding: 0 80px 0 0; }
         </style>
@@ -547,8 +555,18 @@
         <p><a href="https://letsencrypt.org/2015/10/19/lets-encrypt-is-trusted.html">Supporté</a> par les principaux navigateurs depuis octobre 2015.</p>
     </div></section>
 
-	<section class="slide"><div>
-		<h2>révoquation, CRL, OCSP</h2>
+	<section id="revoquation" class="slide"><div>
+            <h2>Révoquation : <a href="https://www.fir3net.com/Security/Concepts-and-Terminology/certificate-revocation.html">CRL</a>, <a href="https://www.fir3net.com/Security/Concepts-and-Terminology/certificate-revocation.html">OCSP</a> et <a href="https://www.imperialviolet.org/2012/02/05/crlsets.html">Chrome</a> <a href="https://www.grc.com/revocation/crlsets.htm">CRLSet</a></h2>
+        <dl>
+            <dt><i class="fa fa-ban"></i>Certificate Revocation Lists (CRL) :
+            <dd>Liste de n° de certificat invalide ; fichier potentiellement conséquent ; mis à jour toutes les 7~14 jours ; seulement pour les <abbr title="Extended validation">EV</abbr> ; inutile si <abbr title="Deny of Service">DOS</abbr> sur le service (navigateur accepte alors)
+            <dt class="next"><i class="fa fa-ban"></i>Online Certificate Status Protocol (OCSP) :
+            <dd class="next">Requête par certificat ; seulement pour les <abbr title="Extended validation">EV</abbr> ;  inutile si DOS sur le service (navigateur accepte alors)
+            <dt class="next"><i class="fa fa-bolt"></i>OSCP Stampling :
+            <dd class="next">Le serveur joint une validation OSCP valable pour quelques minutes à chaque connexion TLS ; TLS 1.2 seulement ; Pas compatible sur tous les navigateurs
+            <dt class="next"><i class="fa fa-ban"></i>Chrome CRLSet :
+            <dd class="next">Liste de 256 Ko de n° de certificat invalide ; régulièrement mise à jour par Chrome ; ne contient qu’une infime partie des certificats révoqués...
+        </dl>
     </div></section>
 
 	<section id="DANE" class="slide"><div>
@@ -679,7 +697,7 @@ http://githubengineering.com/subresource-integrity/
             <li><a href="http://data.confs.fr/ssl-tls-sonntag/">Conférence de Benjamin Sonntag</a>,
             <li><a href="https://www.feistyduck.com/library/openssl-cookbook/">Openssl cookbook</a>, <a href="https://wiki.mozilla.org/Security/Server_Side_TLS">Guide sur TLS</a> sur le wiki de Mozilla,
             <li><a href="https://mozilla.github.io/server-side-tls/ssl-config-generator/">TLS config generator</a> par Mozilla,
-            <li><a href="https://github.com/drwetter/testssl.sh">github.com/testssl.sh</a> ou <a href="https://www.ssllabs.com/">SSLLabs</a> pour tester sa configuration,
+            <li><a href="https://github.com/drwetter/testssl.sh">github.com/testssl.sh</a> ou <a href="https://www.ssllabs.com/">SSLLabs</a> ou <a href="https://github.com/sibiantony/ssleuth">ssleuth</a> pour tester sa configuration,
             <li>Security Now, <a href="https://www.grc.com/sn/past/2013.htm">épisode 412 "SSL &amp; Perfect Forward Secrecy"</a>, juillet 2013,
             <li>un interview de Tom Delmas par les Castcodeurs sur HTTPS (partie <a href="https://lescastcodeurs.com/2015/05/25/lcc-125-interview-sur-https-avec-tom-delmas-partie-1/">1</a> &amp; <a href="https://lescastcodeurs.com/2015/06/24/lcc-127-interview-sur-https-avec-tom-delmas-partie-2/">2</a>),
             <li><a href="https://www.grc.com/fingerprints.htm">GRC fingerprint</a>, pour vérifier les empreintes des certificats,
