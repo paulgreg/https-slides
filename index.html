@@ -437,7 +437,7 @@
         </ul>
 	</div></section>
 
-	<section class="slide"><div>
+	<section id="pfs" class="slide"><div>
         <style scoped>
             img { max-height: 380px; }
         </style>
@@ -561,7 +561,7 @@
         <a href="https://www.internetsociety.org/" class="clear"><img src="pictures/isoc.png" width="100" height="60" alt="ISOC" /></a>
         <a href="https://automattic.com/" class="clear"><img src="pictures/automattic-logo.png" width="100" height="60" alt="automattic" /></a>
         <p><a href="https://letsencrypt.org/2015/10/19/lets-encrypt-is-trusted.html">Supporté</a> par les principaux navigateurs depuis octobre 2015.</p>
-        <p><a href="https://letsencrypt.org/2015/10/29/phishing-and-malware.html">Exclus</a> les sites malveillants.</p>
+        <p><a href="https://letsencrypt.org/2015/10/29/phishing-and-malware.html">Exclus</a> les sites malveillants grâce à la <a href="https://developers.google.com/safe-browsing/">Safe Browsing API</a>.</p>
     </div></section>
 
 	<section id="revoquation" class="slide"><div>
@@ -595,7 +595,6 @@
         </ul>
     </div></section>
 
-
 	<section id="DANE" class="slide"><div>
         <h2>DNS-based Authentication of Named Entities (<a href="http://www.bortzmeyer.org/6698.html">DANE</a>)</h2>
         <ul>
@@ -612,73 +611,102 @@
         </ol>
     </div></section>
 
-	<section class="slide shout"><div>
+	<section id="attaques" class="slide shout"><div>
 		<h2><i class="fa fa-bomb"></i> Attaques</h2>
 	</div></section>
-	<section class="slide"><div>
-		<h2>Attaques : Rogue certificate, Rogue authority</h2>
+
+	<section id="pourquoi-attaquer-la-crypto" class="slide"><div>
+        <style scoped>
+            p { margin: 2em 0; }
+        </style>
+        <h2><i class="fa fa-wrench"></i> S’attaquer à la cryptographie ?</h2>
+        <p>Pourquoi s’attaquer à la cryptographie alors qu’il existe des moyens légaux ?</p>
+        <figure class="center next">
+            <img src="https://imgs.xkcd.com/comics/security.png" alt="xkcd" />
+            <figcaption>ou pas... (<a href="https://xkcd.com/538/">XKCD: security</a>)</figcaption>
+        </figure>
+    </div></section>
+
+	<section id="attaques-faciles" class="slide"><div>
+		<h2><i class="fa fa-keyboard-o"></i> Attaques &laquo; faciles &raquo;</h2>
         <ul>
-            <li>Faux certicat ou fausse autorité
-            <li><a href="https://xkcd.com/538/"><img src="https://imgs.xkcd.com/comics/security.png" alt="carton humoristique" /></a>
+            <li>Récupèrer les infos ailleurs que pendant le transport (chez l’hébergeur...),
+            <li class="next">via une attaque &laquo; <a href="https://en.wikipedia.org/wiki/Moxie_Marlinspike#SSL_stripping">SSLStrip</a> &raquo;, inventé par <a href="https://en.wikipedia.org/wiki/Moxie_Marlinspike">Moxie Marlinspike</a> (<abbr title="Man in the middle">MITM</abbr> remplaçant HTTPS par HTTP au sein des pages),
+            <li class="next">Faire installer un <a href="https://fr.wikipedia.org/wiki/Enregistreur_de_frappe">enregistreur de frappe</a> (keylogger),
+            <li class="next">ou alors faire installer une CA &laquo; maison &raquo; pour faire de l’interception (comme <a href="http://blog.philippheckel.com/2013/07/01/how-to-use-mitmproxy-to-read-and-modify-https-traffic-of-your-phone/">mitmproxy</a>) légale (recommandations de la <a href="http://www.cnil.fr/linstitution/actualite/article/article/analyse-de-flux-https-bonnes-pratiques-et-questions/">CNIL</a> et de l’<a href="http://www.ssi.gouv.fr/guide/recommandations-de-securite-concernant-lanalyse-des-flux-https/">ANSSI</a>) ou illégale...
         </ul>
     </div></section>
 
-	<section class="slide"><div>
-		<h2>Mixed content</h2>
-https://developer.mozilla.org/en-US/docs/Security/MixedContent
-https://googleonlinesecurity.blogspot.com.au/2015/10/simplifying-page-security-icon-in-chrome.html
+	<section id="interception-https" class="slide"><div>
+		<h2><i class="fa fa-user-secret"></i> Interception via un point d’accès malveillant</h2>
+        <video controls preload="metadata" src="videos/mitm-https.webm"></video>
+	</div></section>
 
+	<section id="bugs-logiciels" class="slide"><div>
+        <h2><i class="fa fa-microphone"></i> Bugs ou canaux auxiliaires (side channel)</h2>
+        <ul>
+            <li><a href="https://www.schneier.com/blog/archives/2008/05/random_number_b.html">DSA-1571-1</a> : /dev/random prédictif chez Debian en 2008,
+            <li class="next"><a href="http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2014-1266">CVE-2014-1266</a> : goto fail chez Apple en 2014,
+            <li class="next"><a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0092">CVE-2014-0092</a> : bug sur GnuTLS en 2014,
+            <li class="next"><a href="https://www.bortzmeyer.org/7366.html">RFC 7366</a> : "MAC-then-encrypt" potentiellement dangereux, donc "Encrypt-then-MAC",
+            <li class="next"><a href="http://blog.cryptographyengineering.com/2013/09/the-many-flaws-of-dualecdrbg.html">Dual_EC_DRBG</a> par RSA Security avec une porte dérobé pour la NSA,
+            <li class="next"><a href="http://www.forbes.com/sites/timworstall/2013/12/21/researchers-break-rsa-4096-encryption-with-just-a-microphone-and-a-couple-of-emails/">Écoute du bruit</a> ou de la <a href="http://www.infosecurity-magazine.com/news/researchers-crack-rsa-encryption-via-power-supply/">consommation électrique</a> d’un ordinateur pour retrouver une clé privée...
+        </ul>
     </div></section>
 
-	<section class="slide"><div>
-		<h2>Attaques : </h2>
+	<section id="collision" class="slide"><div>
+		<h2><i class="fa fa-user-secret"></i> Générer des faux certificats</h2>
         <ul>
-            <li>MITM sans chiffrement, SSLStrip,
             <li><a href="https://www.win.tue.nl/hashclash/rogue-ca/">Collision de MD5</a>
             <li><a href="https://sites.google.com/site/itstheshappening/">Oct 8: The SHAppening: freestart collisions for SHA-1</a>
             <li><a href="http://googleonlinesecurity.blogspot.fr/2014/09/gradually-sunsetting-sha-1.html">Gradually sunsetting SHA-1</a>
             <li><a href="https://blog.filippo.io/the-unofficial-chrome-sha1-faq/">The unofficial Chrome SHA1 deprecation FAQ</a>
-            <li>https://security.stackexchange.com/questions/4518/how-to-estimate-the-time-needed-to-crack-rsa-encryption
-            <li>http://arstechnica.com/security/2013/09/of-course-nsa-can-crack-crypto-anyone-can-the-question-is-how-much/
-            <li>récupèrer les infos lorsqu’elle ne sont pas chiffrées ou les clés en clair,
-            <li>Exploiter des failles connues (random sur debian,https://www.schneier.com/blog/archives/2008/05/random_number_b.html), open ssl / goto fail, Dual_EC_DRBG par la RSA, Encrypt then mac (cf https://www.bortzmeyer.org/7366.html)
-            <li>Side channel attacks http://www.forbes.com/sites/timworstall/2013/12/21/researchers-break-rsa-4096-encryption-with-just-a-microphone-and-a-couple-of-emails/
-            <li>FREAK
-            <li><a href="http://www.nextinpact.com/news/94144-logjam-apres-freak-nouvelle-faille-dans-chiffrement-connexions.htm">Logjam</a>, <a href="https://blog.cloudflare.com/logjam-the-latest-tls-vulnerability-explained/">explained</a>, <a href="http://blog.cryptographyengineering.com/2015/05/attack-of-week-logjam.html">one more explanation</a>
-            <li>Brute force, Quantum computer, bon courage...
-            <li>http://arstechnica.com/security/2015/10/breaking-512-bit-rsa-with-amazon-ec2-is-a-cinch-so-why-all-the-weak-keys/
-            <li>http://hackaday.com/2015/10/15/how-the-nsa-can-read-your-emails/
         </ul>
     </div></section>
-	<section class="slide"><div>
-		<h2>Avec un point d’accès malveillant (HTTPS)</h2>
-        <video controls preload="metadata" src="videos/mitm-https.webm"></video>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Interception</h2>
-        <a href="http://blog.philippheckel.com/2013/07/01/how-to-use-mitmproxy-to-read-and-modify-https-traffic-of-your-phone/">mitmproxy</a>
-        <a href="http://www.cnil.fr/linstitution/actualite/article/article/analyse-de-flux-https-bonnes-pratiques-et-questions/">CNIL : Analyse de flux https : bonnes pratiques et questions</a>
-    </div></section>
+
 	<section class="slide"><div>
 		<h2>BEAST</h2>
     </div></section>
+
 	<section class="slide"><div>
 		<h2>BREACH</h2>
     </div></section>
+
 	<section class="slide"><div>
 		<h2>CRIME</h2>
     </div></section>
+
 	<section class="slide"><div>
 		<h2>Heartbleed</h2>
     </div></section>
+
 	<section class="slide"><div>
 		<h2>Freack &amp; Logjam</h2>
         https://weakdh.org/sysadmin.html
+        <a href="http://www.nextinpact.com/news/94144-logjam-apres-freak-nouvelle-faille-dans-chiffrement-connexions.htm">Logjam</a>, <a href="https://blog.cloudflare.com/logjam-the-latest-tls-vulnerability-explained/">explained</a>, <a href="http://blog.cryptographyengineering.com/2015/05/attack-of-week-logjam.html">one more explanation</a>
+        http://hackaday.com/2015/10/15/how-the-nsa-can-read-your-emails/
+    </div></section>
+
+	<section id="force-brute" class="slide"><div>
+		<h2>Force brute ?</h2>
+        <ul>
+            <li>https://security.stackexchange.com/questions/4518/how-to-estimate-the-time-needed-to-crack-rsa-encryption
+            <li>http://arstechnica.com/security/2013/09/of-course-nsa-can-crack-crypto-anyone-can-the-question-is-how-much/
+            <li>Brute force, Quantum computer, bon courage...
+            <li>http://arstechnica.com/security/2015/10/breaking-512-bit-rsa-with-amazon-ec2-is-a-cinch-so-why-all-the-weak-keys/
+        </ul>
     </div></section>
 
 	<section id="apres-HTTPS" class="slide shout"><div>
 		<h2><i class="fa fa-cogs"></i> Après HTTPS</h2>
 	</div></section>
+
+	<section class="slide"><div>
+		<h2>Mixed content</h2>
+https://developer.mozilla.org/en-US/docs/Security/MixedContent
+https://googleonlinesecurity.blogspot.com.au/2015/10/simplifying-page-security-icon-in-chrome.html
+    </div></section>
+
 	<section id="HSTS" class="slide"><div>
 		<h2>HSTS : Http Strict Transport Security</h2>
         <pre><code>Strict-Transport-Security: max-age=16070400; includeSubDomains</code></pre>
@@ -719,9 +747,9 @@ http://githubengineering.com/subresource-integrity/
 
 	<section id="resources" class="slide"><div>
         <style scoped>
-            li { font-size: 24px; line-height: 100%; }
+            li { font-size: 24px; line-height: 110%; }
         </style>
-		<h2>Resources</h2>
+		<h2><i class="fa fa-book"></i> Resources</h2>
         <ul>
             <li><a href="https://www.imperialviolet.org/">ImperialViolet</a>, le blog Adam Langley (Google),
             <li><a href="https://www.schneier.com/">Schneier on Security</a>, le blog de Bruce Schneier,
@@ -729,7 +757,7 @@ http://githubengineering.com/subresource-integrity/
             <li><a href="http://data.confs.fr/ssl-tls-sonntag/">Conférence de Benjamin Sonntag</a>,
             <li><a href="https://www.feistyduck.com/library/openssl-cookbook/">Openssl cookbook</a>, <a href="https://wiki.mozilla.org/Security/Server_Side_TLS">Guide sur TLS</a> sur le wiki de Mozilla,
             <li><a href="https://mozilla.github.io/server-side-tls/ssl-config-generator/">TLS config generator</a> par Mozilla,
-            <li><a href="https://github.com/drwetter/testssl.sh">github.com/testssl.sh</a> ou <a href="https://www.ssllabs.com/">SSLLabs</a> ou <a href="https://github.com/sibiantony/ssleuth">ssleuth</a> pour tester sa configuration,
+            <li><a href="https://github.com/drwetter/testssl.sh">github.com/testssl.sh</a>, <a href="https://www.ssllabs.com/">SSLLabs</a> ou <a href="https://github.com/sibiantony/ssleuth">ssleuth</a> pour tester sa configuration,
             <li>Security Now, <a href="https://www.grc.com/sn/past/2013.htm">épisode 412 "SSL &amp; Perfect Forward Secrecy"</a>, juillet 2013,
             <li>un interview de Tom Delmas par les Castcodeurs sur HTTPS (partie <a href="https://lescastcodeurs.com/2015/05/25/lcc-125-interview-sur-https-avec-tom-delmas-partie-1/">1</a> &amp; <a href="https://lescastcodeurs.com/2015/06/24/lcc-127-interview-sur-https-avec-tom-delmas-partie-2/">2</a>),
             <li><a href="https://www.grc.com/fingerprints.htm">GRC fingerprint</a>, pour vérifier les empreintes des certificats,
@@ -738,7 +766,7 @@ http://githubengineering.com/subresource-integrity/
 		</ul>
 	</div></section>
 	<section id="references" class="slide"><div>
-		<h2>Références</h2>
+		<h2><i class="fa fa-book"></i> Références</h2>
 		<ul>
             <li>Images de cable réseau : <a href="https://www.google.com/about/datacenters/gallery">google.com/about/datacenters/gallery</a>,
             <li>Source de l’image Firesheep : <a href="http://www.genbeta.com/navegadores/firesheep-hackea-con-un-click-cuentas-de-facebook-google-twitter">genbeta.com</a>,
