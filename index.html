@@ -634,7 +634,7 @@
             <li>Récupèrer les infos ailleurs que pendant le transport (chez l’hébergeur...),
             <li class="next">via une attaque &laquo; <a href="https://en.wikipedia.org/wiki/Moxie_Marlinspike#SSL_stripping">SSLStrip</a> &raquo;, inventé par <a href="https://en.wikipedia.org/wiki/Moxie_Marlinspike">Moxie Marlinspike</a> (<abbr title="Man in the middle">MITM</abbr> remplaçant HTTPS par HTTP au sein des pages, d’où <abbr title="Http Strict Transport Security">HSTS</abbr>),
             <li class="next">Faire installer un <a href="https://fr.wikipedia.org/wiki/Enregistreur_de_frappe">enregistreur de frappe</a> (keylogger),
-            <li class="next">Demander à une CA "ami" () de générer un certificat (d’où Certificate pinning)
+            <li class="next">les gouvernements peuvent générer un certificat (<small>Government of /France|Hong Kong|Japan|Spain|Taiwan|Netherlands|Turkey/</small>, d’où le certificate pinning)
             <li class="next">ou alors faire installer une CA &laquo; maison &raquo; pour faire de l’interception (comme <a href="http://blog.philippheckel.com/2013/07/01/how-to-use-mitmproxy-to-read-and-modify-https-traffic-of-your-phone/">mitmproxy</a>) légale (recommandations de la <a href="http://www.cnil.fr/linstitution/actualite/article/article/analyse-de-flux-https-bonnes-pratiques-et-questions/">CNIL</a> et de l’<a href="http://www.ssi.gouv.fr/guide/recommandations-de-securite-concernant-lanalyse-des-flux-https/">ANSSI</a>) ou illégale...
         </ul>
     </div></section>
@@ -661,6 +661,7 @@
         <ul>
             <li><a href="https://www.win.tue.nl/hashclash/rogue-ca/">Collision de MD5</a>
             <li><a href="https://sites.google.com/site/itstheshappening/">Oct 8: The SHAppening: freestart collisions for SHA-1</a>
+            <li>http://blogs.windows.com/msedgedev/2015/11/04/sha-1-deprecation-update/
             <li><a href="http://googleonlinesecurity.blogspot.fr/2014/09/gradually-sunsetting-sha-1.html">Gradually sunsetting SHA-1</a>
             <li><a href="https://blog.filippo.io/the-unofficial-chrome-sha1-faq/">The unofficial Chrome SHA1 deprecation FAQ</a>
         </ul>
@@ -718,7 +719,7 @@ https://googleonlinesecurity.blogspot.com.au/2015/10/simplifying-page-security-i
 		<h2>Certificate public key pinning</h2>
         <ul>
             <li>https://en.m.wikipedia.org/wiki/Transport_Layer_Security#Certificate_pinning
-            <li>Google en référencie en dur : https://www.imperialviolet.org/2011/05/04/pinning.html
+            <li>Google en référencie en dur : https://www.imperialviolet.org/2011/05/04/pinning.html / https://code.google.com/p/chromium/codesearch#chromium/src/net/http/transport_security_state_static.h&cl=GROK&gsn=GetDynamicDomainState&rcl=1446640461
             <li><a href="https://www.imperialviolet.org/2011/05/04/pinning.html">Public key pinning (04 May 2011)</a> dans Chrome
             <li><a href="https://wiki.mozilla.org/SecurityEngineering/Public_Key_Pinning">dans Firefox aussi</a>
             <li>http://www.internetsociety.org/deploy360/blog/2015/05/new-rfc-7469-on-certificate-pinning-http-public-key-pinning-hpkp/
