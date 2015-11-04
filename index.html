@@ -543,7 +543,8 @@
             <li>en 2011, <a href="https://www.comodo.com/Comodo-Fraud-Incident-2011-03-23.html">Comodo</a> signe 9 certificats incluant  mail.google.com, login.yahoo.com, login.skype.com, addons.mozilla.org, login.live.com,
             <li class="next">en 2011, <a href="https://www.vasco.com/company/about_vasco/press_room/news_archive/2011/news_diginotar_reports_security_incident.aspx">Diginotar</a> signe des certificats utilisés pour intercepter le trafic gmail en Iran ; l’entreprise <a href="https://www.vasco.com/company/about_vasco/press_room/news_archive/2011/news_vasco_announces_bankruptcy_filing_by_diginotar_bv.aspx">ferme</a> quelques jours après,
             <li class="next">en 2013, l’<a href="http://googleonlinesecurity.blogspot.fr/2013/12/further-improving-digital-certificate.html">ANSSI</a> génère des certificats pour des domaines de google ; ils sont détectés aussitôt par Chrome,
-            <li class="next">en 2015, <a href="https://googleonlinesecurity.blogspot.sg/2015/03/maintaining-digital-certificate-security.html">Google</a> exclue les certificats signés par l’AC Chinoise <a href="https://en.wikipedia.org/wiki/China_Internet_Network_Information_Center">CNNIC</a> car ils ont signés des certificats Google, le <a href="http://www1.cnnic.cn/AU/MediaC/Announcement/201504/t20150402_52049.htm">CNNIC répond</a>.
+            <li class="next">en 2015, <a href="https://googleonlinesecurity.blogspot.sg/2015/03/maintaining-digital-certificate-security.html">Google</a> exclue les certificats signés par l’AC Chinoise <a href="https://en.wikipedia.org/wiki/China_Internet_Network_Information_Center">CNNIC</a> car ils ont signés des certificats Google, le <a href="http://www1.cnnic.cn/AU/MediaC/Announcement/201504/t20150402_52049.htm">CNNIC répond</a>,
+            <li class="next">en octobre 2015, Symantec : http://www.symantec.com/connect/blogs/tough-day-leaders / http://www.engadget.com/2015/10/29/google-warns-symantec-over-certificates/
         </ul>
     </div></section>
 
@@ -631,8 +632,9 @@
 		<h2><i class="fa fa-keyboard-o"></i> Attaques &laquo; faciles &raquo;</h2>
         <ul>
             <li>Récupèrer les infos ailleurs que pendant le transport (chez l’hébergeur...),
-            <li class="next">via une attaque &laquo; <a href="https://en.wikipedia.org/wiki/Moxie_Marlinspike#SSL_stripping">SSLStrip</a> &raquo;, inventé par <a href="https://en.wikipedia.org/wiki/Moxie_Marlinspike">Moxie Marlinspike</a> (<abbr title="Man in the middle">MITM</abbr> remplaçant HTTPS par HTTP au sein des pages),
+            <li class="next">via une attaque &laquo; <a href="https://en.wikipedia.org/wiki/Moxie_Marlinspike#SSL_stripping">SSLStrip</a> &raquo;, inventé par <a href="https://en.wikipedia.org/wiki/Moxie_Marlinspike">Moxie Marlinspike</a> (<abbr title="Man in the middle">MITM</abbr> remplaçant HTTPS par HTTP au sein des pages, d’où <abbr title="Http Strict Transport Security">HSTS</abbr>),
             <li class="next">Faire installer un <a href="https://fr.wikipedia.org/wiki/Enregistreur_de_frappe">enregistreur de frappe</a> (keylogger),
+            <li class="next">Demander à une CA "ami" () de générer un certificat (d’où Certificate pinning)
             <li class="next">ou alors faire installer une CA &laquo; maison &raquo; pour faire de l’interception (comme <a href="http://blog.philippheckel.com/2013/07/01/how-to-use-mitmproxy-to-read-and-modify-https-traffic-of-your-phone/">mitmproxy</a>) légale (recommandations de la <a href="http://www.cnil.fr/linstitution/actualite/article/article/analyse-de-flux-https-bonnes-pratiques-et-questions/">CNIL</a> et de l’<a href="http://www.ssi.gouv.fr/guide/recommandations-de-securite-concernant-lanalyse-des-flux-https/">ANSSI</a>) ou illégale...
         </ul>
     </div></section>
@@ -715,6 +717,8 @@ https://googleonlinesecurity.blogspot.com.au/2015/10/simplifying-page-security-i
 	<section id="certificate-public-key-pinning" class="slide"><div>
 		<h2>Certificate public key pinning</h2>
         <ul>
+            <li>https://en.m.wikipedia.org/wiki/Transport_Layer_Security#Certificate_pinning
+            <li>Google en référencie en dur : https://www.imperialviolet.org/2011/05/04/pinning.html
             <li><a href="https://www.imperialviolet.org/2011/05/04/pinning.html">Public key pinning (04 May 2011)</a> dans Chrome
             <li><a href="https://wiki.mozilla.org/SecurityEngineering/Public_Key_Pinning">dans Firefox aussi</a>
             <li>http://www.internetsociety.org/deploy360/blog/2015/05/new-rfc-7469-on-certificate-pinning-http-public-key-pinning-hpkp/
