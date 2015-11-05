@@ -623,8 +623,8 @@
         <h2><i class="fa fa-wrench"></i> S’attaquer à la cryptographie ?</h2>
         <p>Pourquoi s’attaquer à la cryptographie alors qu’il existe des moyens légaux ?</p>
         <figure class="center next">
-            <img src="https://imgs.xkcd.com/comics/security.png" alt="xkcd" />
-            <figcaption>ou pas... (<a href="https://xkcd.com/538/">XKCD: security</a>)</figcaption>
+            <a href="https://xkcd.com/538/" class="clear"><img src="pictures/security.png" alt="xkcd" /></a>
+            <figcaption>ou pas...</figcaption>
         </figure>
     </div></section>
 
@@ -644,15 +644,26 @@
         <video controls preload="metadata" src="videos/mitm-https.webm"></video>
 	</div></section>
 
-	<section id="bugs-logiciels" class="slide"><div>
-        <h2><i class="fa fa-microphone"></i> Bugs ou canaux auxiliaires (side channel)</h2>
+	<section id="bugs" class="slide"><div>
+        <style scoped>
+            img { float: right; }
+        </style>
+        <h2><i class="fa fa-bug"></i> Bugs</h2>
+        <a href="https://xkcd.com/221/" class="clear"><img src="pictures/random_number.png" alt="xkcd" /></a>
         <ul>
             <li><a href="https://www.schneier.com/blog/archives/2008/05/random_number_b.html">DSA-1571-1</a> : /dev/random prédictif chez Debian en 2008,
             <li class="next"><a href="http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2014-1266">CVE-2014-1266</a> : goto fail chez Apple en 2014,
             <li class="next"><a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0092">CVE-2014-0092</a> : bug sur GnuTLS en 2014,
-            <li class="next"><a href="https://www.bortzmeyer.org/7366.html">RFC 7366</a> : "MAC-then-encrypt" potentiellement dangereux, donc "Encrypt-then-MAC",
-            <li class="next"><a href="http://blog.cryptographyengineering.com/2013/09/the-many-flaws-of-dualecdrbg.html">Dual_EC_DRBG</a> par RSA Security avec une porte dérobé pour la NSA,
-            <li class="next"><a href="http://www.forbes.com/sites/timworstall/2013/12/21/researchers-break-rsa-4096-encryption-with-just-a-microphone-and-a-couple-of-emails/">Écoute du bruit</a> ou de la <a href="http://www.infosecurity-magazine.com/news/researchers-crack-rsa-encryption-via-power-supply/">consommation électrique</a> d’un ordinateur pour retrouver une clé privée...
+            <li class="next"><a href="https://www.bortzmeyer.org/7366.html">RFC 7366</a> : "MAC-then-encrypt" potentiellement dangereux, donc "Encrypt-then-MAC".
+        </ul>
+    </div></section>
+
+	<section id="quelques-attaques" class="slide"><div>
+        <h2><i class="fa fa-microphone"></i> Quelques attaques</h2>
+        <ul>
+            <li><a href="http://blog.cryptographyengineering.com/2013/09/the-many-flaws-of-dualecdrbg.html">Dual_EC_DRBG</a> par RSA Security avec une porte dérobé pour la NSA,
+            <li class="next"><a href="https://www.youtube.com/watch?v=hkw9tFnJk8k">Attaque sur <abbr title="Network Time Protocol">NTP</abbr></a> pour réinitialiser HSTS, craquer de &laquo; vieux &raquo; certificats 512 bits,
+            <li class="next"><a href="http://www.forbes.com/sites/timworstall/2013/12/21/researchers-break-rsa-4096-encryption-with-just-a-microphone-and-a-couple-of-emails/">Écoute du bruit</a> ou de la <a href="http://www.infosecurity-magazine.com/news/researchers-crack-rsa-encryption-via-power-supply/">consommation électrique</a> d’un ordinateur pour retrouver une clé privée (canal auxiliaire ou &laquo; side channel &raquo;).
         </ul>
     </div></section>
 
@@ -697,6 +708,7 @@
             <li>http://arstechnica.com/security/2013/09/of-course-nsa-can-crack-crypto-anyone-can-the-question-is-how-much/
             <li>Brute force, Quantum computer, bon courage...
             <li>http://arstechnica.com/security/2015/10/breaking-512-bit-rsa-with-amazon-ec2-is-a-cinch-so-why-all-the-weak-keys/
+            <li>512 bits : 9863 minutes (plus de 2,5 jours) https://www.youtube.com/watch?v=hkw9tFnJk8k
         </ul>
     </div></section>
 
@@ -720,7 +732,7 @@ https://googleonlinesecurity.blogspot.com.au/2015/10/simplifying-page-security-i
 		<h2>Certificate public key pinning</h2>
         <ul>
             <li>https://en.m.wikipedia.org/wiki/Transport_Layer_Security#Certificate_pinning
-            <li>Google en référencie en dur : https://www.imperialviolet.org/2011/05/04/pinning.html / https://code.google.com/p/chromium/codesearch#chromium/src/net/http/transport_security_state_static.h&cl=GROK&gsn=GetDynamicDomainState&rcl=1446640461
+            <li>Google en référencie en dur : https://www.imperialviolet.org/2011/05/04/pinning.html / https://code.google.com/p/chromium/codesearch#chromium/src/net/http/transport_security_state_static.h&amp;cl=GROK&amp;gsn=GetDynamicDomainState&amp;rcl=1446640461
             <li><a href="https://www.imperialviolet.org/2011/05/04/pinning.html">Public key pinning (04 May 2011)</a> dans Chrome
             <li><a href="https://wiki.mozilla.org/SecurityEngineering/Public_Key_Pinning">dans Firefox aussi</a>
             <li>http://www.internetsociety.org/deploy360/blog/2015/05/new-rfc-7469-on-certificate-pinning-http-public-key-pinning-hpkp/
@@ -778,7 +790,7 @@ http://githubengineering.com/subresource-integrity/
             <li>Images de cable réseau : <a href="https://www.google.com/about/datacenters/gallery">google.com/about/datacenters/gallery</a>,
             <li>Source de l’image Firesheep : <a href="http://www.genbeta.com/navegadores/firesheep-hackea-con-un-click-cuentas-de-facebook-google-twitter">genbeta.com</a>,
             <li>Échange de clé Diffie-Hellman : <a href="https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange">wikipedia.org</a>,
-            <li><a href="https://xkcd.com/538/">XKCD</a>,
+            <li><a href="https://xkcd.com/">XKCD</a> pour les comics,
             <li>L’idée d’insérer des licornes vient de &quot;<a href="https://www.youtube.com/watch?v=i_qE1iAmjFg">10 Things I Learned from the jQuery Source</a>&quot; par Paul Irish,
             <li>Schémas construits sur <a href="https://www.gliffy.com/">gliffy.com</a>.
 		</ul>
