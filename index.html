@@ -36,7 +36,7 @@
         .slide figure.center                   { text-align: center; }
         .slide figure.sidebyside figcaption,
         .slide figure.sidebyside > img,
-        .slide figure.sidebyside figcaption    { display: inline-block; max-width: 60%; padding-right: 1em; line-height: 1.6; }
+        .slide figure.sidebyside figcaption    { display: inline-block; max-width: 60%; margin-right: 1em; line-height: 1.6; }
         .slide figure.sidebyside figcaption    { vertical-align: top; }
         .slide ul.numbered                     { text-align: left; width: 110%; }
         .slide ul.numbered li                  { line-height: 100%; }
@@ -280,7 +280,7 @@
 	</div></section>
 
 	<section id="handshake-client-hello" class="slide"><div>
-            <h2>1. Client hello</h2>
+        <h2>1. Client hello</h2>
         <figure class="sidebyside handshake">
             <figcaption>
                 <img src="pictures/1-handshake.png" alt="handshake : client hello" />
@@ -304,7 +304,7 @@
         </style>
         <h2>2. Server hello (certificats)</h2>
         <figure class="sidebyside handshake">
-            <figcaption><img src="pictures/2-handshake.png" alt="handshake : server certificates" /></figcaption>
+            <figcaption><img src="pictures/3-handshake.png" alt="handshake : server certificates" /></figcaption>
             <img src="pictures/3-certificates.png" alt="server certificates" />
             <img src="pictures/ca-store.png" alt="browser CA store" class="store" />
         </figure>
@@ -313,7 +313,7 @@
 	<section id="handshake-server-hello-done" class="slide"><div>
         <h2>2. Server hello done</h2>
         <figure class="sidebyside handshake">
-            <figcaption><img src="pictures/2-handshake.png" alt="handshake : server hello done" /></figcaption>
+            <figcaption><img src="pictures/4-handshake.png" alt="handshake : server hello done" /></figcaption>
             <img src="pictures/4-server-hello-done.png" alt="server hello done" />
         </figure>
 	</div></section>
@@ -321,7 +321,15 @@
 	<section id="handshake-key-exchange" class="slide"><div>
         <h2>3. Pré-clé chiffré avec la clé publique du serveur</h2>
         <figure class="sidebyside handshake">
-            <figcaption><img src="pictures/3-handshake.png" alt="handshake : key exchange" /></figcaption>
+            <figcaption>
+                <img src="pictures/5-handshake.png" alt="handshake : key exchange" />
+                <pre>
+                    <code>preMasterSecret=random()</code>
+                    <code> </code>
+                    <code>encrypt(certicate.pubKey,</code>
+                    <code>preMasterSecret)</code>
+                </pre>
+            </figcaption>
             <img src="pictures/5-key-exchange.png" alt="key exchange">
         </figure>
 	</div></section>
@@ -331,18 +339,33 @@
         <figure class="sidebyside handshake">
             <figcaption>
                 <img src="pictures/6-handshake.png" alt="handshake : key exchange" />
-                <code>master_secret = PRF(pre_master_secret, "master secret", ClientHello.random + ServerHello.random)</code>
+                <pre>
+                    <code>masterSecret = PRF(</code>
+                    <code>client.preMasterSecret,</code>
+                    <code>client.random,</code>
+                    <code>server.random)</code>
+                </pre>
             </figcaption>
             <img src="pictures/6-change-cipher-spec.png" alt="change cipher spec">
         </figure>
+        <pre>
+            <code>masterSecret -&gt; client MAC secret, server MAC secret,</code>
+            <code>                client key, server key</code>
+        </pre>
+        </ul>
 	</div></section>
 
 	<section id="handshake-encrypted-data" class="slide"><div>
         <h2>5. Place au trafic chiffré</h2>
         <figure class="sidebyside handshake">
-            <figcaption><img src="pictures/7-handshake.png" alt="poignée de main"></figcaption>
+            <figcaption>
+                <img src="pictures/7-handshake.png" alt="poignée de main">
+            </figcaption>
             <img src="pictures/7-encrypted-data.png" alt="encrypted data">
         </figure>
+        <pre>
+            <code>encrypt(sharedSecret, message)</code>
+        </pre>
 	</div></section>
 
 	<section id="cipher-suite" class="slide"><div>
