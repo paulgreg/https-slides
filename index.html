@@ -302,19 +302,11 @@
         <style scoped>
             img.store { display: block; margin: auto; }
         </style>
-        <h2>2. Server hello (certificats)</h2>
+        <h2>2. Server hello (certificats + done)</h2>
         <figure class="sidebyside handshake">
-            <figcaption><img src="pictures/3-handshake.png" alt="handshake : server certificates" /></figcaption>
+            <figcaption><img src="pictures/4-handshake.png" alt="handshake : server certificates" /></figcaption>
             <img src="pictures/3-certificates.png" alt="server certificates" />
             <img src="pictures/ca-store.png" alt="browser CA store" class="store" />
-        </figure>
-	</div></section>
-
-	<section id="handshake-server-hello-done" class="slide"><div>
-        <h2>2. Server hello done</h2>
-        <figure class="sidebyside handshake">
-            <figcaption><img src="pictures/4-handshake.png" alt="handshake : server hello done" /></figcaption>
-            <img src="pictures/4-server-hello-done.png" alt="server hello done" />
         </figure>
 	</div></section>
 
@@ -339,20 +331,16 @@
         <figure class="sidebyside handshake">
             <figcaption>
                 <img src="pictures/6-handshake.png" alt="handshake : key exchange" />
-                <pre>
-                    <code>masterSecret = PRF(</code>
-                    <code>client.preMasterSecret,</code>
-                    <code>client.random,</code>
-                    <code>server.random)</code>
-                </pre>
             </figcaption>
             <img src="pictures/6-change-cipher-spec.png" alt="change cipher spec">
         </figure>
         <pre>
-            <code>masterSecret -&gt; client MAC secret, server MAC secret,</code>
-            <code>                client key, server key</code>
+            <code>masterSecret = <abbr title="pseudo random function">PRF</abbr>(client.preMasterSecret,</code>
+            <code>                   client.random, server.random)</code>
+            <code> </code>
+            <code>[ clientMAC, serverMAC ] = extractMACs(masterSecret)</code>
+            <code>[ clientKey, serverKey ] = extractKeys(masterSecret)</code>
         </pre>
-        </ul>
 	</div></section>
 
 	<section id="handshake-encrypted-data" class="slide"><div>
@@ -364,7 +352,8 @@
             <img src="pictures/7-encrypted-data.png" alt="encrypted data">
         </figure>
         <pre>
-            <code>encrypt(sharedSecret, message)</code>
+            <code>encryptRequest(clientKey, clientMAC, message)</code>
+            <code>encryptResponse(serverKey, serverMAC, message)</code>
         </pre>
 	</div></section>
 
