@@ -578,7 +578,25 @@
             <li class="next">en 2011, <a href="https://www.vasco.com/company/about_vasco/press_room/news_archive/2011/news_diginotar_reports_security_incident.aspx">Diginotar</a> signe des certificats utilisés pour intercepter le trafic gmail en Iran ; l’entreprise <a href="https://www.vasco.com/company/about_vasco/press_room/news_archive/2011/news_vasco_announces_bankruptcy_filing_by_diginotar_bv.aspx">ferme</a> quelques jours après,
             <li class="next">en 2013, l’<a href="http://googleonlinesecurity.blogspot.fr/2013/12/further-improving-digital-certificate.html">ANSSI</a> génère des certificats pour des domaines de google ; ils sont détectés aussitôt par Chrome,
             <li class="next">en 2015, <a href="https://googleonlinesecurity.blogspot.sg/2015/03/maintaining-digital-certificate-security.html">Google</a> exclue les certificats signés par l’AC Chinoise <a href="https://en.wikipedia.org/wiki/China_Internet_Network_Information_Center">CNNIC</a> car ils ont signés des certificats Google, le <a href="http://www1.cnnic.cn/AU/MediaC/Announcement/201504/t20150402_52049.htm">CNNIC répond</a>,
-            <li class="next">en octobre 2015, Symantec : http://www.symantec.com/connect/blogs/tough-day-leaders / http://www.engadget.com/2015/10/29/google-warns-symantec-over-certificates/
+            <li class="next">en 2015, Symantec <a href="http://www.symantec.com/connect/blogs/tough-day-leaders">annonce une fuite de quelques certificats</a>,
+                Google <a href="https://googleonlinesecurity.blogspot.fr/2015/10/sustaining-digital-certificate-security.html">en découvre 2522</a> et leur impose Certificate Transparency.
+        </ul>
+    </div></section>
+
+	<section id="certificate-transparency" class="slide"><div>
+        <h2>Certificate Transparency</h2>
+        <h3>Problèmes :</h3>
+        <ul>
+            <li class="next">des <a href="https://mozillacaprogram.secure.force.com/CA/IncludedCACertificateReport">centaines de CA</a> dans nos magasins (entreprises, gouvernements),
+            <li class="next">n’importe quel CA peut signer un certificat pour n’importe quel domaine,
+            <li class="next">les CA, des cibles de choix (rogue CA).
+        </ul>
+        <h3 class="next">Une réponse : <a href="http://www.certificate-transparency.org/">certificate transparency</a></h3>
+        <ul>
+            <li class="next">Projet initié par Google, <abbr title="Open Source Software">OSS</abbr> : <a href="https://github.com/google/certificate-transparency">github.com/google/certificate-transparency</a>,
+            <li class="next">Base de données permettant de savoir qui a signé quoi,
+            <li class="next">Système opéré par Google (3 noeuds), Digicert et Symantec,
+            <li class="next">Imposé pour les CA par Google Chome pour les EV.
         </ul>
     </div></section>
 
@@ -611,23 +629,6 @@
             <dt class="next"><i class="fa fa-ban"></i>Google Chrome CRLSet :
             <dd class="next">Liste de 256 Ko de n° de certificat invalide ; régulièrement mise à jour par Chrome ; ne contient qu’une infime partie des certificats révoqués...
         </dl>
-    </div></section>
-
-	<section id="certificate-transparency" class="slide"><div>
-        <h2>Certificate Transparency</h2>
-        <h3>Problèmes :</h3>
-        <ul>
-            <li class="next">des <a href="https://mozillacaprogram.secure.force.com/CA/IncludedCACertificateReport">centaines de CA</a> dans nos magasins (entreprises, gouvernements),
-            <li class="next">n’importe quel CA peut signer un certificat pour n’importe quel domaine,
-            <li class="next">les CA, des cibles de choix (rogue CA).
-        </ul>
-        <h3 class="next">Une réponse : <a href="http://www.certificate-transparency.org/">certificate transparency</a></h3>
-        <ul>
-            <li class="next">Projet initié par Google, <abbr title="Open Source Software">OSS</abbr> : <a href="https://github.com/google/certificate-transparency">github.com/google/certificate-transparency</a>,
-            <li class="next">Base de données permettant de savoir qui a signé quoi,
-            <li class="next">Système opéré par Google (3 noeuds), Digicert et Symantec,
-            <li class="next">Imposé pour les CA par Google Chome pour les EV.
-        </ul>
     </div></section>
 
 	<section id="DANE" class="slide"><div>
@@ -685,10 +686,10 @@
         <h2><i class="fa fa-bug"></i> Bugs</h2>
         <a href="https://xkcd.com/221/" class="clear"><img src="pictures/random_number.png" alt="xkcd" /></a>
         <ul>
-            <li><a href="https://www.schneier.com/blog/archives/2008/05/random_number_b.html">DSA-1571-1</a> : /dev/random prédictif chez Debian en 2008,
-            <li class="next"><a href="http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2014-1266">CVE-2014-1266</a> : goto fail chez Apple en 2014,
-            <li class="next"><a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0092">CVE-2014-0092</a> : bug sur GnuTLS en 2014,
-            <li class="next"><a href="https://www.bortzmeyer.org/7366.html">RFC 7366</a> : "MAC-then-encrypt" potentiellement dangereux, donc "Encrypt-then-MAC".
+            <li>2008 : <a href="https://www.schneier.com/blog/archives/2008/05/random_number_b.html">DSA-1571-1</a> : /dev/random sur Debian limité à 32768 valeurs,
+            <li class="next">2014 : <a href="http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2014-1266">CVE-2014-1266</a> : <a href="https://opensource.apple.com/source/Security/Security-55471/libsecurity_ssl/lib/sslKeyExchange.c?txt">goto fail</a> chez Apple,
+            <li class="next">2014 : <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0092">CVE-2014-0092</a> : <a href="https://www.gitorious.org/gnutls/gnutls/commit/6aa26f78150ccbdf0aec1878a41c17c41d358a3b">goto cleanup</a> sur GnuTLS,
+            <li class="next">2014 : <a href="https://www.bortzmeyer.org/7366.html">RFC 7366</a> : "MAC-then-encrypt" potentiellement dangereux, donc "Encrypt-then-MAC".
         </ul>
     </div></section>
 
@@ -754,6 +755,7 @@
 		<h2>Mixed content</h2>
 https://developer.mozilla.org/en-US/docs/Security/MixedContent
 https://googleonlinesecurity.blogspot.com.au/2015/10/simplifying-page-security-icon-in-chrome.html
+        <img src="pictures/dubious-as-neutral.png" alt="Chrome address bar"/>
     </div></section>
 
 	<section id="HSTS" class="slide"><div>
