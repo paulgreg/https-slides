@@ -45,6 +45,7 @@
         .slide figure.handshake figcaption     { width: 350px; }
         .slide figure.handshake figcaption img { width: 350px; }
         .slide h3                              { color: #666; font-size: 32px; }
+        .slide .mark                           { position: absolute; background-color: rgba(255, 225, 0, 0.24); border: 1px solid black; height: 10px; }
     </style>
 </head>
 <body class="list">
@@ -287,6 +288,12 @@
                 <code>TCP 443</code>
             </figcaption>
             <img src="pictures/1-client-hello.png" alt="wireshark : client hello" />
+            <span class="mark hello"   style="top: 195px; left: 570px; width: 60px;"></span>
+            <span class="mark version" style="top: 228px; left: 522px; width: 40px;"></span>
+            <span class="mark random"  style="top: 260px; left: 488px; width: 55px;"></span>
+            <span class="mark session" style="top: 272px; left: 482px; width: 50px;"></span>
+            <span class="mark suites"  style="top: 295px; left: 482px; width: 65px;"></span>
+            <span class="mark sni"     style="top: 565px; left: 488px; width: 105px;"></span>
         </figure>
 	</div></section>
 
@@ -295,6 +302,11 @@
         <figure class="sidebyside handshake">
             <figcaption><img src="pictures/2-handshake.png" alt="handshake : server hello" /></figcaption>
             <img src="pictures/2-server-hello.png" alt="server hello" />
+            <span class="mark hello"   style="top: 219px; left: 596px; width: 74px;"></span>
+            <span class="mark version" style="top: 260px; left: 538px; width: 48px;"></span>
+            <span class="mark random"  style="top: 302px; left: 496px; width: 70px;"></span>
+            <span class="mark session" style="top: 329px; left: 488px; width: 60px;"></span>
+            <span class="mark suite"   style="top: 342px; left: 488px; width: 72px;"></span>
         </figure>
 	</div></section>
 
@@ -307,6 +319,10 @@
             <figcaption><img src="pictures/4-handshake.png" alt="handshake : server certificates" /></figcaption>
             <img src="pictures/3-certificates.png" alt="server certificates" />
             <img src="pictures/ca-store.png" alt="browser CA store" class="store" />
+            <span class="mark certificate"  style="top: 221px; left: 602px; width: 70px;"></span>
+            <span class="mark mappy"        style="top: 307px; left: 612px; width: 300px;"></span>
+            <span class="mark symatec"      style="top: 335px; left: 612px; width: 300px;"></span>
+            <span class="mark hello-done"   style="top: 420px; left: 603px; width: 105px;"></span>
         </figure>
 	</div></section>
 
@@ -323,6 +339,9 @@
                 </pre>
             </figcaption>
             <img src="pictures/5-key-exchange.png" alt="key exchange">
+            <span class="mark key-exchange"         style="top: 221px; left: 603px; width: 120px;"></span>
+            <span class="mark change-cipher-spec"   style="top: 236px; left: 784px; width: 110px;"></span>
+            <span class="mark encrypted-message"    style="top: 308px; left: 728px; width: 170px;"></span>
         </figure>
 	</div></section>
 
@@ -333,6 +352,8 @@
                 <img src="pictures/6-handshake.png" alt="handshake : key exchange" />
             </figcaption>
             <img src="pictures/6-change-cipher-spec.png" alt="change cipher spec">
+            <span class="mark change-cipher-spec"  style="top: 164px; left: 782px; width: 112px;"></span>
+            <span class="mark encrypted-message"   style="top: 236px; left: 724px; width: 170px;"></span>
         </figure>
         <pre>
             <code>masterSecret = <abbr title="pseudo random function">PRF</abbr>(client.preMasterSecret,</code>
@@ -350,6 +371,7 @@
                 <img src="pictures/7-handshake.png" alt="poignée de main">
             </figcaption>
             <img src="pictures/7-encrypted-data.png" alt="encrypted data">
+            <span class="mark encrypted-message"   style="top: 223px; left: 482px; width: 158px;"></span>
         </figure>
         <pre>
             <code>encryptRequest(clientKey, clientMAC, message)</code>
