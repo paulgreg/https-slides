@@ -18,6 +18,7 @@
         .slide a                               { color: #333; }
         .slide a.clear                         { background: none; }
         .slide i.fa                            { font-style: normal; margin-right: 8px; }
+        .slide .fa.nomargin                    { display: inline; margin: 0 !important; }
         .slide ul                              { margin-bottom: .5em; }
         .slide ul.inner                        { padding-left: 2em; }
         .slide ul.icons li:before              { content: ""; }
@@ -101,7 +102,7 @@
         </figure>
 	</div></section>
 	<section id="interception-traffic-http-explications" class="slide"><div>
-		<h2>Fonctionnement de l’attaque</h2>
+		<h2>Fonctionnement de l’attaque (<a href="http://blog.philippheckel.com/2013/07/01/how-to-use-mitmproxy-to-read-and-modify-https-traffic-of-your-phone/">mitmproxy</a>)</h2>
         <figure class="center">
             <img src="pictures/https_raspberry.svg" class="svg" alt="Fonctionnement de l’interception" />
             <figcaption></figcaption>
@@ -240,15 +241,15 @@
             <code><mark>0c06d876dabb4403cede1245e3b0bf1d81afd497</mark></code>
        </pre>
        <p class="next">
-           <a href="https://fr.wikipedia.org/wiki/MD4">MD4</a>,
-           <a href="https://fr.wikipedia.org/wiki/MD5">MD5</a>,
-           <a href="https://fr.wikipedia.org/wiki/SHA-1">SHA-1</a>,
+           <s><a href="https://fr.wikipedia.org/wiki/MD5">MD5</a></s>,
+               <s><a href="https://fr.wikipedia.org/wiki/SHA-1">SHA-1</a></s>,
            <a href="https://fr.wikipedia.org/wiki/SHA-2">SHA-2</a> <small>(SHA-224, SHA-256, SHA-384 et SHA-512)</small>,
            <a href="https://fr.wikipedia.org/wiki/SHA-3">SHA3</a>.
        </p>
        <p class="next">
-        <a href="https://fr.wikipedia.org/wiki/Message_Authentication_Code">MAC</a> /
-        <a href="https://fr.wikipedia.org/wiki/Keyed-Hash_Message_Authentication_Code">HMAC</a> : influencée par une clé, permet de vérifier simultanément l'intégrité et l'authenticité d’un message.
+       <a href="https://fr.wikipedia.org/wiki/Message_Authentication_Code"><abbr title="Message authentification code">MAC</abbr></a> /
+       <a href="https://fr.wikipedia.org/wiki/Keyed-Hash_Message_Authentication_Code"><abbr title="Keyed message authentification code">HMAC</abbr></a> :
+        influencée par une clé, permet de vérifier simultanément l'intégrité et l'authenticité d’un message.
        </p>
     </div></section>
     <section id="signature-numerique" class="slide signature"><div>
@@ -265,14 +266,20 @@
 	<section id="versions-details" class="slide"><div>
 		<h2>Versions</h2>
         <ul class="icons">
-            <li><i class="fa fa-code-fork"></i><abbr title="Secure Socket Layer">SSL</abbr> 1.0 (jamais publié),
+            <li><i class="fa fa-code-fork"></i><abbr title="Secure Socket Layer">SSL</abbr> 1.0 (jamais publié) par <a href="https://en.wikipedia.org/wiki/Netscape">Netscape</a>,
             <li class="next"><i class="fa fa-code-fork"></i>SSL 2.0 en 1995, <small>déprécié en 2011 par la <a href="https://tools.ietf.org/html/rfc6176"><abbr title="Request for comment">RFC</abbr> 6176</a></small>.
             <li class="next"><i class="fa fa-code-fork"></i>SSL 3.0 / <a href="https://tools.ietf.org/html/rfc6101">RFC 6101</a> en 1996 <small>(refonte)</small>, <small>déprécié en 2015 par la <a href="https://tools.ietf.org/html/rfc7568">RFC 7568</a></small>,
             <li class="next"><i class="fa fa-code-fork"></i><abbr title="Transport Layerr Security">TLS</abbr> 1.0 / <a href="https://tools.ietf.org/html/rfc2246">RFC 2246</a> en 1999 <small>(modifications mineures)</small>,
-            <li class="next"><i class="fa fa-code-fork"></i>TLS 1.1 / <a href="https://tools.ietf.org/html/rfc4346">RFC 4346</a> en 2006 <small>(protections contre les attaques sur <abbr title="Cipher Block Chaining">CBC</abbr>)</small>,
-            <li class="next"><i class="fa fa-code-fork"></i>TLS 1.2 / <a href="https://tools.ietf.org/html/rfc5246">RFC 5246</a> en 2008 <small>(nombreuses améliorations de sécurité)</small>,
-            <li class="next"><i class="fa fa-code-fork"></i>Mise à jour sur TLS 1.2 en 2011/ <a href="https://tools.ietf.org/html/rfc6176">RFC 6176</a> <small>(suppression compatibilité SSL)</small>,
-            <li class="next"><i class="fa fa-code-fork"></i>TLS 1.3 / <a href="https://tools.ietf.org/html/draft-ietf-tls-tls13-10">brouillon</a> en cours <small>(suppression de la compression, de la renégociation, de MD5, SHA-224, SSL, RC4, optimisation réseau)</small>.
+            <li class="next"><i class="fa fa-code-fork"></i>TLS 1.1 / <a href="https://tools.ietf.org/html/rfc4346">RFC 4346</a> en 2006 <small>(<i class="fa fa-plus-circle nomargin"></i> protections contre les attaques sur <abbr title="Cipher Block Chaining">CBC</abbr>)</small>,
+            <li class="next"><i class="fa fa-code-fork"></i>TLS 1.2 / <a href="https://tools.ietf.org/html/rfc5246">RFC 5246</a> en 2008 <small>(<i class="fa fa-plus-circle nomargin"></i> améliorations de sécurité)</small>,
+            <li class="next"><i class="fa fa-code-fork"></i>Mise à jour sur TLS 1.2 en 2011/ <a href="https://tools.ietf.org/html/rfc6176">RFC 6176</a> <small>(<i class="fa fa-ban nomargin"></i> compatibilité SSL)</small>,
+            <li class="next"><i class="fa fa-code-fork"></i>TLS 1.3 / <a href="https://tools.ietf.org/html/draft-ietf-tls-tls13-10">brouillon</a> en cours
+                <small>(<i class="fa fa-ban nomargin"></i> compression,
+                <i class="fa fa-ban nomargin"></i> renégociation,
+                <i class="fa fa-ban nomargin"></i> MD5,
+                <i class="fa fa-ban nomargin"></i> RC4,
+                <i class="fa fa-plus-circle nomargin"></i> optimisation réseau,
+                <i class="fa fa-plus-circle nomargin"></i> SHA-224)</small>.
         </ul>
 	</div></section>
 
@@ -393,7 +400,7 @@
             <li>ECDHE-ECDSA-AES256-SHA384
             <li>ECDHE-RSA-AES256-SHA
             <li>ECDHE-ECDSA-AES256-SHA
-            <li><abbr title="Secure Remote Password">SRP</abbr>-<abbr title="Digital Signature Standard">DSS</abbr>-AES-256-<abbr title="Cipher Block Chaining ">CBC</abbr>-SHA
+            <li><abbr title="Secure Remote Password">SRP</abbr>-<abbr title="Digital Signature Standard">DSS</abbr>-AES-256-<abbr title="Cipher Block Chaining">CBC</abbr>-SHA
             <li>SRP-RSA-AES-256-CBC-SHA
             <li>SRP-AES-256-CBC-SHA
             <li><abbr title="Ephemeral Diffie-Hellman">DHE</abbr>-DSS-AES256-GCM-SHA384
@@ -656,21 +663,22 @@
             p { margin: 2em 0; }
         </style>
         <h2><i class="fa fa-wrench"></i> S’attaquer à la cryptographie ?</h2>
-        <p>Pourquoi s’attaquer à la cryptographie alors qu’il existe des moyens légaux ?</p>
+        <p>Pourquoi s’attaquer à la cryptographie alors qu’il existe d’autres moyens ?</p>
         <figure class="center next">
             <a href="https://xkcd.com/538/" class="clear"><img src="pictures/security.png" alt="xkcd" /></a>
-            <figcaption>ou pas...</figcaption>
+            <figcaption></figcaption>
         </figure>
     </div></section>
 
 	<section id="attaques-faciles" class="slide"><div>
 		<h2><i class="fa fa-keyboard-o"></i> Attaques &laquo; faciles &raquo;</h2>
         <ul>
-            <li>Récupèrer les infos ailleurs que pendant le transport (chez l’hébergeur...),
+            <li>récupèrer les infos ailleurs que pendant le transport (chez l’hébergeur...),
             <li class="next">via une attaque &laquo; <a href="https://en.wikipedia.org/wiki/Moxie_Marlinspike#SSL_stripping">SSLStrip</a> &raquo;, inventé par <a href="https://en.wikipedia.org/wiki/Moxie_Marlinspike">Moxie Marlinspike</a> (<abbr title="Man in the middle">MITM</abbr> remplaçant HTTPS par HTTP au sein des pages, d’où <abbr title="Http Strict Transport Security">HSTS</abbr>),
-            <li class="next">Faire installer un <a href="https://fr.wikipedia.org/wiki/Enregistreur_de_frappe">enregistreur de frappe</a> (keylogger),
-            <li class="next">les gouvernements peuvent générer un certificat (<small>Government of /France|Hong Kong|Japan|Spain|Taiwan|Netherlands|Turkey/</small>, d’où le certificate pinning)
-            <li class="next">ou alors faire installer une CA &laquo; maison &raquo; pour faire de l’interception (comme <a href="http://blog.philippheckel.com/2013/07/01/how-to-use-mitmproxy-to-read-and-modify-https-traffic-of-your-phone/">mitmproxy</a>) légale (recommandations de la <a href="http://www.cnil.fr/linstitution/actualite/article/article/analyse-de-flux-https-bonnes-pratiques-et-questions/">CNIL</a> et de l’<a href="http://www.ssi.gouv.fr/guide/recommandations-de-securite-concernant-lanalyse-des-flux-https/">ANSSI</a>) ou illégale...
+            <li class="next">faire installer un <a href="https://fr.wikipedia.org/wiki/Enregistreur_de_frappe">enregistreur de frappe</a> (keylogger) ou demander la clé privée,
+            <li class="next">les gouvernements peuvent générer un certificat (<small>Government of /France|Hong Kong|Japan|Spain|Taiwan|Netherlands|Turkey/</small>, d’où le certificate pinning),
+            <li class="next">ou alors installer une CA &laquo; maison &raquo; pour faire de l’interception légale (recommandations de la <a href="http://www.cnil.fr/linstitution/actualite/article/article/analyse-de-flux-https-bonnes-pratiques-et-questions/">CNIL</a> et de l’<a href="http://www.ssi.gouv.fr/guide/recommandations-de-securite-concernant-lanalyse-des-flux-https/">ANSSI</a>) ou illégale...
+            <li class="next">même principe pour les antivirus (ou <a href="https://support.lenovo.com/us/en/product_security/superfish">superfish</a>).
         </ul>
     </div></section>
 
@@ -689,51 +697,86 @@
             <li>2008 : <a href="https://www.schneier.com/blog/archives/2008/05/random_number_b.html">DSA-1571-1</a> : /dev/random sur Debian limité à 32768 valeurs,
             <li class="next">2014 : <a href="http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2014-1266">CVE-2014-1266</a> : <a href="https://opensource.apple.com/source/Security/Security-55471/libsecurity_ssl/lib/sslKeyExchange.c?txt">goto fail</a> chez Apple,
             <li class="next">2014 : <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0092">CVE-2014-0092</a> : <a href="https://www.gitorious.org/gnutls/gnutls/commit/6aa26f78150ccbdf0aec1878a41c17c41d358a3b">goto cleanup</a> sur GnuTLS,
-            <li class="next">2014 : <a href="https://www.bortzmeyer.org/7366.html">RFC 7366</a> : "MAC-then-encrypt" potentiellement dangereux, donc "Encrypt-then-MAC".
+            <li class="next">2014 : <a href="https://www.bortzmeyer.org/7366.html">RFC 7366</a> : "MAC-then-encrypt" potentiellement dangereux, donc "Encrypt-then-MAC",
+            <li class="next">2015 : <a href="http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0160">CVE-2014-0160</a> : <i class="fa fa-heartbeat nomargin"></i> <a href="http://heartbleed.com/">heartbleed</a> : le serveur laisse fuiter quelques octets en RAM...
         </ul>
     </div></section>
 
-	<section id="quelques-attaques" class="slide"><div>
-        <h2><i class="fa fa-microphone"></i> Quelques attaques</h2>
-        <ul>
-            <li><a href="http://blog.cryptographyengineering.com/2013/09/the-many-flaws-of-dualecdrbg.html">Dual_EC_DRBG</a> par RSA Security avec une porte dérobé pour la NSA,
-            <li class="next"><a href="https://www.youtube.com/watch?v=hkw9tFnJk8k">Attaque sur <abbr title="Network Time Protocol">NTP</abbr></a> pour réinitialiser HSTS, craquer de &laquo; vieux &raquo; certificats 512 bits,
-            <li class="next"><a href="http://www.forbes.com/sites/timworstall/2013/12/21/researchers-break-rsa-4096-encryption-with-just-a-microphone-and-a-couple-of-emails/">Écoute du bruit</a> ou de la <a href="http://www.infosecurity-magazine.com/news/researchers-crack-rsa-encryption-via-power-supply/">consommation électrique</a> d’un ordinateur pour retrouver une clé privée (canal auxiliaire ou &laquo; side channel &raquo;).
+
         </ul>
     </div></section>
+
 
 	<section id="collision" class="slide"><div>
 		<h2><i class="fa fa-user-secret"></i> Générer des faux certificats</h2>
         <ul>
-            <li><a href="https://www.win.tue.nl/hashclash/rogue-ca/">Collision de MD5</a>
-            <li><a href="https://sites.google.com/site/itstheshappening/">Oct 8: The SHAppening: freestart collisions for SHA-1</a>
-            <li>http://blogs.windows.com/msedgedev/2015/11/04/sha-1-deprecation-update/
-            <li><a href="http://googleonlinesecurity.blogspot.fr/2014/09/gradually-sunsetting-sha-1.html">Gradually sunsetting SHA-1</a>
-            <li><a href="https://blog.filippo.io/the-unofficial-chrome-sha1-faq/">The unofficial Chrome SHA1 deprecation FAQ</a>
+            <li>avec les collisions : on jouent sur le contenu pour que la signature corresponde,
+            <li class="next">en 2008 avec <a href="https://www.win.tue.nl/hashclash/rogue-ca/">MD5</a>,
+            <li class="next">en 2015, &laquo; <a href="https://sites.google.com/site/itstheshappening/">The SHAppening</a> &raquo; : collision sur une partie de SHA1 (compression) ; on estime une <a href="https://www.schneier.com/blog/archives/2012/10/when_will_we_se.html">attaque possible pour 700 000 $</a>,
+            <li class="next">
+                d’abord <a href="http://googleonlinesecurity.blogspot.fr/2014/09/gradually-sunsetting-sha-1.html">Google</a>,
+                puis <a href="http://blogs.windows.com/msedgedev/2015/11/04/sha-1-deprecation-update/">Microsoft</a>
+                et <a href="https://blog.mozilla.org/security/2014/09/23/phasing-out-certificates-with-sha-1-based-signature-algorithms/">Mozilla</a>
+                <a href="https://blog.filippo.io/the-unofficial-chrome-sha1-faq/">bloqueront</a> les certificats et CA signés avec SHA1 dès 2016.
         </ul>
     </div></section>
 
-	<section class="slide"><div>
-		<h2>BEAST</h2>
+	<section id="beast" class="slide"><div>
+        <h2><i class="fa fa-optin-monster"></i> <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">BEAST</a>: Browser Exploit Against SSL/TLS</h2>
+        <ul>
+            <li>Faille dans certains algorithmes de chiffrement symétrique en mode <abbr title="Cipher Block Chaining">CBC</abbr> (sur les <abbr title="Initialization Vector">IV</abbr>) sur SSL 3.0 et TLS 1.0,
+            <li class="next"><a href="https://www.openssl.org/~bodo/tls-cbc.txt">initialement découverte</a> par Phillip Rogaway en 2002,
+            <li class="next">Juliano Rizzo et Thai Duong <a href="http://vnhacker.blogspot.fr/2011/09/beast.html">démontrent un <abbr title="Proof of concept">POC</abbr></a> en 2011,
+            <li class="next">nécessite de choisir le contenu à envoyer + MITM,
+            <li class="next">on préconisait alors d’utiliser <abbr title="Rivest Cipher 4">RC4</abbr> (non vulnérable),
+            <li class="next">corrigée dans TLS 1.1 en 2006.
+        </ul>
     </div></section>
 
-	<section class="slide"><div>
-		<h2>BREACH</h2>
+	<section id="crime" class="slide"><div>
+        <h2><a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">CRIME</a>: Compression Ratio Info-leak Made Easy</h2>
+        <ul>
+            <li>Faille utilisant la compression offerte par SSL/TLS (et aussi SPDY),
+            <li class="next">l’idée consiste à injecter du trafic vers le serveur cible en inspectant la taille, si celle-ci diminie (grâce à la compression), on a deviné une chaîne de caractère (par exemple le cookie),
+            <li class="next"><a href="https://www.iacr.org/cryptodb/data/paper.php?pubkey=3091">initialement découverte</a> par John Kelsey,
+            <li class="next">Juliano Rizzo et Thai Duong (encore) <a href="https://docs.google.com/presentation/d/11eBmGiHbYcHR9gL5nDyZChu_-lCa2GizeuOfaLU2HOU/edit?pli=1">démontrent un POC</a> en 2012,
+            <li class="next">nécessite de choisir le contenu à envoyer + MITM,
+            <li class="next">solution : désactiver la compression sur TLS (le cas sur tous les navigateurs récents).
+        </ul>
     </div></section>
 
-	<section class="slide"><div>
-		<h2>CRIME</h2>
+	<section id="breach" class="slide"><div>
+        <h2><a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">BREACH</a>: Browser Reconnaissance and Exfiltration via Adaptive Compression of Hypertext</h2>
+        <ul>
+            <li>découverte par Angelo Prado, Neal Harris et Yoel Gluck en 2013,
+            <li class="next">même principe que CRIME mais utilisant la compression HTTP (gzip, deflate),
+            <li class="next">touche toutes les versions de SSL/TLS, toutes les suites de chiffrement,
+            <li class="next">nécessite de choisir le contenu à envoyer + MITM,
+            <li class="next">Aucune <a href="http://breachattack.com/#mitigations">solution ultime</a> mais on peut désactiver la compression HTTP en absence de rererrer, se protéger contre les <abbr title="Cross-Site Request Forgery">CSRF</a>,...
+        </ul>
     </div></section>
 
-	<section class="slide"><div>
-		<h2>Heartbleed</h2>
-    </div></section>
-
-	<section class="slide"><div>
-		<h2>Freack &amp; Logjam</h2>
+	<section id="freak" class="slide"><div>
+		<h2>Freak: Factoring RSA EXPORT Attack Keys &amp; Logjam</h2>
         https://weakdh.org/sysadmin.html
         <a href="http://www.nextinpact.com/news/94144-logjam-apres-freak-nouvelle-faille-dans-chiffrement-connexions.htm">Logjam</a>, <a href="https://blog.cloudflare.com/logjam-the-latest-tls-vulnerability-explained/">explained</a>, <a href="http://blog.cryptographyengineering.com/2015/05/attack-of-week-logjam.html">one more explanation</a>
         http://hackaday.com/2015/10/15/how-the-nsa-can-read-your-emails/
+    </div></section>
+
+	<section id="poddle" class="slide"><div>
+		<h2>POODLE</h2>
+    </div></section>
+
+	<section id="quelques-attaques" class="slide"><div>
+        <h2><i class="fa fa-fighter-jet"></i> Quelques autres attaques</h2>
+        <ul>
+            <li>en 2010, analyse de la <a href="http://www.infosecurity-magazine.com/news/researchers-crack-rsa-encryption-via-power-supply/">consommation électrique</a> d’un ordinateur pour retrouver une clé privée (canal auxiliaire ou &laquo; side channel &raquo;),
+            <li class="next">en 2013, analyse du <a href="http://www.forbes.com/sites/timworstall/2013/12/21/researchers-break-rsa-4096-encryption-with-just-a-microphone-and-a-couple-of-emails/">bruit</a> pour la retrouver,
+            <li class="next">en 2013, <a href="http://blog.cryptographyengineering.com/2013/09/the-many-flaws-of-dualecdrbg.html">Dual_EC_DRBG</a> par RSA Security avec une porte dérobé pour la NSA,
+            <li class="next">en 2013, <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">Lucky13</a> et <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf"><abbr title="Timing Info-leak Made Easy">TIME</abbr></a>,
+            <li class="next">en 2013, attaques sur <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">RC4</a> (désactivé par Microsoft, Google et Mozilla en 2016),
+            <li class="next">en 2015, <a href="https://www.youtube.com/watch?v=hkw9tFnJk8k">Attaque sur <abbr title="Network Time Protocol">NTP</abbr></a> pour réinitialiser HSTS, craquer de &laquo; vieux &raquo; certificats 512 bits,
+        </ul>
     </div></section>
 
 	<section id="force-brute" class="slide"><div>
