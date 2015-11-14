@@ -47,6 +47,7 @@
         .slide figure.handshake figcaption img { width: 350px; }
         .slide h3                              { color: #666; font-size: 32px; }
         .slide .mark                           { position: absolute; background-color: rgba(255, 225, 0, 0.24); border: 1px solid black; height: 10px; }
+        .slide table td                        { padding: 0.2em 0.25em; }
     </style>
 </head>
 <body class="list">
@@ -147,9 +148,9 @@
 	</div></section>
 	<section id="html5-seo" class="slide"><div>
         <style scoped>
-            p { margin-top: 2em; }
+            p { margin-top: 1em; }
         </style>
-        <h2>Pour le <abbr title="Search engine optimization">SEO</abbr> et pour HTML5</h2>
+        <h2>Pour le <abbr title="Search engine optimization">SEO</abbr>, HTML5 et iOS/OS X</h2>
         <p><i class="fa fa-google"></i><a href="http://googleonlinesecurity.blogspot.fr/2014/08/https-as-ranking-signal_6.html">Google préférera un site en HTTPS</a>.</p>
         <p class="next"><i class="fa fa-html5"></i>Sans HTTPS, <a href="https://blog.mozilla.org/security/2015/04/30/deprecating-non-secure-http/">Firefox</a> et <a href="https://sites.google.com/a/chromium.org/dev/Home/chromium-security/deprecating-powerful-features-on-insecure-origins">Chrome</a> bloqueront certaines API JavaScript :</p>
         <ul class="inner next">
@@ -159,7 +160,9 @@
             <li><code>geolocation</code>,
             <li><code>getUserMedia</code>, ...
         </ul>
+        <p class="next"><i class="fa fa-apple"></i> Apple <a href="https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW28">force HTTPS avec AppTransportSecurity</a> depuis  iOS 9.0 et OS X v10.11.</p>
     </div></section>
+
 	<section id="http2" class="slide"><div>
 		<h2>Pour bénéficier de <a href="https://www.bortzmeyer.org/7540.html" title="RFC 7540: Hypertext Transfer Protocol version 2">HTTP/2.0</a></h2>
         <figure>
@@ -167,13 +170,14 @@
             <figcaption><a href="https://ma.ttias.be/architecting-websites-http2-era/#tls">Architecting Websites For The HTTP/2 Era</a>, <a href="http://daniel.haxx.se/blog/2015/03/06/tls-in-http2/">TLS in HTTP/2</a></figcaption>
         </figure>
     </div></section>
-	<section id="droit-vie-prive" class="slide"><div>
+
+	<!--section id="droit-vie-prive" class="slide"><div>
 		<h2>Pour respecter la vie privée de vos utilisateurs</h2>
         <figure>
             <blockquote><p>Dire que vous vous n'en avez rien à faire de la vie privée parce que vous n'avez rien à cacher, c'est comme dire que vous n'en avez rien à faire de la liberté d'expression parce que vous n'avez rien à dire.</p></blockquote>
             <figcaption>Edward Snowden : <a href="https://www.youtube.com/watch?v=bpO3GeXTceM">about Privacy</a></figcaption>
         </figure>
-	</div></section>
+	</div></section-->
 
 	<section id="convaincu" class="slide tell"><div>
 		<h2>Convaincu <i class="fa fa-question-circle"></i></h2>
@@ -218,18 +222,7 @@
             <figcaption>2 familles : nombres premiers (<a href="https://fr.wikipedia.org/wiki/Chiffrement_RSA">RSA</a>) et courbes elliptiques (<a href="https://fr.wikipedia.org/wiki/Cryptographie_sur_les_courbes_elliptiques">EC</a>)</figcaption>
         </figure>
     </div></section>
-	<section id="doutes" class="slide"><div>
-		<h2>Le chiffrement, c’est solide ?</h2>
-        <figure>
-            <blockquote><p>Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on. Unfortunately, endpoint security is so terrifically weak that NSA can frequently find ways around it.</p></blockquote>
-            <figcaption>Edward Snowden : <a href="http://techcrunch.com/2013/06/17/encrypting-your-email-works-says-nsa-whistleblower-edward-snowden/">Encrypting Your Email Works</a></figcaption>
-        </figure>
-        <figure class="next">
-            <blockquote><p>Can the NSA break AES? My guess is that they can't.</p></blockquote>
-            <blockquote><p>Still, I trust the mathematics.</p></blockquote>
-            <figcaption>Bruce Schneier : <a href="https://www.schneier.com/blog/archives/2012/03/can_the_nsa_bre.html">Can the NSA Break AES?</a>, <a href="https://www.schneier.com/blog/archives/2013/09/the_nsas_crypto_1.html">The NSA's Cryptographic Capabilities</a></figcaption>
-        </figure>
-    </div></section>
+
     <section id="fonction-hachage" class="slide"><div>
         <h2><i class="fa fa-cutlery"></i> Fonction de hachage</h2>
         <pre>
@@ -658,6 +651,70 @@
 		<h2><i class="fa fa-bomb"></i> Attaques</h2>
 	</div></section>
 
+	<section id="force-brute" class="slide"><div>
+        <style scoped>
+            .broken, .broken a     { color:red; }
+            .unsecure, .unsecure a { color:orange; }
+            .safe, .safe a         { color:green; }
+        </style>
+        <h2><i class="fa fa-server"></i> Pure <a href="https://fr.wikipedia.org/wiki/Attaque_par_force_brute">force brute</a> ?</h2>
+        <table>
+            <tr>
+                <th>type
+                <th>bits
+                <th>crack
+                <th>et aujourd’hui ?
+            <tr class="broken">
+                <td><i class="fa fa-key" style="color: green;"></i>
+                <td>DES 56
+                <td><a href="http://cs-exhibitions.uni-klu.ac.at/index.php?id=263">1997</a>
+                <td><a href="https://en.wikipedia.org/wiki/Data_Encryption_Standard#Brute_force_attack">&lt; 24 heures</a>
+            <tr class="safe">
+                <td><i class="fa fa-key" style="color: green;"></i>
+                <td>AES 128
+                <td>
+                <td><a href="https://blog.cloudflare.com/why-are-some-keys-small/">avec 1 000 000 000 PC, 660 x l’age de l’univers</a>
+            <tr class="safe">
+                <td><i class="fa fa-key" style="color: green;"></i>
+                <td>AES 256
+                <td>
+                <td><a href="https://crypto.stackexchange.com/questions/1145/how-much-would-it-cost-in-u-s-dollars-to-brute-force-a-256-bit-key-in-a-year">8 octodecillion $</a> (<small>ou 10<sup>44</sup> le PIB mondial</small>)
+            <tr class="broken">
+                <td><i class="fa fa-key" style="color: blue;"></i><i class="fa fa-key" style="color: orange"></i>
+                <td>RSA 512
+                <td><a href="https://en.wikipedia.org/wiki/RSA_numbers#RSA-155">1999</a>
+                <td>entre <a href="https://www.youtube.com/watch?v=hkw9tFnJk8k">2,5 jours</a> et <a href="https://eprint.iacr.org/2015/1000.pdf">7 heures</a> via <a href="https://aws.amazon.com/fr/ec2/">EC2</a>
+            <tr class="broken">
+                <td><i class="fa fa-key" style="color: blue;"></i><i class="fa fa-key" style="color: orange"></i>
+                <td>RSA 768
+                <td><a href="https://en.wikipedia.org/wiki/RSA_numbers#RSA-768">2009</a>
+                <td>
+            <tr class="unsecure">
+                <td><i class="fa fa-key" style="color: blue;"></i><i class="fa fa-key" style="color: orange"></i>
+                <td>RSA 1024
+                <td>
+                    <td><a href="http://cr.yp.to/talks/2012.12.28/slides.pdf">1 an via Conficker</a> <small>(<a href="https://en.wikipedia.org/wiki/Conficker">9~15M PC</a>, <a href="https://en.wikipedia.org/wiki/RSA_numbers#RSA-1024">100 000 $ à la clé</a>)</small>
+            <tr class="safe">
+                <td><i class="fa fa-key" style="color: blue;"></i><i class="fa fa-key" style="color: orange"></i>
+                <td>RSA 2048
+                <td>
+                <td><a href="https://www.digicert.com/TimeTravel/math.htm">2<sup>32</sup> plus long que 1024 bits</a> <small>(<a href="https://en.wikipedia.org/wiki/RSA_numbers#RSA-2048">200 000 $ à la clé</a>)</small>
+        </table>
+    </div></section>
+
+	<section id="doutes" class="slide"><div>
+		<h2>Le chiffrement, c’est solide ?</h2>
+        <figure>
+            <blockquote><p>Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on. Unfortunately, endpoint security is so terrifically weak that NSA can frequently find ways around it.</p></blockquote>
+            <figcaption>Edward Snowden : <a href="http://techcrunch.com/2013/06/17/encrypting-your-email-works-says-nsa-whistleblower-edward-snowden/">Encrypting Your Email Works</a></figcaption>
+        </figure>
+        <figure class="next">
+            <blockquote><p>Can the NSA break AES? My guess is that they can't.</p></blockquote>
+            <blockquote><p>Still, I trust the mathematics.</p></blockquote>
+            <figcaption>Bruce Schneier : <a href="https://www.schneier.com/blog/archives/2012/03/can_the_nsa_bre.html">Can the NSA Break AES?</a>, <a href="https://www.schneier.com/blog/archives/2013/09/the_nsas_crypto_1.html">The NSA's Cryptographic Capabilities</a></figcaption>
+        </figure>
+    </div></section>
+
 	<section id="pourquoi-attaquer-la-crypto" class="slide"><div>
         <style scoped>
             p { margin: 2em 0; }
@@ -702,11 +759,6 @@
         </ul>
     </div></section>
 
-
-        </ul>
-    </div></section>
-
-
 	<section id="collision" class="slide"><div>
 		<h2><i class="fa fa-user-secret"></i> Générer des faux certificats</h2>
         <ul>
@@ -725,8 +777,7 @@
         <h2><i class="fa fa-optin-monster"></i> <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">BEAST</a>: Browser Exploit Against SSL/TLS</h2>
         <ul>
             <li>Faille dans certains algorithmes de chiffrement symétrique en mode <abbr title="Cipher Block Chaining">CBC</abbr> (sur les <abbr title="Initialization Vector">IV</abbr>) sur SSL 3.0 et TLS 1.0,
-            <li class="next"><a href="https://www.openssl.org/~bodo/tls-cbc.txt">initialement découverte</a> par Phillip Rogaway en 2002,
-            <li class="next">Juliano Rizzo et Thai Duong <a href="http://vnhacker.blogspot.fr/2011/09/beast.html">démontrent un <abbr title="Proof of concept">POC</abbr></a> en 2011,
+            <li class="next">Juliano Rizzo et Thai Duong <a href="http://vnhacker.blogspot.fr/2011/09/beast.html">démontrent un <abbr title="Proof of concept">POC</abbr></a> en 2011 (principe <a href="https://www.openssl.org/~bodo/tls-cbc.txt">découvert par Phillip Rogaway en 2002</a>),
             <li class="next">nécessite de choisir le contenu à envoyer + MITM,
             <li class="next">on préconisait alors d’utiliser <abbr title="Rivest Cipher 4">RC4</abbr> (non vulnérable),
             <li class="next">corrigée dans TLS 1.1 en 2006.
@@ -734,37 +785,56 @@
     </div></section>
 
 	<section id="crime" class="slide"><div>
-        <h2><a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">CRIME</a>: Compression Ratio Info-leak Made Easy</h2>
+        <h2><i class="fa fa-bolt"></i> <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">CRIME</a>: Compression Ratio Info-leak Made Easy</h2>
         <ul>
             <li>Faille utilisant la compression offerte par SSL/TLS (et aussi SPDY),
             <li class="next">l’idée consiste à injecter du trafic vers le serveur cible en inspectant la taille, si celle-ci diminie (grâce à la compression), on a deviné une chaîne de caractère (par exemple le cookie),
-            <li class="next"><a href="https://www.iacr.org/cryptodb/data/paper.php?pubkey=3091">initialement découverte</a> par John Kelsey,
-            <li class="next">Juliano Rizzo et Thai Duong (encore) <a href="https://docs.google.com/presentation/d/11eBmGiHbYcHR9gL5nDyZChu_-lCa2GizeuOfaLU2HOU/edit?pli=1">démontrent un POC</a> en 2012,
+            <li class="next">Juliano Rizzo et Thai Duong (encore) <a href="https://docs.google.com/presentation/d/11eBmGiHbYcHR9gL5nDyZChu_-lCa2GizeuOfaLU2HOU/edit?pli=1">démontrent un POC</a> en 2012 (principe <a href="https://www.iacr.org/cryptodb/data/paper.php?pubkey=3091">découvert</a> par John Kelsey en 2002),
             <li class="next">nécessite de choisir le contenu à envoyer + MITM,
-            <li class="next">solution : désactiver la compression sur TLS (le cas sur tous les navigateurs récents).
+            <li class="next">solution : désactiver la compression sur TLS.
         </ul>
     </div></section>
 
 	<section id="breach" class="slide"><div>
-        <h2><a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">BREACH</a>: Browser Reconnaissance and Exfiltration via Adaptive Compression of Hypertext</h2>
+        <h2><i class="fa fa-bolt"></i> <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">BREACH</a>: Browser Reconnaissance and Exfiltration via Adaptive Compression of Hypertext</h2>
         <ul>
             <li>découverte par Angelo Prado, Neal Harris et Yoel Gluck en 2013,
             <li class="next">même principe que CRIME mais utilisant la compression HTTP (gzip, deflate),
             <li class="next">touche toutes les versions de SSL/TLS, toutes les suites de chiffrement,
             <li class="next">nécessite de choisir le contenu à envoyer + MITM,
-            <li class="next">Aucune <a href="http://breachattack.com/#mitigations">solution ultime</a> mais on peut désactiver la compression HTTP en absence de rererrer, se protéger contre les <abbr title="Cross-Site Request Forgery">CSRF</a>,...
+            <li class="next">Aucune <a href="http://breachattack.com/#mitigations">solution ultime</a> mais on peut désactiver la compression HTTP en absence de rererrer, se protéger contre les <abbr title="Cross-Site Request Forgery">CSRF</abbr>,...
+        </ul>
+    </div></section>
+
+	<section id="poddle" class="slide"><div>
+        <h2><i class="fa fa-level-down"></i> <a href="https://www.openssl.org/~bodo/ssl-poodle.pdf">POODLE</a>: Padding Oracle On Downgraded Legacy Encryption</h2>
+        <ul>
+            <li>Faille <a href="https://www.openssl.org/~bodo/ssl-poodle.pdf">découverte par Bodo Möller, Thai Duong et Krzysztof Kotowicz</a> (Google) en 2014 sur SSL 3.0,
+            <li class="next">Attaque <abbr title="Man in the middle">MITM</abbr> où la connexion est dégradée vers SSL 3.0 et où l’on pourra utiliser BEAST pour casser le chiffrement,
+            <li class="next">Solution : désactiver SSL 3.0
         </ul>
     </div></section>
 
 	<section id="freak" class="slide"><div>
-		<h2>Freak: Factoring RSA EXPORT Attack Keys &amp; Logjam</h2>
-        https://weakdh.org/sysadmin.html
-        <a href="http://www.nextinpact.com/news/94144-logjam-apres-freak-nouvelle-faille-dans-chiffrement-connexions.htm">Logjam</a>, <a href="https://blog.cloudflare.com/logjam-the-latest-tls-vulnerability-explained/">explained</a>, <a href="http://blog.cryptographyengineering.com/2015/05/attack-of-week-logjam.html">one more explanation</a>
-        http://hackaday.com/2015/10/15/how-the-nsa-can-read-your-emails/
+        <h2><i class="fa fa-level-down"></i> <a href="https://freakattack.com/">FREAK</a>: Factoring RSA EXPORT Attack Keys</h2>
+        <ul>
+            <li>Faille <a href="https://www.smacktls.com/">découverte</a> par l’<a href="https://www.inria.fr/">INRIA</a>, <a href="http://research.microsoft.com/">Microsoft</a> et <a href="http://www.imdea.org/">IMDEA</a> en 2015,
+            <li class="next">en 90, les USA imposent du chiffrement faible (RSA 512 bits) pour l’étranger (<code>export RSA</code>),
+            <li class="next">n’est plus en vigueur mais oublié dans les logiciels,
+            <li class="next">attaque MITM où l’on dégrade la connexion vers ce chiffrement faible, <a href="http://blog.cryptographyengineering.com/2015/03/attack-of-week-freak-or-factoring-nsa.html">cassable en quelques heures</a>,
+            <li class="next">Solution : mettre à jour OpenSSL (<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0204">CVE-2015-0204</a>) et désactiver les suites de chiffrement &laquo; faible &raquo;.
+        </ul>
     </div></section>
 
-	<section id="poddle" class="slide"><div>
-		<h2>POODLE</h2>
+	<section id="logjam" class="slide"><div>
+        <h2><i class="fa fa-level-down"></i> <a href="https://weakdh.org/imperfect-forward-secrecy-ccs15.pdf">Logjam</a></h2>
+        <ul>
+            <li>Faille <a href="https://weakdh.org/imperfect-forward-secrecy-ccs15.pdf">découverte</a> par l’INRIA, Microsoft Research, Johns Hopkins, l’Université du Michigan et celle de Pennsylvanie en 2015,
+            <li class="next">cible l’échange de clé Diffie-Hellman (sans <abbr title="elliptic curve">EC</abbr>)
+            <li class="next">l’<a href="https://blog.cloudflare.com/logjam-the-latest-tls-vulnerability-explained/">attaque</a> <a href="http://blog.cryptographyengineering.com/2015/05/attack-of-week-logjam.html">consiste</a> à remplacer une demande <code>DHE</code> en <code>DHE_EXPORT</code> (512 bits),
+            <li class="next">un autre problème : 82 % des 1 000 000 plus gros sites utilisent les mêmes valeurs pour Diffie-Hellman (en dur), permettant un pré-calcul (<small><a href="http://hackaday.com/2015/10/15/how-the-nsa-can-read-your-emails/">sûrement</a> <a href="https://freedom-to-tinker.com/blog/haldermanheninger/how-is-nsa-breaking-so-much-crypto/">exploité</a></small>),
+            <li class="next">Solution : désactiver les suites de chiffrements &laquo; faibles &raquo; (minimum 2048 bits), <a href="https://blog.flowl.info/2015/how-to-generate-a-new-diffie-hellman-group/">regénérer des paramètres Diffie-Hellman</a>, utiliser <code>ECDHE</code>.
+        </ul>
     </div></section>
 
 	<section id="quelques-attaques" class="slide"><div>
@@ -776,17 +846,6 @@
             <li class="next">en 2013, <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">Lucky13</a> et <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf"><abbr title="Timing Info-leak Made Easy">TIME</abbr></a>,
             <li class="next">en 2013, attaques sur <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">RC4</a> (désactivé par Microsoft, Google et Mozilla en 2016),
             <li class="next">en 2015, <a href="https://www.youtube.com/watch?v=hkw9tFnJk8k">Attaque sur <abbr title="Network Time Protocol">NTP</abbr></a> pour réinitialiser HSTS, craquer de &laquo; vieux &raquo; certificats 512 bits,
-        </ul>
-    </div></section>
-
-	<section id="force-brute" class="slide"><div>
-		<h2>Force brute ?</h2>
-        <ul>
-            <li>https://security.stackexchange.com/questions/4518/how-to-estimate-the-time-needed-to-crack-rsa-encryption
-            <li>http://arstechnica.com/security/2013/09/of-course-nsa-can-crack-crypto-anyone-can-the-question-is-how-much/
-            <li>Brute force, Quantum computer, bon courage...
-            <li>http://arstechnica.com/security/2015/10/breaking-512-bit-rsa-with-amazon-ec2-is-a-cinch-so-why-all-the-weak-keys/
-            <li>512 bits : 9863 minutes (plus de 2,5 jours) https://www.youtube.com/watch?v=hkw9tFnJk8k
         </ul>
     </div></section>
 
@@ -830,6 +889,17 @@ https://hacks.mozilla.org/2015/09/subresource-integrity-in-firefox-43/
 http://githubengineering.com/subresource-integrity/
     </div></section>
 
+	<section id="expiration" class="slide"><div>
+		<h2><i class="fa fa-calendar-times-o"></i> Pensez à renouveller vos certificats !</h2>
+        <p>Quelques fails :</p>
+        <ul class="icons">
+            <li><i class="fa fa-windows"></i>  Microsoft <a href="http://www.techweekeurope.co.uk/workspace/microsoft-windows-azure-cloud-fails-over-expired-ssl-certificate-108444">Azure</a> (2013),
+            <li><i class="fa fa-apple"></i> Mac <a href="http://betanews.com/2014/05/25/apples-ssl-fail-allows-certificate-to-expire-scares-os-x-users/">App Store</a> (2014),
+            <li><i class="fa fa-google"></i> <a href="http://www.ibtimes.com/google-gmail-glitch-outages-caused-failure-update-security-certificate-1870416">GMail</a> (2015),
+            <li><i class="fa fa-apple"></i> Mac <a href="http://techcrunch.com/2015/11/12/all-mac-store-apps-stopped-working-due-to-expired-security-certificate/">App Store</a> (encore en 2015) !
+        </ul>
+    </div></section>
+
 	<section id="performances" class="slide shout"><div>
 		<h2><i class="fa fa-tachometer"></i> Performances</h2>
 	</div></section>
@@ -839,6 +909,19 @@ http://githubengineering.com/subresource-integrity/
             <li>"In our production frontend machines, SSL/TLS accounts for less than 1% of the CPU load, less than 10KB of memory per connection and less than 2% of network overhead"... <a href="https://www.imperialviolet.org/2010/06/25/overclocking-ssl.html">Overclocking SSL</a>
             <li>False start https://technotes.googlecode.com/git/falsestart.html, jump start https://www.ietf.org/id/draft-vkrasnov-tls-jumpstart-00.txt
             <li>https://noncombatant.org/2014/11/23/tls-all-the-things/
+        </ul>
+    </div></section>
+
+	<section id="conclusion" class="slide shout"><div>
+		<h2><i class="fa fa-moon"></i> Conclusion</h2>
+	</div></section>
+	<section id="conclusion-details" class="slide"><div>
+		<h2>Conclusion</h2>
+        <ul>
+            <li>TLS en plus en plus obligatoire (bientôt le défaut ?),
+            <li class="next">n’ayez pas peur, ce n’est pas si compliqué d’avoir une configuration solide,
+            <li class="next">tenez vous au courant, tester votre configuration régulièrement et mettez-la à jour,
+            <li class="next">vivement la démocratisation d’outil pour automatiser TLS (et peut-être supprimer les révocations avec des certificats pour quelques jours).
         </ul>
     </div></section>
 
@@ -852,7 +935,7 @@ http://githubengineering.com/subresource-integrity/
             <li><a href="https://www.schneier.com/">Schneier on Security</a>, le blog de Bruce Schneier,
             <li><a href="http://blog.cryptographyengineering.com/">A Few Thoughts on Cryptographic Engineering</a>, le blog de Matthew Green,
             <li><a href="http://data.confs.fr/ssl-tls-sonntag/">Conférence de Benjamin Sonntag</a>,
-            <li><a href="https://www.feistyduck.com/library/openssl-cookbook/">Openssl cookbook</a>, <a href="https://wiki.mozilla.org/Security/Server_Side_TLS">Guide sur TLS</a> sur le wiki de Mozilla,
+            <li><a href="https://www.feistyduck.com/library/openssl-cookbook/">Openssl cookbook</a>, <a href="https://wiki.mozilla.org/Security/Server_Side_TLS">Guide sur TLS</a> chez Mozilla, <a href="https://www.ssllabs.com/downloads/SSL_TLS_Deployment_Best_Practices.pdf">best practices</a> chez Qualys,
             <li><a href="https://mozilla.github.io/server-side-tls/ssl-config-generator/">TLS config generator</a> par Mozilla,
             <li><a href="https://github.com/drwetter/testssl.sh">github.com/testssl.sh</a>, <a href="https://www.ssllabs.com/">SSLLabs</a> ou <a href="https://github.com/sibiantony/ssleuth">ssleuth</a> pour tester sa configuration,
             <li>Security Now, <a href="https://www.grc.com/sn/past/2013.htm">épisode 412 "SSL &amp; Perfect Forward Secrecy"</a>, juillet 2013,
