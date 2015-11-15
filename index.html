@@ -48,6 +48,9 @@
         .slide h3                              { color: #666; font-size: 32px; }
         .slide .mark                           { position: absolute; background-color: rgba(255, 225, 0, 0.24); border: 1px solid black; height: 10px; }
         .slide table td                        { padding: 0.2em 0.25em; }
+        .broken, .broken a                     { color:red; }
+        .unsecure, .unsecure a                 { color:orange; }
+        .safe, .safe a                         { color:green; }
     </style>
 </head>
 <body class="list">
@@ -212,14 +215,14 @@
         <h2><i class="fa fa-key" style="color: green;"></i> Chiffrement symétrique</h2>
         <figure class="center">
             <img src="./pictures/symmetric-cipher.png" alt="chiffrement symétrique" />
-            <figcaption><abbr title="Data Encryption Standard">DES</abbr> (56 bits), 3DES (112 bits), <abbr title="Advanced Encryption Standard">AES</abbr> (128, 256 bits)</figcaption>
+            <figcaption><abbr title="Data Encryption Standard">DES</abbr> (<span class="broken">56 bits</span>), 3DES (<span class="unsecure">112 bits</span>), <abbr title="Advanced Encryption Standard">AES</abbr> (<span class="safe">128</span>, <span class="safe">256 bits</span>)</figcaption>
         </figure>
     </div></section>
     <section id="chiffrement-asymetrique" class="slide asymetric"><div>
         <h2><i class="fa fa-key" style="color: blue;"></i><i class="fa fa-key" style="color: orange"></i>  Chiffrement asymétrique</h2>
         <figure class="center">
             <img src="./pictures/asymmetric-cipher.png" alt="chiffrement asymétrique" />
-            <figcaption>nombres premiers via <a href="https://fr.wikipedia.org/wiki/Chiffrement_RSA">RSA</a> (1024, 2048, 4096 bits) et courbes elliptiques (<a href="https://fr.wikipedia.org/wiki/Cryptographie_sur_les_courbes_elliptiques">EC</a>)</figcaption>
+            <figcaption>nombres premiers via <a href="https://fr.wikipedia.org/wiki/Chiffrement_RSA">RSA</a> (<span class="unsecure">1024</span>, <span class="safe">2048</span>, <span class="safe">4096 bits</span>) et courbes elliptiques (<a href="https://fr.wikipedia.org/wiki/Cryptographie_sur_les_courbes_elliptiques">EC</a>)</figcaption>
         </figure>
     </div></section>
 
@@ -234,10 +237,10 @@
             <code><mark>0c06d876dabb4403cede1245e3b0bf1d81afd497</mark></code>
        </pre>
        <p class="next">
-           <s><a href="https://fr.wikipedia.org/wiki/MD5">MD5</a></s>,
-               <s><a href="https://fr.wikipedia.org/wiki/SHA-1">SHA-1</a></s>,
-           <a href="https://fr.wikipedia.org/wiki/SHA-2">SHA-2</a> <small>(SHA-224, SHA-256, SHA-384 et SHA-512)</small>,
-           <a href="https://fr.wikipedia.org/wiki/SHA-3">SHA3</a>.
+           <span class="broken"><a href="https://fr.wikipedia.org/wiki/MD5">MD5</a></span>,
+           <span class="unsecure"><a href="https://fr.wikipedia.org/wiki/SHA-1">SHA-1</a></span>,
+           <span class="safe"><a href="https://fr.wikipedia.org/wiki/SHA-2">SHA-2</a><span> <small>(SHA-224, SHA-256, SHA-384 et SHA-512)</small>,
+           <span class="safe"><a href="https://fr.wikipedia.org/wiki/SHA-3">SHA3</a></span>.
        </p>
        <p class="next">
        <a href="https://fr.wikipedia.org/wiki/Message_Authentication_Code"><abbr title="Message authentification code">MAC</abbr></a> /
@@ -259,14 +262,14 @@
 	<section id="versions-details" class="slide"><div>
 		<h2>Versions</h2>
         <ul class="icons">
-            <li><i class="fa fa-code-fork"></i><abbr title="Secure Socket Layer">SSL</abbr> 1.0 (jamais publié) par <a href="https://en.wikipedia.org/wiki/Netscape">Netscape</a>,
-            <li class="next"><i class="fa fa-code-fork"></i>SSL 2.0 en 1995, <small>déprécié en 2011 par la <a href="https://tools.ietf.org/html/rfc6176"><abbr title="Request for comment">RFC</abbr> 6176</a></small>.
-            <li class="next"><i class="fa fa-code-fork"></i>SSL 3.0 / <a href="https://tools.ietf.org/html/rfc6101">RFC 6101</a> en 1996 <small>(refonte)</small>, <small>déprécié en 2015 par la <a href="https://tools.ietf.org/html/rfc7568">RFC 7568</a></small>,
-            <li class="next"><i class="fa fa-code-fork"></i><abbr title="Transport Layerr Security">TLS</abbr> 1.0 / <a href="https://tools.ietf.org/html/rfc2246">RFC 2246</a> en 1999 <small>(modifications mineures)</small>,
-            <li class="next"><i class="fa fa-code-fork"></i>TLS 1.1 / <a href="https://tools.ietf.org/html/rfc4346">RFC 4346</a> en 2006 <small>(<i class="fa fa-plus-circle nomargin"></i> protections contre les attaques sur <abbr title="Cipher Block Chaining">CBC</abbr>)</small>,
-            <li class="next"><i class="fa fa-code-fork"></i>TLS 1.2 / <a href="https://tools.ietf.org/html/rfc5246">RFC 5246</a> en 2008 <small>(<i class="fa fa-plus-circle nomargin"></i> améliorations de sécurité)</small>,
+            <li><i class="fa fa-code-fork"></i><span class="broken"><abbr title="Secure Socket Layer">SSL</abbr> 1.0</span> (jamais publié) par <a href="https://en.wikipedia.org/wiki/Netscape">Netscape</a>,
+            <li class="next"><i class="fa fa-code-fork"></i><span class="broken">SSL 2.0</span> en 1995, <small>déprécié en 2011 par la <a href="https://tools.ietf.org/html/rfc6176"><abbr title="Request for comment">RFC</abbr> 6176</a></small>.
+                <li class="next"><i class="fa fa-code-fork"></i><span class="broken">SSL 3.0</span> / <a href="https://tools.ietf.org/html/rfc6101">RFC 6101</a> en 1996 <small>(refonte)</small>, <small>déprécié en 2015 par la <a href="https://tools.ietf.org/html/rfc7568">RFC 7568</a></small>,
+                <li class="next"><i class="fa fa-code-fork"></i><span class="unsecure"><abbr title="Transport Layerr Security">TLS</abbr> 1.0</span> / <a href="https://tools.ietf.org/html/rfc2246">RFC 2246</a> en 1999 <small>(modifications mineures)</small>,
+                <li class="next"><i class="fa fa-code-fork"></i><span class="unsecure">TLS 1.1</span> / <a href="https://tools.ietf.org/html/rfc4346">RFC 4346</a> en 2006 <small>(<i class="fa fa-plus-circle nomargin"></i> protections contre les attaques sur <abbr title="Cipher Block Chaining">CBC</abbr>)</small>,
+                <li class="next"><i class="fa fa-code-fork"></i><span class="safe">TLS 1.2</span> / <a href="https://tools.ietf.org/html/rfc5246">RFC 5246</a> en 2008 <small>(<i class="fa fa-plus-circle nomargin"></i> améliorations de sécurité)</small>,
             <li class="next"><i class="fa fa-code-fork"></i>Mise à jour sur TLS 1.2 en 2011/ <a href="https://tools.ietf.org/html/rfc6176">RFC 6176</a> <small>(<i class="fa fa-ban nomargin"></i> compatibilité SSL)</small>,
-            <li class="next"><i class="fa fa-code-fork"></i>TLS 1.3 / <a href="https://tools.ietf.org/html/draft-ietf-tls-tls13-10">brouillon</a> en cours
+            <li class="next"><i class="fa fa-code-fork"></i><span class="safe">TLS 1.3</span> / <a href="https://tools.ietf.org/html/draft-ietf-tls-tls13-10">brouillon</a> en cours
                 <small>(<i class="fa fa-ban nomargin"></i> compression,
                 <i class="fa fa-ban nomargin"></i> renégociation,
                 <i class="fa fa-ban nomargin"></i> MD5,
@@ -555,7 +558,7 @@
             <code>        X509v3 <strong>Key Usage</strong>: critical</code>
             <code>            <strong>Digital Signature, Certificate Sign, CRL Sign</strong></code>
             <code>        X509v3 Basic Constraints: critical</code>
-            <code>            CA:TRUE, pathlen:0</code>
+            <code>            <strong>CA:TRUE</strong>, pathlen:0</code>
             <code>        X509v3 <strong>Extended Key Usage</strong>:</code>
             <code>            TLS Web Server Authentication, TLS Web Client Authentication</code>
             <code>        X509v3 Certificate Policies:</code>
@@ -572,7 +575,7 @@
 	</div></section>
 
 	<section id="ca-breach" class="slide"><div>
-        <h2>La vie des CA n’est pas un long fleuve tranquille...</h2>
+        <h2><i class="fa fa-exclamation-triangle"></i> La vie des CA n’est pas un long fleuve tranquille...</h2>
         <ul>
             <li>en 2011, <a href="https://www.comodo.com/Comodo-Fraud-Incident-2011-03-23.html">Comodo</a> signe 9 certificats incluant  mail.google.com, login.yahoo.com, login.skype.com, addons.mozilla.org, login.live.com,
             <li class="next">en 2011, <a href="https://www.vasco.com/company/about_vasco/press_room/news_archive/2011/news_diginotar_reports_security_incident.aspx">Diginotar</a> signe des certificats utilisés pour intercepter le trafic gmail en Iran ; l’entreprise <a href="https://www.vasco.com/company/about_vasco/press_room/news_archive/2011/news_vasco_announces_bankruptcy_filing_by_diginotar_bv.aspx">ferme</a> quelques jours après,
@@ -584,7 +587,7 @@
     </div></section>
 
 	<section id="certificate-transparency" class="slide"><div>
-        <h2>Certificate Transparency</h2>
+        <h2><i class="fa fa-book"></i> Certificate Transparency</h2>
         <h3>Problèmes :</h3>
         <ul>
             <li class="next">des <a href="https://mozillacaprogram.secure.force.com/CA/IncludedCACertificateReport">centaines de CA</a> dans nos magasins (entreprises, gouvernements),
@@ -652,38 +655,18 @@
 	</div></section>
 
 	<section id="force-brute" class="slide"><div>
-        <style scoped>
-            .broken, .broken a     { color:red; }
-            .unsecure, .unsecure a { color:orange; }
-            .safe, .safe a         { color:green; }
-        </style>
         <h2><i class="fa fa-server"></i> Pure <a href="https://fr.wikipedia.org/wiki/Attaque_par_force_brute">force brute</a> ?</h2>
         <table>
             <tr>
                 <th>type
-                <th>bits
+                <th>algo
                 <th>crack
                 <th>et aujourd’hui ?
-            <tr class="broken">
-                <td><i class="fa fa-key" style="color: green;"></i>
-                <td>DES 56
-                <td><a href="http://cs-exhibitions.uni-klu.ac.at/index.php?id=263">1997</a>
-                <td><a href="https://en.wikipedia.org/wiki/Data_Encryption_Standard#Brute_force_attack">&lt; 24 heures</a>
-            <tr class="safe">
-                <td><i class="fa fa-key" style="color: green;"></i>
-                <td>AES 128
-                <td><small>(2304 bits)</small>
-                <td><a href="https://blog.cloudflare.com/why-are-some-keys-small/">avec 1 000 000 000 PC, 660 x l’age de l’univers</a>
-            <tr class="safe">
-                <td><i class="fa fa-key" style="color: green;"></i>
-                <td>AES 256
-                <td>
-                <td><a href="https://crypto.stackexchange.com/questions/1145/how-much-would-it-cost-in-u-s-dollars-to-brute-force-a-256-bit-key-in-a-year">8 octodecillion $</a> (<small>ou 10<sup>44</sup> le PIB mondial</small>)
             <tr class="broken">
                 <td><i class="fa fa-key" style="color: blue;"></i><i class="fa fa-key" style="color: orange"></i>
                 <td>RSA 512
                 <td><a href="https://en.wikipedia.org/wiki/RSA_numbers#RSA-155">1999</a>
-                <td>entre <a href="https://www.youtube.com/watch?v=hkw9tFnJk8k">2,5 jours</a> et <a href="https://eprint.iacr.org/2015/1000.pdf">7 heures</a> via <a href="https://aws.amazon.com/fr/ec2/">EC2</a>
+                <td>entre <a href="https://eprint.iacr.org/2015/1000.pdf">7 heures</a> et <a href="https://www.youtube.com/watch?v=hkw9tFnJk8k">2,5 jours</a> via <a href="https://aws.amazon.com/fr/ec2/">EC2</a>
             <tr class="broken">
                 <td><i class="fa fa-key" style="color: blue;"></i><i class="fa fa-key" style="color: orange"></i>
                 <td>RSA 768
@@ -698,20 +681,40 @@
                 <td><i class="fa fa-key" style="color: blue;"></i><i class="fa fa-key" style="color: orange"></i>
                 <td>RSA 2048
                 <td>
-                <td><a href="https://www.digicert.com/TimeTravel/math.htm">2<sup>32</sup> plus long que 1024 bits</a> <small>(<a href="https://en.wikipedia.org/wiki/RSA_numbers#RSA-2048">200 000 $ à la clé</a>)</small>
+                <td><a href="https://www.digicert.com/TimeTravel/math.htm">2<sup>32</sup> plus</a> <small>(<a href="https://en.wikipedia.org/wiki/RSA_numbers#RSA-2048">200 000 $ à la clé</a>)</small>
+            <tr class="broken">
+                <td><i class="fa fa-key" style="color: green;"></i>
+                <td>DES 56
+                <td><a href="http://cs-exhibitions.uni-klu.ac.at/index.php?id=263">1997</a>
+                <td><a href="https://en.wikipedia.org/wiki/Data_Encryption_Standard#Brute_force_attack">&lt; 24 heures</a>
+            <tr class="safe">
+                <td><i class="fa fa-key" style="color: green;"></i>
+                <td>AES 128
+                <td> <small>(2304 bits)</small>
+                <td><a href="https://blog.cloudflare.com/why-are-some-keys-small/">avec 1 000 000 000 PC, 660 x l’age de l’univers</a>
+            <tr class="safe">
+                <td><i class="fa fa-key" style="color: green;"></i>
+                <td>AES 256
+                <td>
+                <td><a href="https://crypto.stackexchange.com/questions/1145/how-much-would-it-cost-in-u-s-dollars-to-brute-force-a-256-bit-key-in-a-year">8 octodecillion $</a> (<small>ou 10<sup>44</sup> le PIB mondial</small>)
         </table>
     </div></section>
 
 	<section id="doutes" class="slide"><div>
+        <style scoped>
+            .portrait { float: right; max-width: 100px; border: 1px solid black; }
+        </style>
 		<h2>Le chiffrement, c’est solide ?</h2>
         <figure>
-            <blockquote><p>Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on. Unfortunately, endpoint security is so terrifically weak that NSA can frequently find ways around it.</p></blockquote>
-            <figcaption>Edward Snowden : <a href="http://techcrunch.com/2013/06/17/encrypting-your-email-works-says-nsa-whistleblower-edward-snowden/">Encrypting Your Email Works</a></figcaption>
-        </figure>
-        <figure class="next">
+            <img src="pictures/Schneier.jpg" alt="Bruce Scheier" class="portrait" />
             <blockquote><p>Can the NSA break AES? My guess is that they can't.</p></blockquote>
             <blockquote><p>Still, I trust the mathematics.</p></blockquote>
             <figcaption>Bruce Schneier : <a href="https://www.schneier.com/blog/archives/2012/03/can_the_nsa_bre.html">Can the NSA Break AES?</a>, <a href="https://www.schneier.com/blog/archives/2013/09/the_nsas_crypto_1.html">The NSA's Cryptographic Capabilities</a></figcaption>
+        </figure>
+        <figure class="next">
+            <img src="pictures/Snowden.jpeg" alt="Edward Snowden" class="portrait" />
+            <blockquote><p>Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on. Unfortunately, endpoint security is so terrifically weak that NSA can frequently find ways around it.</p></blockquote>
+            <figcaption>Edward Snowden : <a href="http://techcrunch.com/2013/06/17/encrypting-your-email-works-says-nsa-whistleblower-edward-snowden/">Encrypting Your Email Works</a></figcaption>
         </figure>
     </div></section>
 
@@ -765,8 +768,7 @@
             <li>avec les collisions : on jouent sur le contenu pour que la signature corresponde,
             <li class="next">en 2008 avec <a href="https://www.win.tue.nl/hashclash/rogue-ca/">MD5</a>,
             <li class="next">en 2015, &laquo; <a href="https://sites.google.com/site/itstheshappening/">The SHAppening</a> &raquo; : collision sur une partie de SHA1 (compression) ; on estime une <a href="https://www.schneier.com/blog/archives/2012/10/when_will_we_se.html">attaque possible pour 700 000 $</a>,
-            <li class="next">
-                d’abord <a href="http://googleonlinesecurity.blogspot.fr/2014/09/gradually-sunsetting-sha-1.html">Google</a>,
+            <li class="next">d’abord <a href="http://googleonlinesecurity.blogspot.fr/2014/09/gradually-sunsetting-sha-1.html">Google</a>,
                 puis <a href="http://blogs.windows.com/msedgedev/2015/11/04/sha-1-deprecation-update/">Microsoft</a>
                 et <a href="https://blog.mozilla.org/security/2014/09/23/phasing-out-certificates-with-sha-1-based-signature-algorithms/">Mozilla</a>
                 <a href="https://blog.filippo.io/the-unofficial-chrome-sha1-faq/">bloqueront</a> les certificats et CA signés avec SHA1 dès 2016.
@@ -801,7 +803,7 @@
             <li>découverte par Angelo Prado, Neal Harris et Yoel Gluck en 2013,
             <li class="next">même principe que CRIME mais utilisant la compression HTTP (gzip, deflate),
             <li class="next">touche toutes les versions de SSL/TLS, toutes les suites de chiffrement,
-            <li class="next">nécessite de choisir le contenu à envoyer + MITM,
+            <li class="next">nécessite de choisir le contenu à envoyer + MITM + retour,
             <li class="next">Aucune <a href="http://breachattack.com/#mitigations">solution ultime</a> mais on peut désactiver la compression HTTP en absence de rererrer, se protéger contre les <abbr title="Cross-Site Request Forgery">CSRF</abbr>,...
         </ul>
     </div></section>
@@ -818,7 +820,7 @@
 	<section id="freak" class="slide"><div>
         <h2><i class="fa fa-level-down"></i> <a href="https://freakattack.com/">FREAK</a>: Factoring RSA EXPORT Attack Keys</h2>
         <ul>
-            <li>Faille <a href="https://www.smacktls.com/">découverte</a> par l’<a href="https://www.inria.fr/">INRIA</a>, <a href="http://research.microsoft.com/">Microsoft</a> et <a href="http://www.imdea.org/">IMDEA</a> en 2015,
+            <li>Faille <a href="https://www.smacktls.com/">découverte</a> par l’<a href="https://www.inria.fr/">INRIA</a>, <a href="http://research.microsoft.com/">Microsoft Research</a> et <a href="http://www.imdea.org/">IMDEA</a> en 2015,
             <li class="next">en 90, les USA imposent du chiffrement faible (RSA 512 bits) pour l’étranger (<code>export RSA</code>),
             <li class="next">n’est plus en vigueur mais oublié dans les logiciels,
             <li class="next">attaque MITM où l’on dégrade la connexion vers ce chiffrement faible, <a href="http://blog.cryptographyengineering.com/2015/03/attack-of-week-freak-or-factoring-nsa.html">cassable en quelques heures</a>,
@@ -832,7 +834,7 @@
             <li>Faille <a href="https://weakdh.org/imperfect-forward-secrecy-ccs15.pdf">découverte</a> par l’INRIA, Microsoft Research, Johns Hopkins, l’Université du Michigan et celle de Pennsylvanie en 2015,
             <li class="next">cible l’échange de clé Diffie-Hellman (sans <abbr title="elliptic curve">EC</abbr>)
             <li class="next">l’<a href="https://blog.cloudflare.com/logjam-the-latest-tls-vulnerability-explained/">attaque</a> <a href="http://blog.cryptographyengineering.com/2015/05/attack-of-week-logjam.html">consiste</a> à remplacer une demande <code>DHE</code> en <code>DHE_EXPORT</code> (512 bits),
-            <li class="next">un autre problème : 82 % des 1 000 000 plus gros sites utilisent les mêmes valeurs pour Diffie-Hellman (en dur), permettant un pré-calcul (<small><a href="http://hackaday.com/2015/10/15/how-the-nsa-can-read-your-emails/">sûrement</a> <a href="https://freedom-to-tinker.com/blog/haldermanheninger/how-is-nsa-breaking-so-much-crypto/">exploité</a></small>),
+            <li class="next">2<sup>ème</sup> problème : 82 % des 1 000 000 plus gros sites utilisent les mêmes valeurs pour Diffie-Hellman (en dur), permettant un pré-calcul (<small><a href="http://hackaday.com/2015/10/15/how-the-nsa-can-read-your-emails/">sûrement</a> <a href="https://freedom-to-tinker.com/blog/haldermanheninger/how-is-nsa-breaking-so-much-crypto/">exploité</a></small>),
             <li class="next">Solution : désactiver les suites de chiffrements &laquo; faibles &raquo; (minimum 2048 bits), <a href="https://blog.flowl.info/2015/how-to-generate-a-new-diffie-hellman-group/">regénérer des paramètres Diffie-Hellman</a>, utiliser <code>ECDHE</code>.
         </ul>
     </div></section>
@@ -841,7 +843,7 @@
         <h2><i class="fa fa-fighter-jet"></i> Quelques autres attaques</h2>
         <ul>
             <li>en 2010, analyse de la <a href="http://www.infosecurity-magazine.com/news/researchers-crack-rsa-encryption-via-power-supply/">consommation électrique</a> d’un ordinateur pour retrouver une clé privée (canal auxiliaire ou &laquo; side channel &raquo;),
-            <li class="next">en 2013, analyse du <a href="http://www.forbes.com/sites/timworstall/2013/12/21/researchers-break-rsa-4096-encryption-with-just-a-microphone-and-a-couple-of-emails/">bruit</a> pour la retrouver,
+            <li class="next">en 2013, analyse du <a href="http://www.forbes.com/sites/timworstall/2013/12/21/researchers-break-rsa-4096-encryption-with-just-a-microphone-and-a-couple-of-emails/">bruit des composants</a> pour la retrouver,
             <li class="next">en 2013, <a href="http://blog.cryptographyengineering.com/2013/09/the-many-flaws-of-dualecdrbg.html">Dual_EC_DRBG</a> par RSA Security avec une porte dérobé pour la NSA,
             <li class="next">en 2013, <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">Lucky13</a> et <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf"><abbr title="Timing Info-leak Made Easy">TIME</abbr></a>,
             <li class="next">en 2013, attaques sur <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">RC4</a> (désactivé par Microsoft, Google et Mozilla en 2016),
@@ -892,12 +894,13 @@ http://githubengineering.com/subresource-integrity/
 
 	<section id="expiration" class="slide"><div>
 		<h2><i class="fa fa-calendar-times-o"></i> Pensez à renouveller vos certificats !</h2>
-        <p>Quelques fails :</p>
+        <p>Avec HSTS, cela ne pardonne pas <small>(et je ne parle même pas de du Certificate Pinning)</small></p>
+        <p class="next">Quelques fails :</p>
         <ul class="icons">
-            <li><i class="fa fa-windows"></i>  Microsoft <a href="http://www.techweekeurope.co.uk/workspace/microsoft-windows-azure-cloud-fails-over-expired-ssl-certificate-108444">Azure</a> (2013),
-            <li><i class="fa fa-apple"></i> Mac <a href="http://betanews.com/2014/05/25/apples-ssl-fail-allows-certificate-to-expire-scares-os-x-users/">App Store</a> (2014),
-            <li><i class="fa fa-google"></i> <a href="http://www.ibtimes.com/google-gmail-glitch-outages-caused-failure-update-security-certificate-1870416">GMail</a> (2015),
-            <li><i class="fa fa-apple"></i> Mac <a href="http://techcrunch.com/2015/11/12/all-mac-store-apps-stopped-working-due-to-expired-security-certificate/">App Store</a> (encore en 2015) !
+            <li class="next"><i class="fa fa-windows"></i>  Microsoft <a href="http://www.techweekeurope.co.uk/workspace/microsoft-windows-azure-cloud-fails-over-expired-ssl-certificate-108444">Azure</a> (2013),
+            <li class="next"><i class="fa fa-apple"></i> Mac <a href="http://betanews.com/2014/05/25/apples-ssl-fail-allows-certificate-to-expire-scares-os-x-users/">App Store</a> (2014),
+            <li class="next"><i class="fa fa-google"></i> <a href="http://www.ibtimes.com/google-gmail-glitch-outages-caused-failure-update-security-certificate-1870416">GMail</a> (2015),
+            <li class="next"><i class="fa fa-apple"></i> Mac <a href="http://techcrunch.com/2015/11/12/all-mac-store-apps-stopped-working-due-to-expired-security-certificate/">App Store</a> (encore en 2015) !
         </ul>
     </div></section>
 
@@ -917,13 +920,24 @@ http://githubengineering.com/subresource-integrity/
 		<h2><i class="fa fa-moon"></i> Conclusion</h2>
 	</div></section>
 	<section id="conclusion-details" class="slide"><div>
+		<style scoped>
+            p.link     { display: inline-block; float: right; text-align: right; }
+            p.link img { width: 100px; position: relative; }
+            p.link a   { display: block; }
+		</style>
 		<h2>Conclusion</h2>
-        <ul>
-            <li>TLS en plus en plus obligatoire (bientôt le défaut ?),
-            <li class="next">n’ayez pas peur, ce n’est pas si compliqué d’avoir une configuration solide,
-            <li class="next">tenez vous au courant, tester votre configuration régulièrement et mettez-la à jour,
-            <li class="next">vivement la démocratisation d’outil pour automatiser TLS (et peut-être supprimer les révocations avec des certificats pour quelques jours).
+        <ul class="icons">
+            <li><i class="fa fa-bullhorn"></i> répétez après moi : TLS (<s>SSL</s>) !
+            <li class="next"><i class="fa fa-users"></i> TLS bientôt le défaut,
+            <li class="next"><i class="fa fa-server"></i> n’ayez pas peur <small>(pas si compliqué d’avoir une configuration solide)</small>,
+            <li class="next"><i class="fa fa-bell-o"></i> tenez vous au courant, tester votre site régulièrement et mettez-la à jour,
+            <li class="next"><i class="fa fa-wrench"></i> vive l’outillage pour automatiser TLS
+            <li class="next"><i class="fa fa-ban"></i> la fin des révocations (<small>avec des certificats pour quelques jours</small>) ?
         </ul>
+        <p class="link">
+            <img src="pictures/qrcode.svg" alt="" />
+            <a href="http://paulgreg.me/https-slides/">http://paulgreg.me/https-slides/</a>
+        </p>
     </div></section>
 
 	<section id="resources" class="slide"><div>
