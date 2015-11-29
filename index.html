@@ -51,108 +51,117 @@
         .broken, .broken a                     { color:red; }
         .unsecure, .unsecure a                 { color:orange; }
         .safe, .safe a                         { color:green; }
-    </style>
+
+        #cover *                               { color: #FFF; }
+        #cover h2                              { margin:30px 0 0; background-color: rgba(0, 0, 0, .5); text-align:center; font-size:70px; }
+        #cover p                               { margin:10px 0 0; text-align:center; background-color: rgba(0, 0, 0, .5); font-style:italic; font-size:20px; }
+        #cover p.link                          { display: inline-block; float: right; margin-top: 8em; }
+        #cover p.link img                      { width: 100px; position: relative; z-index: 10; margin: .5em .5em 0 .5em; }
+        #cover p.link a                        { display: block;  margin: .25em .5em .5em .5em; }
+        #interception-traffic-http figcaption  { width: 100%; text-align: right; margin-top: -60px;}
+        #html-seo p                            { margin-top: 1em; }
+        #chiffrement-symetrique figure         { margin-top: 100px; }
+        #handshake-certificate img.store       { display: block; margin: auto; }
+        #cipher-suite ul                       { column-count: 4; -moz-column-count: 4; -webkit-column-count: 4; font-size: 12px; font-family: monospace; }
+        #cipher-suite ul li                    { margin: 0; }
+        #pfs img                               { max-height: 380px; }
+        #type-certificate img                  { display: block; margin: 1em auto 0 auto; }
+        #lets-encrypt img                      { padding: 0 80px 0 0; }
+        #doutes .portrait                      { float: right; max-width: 100px; border: 1px solid black; }
+        #pourquoi-attaquer-la-crypto p         { margin: 2em 0; }
+        #bugs img                              { float: right; }
+        #conclusion-details p.link             { display: inline-block; float: right; text-align: right; }
+        #conclusion-details p.link img         { width: 100px; position: relative; }
+        #conclusion-details p.link a           { display: block; }
+        #resources li                          { font-size: 24px; line-height: 110%; }
+</style>
 </head>
 <body class="list">
-	<header class="caption">
-        <h1>HTTPS n’aura plus de secret pour vous</h1>
-		<p>Grégory Paul</p>
-	</header>
-	<section id="cover" class="slide cover"><div>
-		<style>
-            #cover *          { color: #FFF; }
-            #cover h2         { margin:30px 0 0; background-color: rgba(0, 0, 0, .5); text-align:center; font-size:70px; }
-            #cover p          { margin:10px 0 0; text-align:center; background-color: rgba(0, 0, 0, .5); font-style:italic; font-size:20px; }
-            #cover p.link     { display: inline-block; float: right; margin-top: 8em; }
-            #cover p.link img { width: 100px; position: relative; z-index: 10; margin: .5em .5em 0 .5em; }
-            #cover p.link a   { display: block;  margin: .25em .5em .5em .5em; }
-		</style>
-        <h2><abbr title="HyperText Transfer Protocol Secure">HTTPS</abbr> n’aura plus de secret<br/>pour vous</h2>
-		<p>par <a href="http://paulgreg.me/">Grégory Paul</a></p>
-		<img src="pictures/cables.jpg" alt="" />
-        <p class="link">
-            <img src="pictures/qrcode.svg" alt="" />
-            <a href="http://paulgreg.me/https-slides/">http://paulgreg.me/https-slides/</a>
-        </p>
-	</div></section>
+<header class="caption">
+    <h1>HTTPS n’aura plus de secret pour vous</h1>
+    <p>Grégory Paul</p>
+</header>
+<section id="cover" class="slide cover"><div>
+    <h2><abbr title="HyperText Transfer Protocol Secure">HTTPS</abbr> n’aura plus de secret<br/>pour vous</h2>
+    <p>par <a href="http://paulgreg.me/">Grégory Paul</a></p>
+    <img src="pictures/cables.jpg" alt="" />
+    <p class="link">
+        <img src="pictures/qrcode.svg" alt="" />
+        <a href="http://paulgreg.me/https-slides/">http://paulgreg.me/https-slides/</a>
+    </p>
+</div></section>
 
-	<section id="pourquoi-https" class="slide shout"><div>
-            <h2>Pourquoi<br>HTTPS <i class="fa fa-question-circle"></i></h2>
-	</div></section>
+<section id="pourquoi-https" class="slide shout"><div>
+        <h2>Pourquoi<br>HTTPS <i class="fa fa-question-circle"></i></h2>
+</div></section>
 
-	<section id="reseau-typique" class="slide"><div>
-		<h2>Dans un réseau typique...</h2>
-        <figure>
-            <img src="pictures/https_network.svg" class="svg" alt="Réseau normal" />
-            <figcaption></figcaption>
-        </figure>
-	</div></section>
+<section id="reseau-typique" class="slide"><div>
+    <h2>Dans un réseau typique...</h2>
+    <figure>
+        <img src="pictures/https_network.svg" class="svg" alt="Réseau normal" />
+        <figcaption></figcaption>
+    </figure>
+</div></section>
 
-	<section id="interception-traffic-http" class="slide"><div>
-        <style>
-            #interception-traffic-http figcaption { width: 100%; text-align: right; margin-top: -60px;}
-        </style>
-		<h2>Pour éviter l’interception de traffic</h2>
-        <figure>
-            <img src="pictures/https_rogue_ap.svg" class="svg" alt="Réseau anormal au niveau du point d’accès" />
-            <figcaption><kbd>donotbeevil</kbd></figcaption>
-        </figure>
-	</div></section>
-	<section id="interception-traffic-http-video" class="slide"><div>
-		<h2>Pour éviter l’interception de traffic</h2>
-        <figure class="center">
-            <video controls preload="metadata" src="videos/mitm-http.webm"></video>
-            <figcaption></figcaption>
-        </figure>
-	</div></section>
-	<section id="interception-traffic-http-explications" class="slide"><div>
-		<h2>Fonctionnement de l’attaque (<a href="http://blog.philippheckel.com/2013/07/01/how-to-use-mitmproxy-to-read-and-modify-https-traffic-of-your-phone/">mitmproxy</a>)</h2>
-        <figure class="center">
-            <img src="pictures/https_raspberry.svg" class="svg" alt="Fonctionnement de l’interception" />
-            <figcaption></figcaption>
-        </figure>
-	</div></section>
-	<section id="vol-cookie" class="slide"><div>
-		<h2>Pour éviter de se faire voler ses cookies</h2>
-        <figure class="center">
-            <img src="pictures/firesheep.png" alt="Logiciel Firesheep" />
-            <figcaption><a href="http://codebutler.com/firesheep/">Firesheep</a> en octobre 2010</figcaption>
-        </figure>
-	</div></section>
-	<section id="protection-fai-schema" class="slide"><div>
-        <h2>Pour se protéger des <abbr title="Fournisseur d’Accès Internet">FAI</abbr> malveillant</h2>
-        <figure>
-            <img src="pictures/https_fai_injection.svg" class="svg" alt="Réseau anormal au niveau du FAI" />
-            <figcaption></figcaption>
-        </figure>
-	</div></section>
-	<section id="protection-fai" class="slide"><div>
-        <h2>Pour se protéger des <abbr title="Fournisseur d’Accès Internet">FAI</abbr> malveillant</h2>
-        <ul>
-            <li><a href="http://www.webrankinfo.com/dossiers/webmastering/blocage-publicite-free">Blocage des pubs Google par Free</a> en mai 2013,
-            <li class="next"><a href="http://arstechnica.com/tech-policy/2014/09/why-comcasts-javascript-ad-injections-threaten-security-net-neutrality/">Ajout de pub par Comcast</a> en septembre 2014,
-            <li class="next">depuis 2009, des pubs malicieuses ont déjà été servies depuis
-                <a href="http://www.pcworld.com/article/2604480/malicious-advertising-hits-amazon-youtube-and-yahoo-cisco-says.html">Amazon</a>,
-                <a href="http://www.techworm.net/2014/10/youtube-malvertising.html">Youtube</a>,
-                <a href="https://finance.yahoo.com/news/malvertising-yahoo-affects-users-172836199.html">Yahoo</a>,
-                le <a href="http://www.theguardian.com/technology/2009/sep/25/malvertising">New York Times</a>,
-                <a href="https://zeltser.com/malvertising-malicious-ad-campaigns/">The Onion</a>,
-                <a href="http://www.darkreading.com/attacks-breaches/zero-day-malvertising-attack-went-undetected-for-two-months/d/d-id/1320092">Dailymotion</a>,
-                etc,
-                <li class="next">Ajout de <a href="https://www.eff.org/fr/deeplinks/2014/11/verizon-x-uidh">cookie par Verizon</a> en novembre 2014, d’<a href="http://www.bortzmeyer.org/enrichir-qui.html">identifiant par Orange Jordanie, Vodafone Afrique du Sud</a> ou encore d’<a href="http://www.bortzmeyer.org/enrichir-qui.html">entêtes techniques par SFR ou Bouygues</a> en 2015.
-        </ul>
-    </div></section>
-	<section id="grand-cannon" class="slide"><div>
-        <h2>Pour se protéger du <a href="https://citizenlab.org/2015/04/chinas-great-cannon/">Grand Cannon Chinois</a></h2>
-        <figure>
-            <img src="pictures/https_great_cannon.svg" class="svg" alt="grand cannon"/>
-            <figcaption>en avril 2015</figcaption>
-        </figure>
-	</div></section>
-	<section id="html5-seo" class="slide"><div>
-        <style>
-            #html-seo p { margin-top: 1em; }
-        </style>
+<section id="interception-traffic-http" class="slide"><div>
+    <h2>Pour éviter l’interception de traffic</h2>
+    <figure>
+        <img src="pictures/https_rogue_ap.svg" class="svg" alt="Réseau anormal au niveau du point d’accès" />
+        <figcaption><kbd>donotbeevil</kbd></figcaption>
+    </figure>
+</div></section>
+<section id="interception-traffic-http-video" class="slide"><div>
+    <h2>Pour éviter l’interception de traffic</h2>
+    <figure class="center">
+        <video controls preload="metadata" src="videos/mitm-http.webm"></video>
+        <figcaption></figcaption>
+    </figure>
+</div></section>
+<section id="interception-traffic-http-explications" class="slide"><div>
+    <h2>Fonctionnement de l’attaque (<a href="http://blog.philippheckel.com/2013/07/01/how-to-use-mitmproxy-to-read-and-modify-https-traffic-of-your-phone/">mitmproxy</a>)</h2>
+    <figure class="center">
+        <img src="pictures/https_raspberry.svg" class="svg" alt="Fonctionnement de l’interception" />
+        <figcaption></figcaption>
+    </figure>
+</div></section>
+<section id="vol-cookie" class="slide"><div>
+    <h2>Pour éviter de se faire voler ses cookies</h2>
+    <figure class="center">
+        <img src="pictures/firesheep.png" alt="Logiciel Firesheep" />
+        <figcaption><a href="http://codebutler.com/firesheep/">Firesheep</a> en octobre 2010</figcaption>
+    </figure>
+</div></section>
+<section id="protection-fai-schema" class="slide"><div>
+    <h2>Pour se protéger des <abbr title="Fournisseur d’Accès Internet">FAI</abbr> malveillant</h2>
+    <figure>
+        <img src="pictures/https_fai_injection.svg" class="svg" alt="Réseau anormal au niveau du FAI" />
+        <figcaption></figcaption>
+    </figure>
+</div></section>
+<section id="protection-fai" class="slide"><div>
+    <h2>Pour se protéger des <abbr title="Fournisseur d’Accès Internet">FAI</abbr> malveillant</h2>
+    <ul>
+        <li><a href="http://www.webrankinfo.com/dossiers/webmastering/blocage-publicite-free">Blocage des pubs Google par Free</a> en mai 2013,
+        <li class="next"><a href="http://arstechnica.com/tech-policy/2014/09/why-comcasts-javascript-ad-injections-threaten-security-net-neutrality/">Ajout de pub par Comcast</a> en septembre 2014,
+        <li class="next">depuis 2009, des pubs malicieuses ont déjà été servies depuis
+            <a href="http://www.pcworld.com/article/2604480/malicious-advertising-hits-amazon-youtube-and-yahoo-cisco-says.html">Amazon</a>,
+            <a href="http://www.techworm.net/2014/10/youtube-malvertising.html">Youtube</a>,
+            <a href="https://finance.yahoo.com/news/malvertising-yahoo-affects-users-172836199.html">Yahoo</a>,
+            le <a href="http://www.theguardian.com/technology/2009/sep/25/malvertising">New York Times</a>,
+            <a href="https://zeltser.com/malvertising-malicious-ad-campaigns/">The Onion</a>,
+            <a href="http://www.darkreading.com/attacks-breaches/zero-day-malvertising-attack-went-undetected-for-two-months/d/d-id/1320092">Dailymotion</a>,
+            etc,
+            <li class="next">Ajout de <a href="https://www.eff.org/fr/deeplinks/2014/11/verizon-x-uidh">cookie par Verizon</a> en novembre 2014, d’<a href="http://www.bortzmeyer.org/enrichir-qui.html">identifiant par Orange Jordanie, Vodafone Afrique du Sud</a> ou encore d’<a href="http://www.bortzmeyer.org/enrichir-qui.html">entêtes techniques par SFR ou Bouygues</a> en 2015.
+    </ul>
+</div></section>
+<section id="grand-cannon" class="slide"><div>
+    <h2>Pour se protéger du <a href="https://citizenlab.org/2015/04/chinas-great-cannon/">Grand Cannon Chinois</a></h2>
+    <figure>
+        <img src="pictures/https_great_cannon.svg" class="svg" alt="grand cannon"/>
+        <figcaption>en avril 2015</figcaption>
+    </figure>
+</div></section>
+<section id="html5-seo" class="slide"><div>
         <h2>Pour le <abbr title="Search engine optimization">SEO</abbr>, HTML5 et iOS/OS X</h2>
         <p><i class="fa fa-google"></i><a href="http://googleonlinesecurity.blogspot.fr/2014/08/https-as-ranking-signal_6.html">Google préférera un site en HTTPS</a>.</p>
         <p class="next"><i class="fa fa-html5"></i>Sans HTTPS, <a href="https://blog.mozilla.org/security/2015/04/30/deprecating-non-secure-http/">Firefox</a> et <a href="https://sites.google.com/a/chromium.org/dev/Home/chromium-security/deprecating-powerful-features-on-insecure-origins">Chrome</a> bloqueront certaines API JavaScript :</p>
@@ -181,6 +190,7 @@
             <figcaption>Edward Snowden : <a href="https://www.youtube.com/watch?v=bpO3GeXTceM">about Privacy</a></figcaption>
         </figure>
 	</div></section-->
+    <!--  <a href="https://en.wikipedia.org/wiki/STARTTLS">STARTTLS</a> -->
 
 	<section id="convaincu" class="slide tell"><div>
 		<h2>Convaincu <i class="fa fa-question-circle"></i></h2>
@@ -209,9 +219,6 @@
 		<h2><i class="fa fa-lock"></i> Quelques rappels cryptographiques...</h2>
 	</div></section>
     <section id="chiffrement-symetrique" class="slide symetric"><div>
-        <style>
-            #chiffrement-symetrique figure { margin-top: 100px; }
-        </style>
         <h2><i class="fa fa-key" style="color: green;"></i> Chiffrement symétrique</h2>
         <figure class="center">
             <img src="./pictures/symmetric-cipher.png" alt="chiffrement symétrique" />
@@ -239,7 +246,7 @@
        <p class="next">
            <span class="broken"><a href="https://fr.wikipedia.org/wiki/MD5">MD5</a></span>,
            <span class="unsecure"><a href="https://fr.wikipedia.org/wiki/SHA-1">SHA-1</a></span>,
-           <span class="safe"><a href="https://fr.wikipedia.org/wiki/SHA-2">SHA-2</a><span> <small>(SHA-224, SHA-256, SHA-384 et SHA-512)</small>,
+           <span class="safe"><a href="https://fr.wikipedia.org/wiki/SHA-2">SHA-2</a></span> <small>(SHA-224, SHA-256, SHA-384 et SHA-512)</small>,
            <span class="safe"><a href="https://fr.wikipedia.org/wiki/SHA-3">SHA3</a></span>.
        </p>
        <p class="next">
@@ -314,9 +321,6 @@
 	</div></section>
 
 	<section id="handshake-certificate" class="slide"><div>
-        <style>
-            #handshake-certificate img.store { display: block; margin: auto; }
-        </style>
         <h2>2. Server hello (certificats + done)</h2>
         <figure class="sidebyside handshake">
             <figcaption><img src="pictures/4-handshake.png" alt="handshake : server certificates" /></figcaption>
@@ -327,6 +331,7 @@
             <span class="mark symatec"      style="top: 335px; left: 612px; width: 300px;"></span>
             <span class="mark hello-done"   style="top: 420px; left: 603px; width: 105px;"></span>
         </figure>
+        <p>Wildcard <small>(*.mappy.net)</small> ou Subject Alternative Name <small>(map1.mappy.net, map2.mappy.net,...)</small></p>
 	</div></section>
 
 	<section id="handshake-key-exchange" class="slide"><div>
@@ -383,10 +388,6 @@
 	</div></section>
 
 	<section id="cipher-suite" class="slide"><div>
-        <style>
-            #cipher-suite ul { column-count: 4; -moz-column-count: 4; -webkit-column-count: 4; font-size: 12px; font-family: monospace; }
-            #cipher-suite ul li { margin: 0; }
-        </style>
         <h2>Suites de chiffrement <small>(<a href="https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#tls-parameters-4">cipher suites</a>)</small></h2>
         <p>Authentication <small>(asymétrique)</small>, chiffrement <small>(symétrique)</small>, MAC/HMAC et échange de clé</p>
         <ul>
@@ -475,9 +476,6 @@
 	</div></section>
 
 	<section id="pfs" class="slide"><div>
-        <style>
-            #pfs img { max-height: 380px; }
-        </style>
         <h2><i class="fa fa-user-secret"></i> Confidentialité persistante parfaite (<a href="http://vincent.bernat.im/en/blog/2011-ssl-perfect-forward-secrecy.html"><abbr title="Perfect Forward Secrecy">PFS</abbr></a>)</h2>
         <figure class="sidebyside">
             <figcaption>
@@ -519,9 +517,6 @@
     </div></section>
 
 	<section id="type-certificats" class="slide"><div>
-        <style>
-            #type-certificate img { display: block; margin: 1em auto 0 auto; }
-        </style>
 		<h2>Domain, Organization et Extended Validation</h2>
         <dl>
             <dt><i class="fa fa-certificate"></i>Domain validation
@@ -604,9 +599,6 @@
     </div></section>
 
 	<section id="lets-encrypt" class="slide"><div>
-        <style>
-            #lets-encrypt img { padding: 0 80px 0 0; }
-        </style>
         <h2><a href="https://letsencrypt.org/" class="clear"><img src="pictures/letsencrypt.svg" alt="Let’s encrypt" /></a></h2>
         <p>Système automatique qui, via un agent Open Source sur votre serveur, valide le domaine, installe et renouvelle automatiquement un certificat gratuit (domain validation).</p>
         <a href="https://www.mozilla.org/" class="clear"><img src="pictures/mozilla-logo.png" width="100" height="60" alt="mozilla" /></a>
@@ -701,9 +693,6 @@
     </div></section>
 
 	<section id="doutes" class="slide"><div>
-        <style>
-            #doutes .portrait { float: right; max-width: 100px; border: 1px solid black; }
-        </style>
 		<h2>Le chiffrement, c’est solide ?</h2>
         <figure>
             <img src="pictures/Schneier.jpg" alt="Bruce Scheier" class="portrait" />
@@ -719,9 +708,6 @@
     </div></section>
 
 	<section id="pourquoi-attaquer-la-crypto" class="slide"><div>
-        <style>
-            #pourquoi-attaquer-la-crypto p { margin: 2em 0; }
-        </style>
         <h2><i class="fa fa-wrench"></i> S’attaquer à la cryptographie ?</h2>
         <p>Pourquoi s’attaquer à la cryptographie alors qu’il existe d’autres moyens ?</p>
         <figure class="center next">
@@ -738,7 +724,7 @@
             <li class="next">faire installer un <a href="https://fr.wikipedia.org/wiki/Enregistreur_de_frappe">enregistreur de frappe</a> (keylogger) ou demander la clé privée,
             <li class="next">les gouvernements peuvent générer un certificat (<small>Government of /France|Hong Kong|Japan|Spain|Taiwan|Netherlands|Turkey/</small>, d’où le certificate pinning),
             <li class="next">ou alors installer une CA &laquo; maison &raquo; pour faire de l’interception légale (recommandations de la <a href="http://www.cnil.fr/linstitution/actualite/article/article/analyse-de-flux-https-bonnes-pratiques-et-questions/">CNIL</a> et de l’<a href="http://www.ssi.gouv.fr/guide/recommandations-de-securite-concernant-lanalyse-des-flux-https/">ANSSI</a>) ou illégale...
-            <li class="next">même principe pour les antivirus (ou <a href="https://support.lenovo.com/us/en/product_security/superfish">superfish</a>).
+            <li class="next">même principe pour les antivirus (ou <a href="https://support.lenovo.com/us/en/product_security/superfish">superfish</a>, <a href="http://joenord.blogspot.fr/2015/11/new-dell-computer-comes-with-edellroot.html">eDellRoot</a>).
         </ul>
     </div></section>
 
@@ -748,9 +734,6 @@
 	</div></section>
 
 	<section id="bugs" class="slide"><div>
-        <style>
-            #bugs img { float: right; }
-        </style>
         <h2><i class="fa fa-bug"></i> Bugs</h2>
         <a href="https://xkcd.com/221/" class="clear"><img src="pictures/random_number.png" alt="xkcd" /></a>
         <ul>
@@ -920,11 +903,6 @@ http://githubengineering.com/subresource-integrity/
 		<h2><i class="fa fa-moon"></i> Conclusion</h2>
 	</div></section>
 	<section id="conclusion-details" class="slide"><div>
-		<style>
-            #conclusion-details p.link     { display: inline-block; float: right; text-align: right; }
-            #conclusion-details p.link img { width: 100px; position: relative; }
-            #conclusion-details p.link a   { display: block; }
-		</style>
 		<h2>Conclusion</h2>
         <ul class="icons">
             <li><i class="fa fa-bullhorn"></i> répétez après moi : TLS (<s>SSL</s>) !
@@ -941,9 +919,6 @@ http://githubengineering.com/subresource-integrity/
     </div></section>
 
 	<section id="resources" class="slide"><div>
-        <style>
-            #resources li { font-size: 24px; line-height: 110%; }
-        </style>
 		<h2><i class="fa fa-book"></i> Resources</h2>
         <ul>
             <li><a href="https://www.imperialviolet.org/">ImperialViolet</a>, le blog Adam Langley (Google),
