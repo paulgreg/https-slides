@@ -51,6 +51,7 @@
         .broken, .broken a                     { color:red; }
         .unsecure, .unsecure a                 { color:orange; }
         .safe, .safe a                         { color:green; }
+        .center                                { width: 100%; text-align: center; }
 
         #cover *                               { color: #FFF; }
         #cover h2                              { margin:30px 0 0; background-color: rgba(0, 0, 0, .5); text-align:center; font-size:70px; }
@@ -600,14 +601,21 @@
 
 	<section id="lets-encrypt" class="slide"><div>
         <h2><a href="https://letsencrypt.org/" class="clear"><img src="pictures/letsencrypt.svg" alt="Let’s encrypt" /></a></h2>
-        <p>Système automatique qui, via un agent Open Source sur votre serveur, valide le domaine, installe et renouvelle automatiquement un certificat gratuit (domain validation).</p>
-        <a href="https://www.mozilla.org/" class="clear"><img src="pictures/mozilla-logo.png" width="100" height="60" alt="mozilla" /></a>
-        <a href="http://www.akamai.com/" class="clear"><img src="pictures/akamai-logo.png" width="100" height="60" alt="akamai" /></a>
-        <a href="http://www.cisco.com/" class="clear"><img src="pictures/cisco-logo.png" width="100" height="60" alt="cisco" /></a>
-        <a href="https://www.eff.org/" class="clear"><img src="pictures/eff-logo.png" width="100" height="60" alt="EFF" /></a>
-        <a href="https://www.identrustssl.com/" class="clear"><img src="pictures/identrust-logo.png" width="100" height="60" alt="identrust" /></a>
-        <a href="https://www.internetsociety.org/" class="clear"><img src="pictures/isoc.png" width="100" height="60" alt="ISOC" /></a>
-        <a href="https://automattic.com/" class="clear"><img src="pictures/automattic-logo.png" width="100" height="60" alt="automattic" /></a>
+        <p>Protocole <a href="https://github.com/letsencrypt/acme-spec"><abbr title="Automated Certificate Management Environment ">ACME</abbr></a> permettant l’attribution et la révoquation de certificat.</p>
+        <p class="center"><strong>+</strong></p>
+        <p>Système qui, via un agent Open Source sur votre serveur, valide le domaine, installe et renouvelle automatiquement un certificat gratuit (<abbr title="Domain Validation">DV</abbr>).</p>
+
+        <a href="https://www.mozilla.org/" class="clear"><img src="pictures/mozilla-logo.png" width="80" height="50" alt="mozilla" /></a>
+        <a href="http://www.akamai.com/" class="clear"><img src="pictures/akamai-logo.png" width="80" height="50" alt="akamai" /></a>
+        <a href="http://www.cisco.com/" class="clear"><img src="pictures/cisco-logo.png" width="80" height="50" alt="cisco" /></a>
+        <a href="https://www.eff.org/" class="clear"><img src="pictures/eff-logo.png" width="80" height="50" alt="EFF" /></a>
+        <a href="https://www.identrustssl.com/" class="clear"><img src="pictures/identrust-logo.png" width="80" height="50" alt="identrust" /></a>
+        <a href="https://www.internetsociety.org/" class="clear"><img src="pictures/isoc.png" width="80" height="50" alt="ISOC" /></a>
+        <a href="https://automattic.com/" class="clear"><img src="pictures/automattic-logo.png" width="80" height="50" alt="automattic" /></a>
+        <a href="https://www.ovh.com/" class="clear"><img src="pictures/ovh-logo.png" alt="OVH" width="80" height="50"></a>
+        <a href="https://www.google.com/chrome/" class="clear"><img src="pictures/chrome-logo.png" alt="Google Chrome" width="80" height="50"></a>
+        <a href="https://www.facebook.com/" class="clear"><img src="pictures/facebook-logo.png" alt="Facebook" width="80" height="50"></a>
+
         <p><a href="https://letsencrypt.org/2015/10/19/lets-encrypt-is-trusted.html">Supporté</a> par les principaux navigateurs depuis octobre 2015.</p>
         <p><a href="https://letsencrypt.org/2015/10/29/phishing-and-malware.html">Exclus</a> les sites malveillants grâce à la <a href="https://developers.google.com/safe-browsing/">Safe Browsing API</a>.</p>
     </div></section>
