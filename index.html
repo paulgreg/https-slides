@@ -93,27 +93,8 @@
         <h2>Pour se protéger des <abbr title="Fournisseur d’Accès Internet">FAI</abbr> malveillant</h2>
         <figure>
             <img src="pictures/https_fai_injection.svg" class="svg" alt="Réseau anormal au niveau du FAI" />
-            <figcaption></figcaption>
+            <figcaption><a href="#protection-fai">exemples de modifications de contenu par des FAI</a></figcaption>
         </figure>
-    </div></section>
-
-    <section id="protection-fai" class="slide"><div>
-        <h2>Pour se protéger des <abbr title="Fournisseur d’Accès Internet">FAI</abbr> malveillant</h2>
-        <ul>
-            <li><a href="http://www.webrankinfo.com/dossiers/webmastering/blocage-publicite-free">Blocage des pubs Google par Free</a> en mai 2013,
-            <li class="next"><a href="http://arstechnica.com/tech-policy/2014/09/why-comcasts-javascript-ad-injections-threaten-security-net-neutrality/">Ajout de pub par Comcast</a> en septembre 2014
-                <span class="next">(<small>depuis 2009, des pubs malicieuses ont déjà été servies depuis
-                    <a href="http://www.pcworld.com/article/2604480/malicious-advertising-hits-amazon-youtube-and-yahoo-cisco-says.html">Amazon</a>,
-                    <a href="http://www.techworm.net/2014/10/youtube-malvertising.html">Youtube</a>,
-                    <a href="https://finance.yahoo.com/news/malvertising-yahoo-affects-users-172836199.html">Yahoo</a>,
-                    le <a href="http://www.theguardian.com/technology/2009/sep/25/malvertising">New York Times</a>,
-                    <a href="https://zeltser.com/malvertising-malicious-ad-campaigns/">The Onion</a>,
-                    <a href="http://www.darkreading.com/attacks-breaches/zero-day-malvertising-attack-went-undetected-for-two-months/d/d-id/1320092">Dailymotion</a>,
-                    etc,
-                </small>),</span>
-                <li class="next">Ajout de <a href="https://www.eff.org/fr/deeplinks/2014/11/verizon-x-uidh">cookie par Verizon</a> en novembre 2014, d’<a href="http://www.bortzmeyer.org/enrichir-qui.html">identifiant par Orange Jordanie, Vodafone Afrique du Sud</a> ou encore d’<a href="http://www.bortzmeyer.org/enrichir-qui.html">entêtes techniques par SFR ou Bouygues</a> en 2015.
-                <li class="next">Bref, pour <a href="#droit-vie-prive">protéger sa vie privée</a>.
-        </ul>
     </div></section>
 
     <section id="grand-canon" class="slide"><div>
@@ -523,25 +504,13 @@
         </pre>
 	</div></section>
 
-	<section id="ca-breach" class="slide"><div>
-        <h2><i class="fa fa-exclamation-triangle"></i> La vie des CA n’est pas un long fleuve tranquille...</h2>
-        <ul>
-            <li>en 2011, <a href="https://www.comodo.com/Comodo-Fraud-Incident-2011-03-23.html">Comodo</a> signe 9 certificats incluant  mail.google.com, login.yahoo.com, login.skype.com, addons.mozilla.org, login.live.com,
-            <li class="next">en 2011, <a href="https://www.vasco.com/company/about_vasco/press_room/news_archive/2011/news_diginotar_reports_security_incident.aspx">Diginotar</a> signe des certificats utilisés pour intercepter le trafic gmail en Iran ; l’entreprise <a href="https://www.vasco.com/company/about_vasco/press_room/news_archive/2011/news_vasco_announces_bankruptcy_filing_by_diginotar_bv.aspx">ferme</a> quelques jours après,
-            <li class="next">en 2013, l’<a href="http://googleonlinesecurity.blogspot.fr/2013/12/further-improving-digital-certificate.html">ANSSI</a> génère des certificats pour des domaines de google ; ils sont détectés aussitôt par Chrome,
-            <li class="next">en 2015, <a href="https://googleonlinesecurity.blogspot.sg/2015/03/maintaining-digital-certificate-security.html">Google</a> exclue les certificats signés par l’AC Chinoise <a href="https://en.wikipedia.org/wiki/China_Internet_Network_Information_Center">CNNIC</a> car ils ont signés des certificats Google, le <a href="http://www1.cnnic.cn/AU/MediaC/Announcement/201504/t20150402_52049.htm">CNNIC répond</a>,
-            <li class="next">en 2015, Symantec <a href="http://www.symantec.com/connect/blogs/tough-day-leaders">annonce une fuite de quelques certificats</a>,
-                Google <a href="https://googleonlinesecurity.blogspot.fr/2015/10/sustaining-digital-certificate-security.html">en découvre 2522</a> et leur impose Certificate Transparency.
-        </ul>
-    </div></section>
-
 	<section id="certificate-transparency" class="slide"><div>
         <h2><i class="fa fa-book"></i> Certificate Transparency</h2>
         <h3>Problèmes :</h3>
         <ul>
             <li class="next">des <a href="https://mozillacaprogram.secure.force.com/CA/IncludedCACertificateReport">centaines de CA</a> dans nos magasins (entreprises, gouvernements),
             <li class="next">n’importe quel CA peut signer un certificat pour n’importe quel domaine,
-            <li class="next">les CA, des cibles de choix (rogue CA).
+            <li class="next">les CA, des cibles de choix <small>(<a href="#ca-breach">quelques attaques</a>, rogue CA)</small>.
         </ul>
         <h3 class="next">Une réponse : <a href="http://www.certificate-transparency.org/">certificate transparency</a></h3>
         <ul>
@@ -645,19 +614,6 @@
         </ul>
     </div></section>
 
-	<section id="collision" class="slide"><div>
-		<h2><i class="fa fa-user-secret"></i> Générer des faux certificats</h2>
-        <ul>
-            <li>avec les collisions : on joue sur le contenu pour que la signature corresponde,
-            <li class="next">en 2008 avec <a href="https://www.win.tue.nl/hashclash/rogue-ca/">MD5</a>,
-            <li class="next">en 2015, &laquo; <a href="https://sites.google.com/site/itstheshappening/">The SHAppening</a> &raquo; : collision sur une partie de SHA1 (compression) ; on estime une <a href="https://www.schneier.com/blog/archives/2012/10/when_will_we_se.html">attaque possible pour 700 000 $</a>,
-            <li class="next">d’abord <a href="http://googleonlinesecurity.blogspot.fr/2014/09/gradually-sunsetting-sha-1.html">Google</a>,
-                puis <a href="http://blogs.windows.com/msedgedev/2015/11/04/sha-1-deprecation-update/">Microsoft</a>
-                et <a href="https://blog.mozilla.org/security/2014/09/23/phasing-out-certificates-with-sha-1-based-signature-algorithms/">Mozilla</a>
-                <a href="https://blog.filippo.io/the-unofficial-chrome-sha1-faq/">bloqueront</a> les certificats et CA signés avec SHA1 dès 2016.
-        </ul>
-    </div></section>
-
 	<section id="attacks-summary" class="slide"><div>
 		<h2><i class="fa fa-bomb"></i> Les attaques connues</h2>
         <ul class="icons">
@@ -666,18 +622,8 @@
             <li>en 2013 <i class="fa fa-bolt"></i> <a href="#breach">BREACH</a>: Browser Reconnaissance and Exfiltration via Adaptive Compression of Hypertext,
             <li>en 2014 <i class="fa fa-level-down"></i> <a href="#poodle">POODLE</a>: Padding Oracle On Downgraded Legacy Encryption,
             <li>en 2015 <i class="fa fa-level-down"></i> <a href="#freak">FREAK</a>: Factoring RSA EXPORT Attack Keys,
-            <li>en 2015 <i class="fa fa-level-down"></i> <a href="#logjam">Logjam</a>: sur Diffie-Hellman.
-        </ul>
-    </div></section>
-
-	<section id="quelques-attaques" class="slide"><div>
-        <h2><i class="fa fa-fighter-jet"></i> Quelques autres attaques</h2>
-        <ul>
-            <li>en 2010, analyse de la <a href="http://www.infosecurity-magazine.com/news/researchers-crack-rsa-encryption-via-power-supply/">consommation électrique</a> d’un ordinateur pour retrouver une clé privée (canal auxiliaire ou &laquo; side channel &raquo;),
-            <li class="next">en 2013, analyse du <a href="http://www.forbes.com/sites/timworstall/2013/12/21/researchers-break-rsa-4096-encryption-with-just-a-microphone-and-a-couple-of-emails/">bruit des composants</a> pour la retrouver,
-            <li class="next">en 2013, <a href="http://blog.cryptographyengineering.com/2013/09/the-many-flaws-of-dualecdrbg.html">Dual_EC_DRBG</a> par RSA Security avec une porte dérobé pour la NSA,
-            <li class="next">en 2013, <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">Lucky13</a>, <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf"><abbr title="Timing Info-leak Made Easy">TIME</abbr></a> et attaques sur <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">RC4</a> (désactivé par Microsoft, Google et Mozilla en 2016),
-            <li class="next">en 2015, <a href="https://www.youtube.com/watch?v=hkw9tFnJk8k">Attaque sur <abbr title="Network Time Protocol">NTP</abbr></a> pour réinitialiser HSTS puis craquer de &laquo; vieux &raquo; certificats 512 bits.
+            <li>en 2015 <i class="fa fa-level-down"></i> <a href="#logjam">Logjam</a>: sur Diffie-Hellman,
+            <li>sans parler de <a href="#collision">génération de certificats via des collisions</a> ou d’<a href="#attaques-pointues">attaques encore plus pointues</a>...
         </ul>
     </div></section>
 
@@ -874,6 +820,25 @@
         </figure>
     </div></section>
 
+    <section id="protection-fai" class="slide"><div>
+        <h2>Pour se protéger des <abbr title="Fournisseur d’Accès Internet">FAI</abbr> malveillant</h2>
+        <ul>
+            <li><a href="http://www.webrankinfo.com/dossiers/webmastering/blocage-publicite-free">Blocage des pubs Google par Free</a> en mai 2013,
+            <li><a href="http://arstechnica.com/tech-policy/2014/09/why-comcasts-javascript-ad-injections-threaten-security-net-neutrality/">Ajout de pub par Comcast</a> en septembre 2014, ajout de pub ou remplacement des identifiants en échange de wifi gratuit
+                <span>(<small>depuis 2009, des pubs malicieuses ont déjà été servies depuis
+                    <a href="http://www.pcworld.com/article/2604480/malicious-advertising-hits-amazon-youtube-and-yahoo-cisco-says.html">Amazon</a>,
+                    <a href="http://www.techworm.net/2014/10/youtube-malvertising.html">Youtube</a>,
+                    <a href="https://finance.yahoo.com/news/malvertising-yahoo-affects-users-172836199.html">Yahoo</a>,
+                    le <a href="http://www.theguardian.com/technology/2009/sep/25/malvertising">New York Times</a>,
+                    <a href="https://zeltser.com/malvertising-malicious-ad-campaigns/">The Onion</a>,
+                    <a href="http://www.darkreading.com/attacks-breaches/zero-day-malvertising-attack-went-undetected-for-two-months/d/d-id/1320092">Dailymotion</a>,
+                    etc,
+                </small>),</span>
+                <li>Ajout de <a href="https://www.eff.org/fr/deeplinks/2014/11/verizon-x-uidh">cookie par Verizon</a> en novembre 2014, d’<a href="http://www.bortzmeyer.org/enrichir-qui.html">identifiant par Orange Jordanie, Vodafone Afrique du Sud</a> ou encore d’<a href="http://www.bortzmeyer.org/enrichir-qui.html">entêtes techniques par SFR ou Bouygues</a> en 2015.
+                <li>ou encore pour <a href="#droit-vie-prive">protéger sa vie privée</a>.
+        </ul>
+    </div></section>
+
 	<section id="droit-vie-prive" class="slide"><div>
 		<h2>Pour respecter la vie privée de vos utilisateurs</h2>
         <figure>
@@ -881,6 +846,19 @@
             <figcaption>Edward Snowden : <a href="https://www.youtube.com/watch?v=bpO3GeXTceM">about Privacy</a></figcaption>
         </figure>
 	</div></section>
+
+	<section id="ca-breach" class="slide"><div>
+        <h2><i class="fa fa-exclamation-triangle"></i> La vie des CA n’est pas un long fleuve tranquille...</h2>
+        <ul>
+            <li>en 2011, <a href="https://www.comodo.com/Comodo-Fraud-Incident-2011-03-23.html">Comodo</a> signe 9 certificats incluant  mail.google.com, login.yahoo.com, login.skype.com, addons.mozilla.org, login.live.com,
+            <li>en 2011, <a href="https://www.vasco.com/company/about_vasco/press_room/news_archive/2011/news_diginotar_reports_security_incident.aspx">Diginotar</a> signe des certificats utilisés pour intercepter le trafic gmail en Iran ; l’entreprise <a href="https://www.vasco.com/company/about_vasco/press_room/news_archive/2011/news_vasco_announces_bankruptcy_filing_by_diginotar_bv.aspx">ferme</a> quelques jours après,
+            <li>en 2013, l’<a href="http://googleonlinesecurity.blogspot.fr/2013/12/further-improving-digital-certificate.html">ANSSI</a> génère des certificats pour des domaines de google ; ils sont détectés aussitôt par Chrome,
+            <li>en 2015, <a href="https://googleonlinesecurity.blogspot.sg/2015/03/maintaining-digital-certificate-security.html">Google</a> exclue les certificats signés par l’AC Chinoise <a href="https://en.wikipedia.org/wiki/China_Internet_Network_Information_Center">CNNIC</a> car ils ont signés des certificats Google, le <a href="http://www1.cnnic.cn/AU/MediaC/Announcement/201504/t20150402_52049.htm">CNNIC répond</a>,
+            <li>en 2015, Symantec <a href="http://www.symantec.com/connect/blogs/tough-day-leaders">annonce une fuite de quelques certificats</a>,
+                Google <a href="https://googleonlinesecurity.blogspot.fr/2015/10/sustaining-digital-certificate-security.html">en découvre 2522</a> et leur impose Certificate Transparency.
+        </ul>
+    </div></section>
+
 
 	<section id="force-brute" class="slide"><div>
         <h2><i class="fa fa-server"></i> Pure <a href="https://fr.wikipedia.org/wiki/Attaque_par_force_brute">force brute</a> ?</h2>
@@ -1007,7 +985,29 @@
         </ul>
     </div></section>
 
+	<section id="collision" class="slide"><div>
+		<h2><i class="fa fa-user-secret"></i> Générer des faux certificats</h2>
+        <ul>
+            <li>avec les collisions : on joue sur le contenu pour que la signature corresponde,
+            <li>en 2008 avec <a href="https://www.win.tue.nl/hashclash/rogue-ca/">MD5</a>,
+            <li>en 2015, &laquo; <a href="https://sites.google.com/site/itstheshappening/">The SHAppening</a> &raquo; : collision sur une partie de SHA1 (compression) ; on estime une <a href="https://www.schneier.com/blog/archives/2012/10/when_will_we_se.html">attaque possible pour 700 000 $</a>,
+            <li>d’abord <a href="http://googleonlinesecurity.blogspot.fr/2014/09/gradually-sunsetting-sha-1.html">Google</a>,
+                puis <a href="http://blogs.windows.com/msedgedev/2015/11/04/sha-1-deprecation-update/">Microsoft</a>
+                et <a href="https://blog.mozilla.org/security/2014/09/23/phasing-out-certificates-with-sha-1-based-signature-algorithms/">Mozilla</a>
+                <a href="https://blog.filippo.io/the-unofficial-chrome-sha1-faq/">bloquent</a> les certificats et CA signés avec SHA1 en 2016.
+        </ul>
+    </div></section>
 
+	<section id="attaques-pointues" class="slide"><div>
+        <h2><i class="fa fa-fighter-jet"></i> Quelques autres attaques</h2>
+        <ul>
+            <li>en 2010, analyse de la <a href="http://www.infosecurity-magazine.com/news/researchers-crack-rsa-encryption-via-power-supply/">consommation électrique</a> d’un ordinateur pour retrouver une clé privée (canal auxiliaire ou &laquo; side channel &raquo;),
+            <li>en 2013, analyse du <a href="http://www.forbes.com/sites/timworstall/2013/12/21/researchers-break-rsa-4096-encryption-with-just-a-microphone-and-a-couple-of-emails/">bruit des composants</a> pour la retrouver,
+            <li>en 2013, <a href="http://blog.cryptographyengineering.com/2013/09/the-many-flaws-of-dualecdrbg.html">Dual_EC_DRBG</a> par RSA Security avec une porte dérobé pour la NSA,
+            <li>en 2013, <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">Lucky13</a>, <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf"><abbr title="Timing Info-leak Made Easy">TIME</abbr></a> et attaques sur <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">RC4</a> (désactivé par Microsoft, Google et Mozilla en 2016),
+            <li>en 2015, <a href="https://www.youtube.com/watch?v=hkw9tFnJk8k">Attaque sur <abbr title="Network Time Protocol">NTP</abbr></a> pour réinitialiser HSTS puis craquer de &laquo; vieux &raquo; certificats 512 bits.
+        </ul>
+    </div></section>
 
 	<p class="badge"><a href="https://github.com/paulgreg/https-slides">Fork me on Github</a></p>
 	<div class="progress"><div></div></div>
