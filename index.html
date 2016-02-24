@@ -88,12 +88,12 @@
 </style>
 </head>
 <body class="list">
-<header class="caption">
-    <h1>HTTPS n’aura plus de secret pour vous</h1>
-    <p>Grégory Paul</p>
-</header>
+    <header class="caption">
+        <h1>HTTPS n’aura plus de secret pour vous</h1>
+        <p>Grégory Paul</p>
+    </header>
 
-<section id="cover" class="slide cover"><div>
+    <section id="cover" class="slide cover"><div>
     <h2><abbr title="HyperText Transfer Protocol Secure">HTTPS</abbr> n’aura plus de secret<br/>pour vous</h2>
     <p>par <a href="http://paulgreg.me/">Grégory Paul</a> - <a href="http://fr.mappy.com/" class="clear"><img alt="Mappy" src="pictures/mappy-logo.png" class="logo" /></a></p>
     <img src="pictures/cables.jpg" alt="" />
@@ -101,9 +101,9 @@
         <img src="pictures/qrcode.svg" alt="" />
         <a href="http://paulgreg.me/https-slides/">http://paulgreg.me/https-slides/</a>
     </p>
-</div></section>
+    </div></section>
 
-<section id="presentation" class="slide"><div>
+    <section id="presentation" class="slide"><div>
     <h2>Présentation</h2>
     <ul class="icons">
         <li><i class="fa fa-user nomargin"> </i>Grégory Paul
@@ -120,9 +120,9 @@
         <img class="mappy-home" alt="" src="pictures/mappy-home.png" />
         <img class="mappy-immersive" alt="" src="pictures/mappy-immersive.png" />
     </ul>
-</div></section>
+    </div></section>
 
-<section id="sommaire" class="slide"><div>
+    <section id="sommaire" class="slide"><div>
     <h2>Sommaire</h2>
     <ul class="icons">
         <li><i class="fa fa-question-circle"></i> Pourquoi HTTPS ?
@@ -134,56 +134,45 @@
         <li><i class="fa fa-tachometer"></i> Performances</h2>
         <li><i class="fa fa-hourglass-end"></i> Conclusion</h2>
     </ul>
-</div></section>
+    </div></section>
 
-<section id="pourquoi-https" class="slide shout"><div>
+    <section id="pourquoi-https" class="slide shout"><div>
         <h2>Pourquoi<br>HTTPS <i class="fa fa-question-circle"></i></h2>
-</div></section>
+    </div></section>
 
-<section id="reseau-typique" class="slide"><div>
+    <section id="reseau-typique" class="slide"><div>
     <h2>Dans un réseau typique...</h2>
     <figure>
         <img src="pictures/https_network.svg" class="svg" alt="Réseau normal" />
         <figcaption></figcaption>
     </figure>
-</div></section>
+    </div></section>
 
-<section id="interception-traffic-http" class="slide"><div>
+    <section id="interception-traffic-http" class="slide"><div>
     <h2>Pour éviter l’interception de traffic</h2>
     <figure>
         <img src="pictures/https_rogue_ap.svg" class="svg" alt="Réseau anormal au niveau du point d’accès" />
         <figcaption><kbd>donotbeevil</kbd></figcaption>
     </figure>
-</div></section>
-<section id="interception-traffic-http-video" class="slide"><div>
+    </div></section>
+
+    <section id="interception-traffic-http-video" class="slide"><div>
     <h2>Pour éviter l’interception de traffic</h2>
     <figure class="center">
         <video controls preload="metadata" src="videos/mitm-http.webm"></video>
         <figcaption></figcaption>
     </figure>
-</div></section>
-<section id="interception-traffic-http-explications" class="slide"><div>
-    <h2>Fonctionnement de l’attaque (<a href="http://blog.philippheckel.com/2013/07/01/how-to-use-mitmproxy-to-read-and-modify-https-traffic-of-your-phone/">mitmproxy</a>)</h2>
-    <figure class="center">
-        <img src="pictures/https_raspberry.svg" class="svg" alt="Fonctionnement de l’interception" />
-        <figcaption></figcaption>
-    </figure>
-</div></section>
-<section id="vol-cookie" class="slide"><div>
-    <h2>Pour éviter de se faire voler ses cookies</h2>
-    <figure class="center">
-        <img src="pictures/firesheep.png" alt="Logiciel Firesheep" />
-        <figcaption><a href="http://codebutler.com/firesheep/">Firesheep</a> en octobre 2010</figcaption>
-    </figure>
-</div></section>
-<section id="protection-fai-schema" class="slide"><div>
+    </div></section>
+
+    <section id="protection-fai-schema" class="slide"><div>
     <h2>Pour se protéger des <abbr title="Fournisseur d’Accès Internet">FAI</abbr> malveillant</h2>
     <figure>
         <img src="pictures/https_fai_injection.svg" class="svg" alt="Réseau anormal au niveau du FAI" />
         <figcaption></figcaption>
     </figure>
-</div></section>
-<section id="protection-fai" class="slide"><div>
+    </div></section>
+
+    <section id="protection-fai" class="slide"><div>
     <h2>Pour se protéger des <abbr title="Fournisseur d’Accès Internet">FAI</abbr> malveillant</h2>
     <ul>
         <li><a href="http://www.webrankinfo.com/dossiers/webmastering/blocage-publicite-free">Blocage des pubs Google par Free</a> en mai 2013,
@@ -198,8 +187,9 @@
             etc,
             <li class="next">Ajout de <a href="https://www.eff.org/fr/deeplinks/2014/11/verizon-x-uidh">cookie par Verizon</a> en novembre 2014, d’<a href="http://www.bortzmeyer.org/enrichir-qui.html">identifiant par Orange Jordanie, Vodafone Afrique du Sud</a> ou encore d’<a href="http://www.bortzmeyer.org/enrichir-qui.html">entêtes techniques par SFR ou Bouygues</a> en 2015.
     </ul>
-</div></section>
-<section id="grand-cannon" class="slide"><div>
+    </div></section>
+
+    <section id="grand-cannon" class="slide"><div>
     <h2>Pour se protéger du <a href="https://citizenlab.org/2015/04/chinas-great-cannon/">Grand Cannon Chinois</a></h2>
     <figure>
         <img src="pictures/https_great_cannon.svg" class="svg" alt="grand cannon"/>
@@ -1005,6 +995,22 @@ http://githubengineering.com/subresource-integrity/
 	<section id="annexes" class="slide shout"><div>
 		<h2><i class="fa fa-moon"></i> Annexes</h2>
 	</div></section>
+
+    <section id="interception-traffic-http-explications" class="slide"><div>
+        <h2>Fonctionnement de l’attaque (<a href="http://blog.philippheckel.com/2013/07/01/how-to-use-mitmproxy-to-read-and-modify-https-traffic-of-your-phone/">mitmproxy</a>)</h2>
+        <figure class="center">
+            <img src="pictures/https_raspberry.svg" class="svg" alt="Fonctionnement de l’interception" />
+            <figcaption></figcaption>
+        </figure>
+    </div></section>
+
+    <section id="vol-cookie" class="slide"><div>
+    <h2>Pour éviter de se faire voler ses cookies</h2>
+        <figure class="center">
+            <img src="pictures/firesheep.png" alt="Logiciel Firesheep" />
+            <figcaption><a href="http://codebutler.com/firesheep/">Firesheep</a> en octobre 2010</figcaption>
+        </figure>
+    </div></section>
 
 
 	<p class="badge"><a href="https://github.com/paulgreg/https-slides">Fork me on Github</a></p>
