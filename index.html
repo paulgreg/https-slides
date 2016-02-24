@@ -732,16 +732,24 @@
             <li><i class="fa fa-thumb-tack"></i> Entête HTTP apportant des restrictions sur les types de contenu attendus et leur provenances,
             <li><i class="fa fa-ban"></i> Système de liste blanche <small>(ce qui n’est pas listé est bloqué)</small>,
             <li><i class="fa fa-bomb"></i> Très puissant car permet d’éviter des injections de code,
-            <li><i class="fa fa-exclamation-triangle"></i> Difficile <small>(impossible ?)</small> à mettre en place avec du contenu aggrégé <small>(publicité, mashup, like, tweet,...)</small>,
+            <li><i class="fa fa-exclamation-triangle"></i> Difficile <small>(impossible ?)</small> à mettre en place avec du contenu aggrégé <small>(publicité...)</small>,
             <li><i class="fa fa-flag-o"></i> Activez les rapports : <code>report-uri</code> <small>(il existe des <a href="https://report-uri.io/home/generate/">générateurs</a> de CSP)</small>
         <ul>
     </div></section>
 
 	<section id="subresource-integrity" class="slide"><div>
 		<h2>Subresource integrity</h2>
-https://hacks.mozilla.org/2015/09/subresource-integrity-in-firefox-43/
-https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity
-http://githubengineering.com/subresource-integrity/
+        <pre>
+            <code>&lt;script src="https://example.com/jquery.js"</code>
+            <code>        integrity="sha384-oqVuAfX542FR..."&gt;&lt;script&gt;</code>
+        </pre>
+        <ul class="icons">
+            <li><i class="fa fa-certificate"></i> Permet de valider cryptographiqment le contenu d’un &lt;script&gt; ou &lt;link&gt;,
+            <li><i class="fa fa-globe"></i> Intéressant pour les contenus hébérgés ailleurs (<abbr title="Content Delivery Network">CDN</abbr>),
+            <li><i class="fa fa-firefox"></i><i class="fa fa-chrome"></i> Depuis <a href="https://hacks.mozilla.org/2015/09/subresource-integrity-in-firefox-43/">Firefox 43</a> et <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=355467">Chrome 45</a>,
+            <li><i class="fa fa-github"></i> Utilisé sur <a href="http://githubengineering.com/subresource-integrity/">github.com</a>.
+        </ul>
+
     </div></section>
 
 	<section id="expiration" class="slide"><div>
@@ -759,13 +767,40 @@ http://githubengineering.com/subresource-integrity/
 	<section id="performances" class="slide shout"><div>
 		<h2><i class="fa fa-tachometer"></i> Performances</h2>
 	</div></section>
-	<section id="performances-details" class="slide"><div>
-		<h2>Performances / optimisation</h2>
-        <ul>
-            <li><a href="https://en.wikipedia.org/wiki/STARTTLS">STARTTLS</a>
-            <li>"In our production frontend machines, SSL/TLS accounts for less than 1% of the CPU load, less than 10KB of memory per connection and less than 2% of network overhead"... <a href="https://www.imperialviolet.org/2010/06/25/overclocking-ssl.html">Overclocking SSL</a>
-            <li>False start https://technotes.googlecode.com/git/falsestart.html, jump start https://www.ietf.org/id/draft-vkrasnov-tls-jumpstart-00.txt
-            <li>https://noncombatant.org/2014/11/23/tls-all-the-things/
+
+	<section id="performances-details-quotes" class="slide"><div>
+		<h2>Performances</h2>
+        <figure>
+            <blockquote><p>SSL/TLS accounts for less than 1% of the CPU load, less than 10KB of memory per connection and less than 2% of network overhead</p></blockquote>
+            <figcaption>Migration de gmail en 2010 - <a href="https://www.imperialviolet.org/2010/06/25/overclocking-ssl.html">Adam Langley (Google)</a></figcaption>
+
+            <blockquote><p>We have found that modern software-based TLS implementations running on commodity CPUs are fast enough to handle heavy HTTPS traffic</p></blockquote>
+            <figcaption>Doug Beaver (Facebook)</figcaption>
+        </figure>
+	</div></section>
+
+	<section id="performances-details-numbers" class="slide"><div>
+		<h2>Performances</h2>
+        <p><i class="fa fa-exchange"></i> Pour tester le nombre de "poignées de main/seconde" :</p>
+        <pre><code>$ openssl speed rsa</code></pre>
+        <p><i class="fa fa-laptop"></i> Sur ce <a href="http://shop.lenovo.com/fr/fr/laptops/thinkpad/t-series/t440s/">Thinkpad t440s</a> <small>(fin 2013 - Intel Core i7-4600U @ 2.10GHz)</small> :</p>
+        <pre>
+            <code>                 sign    verify    sign/s verify/s</code>
+            <code>rsa  512 bits 0.000051s 0.000005s  19514.8 220139.1</code>
+            <code><strong>rsa 1024</strong> bits 0.000193s 0.000013s   <strong>5182.2</strong>  79873.9</code>
+            <code><strong>rsa 2048</strong> bits 0.001312s 0.000040s    <strong>762.3</strong>  25034.3</code>
+            <code><strong>rsa 4096</strong> bits 0.009250s 0.000145s    <strong>108.1</strong>   6889.3</code>
+        </pre>
+        <p><i class="fa fa-bolt"></i> Facteur 7 entre 1024 et 2048, 2048 et 4096 <i class="fa fa-exclamation"></i></p>
+    </div></section>
+
+	<section id="performances-details-conclusion" class="slide"><div>
+		<h2>Performances</h2>
+        <ul class="icons">
+            <li><i class="fa fa-smile-o"></i> TLS a un impact faible sur le processeur et le réseau <strong>mais</strong> :
+            <li><i class="fa fa-exclamation-circle"></i> La taille des clés du chiffrement asymétrique a un impact très fort <small>(2048 suffisant pour la majorité des usages)</small>,
+            <li><i class="fa fa-exclamation-triangle"></i> Cacher les sessions TLS est obligatoire !
+            <li><i class="fa fa-link"></i> <a href="https://istlsfastyet.com/">IsTlsFastYest.com</a>
         </ul>
     </div></section>
 
