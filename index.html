@@ -711,21 +711,32 @@
 	<section id="certificate-public-key-pinning" class="slide"><div>
 		<h2>CPKP : Certificate Public Key Pinning <a href="http://tools.ietf.org/html/rfc7469">RFC7469</a></h2>
         <pre><code>Public-Key-Pins: pin-sha256=""; pin-sha256=""; max-age=259200</code></pre>
-        <ul>
-            <li>Entête HTTP "épinglant" une liste de condensat (hash) de certificats (AC racine, AC intermédiaire ou feuille),
-            <li>Connexion uniquement si le condensat est trouvé dans la chaîne,
-            <li>Évite qu’une autre certification ne signe un certificat (<a href="https://www.nsa.gov/">nsa.gov</a> signé par <abbr title="China Internet Network Information Center">CNNIC</abbr>),
-            <li>Pré-chargement dans les navigateurs : <a href="https://www.imperialviolet.org/2011/05/04/pinning.html / https://code.google.com/p/chromium/codesearch#chromium/src/net/http/transport_security_state_static.h&amp;cl=GROK&amp;gsn=GetDynamicDomainState">transport_security_state_static.h</a>,
-            <li>Commencez par : <pre><code>Public-Key-Pins-Report-Only: ... report-uri="https://..."</code></pre>
-            <li><a href="https://noncombatant.org/2015/05/01/about-http-public-key-pinning/">Plus</a> <a href="https://timtaubert.de/blog/2014/10/http-public-key-pinning-explained/">compliqué</a> à <a href="https://developers.google.com/web/updates/2015/09/HPKP-reporting-with-chrome-46">mettre en place</a> et plus risqué ; à reserver aux sites sensibles.
+        <ul class="icons">
+            <li><i class="fa fa-thumb-tack"></i> Entête HTTP "épinglant" une liste de condensat (hash) de certificats (AC racine, AC intermédiaire ou feuille),
+            <li><i class="fa fa-cutlery"></i> Connexion uniquement si le condensat est trouvé dans la chaîne,
+            <li><i class="fa fa-user-secret"></i> Évite qu’une autre certification ne signe son certificat (<a href="https://www.nsa.gov/">www.nsa.gov</a> signé par <abbr title="China Internet Network Information Center">CNNIC</abbr>),
+            <li><i class="fa fa-gift"></i> Pré-chargement dans les navigateurs : <a href="https://www.imperialviolet.org/2011/05/04/pinning.html / https://code.google.com/p/chromium/codesearch#chromium/src/net/http/transport_security_state_static.h&amp;cl=GROK&amp;gsn=GetDynamicDomainState">transport_security_state_static.h</a>,
+            <li><i class="fa fa-flag-o"></i> <a href="https://developers.google.com/web/updates/2015/09/HPKP-reporting-with-chrome-46">Commencez par</a> : <code>Public-Key-Pins-Report-Only: report-uri</code>
+            <li><i class="fa fa-exclamation-triangle"></i> <a href="https://noncombatant.org/2015/05/01/about-http-public-key-pinning/">Plus</a> <a href="https://timtaubert.de/blog/2014/10/http-public-key-pinning-explained/">compliqué</a> à mettre en place et plus risqué ; à reserver aux sites sensibles.
         </ul>
     </div></section>
 
 	<section id="CSP" class="slide"><div>
-		<h2>CSP : Content Security Policy</h2>
-        <p><a href="https://securityheaders.com/content-security-policy.php">Content Security Policy</a>
-https://diogomonica.com/2015/12/30/deep-into-csp/
+        <h2><a href="https://diogomonica.com/2015/12/30/deep-into-csp/">CSP</a> : Content Security Policy</h2>
+        <pre>
+            <code>Content-Security-Policy:default-src 'none';</code>
+            <code>     script-src 'self'; style-src 'self';</code>
+            <code>     upgrade-insecure-requests; block-all-mixed-content;</code>
+        </pre>
+        <ul class="icons">
+            <li><i class="fa fa-thumb-tack"></i> Entête HTTP apportant des restrictions sur les types de contenu attendus et leur provenances,
+            <li><i class="fa fa-ban"></i> Système de liste blanche <small>(ce qui n’est pas listé est bloqué)</small>,
+            <li><i class="fa fa-bomb"></i> Très puissant car permet d’éviter des injections de code,
+            <li><i class="fa fa-exclamation-triangle"></i> Difficile <small>(impossible ?)</small> à mettre en place avec du contenu aggrégé <small>(publicité, mashup, like, tweet,...)</small>,
+            <li><i class="fa fa-flag-o"></i> Activez les rapports : <code>report-uri</code> <small>(il existe des <a href="https://report-uri.io/home/generate/">générateurs</a> de CSP)</small>
+        <ul>
     </div></section>
+
 	<section id="subresource-integrity" class="slide"><div>
 		<h2>Subresource integrity</h2>
 https://hacks.mozilla.org/2015/09/subresource-integrity-in-firefox-43/
@@ -768,8 +779,8 @@ http://githubengineering.com/subresource-integrity/
             <li class="next"><i class="fa fa-users"></i> TLS bientôt le défaut,
             <li class="next"><i class="fa fa-server"></i> n’ayez pas peur <small>(pas si compliqué d’avoir une configuration solide)</small>,
             <li class="next"><i class="fa fa-bell-o"></i> tenez vous au courant, tester votre site régulièrement et mettez-la à jour,
-            <li class="next"><i class="fa fa-wrench"></i> vive l’outillage pour automatiser TLS
-            <li class="next"><i class="fa fa-ban"></i> la fin des révocations (<small>avec des certificats pour quelques jours</small>) ?
+            <li class="next"><i class="fa fa-wrench"></i> vive l’outillage pour automatiser TLS <small>(Let’s encrypt/ACME)</small>
+            <li class="next"><i class="fa fa-ban"></i> la fin des révocations <small>(avec des certificats pour quelques jours)</small> ?
         </ul>
         <p class="link">
             <img src="pictures/qrcode.svg" alt="" />
