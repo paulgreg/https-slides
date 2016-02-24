@@ -1,6 +1,5 @@
-
-figcaption                                  { margin-top: -20px; }
 header.caption                              { color: white; }
+
 .slide.shout h2                             { font-size: 135px; }
 .slide h2                                   { margin: 0px 0px 20px}
 .slide img.svg                              { max-width: 110%; }
@@ -17,9 +16,11 @@ header.caption                              { color: white; }
 .slide ul.icons li:before                   { content: ""; }
 .slide ul.icons li i                        { margin: 0 -10px 0 40px; text-align: center; }
 .slide.tell h2                              { position: absolute; top: 50%; left: 0px; width: 100%; text-align: center; line-height: 1; font-size: 100px; transform: translateY(-50%); }
+.slide code                                 { background-color: rgba(242, 61, 12, 0.37); }
 .slide pre                                  { margin-bottom: 1em;  }
 .slide pre code                             { line-height: 175%; }
 .slide pre.small code                       { line-height: 110%; font-size: 12px; }
+.slide figcaption                                  { margin-top: -20px; }
 .slide small                                { font-size: 80%; color: #666; }
 .slide small a                              { color: #666; }
 .slide p                                    { margin-bottom: .25em; }
@@ -41,6 +42,7 @@ header.caption                              { color: white; }
 .slide h3                                   { color: #666; font-size: 32px; }
 .slide .mark                                { position: absolute; background-color: rgba(255, 225, 0, 0.24); border: 1px solid black; height: 10px; }
 .slide table td                             { padding: 0.2em 0.25em; }
+
 .broken, .broken a                          { color:red; }
 .unsecure, .unsecure a                      { color:orange; }
 .safe, .safe a                              { color:green; }

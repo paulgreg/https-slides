@@ -39,7 +39,7 @@
         </ul>
         <ul class="next icons">
             <li><i class="fa fa-link nomargin"></i> mappy.com : application web avec ~700 000 visites par jour
-            <li><i class="fa fa-star nomargin"></i> cartes, itinéraires, ~4 500 000 <acronym title="Point Of Interest">POI</acronym>, vues immersives <small>(en <a href="http://techblog.mappy.com/vues-360-en-webgl.html">webGL</a>)</small>
+            <li><i class="fa fa-star nomargin"></i> cartes, itinéraires, ~4 500 000 <abbr title="Point Of Interest">POI</abbr>, vues immersives <small>(en <a href="http://techblog.mappy.com/vues-360-en-webgl.html">webGL</a>)</small>
             <img class="mappy-home" alt="" src="pictures/mappy-home.png" />
             <img class="mappy-immersive" alt="" src="pictures/mappy-immersive.png" />
         </ul>
@@ -676,9 +676,8 @@
             <li>en 2010, analyse de la <a href="http://www.infosecurity-magazine.com/news/researchers-crack-rsa-encryption-via-power-supply/">consommation électrique</a> d’un ordinateur pour retrouver une clé privée (canal auxiliaire ou &laquo; side channel &raquo;),
             <li class="next">en 2013, analyse du <a href="http://www.forbes.com/sites/timworstall/2013/12/21/researchers-break-rsa-4096-encryption-with-just-a-microphone-and-a-couple-of-emails/">bruit des composants</a> pour la retrouver,
             <li class="next">en 2013, <a href="http://blog.cryptographyengineering.com/2013/09/the-many-flaws-of-dualecdrbg.html">Dual_EC_DRBG</a> par RSA Security avec une porte dérobé pour la NSA,
-            <li class="next">en 2013, <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">Lucky13</a> et <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf"><abbr title="Timing Info-leak Made Easy">TIME</abbr></a>,
-            <li class="next">en 2013, attaques sur <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">RC4</a> (désactivé par Microsoft, Google et Mozilla en 2016),
-            <li class="next">en 2015, <a href="https://www.youtube.com/watch?v=hkw9tFnJk8k">Attaque sur <abbr title="Network Time Protocol">NTP</abbr></a> pour réinitialiser HSTS, craquer de &laquo; vieux &raquo; certificats 512 bits,
+            <li class="next">en 2013, <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">Lucky13</a>, <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf"><abbr title="Timing Info-leak Made Easy">TIME</abbr></a> et attaques sur <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">RC4</a> (désactivé par Microsoft, Google et Mozilla en 2016),
+            <li class="next">en 2015, <a href="https://www.youtube.com/watch?v=hkw9tFnJk8k">Attaque sur <abbr title="Network Time Protocol">NTP</abbr></a> pour réinitialiser HSTS puis craquer de &laquo; vieux &raquo; certificats 512 bits.
         </ul>
     </div></section>
 
@@ -689,9 +688,9 @@
 	<section id="mixed-content" class="slide"><div>
 		<h2>Mixed content</h2>
         <ul>
-            <li>Mixed content : ressources via HTTP depuis une page HTTPS
-            <li>contenu passif dégradant l’icône de sécurité : <code>&lt;img&gt;</code>, <code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code>
-            <li>contenu actif simplement bloqué : <code>&lt;script&gt;</code>, <code>&lt;link&gt;</code>, <code>&lt;iframe&gt;</code>, <code>&lt;object&gt;</code>, <code>XMLHttpRequest</code>, propriétés <code>CSS</code>
+            <li>Mixed content : ressources chargées via HTTP depuis une page HTTPS <small>(<a href="https://developer.mozilla.org/en-US/docs/Security/Mixed_content"><abbr title="Mozilla Developer Network">MDN</abbr></a>)</small>
+            <li>Contenu <strong>passif</strong> dégradant l’icône de sécurité : <code>&lt;img&gt;</code>, <code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code>
+            <li>Contenu <strong>actif</strong> bloqué : <code>&lt;script&gt;</code>, <code>&lt;link&gt;</code>, <code>&lt;iframe&gt;</code>, <code>&lt;object&gt;</code>, <code>XMLHttpRequest</code>, propriétés <code>CSS</code>
         </ul>
         <figure class="center">
             <img src="pictures/dubious-as-neutral.png" alt="Chrome page security icon" width="400"/>
@@ -700,25 +699,28 @@
     </div></section>
 
 	<section id="HSTS" class="slide"><div>
-		<h2>HSTS : Http Strict Transport Security</h2>
+		<h2>HSTS : Http Strict Transport Security <a href="https://tools.ietf.org/html/rfc6797">RFC6797</a></h2>
         <pre><code>Strict-Transport-Security: max-age=16070400; includeSubDomains</code></pre>
-        <p>MITM : affaiblir le chiffrement d’où <a href="https://securityheaders.com/http-strict-transport-security.php">HTTP Strict Transport Security</a>
-        <p>https://www.youtube.com/watch?v=hkw9tFnJk8k
-        <p>https://code.google.com/p/chromium/codesearch#chromium/src/net/http/transport_security_state_static.json
+        <ul class="icons">
+            <li><i class="fa fa-bolt"></i> Entête HTTP indiquant au navigateur de toujours se connecter sur <code>https://</code> (même si l’utilisateur tape explicitement <code>http://</code> ou si les liens pointent vers <code>http://</code> y compris les sous-domaines),
+            <li><i class="fa fa-user-secret"></i> Évite une interception future (ou sslstrip),
+            <li><i class="fa fa-gift"></i> Pré-chargement dans les navigateurs : <a href="https://code.google.com/p/chromium/codesearch#chromium/src/net/http/transport_security_state_static.json">transport_security_state_static.json</a>,
+            <li><i class="fa fa-exclamation-triangle"></i> Que se passe-t-il si votre certificat expire ou si le port 443 ne répond plus ?
     </div></section>
+
 	<section id="certificate-public-key-pinning" class="slide"><div>
-		<h2>Certificate public key pinning</h2>
+		<h2>CPKP : Certificate Public Key Pinning <a href="http://tools.ietf.org/html/rfc7469">RFC7469</a></h2>
+        <pre><code>Public-Key-Pins: pin-sha256=""; pin-sha256=""; max-age=259200</code></pre>
         <ul>
-            <li>https://en.m.wikipedia.org/wiki/Transport_Layer_Security#Certificate_pinning
-            <li>Google en référencie en dur : https://www.imperialviolet.org/2011/05/04/pinning.html / https://code.google.com/p/chromium/codesearch#chromium/src/net/http/transport_security_state_static.h&amp;cl=GROK&amp;gsn=GetDynamicDomainState&amp;rcl=1446640461
-            <li><a href="https://www.imperialviolet.org/2011/05/04/pinning.html">Public key pinning (04 May 2011)</a> dans Chrome
-            <li><a href="https://wiki.mozilla.org/SecurityEngineering/Public_Key_Pinning">dans Firefox aussi</a>
-            <li>http://www.internetsociety.org/deploy360/blog/2015/05/new-rfc-7469-on-certificate-pinning-http-public-key-pinning-hpkp/
-            <li>https://noncombatant.org/2015/05/01/about-http-public-key-pinning/
-            <li>https://timtaubert.de/blog/2014/10/http-public-key-pinning-explained/
-           https://www.chromium.org/Home/chromium-security/security-faq#TOC-How-does-key-pinning-interact-with-local-proxies-and-filters-
+            <li>Entête HTTP "épinglant" une liste de condensat (hash) de certificats (AC racine, AC intermédiaire ou feuille),
+            <li>Connexion uniquement si le condensat est trouvé dans la chaîne,
+            <li>Évite qu’une autre certification ne signe un certificat (<a href="https://www.nsa.gov/">nsa.gov</a> signé par <abbr title="China Internet Network Information Center">CNNIC</abbr>),
+            <li>Pré-chargement dans les navigateurs : <a href="https://www.imperialviolet.org/2011/05/04/pinning.html / https://code.google.com/p/chromium/codesearch#chromium/src/net/http/transport_security_state_static.h&amp;cl=GROK&amp;gsn=GetDynamicDomainState">transport_security_state_static.h</a>,
+            <li>Commencez par : <pre><code>Public-Key-Pins-Report-Only: ... report-uri="https://..."</code></pre>
+            <li><a href="https://noncombatant.org/2015/05/01/about-http-public-key-pinning/">Plus</a> <a href="https://timtaubert.de/blog/2014/10/http-public-key-pinning-explained/">compliqué</a> à <a href="https://developers.google.com/web/updates/2015/09/HPKP-reporting-with-chrome-46">mettre en place</a> et plus risqué ; à reserver aux sites sensibles.
         </ul>
     </div></section>
+
 	<section id="CSP" class="slide"><div>
 		<h2>CSP : Content Security Policy</h2>
         <p><a href="https://securityheaders.com/content-security-policy.php">Content Security Policy</a>
@@ -781,12 +783,12 @@ http://githubengineering.com/subresource-integrity/
             <li><a href="https://www.imperialviolet.org/">ImperialViolet</a>, le blog Adam Langley (Google),
             <li><a href="https://www.schneier.com/">Schneier on Security</a>, le blog de Bruce Schneier,
             <li><a href="http://blog.cryptographyengineering.com/">A Few Thoughts on Cryptographic Engineering</a>, le blog de Matthew Green,
-            <li><a href="http://data.confs.fr/ssl-tls-sonntag/">Conférence de Benjamin Sonntag</a>,
+            <li>Interview de Tom Delmas par les Castcodeurs sur HTTPS (partie <a href="https://lescastcodeurs.com/2015/05/25/lcc-125-interview-sur-https-avec-tom-delmas-partie-1/">1</a> &amp; <a href="https://lescastcodeurs.com/2015/06/24/lcc-127-interview-sur-https-avec-tom-delmas-partie-2/">2</a>),
+            <li>Security Now, <a href="https://www.grc.com/sn/past/2013.htm">épisode 412 "SSL &amp; Perfect Forward Secrecy"</a>,
+            <li><a href="http://data.confs.fr/ssl-tls-sonntag/">Conférence de Benjamin Sonntag</a>, <a href="https://mozilla.github.io/server-side-tls/ssl-config-generator/">TLS config generator</a> par Mozilla,
             <li><a href="https://www.feistyduck.com/library/openssl-cookbook/">Openssl cookbook</a>, <a href="https://wiki.mozilla.org/Security/Server_Side_TLS">Guide sur TLS</a> chez Mozilla, <a href="https://www.ssllabs.com/downloads/SSL_TLS_Deployment_Best_Practices.pdf">best practices</a> chez Qualys,
-            <li><a href="https://mozilla.github.io/server-side-tls/ssl-config-generator/">TLS config generator</a> par Mozilla,
             <li><a href="https://github.com/drwetter/testssl.sh">testssl.sh</a>, <a href="https://www.ssllabs.com/">SSLLabs</a>, <a href="https://tls.imirhil.fr/">tls.imirhil.fr</a> ou <a href="https://github.com/sibiantony/ssleuth">ssleuth</a> pour tester sa configuration,
-            <li>Security Now, <a href="https://www.grc.com/sn/past/2013.htm">épisode 412 "SSL &amp; Perfect Forward Secrecy"</a>, juillet 2013,
-            <li>un interview de Tom Delmas par les Castcodeurs sur HTTPS (partie <a href="https://lescastcodeurs.com/2015/05/25/lcc-125-interview-sur-https-avec-tom-delmas-partie-1/">1</a> &amp; <a href="https://lescastcodeurs.com/2015/06/24/lcc-127-interview-sur-https-avec-tom-delmas-partie-2/">2</a>),
+            <li><a href="https://securityheaders.com/">securityheaders.io</a> pour vérifier les entêtes HTTP,
             <li><a href="https://www.grc.com/fingerprints.htm">GRC fingerprint</a>, pour vérifier les empreintes des certificats,
             <li>Mes flux RSS sur <a href="https://rsstodolist.appspot.com/?n=https&amp;l=100">HTTPS</a>, <a href="https://rsstodolist.appspot.com/?n=tls&amp;l=100">TLS</a> &amp; <a href="https://rsstodolist.appspot.com/?n=ssl&amp;l=100">SSL</a>,
             <li><a href="https://valtechtechno.github.io/cours-du-soir-http/">Si vous voulez creuser HTTP</a>.
@@ -799,8 +801,9 @@ http://githubengineering.com/subresource-integrity/
             <li>Images de cable réseau : <a href="https://www.google.com/about/datacenters/gallery">google.com/about/datacenters/gallery</a>,
             <li>Source de l’image Firesheep : <a href="http://www.genbeta.com/navegadores/firesheep-hackea-con-un-click-cuentas-de-facebook-google-twitter">genbeta.com</a>,
             <li>Échange de clé Diffie-Hellman : <a href="https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange">wikipedia.org</a>,
-            <li><a href="https://xkcd.com/">XKCD</a> pour les comics,
             <li>L’idée d’insérer des licornes vient de &quot;<a href="https://www.youtube.com/watch?v=i_qE1iAmjFg">10 Things I Learned from the jQuery Source</a>&quot; par Paul Irish,
+            <li><a href="https://xkcd.com/">XKCD</a> pour les comics,
+            <li>Icônes via <a href="http://fortawesome.github.io/Font-Awesome/icons/">Font-Awesome</a>,
             <li>Schémas construits sur <a href="https://www.gliffy.com/">gliffy.com</a>.
 		</ul>
 	</div></section>
