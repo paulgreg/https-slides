@@ -8,7 +8,6 @@
 	<link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen.css" />
 	<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
 	<link rel="stylesheet" href="styles.css" />
-</style>
 </head>
 <body class="list">
     <header class="caption">
@@ -33,7 +32,7 @@
             <li><i class="fa fa-briefcase nomargin"></i> Développeur Web à<img alt="Mappy" src="pictures/mappy-logo.png" class="logo" />
             <br>(<a href="https://twitter.com/search?q=%23javascript%20from%3Apaulgreg&src=typd">JavaScript</a>, <a href="https://twitter.com/search?q=%23security%20from%3Apaulgreg&src=typd">sécurité</a>, <a href="https://twitter.com/search?q=%23hack%20from%3Apaulgreg&src=typd">bidouillage</a>)
             <li>
-                <a href="http:/paulgreg.me/" rel="me">http://paulgreg.me</a>
+                <a href="http://paulgreg.me/" rel="me">http://paulgreg.me</a>
                 <a href="https://twitter.com/paulgreg" rel="me"><i class="fa fa-twitter nomargin"></i></a>
                 <a href="https://github.com/paulgreg" rel="me"><i class="fa fa-github nomargin"></i></a>
         </ul>
@@ -51,11 +50,11 @@
             <li><i class="fa fa-question-circle"></i> Pourquoi HTTPS ?
             <li><i class="fa fa-paper-plane"></i> Objectifs d’HTTPS
             <li><i class="fa fa-exchange"></i> Poignée de main
-            <li><i class="fa fa-key"></i> Authentification</h2>
-            <li><i class="fa fa-bomb"></i> Attaques</h2>
-            <li><i class="fa fa-cogs"></i> Après HTTPS</h2>
-            <li><i class="fa fa-tachometer"></i> Performances</h2>
-            <li><i class="fa fa-hourglass-end"></i> Conclusion</h2>
+            <li><i class="fa fa-key"></i> Authentification
+            <li><i class="fa fa-bomb"></i> Attaques
+            <li><i class="fa fa-cogs"></i> Après HTTPS
+            <li><i class="fa fa-tachometer"></i> Performances
+            <li><i class="fa fa-hourglass-end"></i> Conclusion
         </ul>
     </div></section>
 
@@ -213,12 +212,18 @@
         influencée par une clé, permet de vérifier simultanément l'intégrité et l'authenticité d’un message.
        </p>
     </div></section>
+
     <section id="signature-numerique" class="slide signature"><div>
         <h2><i class="fa fa-certificate"></i> Signature numérique</h2>
         <figure class="center">
             <img src="./pictures/signature.png" alt="signature numérique" />
             <figcaption></figcaption>
         </figure>
+    </div></section>
+
+    <section id="chaine-de-confiance" class="slide"><div>
+        <h2><i class="fa fa-chain"></i> Chaîne de confiance</h2>
+        <p>TODO: Schéma</p>
     </div></section>
 
 	<section id="handshake-title" class="slide tell"><div>
@@ -652,6 +657,7 @@
             <li><i class="fa fa-user-secret"></i> Évite une interception future (ou sslstrip),
             <li><i class="fa fa-gift"></i> Pré-chargement dans les navigateurs : <a href="https://code.google.com/p/chromium/codesearch#chromium/src/net/http/transport_security_state_static.json">transport_security_state_static.json</a>,
             <li><i class="fa fa-exclamation-triangle"></i> Que se passe-t-il si votre certificat expire ou si le port 443 ne répond plus ?
+        </ul>
     </div></section>
 
 	<section id="certificate-public-key-pinning" class="slide"><div>
@@ -661,7 +667,7 @@
             <li><i class="fa fa-thumb-tack"></i> Entête HTTP "épinglant" une liste de condensat (hash) de certificats (AC racine, AC intermédiaire ou feuille),
             <li><i class="fa fa-cutlery"></i> Connexion uniquement si le condensat est trouvé dans la chaîne,
             <li><i class="fa fa-user-secret"></i> Évite qu’une autre certification ne signe son certificat (<a href="https://www.nsa.gov/">www.nsa.gov</a> signé par <abbr title="China Internet Network Information Center">CNNIC</abbr>),
-            <li><i class="fa fa-gift"></i> Pré-chargement dans les navigateurs : <a href="https://www.imperialviolet.org/2011/05/04/pinning.html / https://code.google.com/p/chromium/codesearch#chromium/src/net/http/transport_security_state_static.h&amp;cl=GROK&amp;gsn=GetDynamicDomainState">transport_security_state_static.h</a>,
+            <li><i class="fa fa-gift"></i> Pré-chargement dans les navigateurs : <a href="https://code.google.com/p/chromium/codesearch#chromium/src/net/http/transport_security_state_static.h&amp;cl=GROK&amp;gsn=GetDynamicDomainState">transport_security_state_static.h</a>,
             <li><i class="fa fa-flag-o"></i> <a href="https://developers.google.com/web/updates/2015/09/HPKP-reporting-with-chrome-46">Commencez par</a> : <code>Public-Key-Pins-Report-Only: report-uri</code>
             <li><i class="fa fa-exclamation-triangle"></i> <a href="https://noncombatant.org/2015/05/01/about-http-public-key-pinning/">Plus</a> <a href="https://timtaubert.de/blog/2014/10/http-public-key-pinning-explained/">compliqué</a> à mettre en place et plus risqué ; à reserver aux sites sensibles.
         </ul>
@@ -680,7 +686,7 @@
             <li><i class="fa fa-bomb"></i> Très puissant car permet d’éviter des injections de code,
             <li><i class="fa fa-exclamation-triangle"></i> Difficile <small>(impossible ?)</small> à mettre en place avec du contenu aggrégé <small>(publicité...)</small>,
             <li><i class="fa fa-flag-o"></i> Activez les rapports : <code>report-uri</code> <small>(il existe des <a href="https://report-uri.io/home/generate/">générateurs</a> de CSP)</small>
-        <ul>
+        </ul>
     </div></section>
 
 	<section id="subresource-integrity" class="slide"><div>
@@ -719,7 +725,8 @@
         <figure>
             <blockquote><p>SSL/TLS accounts for less than 1% of the CPU load, less than 10KB of memory per connection and less than 2% of network overhead</p></blockquote>
             <figcaption>Migration de gmail en 2010 - <a href="https://www.imperialviolet.org/2010/06/25/overclocking-ssl.html">Adam Langley (Google)</a></figcaption>
-
+        </figure>
+        <figure>
             <blockquote><p>We have found that modern software-based TLS implementations running on commodity CPUs are fast enough to handle heavy HTTPS traffic</p></blockquote>
             <figcaption>Doug Beaver (Facebook)</figcaption>
         </figure>
