@@ -1,0 +1,80 @@
+
+header.caption                              { color: white; }
+.slide.shout h2                             { font-size: 135px; }
+.slide h2                                   { margin: 0px 0px 20px}
+.slide img.svg                              { max-width: 110%; }
+.slide video                                { max-width: 90%; }
+.slide > div                                { padding: 80px 80px 0px; height: 555px; width: 865px; }
+.slide dd                                   { padding: 0; font-size: 20px; color: #666; line-height: 120%; margin-bottom: .5em; }
+.slide dt                                   { margin-top: 0; }
+.slide a                                    { color: #333; }
+.slide a.clear                              { background: none; }
+.slide i.fa                                 { font-style: normal; margin-right: 8px; }
+.slide .fa.nomargin                         { display: inline; margin: 0 !important; }
+.slide ul                                   { margin-bottom: .5em; }
+.slide ul.inner                             { padding-left: 2em; }
+.slide ul.icons li:before                   { content: ""; }
+.slide ul.icons li i                        { margin: 0 -25px 0 25px; }
+.slide.tell h2                              { position: absolute; top: 50%; left: 0px; width: 100%; text-align: center; line-height: 1; font-size: 100px; transform: translateY(-50%); }
+.slide pre                                  { margin-bottom: 1em;  }
+.slide pre code                             { line-height: 175%; }
+.slide pre.small code                       { line-height: 110%; font-size: 12px; }
+.slide small                                { font-size: 80%; color: #666; }
+.slide small a                              { color: #666; }
+.slide p                                    { margin-bottom: .25em; }
+.slide p,
+.slide li                                   { line-height: 150%; margin-bottom: .5em; }
+.slide blockquote + figcaption              { margin-top: 0; }
+.slide figure img                           { max-height: 470px; }
+.slide figure.center                        { text-align: center; }
+.slide figure.sidebyside figcaption,
+.slide figure.sidebyside > img,
+.slide figure.sidebyside figcaption         { display: inline-block; max-width: 60%; margin-right: 1em; line-height: 1.6; }
+.slide figure.sidebyside figcaption         { vertical-align: top; }
+.slide ul.numbered                          { text-align: left; width: 110%; }
+.slide ul.numbered li                       { line-height: 100%; }
+.slide ul.numbered li:before                { content: ""; }
+.slide figure.handshake > img               { max-width: 450px; border: 1px solid #666; }
+.slide figure.handshake figcaption          { width: 350px; }
+.slide figure.handshake figcaption img      { width: 350px; }
+.slide h3                                   { color: #666; font-size: 32px; }
+.slide .mark                                { position: absolute; background-color: rgba(255, 225, 0, 0.24); border: 1px solid black; height: 10px; }
+.slide table td                             { padding: 0.2em 0.25em; }
+.broken, .broken a                          { color:red; }
+.unsecure, .unsecure a                      { color:orange; }
+.safe, .safe a                              { color:green; }
+.center                                     { width: 100%; text-align: center; }
+.logo                                       { width: 110px; vertical-align: middle; margin: .25em; }
+
+#cover *                                    { color: #FFF; }
+#cover h2                                   { margin:30px 0 0; background-color: rgba(0, 0, 0, .5); text-align:center; font-size:70px; }
+#cover p                                    { margin:10px 0 0; text-align:center; background-color: rgba(0, 0, 0, .5); font-style:italic; font-size:20px; }
+#cover p.link                               { display: inline-block; float: right; margin-top: 8em; }
+#cover p.link img                           { width: 100px; position: relative; z-index: 10; margin: .5em .5em 0 .5em; }
+#cover p.link a                             { display: block;  margin: .25em .5em .5em .5em; }
+#cover img.logo                             { position: relative; z-index: 1; background-color: white; padding: .3em; }
+#presentation ul                            { display: inline-block; width: 50%;  }
+#presentation ul.next                       { float: right;}
+#presentation .mappy-home,
+#presentation .mappy-immersive              { width: 400px; position: absolute; top: 335px; border: 1px solid black }
+#presentation .mappy-home                   { left: 80px; }
+#presentation .mappy-immersive              { left: 540px; }
+#sommaire ul                                { margin: .5em; }
+#sommaire ul li                             { margin: .75em; }
+#interception-traffic-http figcaption       { width: 100%; text-align: right; margin-top: -60px;}
+#interception-traffic-http-video figcaption { width: 100%; text-align: right; margin: -25px 0 0 -40px;}
+#html-seo p                                 { margin-top: 1em; }
+#chiffrement-symetrique figure              { margin-top: 100px; }
+#handshake-certificate img.store            { display: block; margin: auto; }
+#cipher-suite ul                            { column-count: 4; -moz-column-count: 4; -webkit-column-count: 4; font-size: 12px; font-family: monospace; }
+#cipher-suite ul li                         { margin: 0; }
+#pfs img                                    { max-height: 380px; }
+#type-certificate img                       { display: block; margin: 1em auto 0 auto; }
+#lets-encrypt img                           { padding: 0 80px 0 0; }
+#doutes .portrait                           { float: right; max-width: 100px; border: 1px solid black; }
+#pourquoi-attaquer-la-crypto p              { margin: 2em 0; }
+#bugs img                                   { float: right; }
+#conclusion-details p.link                  { display: inline-block; float: right; text-align: right; }
+#conclusion-details p.link img              { width: 100px; position: relative; }
+#conclusion-details p.link a                { display: block; }
+#resources li                               { font-size: 24px; line-height: 110%; }

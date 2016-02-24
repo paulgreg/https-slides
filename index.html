@@ -2,90 +2,12 @@
 <html lang="en">
 <head>
 	<title>HTTPS n’aura plus de secret pour vous</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=792, user-scalable=no">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen.css">
-	<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
-    <style>
-        header.caption                         { color: white; }
-        .slide.shout h2                        { font-size: 135px; }
-        .slide h2                              { margin: 0px 0px 20px}
-        .slide img.svg                         { max-width: 110%; }
-        .slide video                           { max-width: 90%; }
-        .slide > div                           { padding: 80px 80px 0px; height: 555px; width: 865px; }
-        .slide dd                              { padding: 0; font-size: 20px; color: #666; line-height: 120%; margin-bottom: .5em; }
-        .slide dt                              { margin-top: 0; }
-        .slide a                               { color: #333; }
-        .slide a.clear                         { background: none; }
-        .slide i.fa                            { font-style: normal; margin-right: 8px; }
-        .slide .fa.nomargin                    { display: inline; margin: 0 !important; }
-        .slide ul                              { margin-bottom: .5em; }
-        .slide ul.inner                        { padding-left: 2em; }
-        .slide ul.icons li:before              { content: ""; }
-        .slide ul.icons li i                   { margin: 0 -25px 0 25px; }
-        .slide.tell h2                         { position: absolute; top: 50%; left: 0px; width: 100%; text-align: center; line-height: 1; font-size: 100px; transform: translateY(-50%); }
-        .slide pre                             { margin-bottom: 1em;  }
-        .slide pre code                        { line-height: 175%; }
-        .slide pre.small code                  { line-height: 110%; font-size: 12px; }
-        .slide small                           { font-size: 80%; color: #666; }
-        .slide small a                         { color: #666; }
-        .slide p                               { margin-bottom: .25em; }
-        .slide p,
-        .slide li                              { line-height: 150%; margin-bottom: .5em; }
-        .slide blockquote + figcaption         { margin-top: 0; }
-        .slide figure img                      { max-height: 470px; }
-        .slide figure.center                   { text-align: center; }
-        .slide figure.sidebyside figcaption,
-        .slide figure.sidebyside > img,
-        .slide figure.sidebyside figcaption    { display: inline-block; max-width: 60%; margin-right: 1em; line-height: 1.6; }
-        .slide figure.sidebyside figcaption    { vertical-align: top; }
-        .slide ul.numbered                     { text-align: left; width: 110%; }
-        .slide ul.numbered li                  { line-height: 100%; }
-        .slide ul.numbered li:before           { content: ""; }
-        .slide figure.handshake > img          { max-width: 450px; border: 1px solid #666; }
-        .slide figure.handshake figcaption     { width: 350px; }
-        .slide figure.handshake figcaption img { width: 350px; }
-        .slide h3                              { color: #666; font-size: 32px; }
-        .slide .mark                           { position: absolute; background-color: rgba(255, 225, 0, 0.24); border: 1px solid black; height: 10px; }
-        .slide table td                        { padding: 0.2em 0.25em; }
-        .broken, .broken a                     { color:red; }
-        .unsecure, .unsecure a                 { color:orange; }
-        .safe, .safe a                         { color:green; }
-        .center                                { width: 100%; text-align: center; }
-        .logo                                  { width: 110px; vertical-align: middle; margin: .25em; }
-
-        #cover *                               { color: #FFF; }
-        #cover h2                              { margin:30px 0 0; background-color: rgba(0, 0, 0, .5); text-align:center; font-size:70px; }
-        #cover p                               { margin:10px 0 0; text-align:center; background-color: rgba(0, 0, 0, .5); font-style:italic; font-size:20px; }
-        #cover p.link                          { display: inline-block; float: right; margin-top: 8em; }
-        #cover p.link img                      { width: 100px; position: relative; z-index: 10; margin: .5em .5em 0 .5em; }
-        #cover p.link a                        { display: block;  margin: .25em .5em .5em .5em; }
-        #cover img.logo                        { position: relative; z-index: 1; background-color: white; padding: .3em; }
-        #presentation ul                       { display: inline-block; width: 50%;  }
-        #presentation ul.next                  { float: right;}
-        #presentation .mappy-home,
-        #presentation .mappy-immersive         { width: 400px; position: absolute; top: 335px; border: 1px solid black }
-        #presentation .mappy-home              { left: 80px; }
-        #presentation .mappy-immersive         { left: 540px; }
-        #sommaire ul                           { margin: .5em; }
-        #sommaire ul li                        { margin: .75em; }
-        #interception-traffic-http figcaption  { width: 100%; text-align: right; margin-top: -60px;}
-        #html-seo p                            { margin-top: 1em; }
-        #chiffrement-symetrique figure         { margin-top: 100px; }
-        #handshake-certificate img.store       { display: block; margin: auto; }
-        #cipher-suite ul                       { column-count: 4; -moz-column-count: 4; -webkit-column-count: 4; font-size: 12px; font-family: monospace; }
-        #cipher-suite ul li                    { margin: 0; }
-        #pfs img                               { max-height: 380px; }
-        #type-certificate img                  { display: block; margin: 1em auto 0 auto; }
-        #lets-encrypt img                      { padding: 0 80px 0 0; }
-        #doutes .portrait                      { float: right; max-width: 100px; border: 1px solid black; }
-        #pourquoi-attaquer-la-crypto p         { margin: 2em 0; }
-        #bugs img                              { float: right; }
-        #conclusion-details p.link             { display: inline-block; float: right; text-align: right; }
-        #conclusion-details p.link img         { width: 100px; position: relative; }
-        #conclusion-details p.link a           { display: block; }
-        #resources li                          { font-size: 24px; line-height: 110%; }
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=792, user-scalable=no" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge" />
+	<link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen.css" />
+	<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="styles.css" />
 </style>
 </head>
 <body class="list">
@@ -160,8 +82,10 @@
     <section id="interception-traffic-http-video" class="slide"><div>
     <h2>Pour éviter l’interception de traffic</h2>
     <figure class="center">
-        <video controls preload="metadata" src="videos/mitm-http.webm"></video>
-        <figcaption></figcaption>
+        <video controls preload="metadata">
+            <source src="videos/mitm-http.webm" type="video/webm" />
+        </video>
+        <figcaption><a href="#interception-traffic-http-explications">details sur le fonctionnement</a> - <a href="#vol-cookie">vols de cookie</a></figcaption>
     </figure>
     </div></section>
 
@@ -190,10 +114,10 @@
     </ul>
     </div></section>
 
-    <section id="grand-cannon" class="slide"><div>
-    <h2>Pour se protéger du <a href="https://citizenlab.org/2015/04/chinas-great-cannon/">Grand Cannon Chinois</a></h2>
+    <section id="grand-canon" class="slide"><div>
+    <h2>Pour se protéger du <a href="https://citizenlab.org/2015/04/chinas-great-cannon/">Grand Canon Chinois</a></h2>
     <figure>
-        <img src="pictures/https_great_cannon.svg" class="svg" alt="grand cannon"/>
+        <img src="pictures/https_great_cannon.svg" class="svg" alt="grand canon"/>
         <figcaption>en avril 2015</figcaption>
     </figure>
 </div></section>
@@ -247,9 +171,33 @@
             <dt class="next"><i class="fa fa-diamond"></i>Transparence :
             <dd class="next">Aucun changement nécessaire dans le protocole applicatif englobé
             <dt class="next"><i class="fa fa-bolt"></i>Spontanéité :
-            <dd class="next">Un client peut spontannément se connecter à un serveur (pas de pré-requis)
+            <dd class="next">Un client peut spontanément se connecter à un serveur (pas de pré-requis)
         </dl>
     </div></section>
+
+	<section id="version" class="slide tell"><div>
+		<h2><i class="fa fa-code-fork"></i> Versions</h2>
+	</div></section>
+	<section id="versions-details" class="slide"><div>
+		<h2>Versions</h2>
+        <ul class="icons">
+            <li><i class="fa fa-code-fork"></i><span class="broken"><abbr title="Secure Socket Layer">SSL</abbr> 1.0</span> (jamais publié) par <a href="https://en.wikipedia.org/wiki/Netscape">Netscape</a>,
+            <li class="next"><i class="fa fa-code-fork"></i><span class="broken">SSL 2.0</span> en 1995, <small>déprécié en 2011 par la <a href="https://tools.ietf.org/html/rfc6176"><abbr title="Request for comment">RFC</abbr> 6176</a></small>.
+                <li class="next"><i class="fa fa-code-fork"></i><span class="broken">SSL 3.0</span> / <a href="https://tools.ietf.org/html/rfc6101">RFC 6101</a> en 1996 <small>(refonte)</small>, <small>déprécié en 2015 par la <a href="https://tools.ietf.org/html/rfc7568">RFC 7568</a></small>,
+                <li class="next"><i class="fa fa-code-fork"></i><span class="unsecure"><abbr title="Transport Layerr Security">TLS</abbr> 1.0</span> / <a href="https://tools.ietf.org/html/rfc2246">RFC 2246</a> en 1999 <small>(modifications mineures)</small>,
+                <li class="next"><i class="fa fa-code-fork"></i><span class="unsecure">TLS 1.1</span> / <a href="https://tools.ietf.org/html/rfc4346">RFC 4346</a> en 2006 <small>(<i class="fa fa-plus-circle nomargin"></i> protections contre les attaques sur <abbr title="Cipher Block Chaining">CBC</abbr>)</small>,
+                <li class="next"><i class="fa fa-code-fork"></i><span class="safe">TLS 1.2</span> / <a href="https://tools.ietf.org/html/rfc5246">RFC 5246</a> en 2008 <small>(<i class="fa fa-plus-circle nomargin"></i> améliorations de sécurité)</small>,
+            <li class="next"><i class="fa fa-code-fork"></i>Mise à jour sur TLS 1.2 en 2011/ <a href="https://tools.ietf.org/html/rfc6176">RFC 6176</a> <small>(<i class="fa fa-ban nomargin"></i> compatibilité SSL)</small>,
+            <li class="next"><i class="fa fa-code-fork"></i><span class="safe">TLS 1.3</span> / <a href="https://tools.ietf.org/html/draft-ietf-tls-tls13-10">brouillon</a> en cours
+                <small>(<i class="fa fa-ban nomargin"></i> compression,
+                <i class="fa fa-ban nomargin"></i> renégociation,
+                <i class="fa fa-ban nomargin"></i> MD5,
+                <i class="fa fa-ban nomargin"></i> RC4,
+                <i class="fa fa-plus-circle nomargin"></i> optimisation réseau,
+                <i class="fa fa-plus-circle nomargin"></i> SHA-224)</small>.
+        </ul>
+	</div></section>
+
 
 	<section id="rappels-cryptographiques" class="slide tell"><div>
 		<h2><i class="fa fa-lock"></i> Quelques rappels cryptographiques...</h2>
@@ -298,29 +246,6 @@
             <figcaption></figcaption>
         </figure>
     </div></section>
-
-	<section id="version" class="slide tell"><div>
-		<h2><i class="fa fa-code-fork"></i> Versions</h2>
-	</div></section>
-	<section id="versions-details" class="slide"><div>
-		<h2>Versions</h2>
-        <ul class="icons">
-            <li><i class="fa fa-code-fork"></i><span class="broken"><abbr title="Secure Socket Layer">SSL</abbr> 1.0</span> (jamais publié) par <a href="https://en.wikipedia.org/wiki/Netscape">Netscape</a>,
-            <li class="next"><i class="fa fa-code-fork"></i><span class="broken">SSL 2.0</span> en 1995, <small>déprécié en 2011 par la <a href="https://tools.ietf.org/html/rfc6176"><abbr title="Request for comment">RFC</abbr> 6176</a></small>.
-                <li class="next"><i class="fa fa-code-fork"></i><span class="broken">SSL 3.0</span> / <a href="https://tools.ietf.org/html/rfc6101">RFC 6101</a> en 1996 <small>(refonte)</small>, <small>déprécié en 2015 par la <a href="https://tools.ietf.org/html/rfc7568">RFC 7568</a></small>,
-                <li class="next"><i class="fa fa-code-fork"></i><span class="unsecure"><abbr title="Transport Layerr Security">TLS</abbr> 1.0</span> / <a href="https://tools.ietf.org/html/rfc2246">RFC 2246</a> en 1999 <small>(modifications mineures)</small>,
-                <li class="next"><i class="fa fa-code-fork"></i><span class="unsecure">TLS 1.1</span> / <a href="https://tools.ietf.org/html/rfc4346">RFC 4346</a> en 2006 <small>(<i class="fa fa-plus-circle nomargin"></i> protections contre les attaques sur <abbr title="Cipher Block Chaining">CBC</abbr>)</small>,
-                <li class="next"><i class="fa fa-code-fork"></i><span class="safe">TLS 1.2</span> / <a href="https://tools.ietf.org/html/rfc5246">RFC 5246</a> en 2008 <small>(<i class="fa fa-plus-circle nomargin"></i> améliorations de sécurité)</small>,
-            <li class="next"><i class="fa fa-code-fork"></i>Mise à jour sur TLS 1.2 en 2011/ <a href="https://tools.ietf.org/html/rfc6176">RFC 6176</a> <small>(<i class="fa fa-ban nomargin"></i> compatibilité SSL)</small>,
-            <li class="next"><i class="fa fa-code-fork"></i><span class="safe">TLS 1.3</span> / <a href="https://tools.ietf.org/html/draft-ietf-tls-tls13-10">brouillon</a> en cours
-                <small>(<i class="fa fa-ban nomargin"></i> compression,
-                <i class="fa fa-ban nomargin"></i> renégociation,
-                <i class="fa fa-ban nomargin"></i> MD5,
-                <i class="fa fa-ban nomargin"></i> RC4,
-                <i class="fa fa-plus-circle nomargin"></i> optimisation réseau,
-                <i class="fa fa-plus-circle nomargin"></i> SHA-224)</small>.
-        </ul>
-	</div></section>
 
 	<section id="handshake-title" class="slide tell"><div>
         <h2><i class="fa fa-exchange"></i> Poignée de main (<a href="http://www.moserware.com/2009/06/first-few-milliseconds-of-https.html">handshake</a>)</h2>
@@ -636,7 +561,7 @@
 
 	<section id="lets-encrypt" class="slide"><div>
         <h2><a href="https://letsencrypt.org/" class="clear"><img src="pictures/letsencrypt.svg" alt="Let’s encrypt" /></a></h2>
-        <p>Protocole <a href="https://github.com/letsencrypt/acme-spec"><abbr title="Automated Certificate Management Environment ">ACME</abbr></a> permettant l’attribution et la révoquation de certificat.</p>
+        <p>Protocole <a href="https://github.com/letsencrypt/acme-spec"><abbr title="Automated Certificate Management Environment ">ACME</abbr></a> permettant l’attribution et la révocation de certificat.</p>
         <p class="center"><strong>+</strong></p>
         <p>Système qui, via un agent Open Source sur votre serveur, valide le domaine, installe et renouvelle automatiquement un certificat gratuit (<abbr title="Domain Validation">DV</abbr>).</p>
 
@@ -656,10 +581,10 @@
     </div></section>
 
 	<section id="revoquation" class="slide"><div>
-            <h2>Révoquation : <a href="https://www.fir3net.com/Security/Concepts-and-Terminology/certificate-revocation.html">CRL</a>, <a href="https://www.fir3net.com/Security/Concepts-and-Terminology/certificate-revocation.html">OCSP</a> et <a href="https://www.imperialviolet.org/2012/02/05/crlsets.html">Chrome</a> <a href="https://www.grc.com/revocation/crlsets.htm">CRLSet</a></h2>
+            <h2>Révocation : <a href="https://www.fir3net.com/Security/Concepts-and-Terminology/certificate-revocation.html">CRL</a>, <a href="https://www.fir3net.com/Security/Concepts-and-Terminology/certificate-revocation.html">OCSP</a> et <a href="https://www.imperialviolet.org/2012/02/05/crlsets.html">Chrome</a> <a href="https://www.grc.com/revocation/crlsets.htm">CRLSet</a></h2>
         <dl>
             <dt><i class="fa fa-ban"></i>Certificate Revocation Lists (CRL) :
-            <dd>Liste de n° de certificat invalide ; fichier potentiellement conséquent ; mis à jour toutes les 7~14 jours ; seulement pour les <abbr title="Extended validation">EV</abbr> ; inutile si <abbr title="Deny of Service">DOS</abbr> sur le service (navigateur accepte alors)
+            <dd>Liste de n° de certificat invalide ; fichier potentiellement conséquent ; mis à jour tous les 7~14 jours ; seulement pour les <abbr title="Extended validation">EV</abbr> ; inutile si <abbr title="Deny of Service">DOS</abbr> sur le service (navigateur accepte alors)
             <dt class="next"><i class="fa fa-ban"></i>Online Certificate Status Protocol (OCSP) :
             <dd class="next">Requête par certificat ; seulement pour les <abbr title="Extended validation">EV</abbr> ;  inutile si DOS sur le service (navigateur accepte alors)
             <dt class="next"><i class="fa fa-bolt"></i>OSCP Stampling :
@@ -791,7 +716,7 @@
 	<section id="collision" class="slide"><div>
 		<h2><i class="fa fa-user-secret"></i> Générer des faux certificats</h2>
         <ul>
-            <li>avec les collisions : on jouent sur le contenu pour que la signature corresponde,
+            <li>avec les collisions : on joue sur le contenu pour que la signature corresponde,
             <li class="next">en 2008 avec <a href="https://www.win.tue.nl/hashclash/rogue-ca/">MD5</a>,
             <li class="next">en 2015, &laquo; <a href="https://sites.google.com/site/itstheshappening/">The SHAppening</a> &raquo; : collision sur une partie de SHA1 (compression) ; on estime une <a href="https://www.schneier.com/blog/archives/2012/10/when_will_we_se.html">attaque possible pour 700 000 $</a>,
             <li class="next">d’abord <a href="http://googleonlinesecurity.blogspot.fr/2014/09/gradually-sunsetting-sha-1.html">Google</a>,
@@ -816,7 +741,7 @@
         <h2><i class="fa fa-bolt"></i> <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">CRIME</a>: Compression Ratio Info-leak Made Easy</h2>
         <ul>
             <li>Faille utilisant la compression offerte par SSL/TLS (et aussi SPDY),
-            <li class="next">l’idée consiste à injecter du trafic vers le serveur cible en inspectant la taille, si celle-ci diminie (grâce à la compression), on a deviné une chaîne de caractère (par exemple le cookie),
+            <li class="next">l’idée consiste à injecter du trafic vers le serveur cible en inspectant la taille, si celle-ci diminue (grâce à la compression), on a deviné une chaîne de caractère (par exemple le cookie),
             <li class="next">Juliano Rizzo et Thai Duong (encore) <a href="https://docs.google.com/presentation/d/11eBmGiHbYcHR9gL5nDyZChu_-lCa2GizeuOfaLU2HOU/edit?pli=1">démontrent un POC</a> en 2012 (principe <a href="https://www.iacr.org/cryptodb/data/paper.php?pubkey=3091">découvert</a> par John Kelsey en 2002),
             <li class="next">nécessite de choisir le contenu à envoyer + MITM,
             <li class="next">solution : désactiver la compression sur TLS.
