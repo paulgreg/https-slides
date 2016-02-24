@@ -686,11 +686,17 @@
 		<h2><i class="fa fa-cogs"></i> Après HTTPS</h2>
 	</div></section>
 
-	<section class="slide"><div>
+	<section id="mixed-content" class="slide"><div>
 		<h2>Mixed content</h2>
-https://developer.mozilla.org/en-US/docs/Security/MixedContent
-https://googleonlinesecurity.blogspot.com.au/2015/10/simplifying-page-security-icon-in-chrome.html
-        <img src="pictures/dubious-as-neutral.png" alt="Chrome address bar"/>
+        <ul>
+            <li>Mixed content : ressources via HTTP depuis une page HTTPS
+            <li>contenu passif dégradant l’icône de sécurité : <code>&lt;img&gt;</code>, <code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code>
+            <li>contenu actif simplement bloqué : <code>&lt;script&gt;</code>, <code>&lt;link&gt;</code>, <code>&lt;iframe&gt;</code>, <code>&lt;object&gt;</code>, <code>XMLHttpRequest</code>, propriétés <code>CSS</code>
+        </ul>
+        <figure class="center">
+            <img src="pictures/dubious-as-neutral.png" alt="Chrome page security icon" width="400"/>
+            <figcaption><a href="https://googleonlinesecurity.blogspot.com.au/2015/10/simplifying-page-security-icon-in-chrome.html">Simplifying page security icon in Chrome</a></figcaption>
+        </figure>
     </div></section>
 
 	<section id="HSTS" class="slide"><div>
