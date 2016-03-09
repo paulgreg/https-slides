@@ -1,2 +1,4 @@
 mitm-ca
 *.ogv
+node_modules/http-server/
+node_modules/.bin/
