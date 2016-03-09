@@ -29,7 +29,7 @@
         <h2>Présentation</h2>
         <ul class="icons">
             <li><i class="fa fa-user nomargin"> </i>Grégory Paul
-            <li><i class="fa fa-briefcase nomargin"></i> Développeur Web chez<img alt="Mappy" src="pictures/mappy-logo.png" class="logo" />
+            <li><i class="fa fa-briefcase nomargin"></i> Développeur Web
             <br>(<a href="https://twitter.com/search?q=%23javascript%20from%3Apaulgreg&src=typd">JavaScript</a>, <a href="https://twitter.com/search?q=%23security%20from%3Apaulgreg&src=typd">sécurité</a>, <a href="https://twitter.com/search?q=%23hack%20from%3Apaulgreg&src=typd">bidouillage</a>)
             <li>
                 <a href="https://paulgreg.me/" rel="me">https://paulgreg.me</a>
@@ -37,8 +37,9 @@
                 <a href="https://github.com/paulgreg" rel="me"><i class="fa fa-github nomargin"></i></a>
         </ul>
         <ul class="next icons">
-            <li><i class="fa fa-link nomargin"></i> mappy.com : application web avec ~700 000 visites par jour
+            <li><img alt="Mappy" src="pictures/mappy-logo.png" class="logo" />
             <li><i class="fa fa-star nomargin"></i> cartes, itinéraires, ~4 500 000 <abbr title="Point Of Interest">POI</abbr>, vues immersives <small>(en <a href="http://techblog.mappy.com/vues-360-en-webgl.html">webGL</a>)</small>
+            <li><i class="fa fa-line-chart nomargin"></i> ~ 700 000 visites par jour
             <img class="mappy-home" alt="" src="pictures/mappy-home.png" />
             <img class="mappy-immersive" alt="" src="pictures/mappy-immersive.png" />
         </ul>
@@ -623,6 +624,7 @@
             <li>en 2014 <i class="fa fa-level-down"></i> <a href="#poodle">POODLE</a>: Padding Oracle On Downgraded Legacy Encryption,
             <li>en 2015 <i class="fa fa-level-down"></i> <a href="#freak">FREAK</a>: Factoring RSA EXPORT Attack Keys,
             <li>en 2015 <i class="fa fa-level-down"></i> <a href="#logjam">Logjam</a>: sur Diffie-Hellman,
+            <li>en 2016 <i class="fa fa-level-down"></i> <a href="#drown">Drown</a>: via SSLv2,
             <li>sans parler de <a href="#collision">génération de certificats via des collisions</a> ou d’<a href="#attaques-pointues">attaques encore plus pointues</a>...
         </ul>
     </div></section>
@@ -986,6 +988,14 @@
             <li class="next">Solution : désactiver les suites de chiffrements &laquo; faibles &raquo; (minimum 2048 bits), <a href="https://blog.flowl.info/2015/how-to-generate-a-new-diffie-hellman-group/">regénérer des paramètres Diffie-Hellman</a>, utiliser <code>ECDHE</code>.
         </ul>
     </div></section>
+
+	<section id="drown" class="slide"><div>
+        <h2><i class="fa fa-level-down"></i> <a href="https://drownattack.com/">DROWN: Breaking TLS using SSLv2</a></h2>
+        <ul>
+            <li>
+        </ul>
+    </div></section>
+
 
 	<section id="collision" class="slide"><div>
 		<h2><i class="fa fa-user-secret"></i> Générer des faux certificats</h2>
