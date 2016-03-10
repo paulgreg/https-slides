@@ -77,7 +77,7 @@ header.caption                              { color: white; }
 #doutes .portrait                           { float: right; max-width: 100px; border: 1px solid black; }
 #pourquoi-attaquer-la-crypto p              { margin: 2em 0; }
 #bugs img                                   { float: right; }
-#conclusion-details p.link                  { display: inline-block; float: right; text-align: right; }
+#conclusion-details p.link                  { display: block; position: absolute; top: 440px; right: 115px; text-align: right; }
 #conclusion-details p.link img              { width: 100px; position: relative; }
 #conclusion-details p.link a                { display: block; }
 #resources li                               { font-size: 24px; line-height: 110%; }
