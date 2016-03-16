@@ -82,11 +82,14 @@ header.caption                              { color: white; }
 #conclusion-details p.link a                { display: block; }
 #resources .resources li                    { font-size: 24px; line-height: 110%; }
 
-slide-progression                           { display: block; position: absolute; left: 0; top: 0; width: 100%; }
-slide-progression ul                        { background-color: #FFEFEF; border-bottom: 1px solid black; margin: 0; padding: 0 1em; }
-slide-progression li                        { display: inline-block; padding: 0 5px; }
-slide-progression                           { color: #CC0000; }
-slide-progression .closed i                 { color: black; }
-slide-progression .closed span              { display: none; }
-slide-progression .hidden                   { display: none; }
+.slide slide-progression                    { display: block; position: absolute; left: 0; top: 0; width: 100%; }
+.slide slide-progression ul                 { background-color: #FFEFEF; border-bottom: 1px solid black; margin: 0; padding: 0 0 0 5px; }
+.slide slide-progression li                 { display: inline-block; padding: 0 4px 0 6px; margin: 0; vertical-align: baseline;}
+.slide slide-progression                    { color: #CC0000; font-size: 22px; }
+.slide slide-progression .closed            { color: #333; }
+.slide slide-progression .closed i          { display: none; }
+.slide slide-progression .closed span       { font-size: 14px; }
+.slide slide-progression .hidden            { display: none; }
 
+.full .progress div                         { border-bottom-color: #CC0000; }
+.slide::after                               { right: 70px; }
