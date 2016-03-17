@@ -207,7 +207,6 @@
 
 	<section id="handshake-title" class="slide tell"><div>
         <slide-progression open="handshake"></slide-progression>
-        <h2><i class="handshake"></i> Poignée de main (<a href="http://www.moserware.com/2009/06/first-few-milliseconds-of-https.html">handshake</a>)</h2>
 	</div></section>
 
 
@@ -269,7 +268,7 @@
 
 	<section id="handshake-title-bis" class="slide tell"><div>
         <slide-progression open="handshake"></slide-progression>
-        <h2><i class="handshake"></i> Poignée de main (<a href="http://www.moserware.com/2009/06/first-few-milliseconds-of-https.html">handshake</a>)</h2>
+        <h2><i class="handshake"></i> Poignée de main<br/><small>(<a href="http://www.moserware.com/2009/06/first-few-milliseconds-of-https.html">en détails</a>)</small></h2>
 	</div></section>
 
 	<section id="handshake-client-hello" class="slide"><div>
@@ -316,7 +315,7 @@
             <span class="mark symatec"      style="top: 335px; left: 612px; width: 300px;"></span>
             <span class="mark hello-done"   style="top: 420px; left: 603px; width: 105px;"></span>
         </figure>
-        <p>Wildcard <small>(*.mappy.net)</small> ou Subject Alternative Name <small>(map1.mappy.net, map2.mappy.net,...)</small></p>
+        <p>Wildcard <small>(*.mappy.com)</small> ou Subject Alternative Name <small>(fr.mappy.com, en.mappy.com,...)</small></p>
 	</div></section>
 
 	<section id="handshake-key-exchange" class="slide"><div>
@@ -1022,7 +1021,7 @@
 
 	<section id="diffie-hellman-handshake-title" class="slide tell"><div>
         <slide-progression open="annexes"></slide-progression>
-        <h2><i class="fa fa-exchange"></i> Poignée de main Diffie-Hellman (<a href="http://www.moserware.com/2009/06/first-few-milliseconds-of-https.html">handshake</a>)</h2>
+        <h2><i class="handshake"></i> Poignée de main <small>via l’échange de clé Diffie-Hellman <small>(<a href="http://vincent.bernat.im/fr/blog/2011-ssl-perfect-forward-secrecy.html">détails</a>)</small></a></h2>
 	</div></section>
 
 	<section id="diffie-hellman-handshake-client-hello" class="slide"><div>
@@ -1031,15 +1030,8 @@
         <figure class="sidebyside handshake">
             <figcaption>
                 <img src="pictures/diffie-hellman-handshake/1-handshake.png" alt="handshake : client hello" />
-                <code>TCP 443</code>
             </figcaption>
             <img src="pictures/diffie-hellman-handshake/1-client-hello.png" alt="wireshark : client hello" />
-            <span class="mark hello"   style="top: 195px; left: 570px; width: 60px;"></span>
-            <span class="mark version" style="top: 228px; left: 522px; width: 40px;"></span>
-            <span class="mark random"  style="top: 260px; left: 488px; width: 55px;"></span>
-            <span class="mark session" style="top: 272px; left: 482px; width: 50px;"></span>
-            <span class="mark suites"  style="top: 295px; left: 482px; width: 65px;"></span>
-            <span class="mark sni"     style="top: 565px; left: 488px; width: 105px;"></span>
         </figure>
 	</div></section>
 
@@ -1049,70 +1041,59 @@
         <figure class="sidebyside handshake">
             <figcaption><img src="pictures/diffie-hellman-handshake/2-handshake.png" alt="handshake : server hello" /></figcaption>
             <img src="pictures/diffie-hellman-handshake/2-server-hello.png" alt="server hello" />
-            <span class="mark hello"   style="top: 219px; left: 596px; width: 74px;"></span>
-            <span class="mark version" style="top: 260px; left: 538px; width: 48px;"></span>
-            <span class="mark random"  style="top: 302px; left: 496px; width: 70px;"></span>
-            <span class="mark session" style="top: 329px; left: 488px; width: 60px;"></span>
-            <span class="mark suite"   style="top: 342px; left: 488px; width: 72px;"></span>
         </figure>
 	</div></section>
 
-	<section id="diffie-hellman-handshake-certificate" class="slide"><div>
+	<section id="diffie-hellman-handshake-server-certificate" class="slide"><div>
         <slide-progression open="annexes"></slide-progression>
-        <h2>2. Server hello (certificats + done)</h2>
+        <h2>2. Server hello (certificats)</h2>
         <figure class="sidebyside handshake">
-            <figcaption><img src="pictures/diffie-hellman-handshake/4-handshake.png" alt="handshake : server certificates" /></figcaption>
+            <figcaption><img src="pictures/diffie-hellman-handshake/3-handshake.png" alt="handshake : server certificates" /></figcaption>
             <img src="pictures/diffie-hellman-handshake/3-certificates.png" alt="server certificates" />
-            <span class="mark certificate"  style="top: 221px; left: 602px; width: 70px;"></span>
-            <span class="mark mappy"        style="top: 307px; left: 612px; width: 300px;"></span>
-            <span class="mark symatec"      style="top: 335px; left: 612px; width: 300px;"></span>
-            <span class="mark hello-done"   style="top: 420px; left: 603px; width: 105px;"></span>
         </figure>
-        <p>Wildcard <small>(*.mappy.net)</small> ou Subject Alternative Name <small>(map1.mappy.net, map2.mappy.net,...)</small></p>
+	</div></section>
+
+	<section id="diffie-hellman-handshake-server-hello-done" class="slide"><div>
+        <slide-progression open="annexes"></slide-progression>
+        <h2>3. Server hello done </h2>
+        <figure class="sidebyside handshake">
+            <figcaption>
+                <img src="pictures/diffie-hellman-handshake/4-handshake.png" alt="handshake : key exchange" />
+            </figcaption>
+            <img src="pictures/diffie-hellman-handshake/4-server-hello-done.png" alt="key exchange">
+        </figure>
 	</div></section>
 
 	<section id="diffie-hellman-handshake-key-exchange" class="slide"><div>
         <slide-progression open="annexes"></slide-progression>
-        <h2>3. Pré-clé chiffré avec la clé publique du serveur</h2>
+        <h2>4. Échange de clé</h2>
         <figure class="sidebyside handshake">
             <figcaption>
                 <img src="pictures/diffie-hellman-handshake/5-handshake.png" alt="handshake : key exchange" />
-                <pre>
-                    <code></code>
-                </pre>
             </figcaption>
             <img src="pictures/diffie-hellman-handshake/5-key-exchange.png" alt="key exchange">
-            <span class="mark key-exchange"         style="top: 221px; left: 603px; width: 120px;"></span>
-            <span class="mark change-cipher-spec"   style="top: 236px; left: 784px; width: 110px;"></span>
-            <span class="mark encrypted-message"    style="top: 308px; left: 728px; width: 170px;"></span>
         </figure>
 	</div></section>
 
 	<section id="diffie-hellman-handshake-change-cipher-spec" class="slide"><div>
         <slide-progression open="annexes"></slide-progression>
-        <h2>4. Échange terminé</h2>
+        <h2>5. Fin de l’échange de clé</h2>
         <figure class="sidebyside handshake">
             <figcaption>
                 <img src="pictures/diffie-hellman-handshake/6-handshake.png" alt="handshake : key exchange" />
             </figcaption>
             <img src="pictures/diffie-hellman-handshake/6-change-cipher-spec.png" alt="change cipher spec">
-            <span class="mark change-cipher-spec"  style="top: 164px; left: 782px; width: 112px;"></span>
-            <span class="mark encrypted-message"   style="top: 236px; left: 724px; width: 170px;"></span>
         </figure>
-        <pre>
-            <code></code>
-        </pre>
 	</div></section>
 
 	<section id="diffie-hellman-handshake-encrypted-data" class="slide"><div>
         <slide-progression open="annexes"></slide-progression>
-        <h2>5. Place au trafic chiffré</h2>
+        <h2>6. Place au trafic chiffré</h2>
         <figure class="sidebyside handshake">
             <figcaption>
                 <img src="pictures/diffie-hellman-handshake/7-handshake.png" alt="poignée de main">
             </figcaption>
             <img src="pictures/diffie-hellman-handshake/7-encrypted-data.png" alt="encrypted data">
-            <span class="mark encrypted-message"   style="top: 223px; left: 482px; width: 158px;"></span>
         </figure>
         <pre>
             <code></code>

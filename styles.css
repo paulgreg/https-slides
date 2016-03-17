@@ -1,6 +1,6 @@
 header.caption                                      { color: white; }
 .full .progress div                                 { border-bottom-color: #CC0000; }
-.slide::after                                       { right: 70px; }
+.slide::after                                       { right: 60px; }
 
 .slide.shout h2                                     { font-size: 135px; }
 .slide h2                                           { margin: 0px 0px 20px}
