@@ -9,7 +9,6 @@
 	<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
 	<link rel="stylesheet" href="styles.css" />
     <script src="slide-progression.js"></script>
-</script>
 </head>
 <body class="list">
     <header class="caption">
@@ -585,12 +584,13 @@
         <slide-progression open="authentification"></slide-progression>
         <h2><a href="https://letsencrypt.org/" class="clear"><img src="pictures/letsencrypt.svg" alt="Let’s encrypt" /></a></h2>
         <p>
-            <span class="next">Autorité de certification
+            <span class="next">Autorité de certification</span>
             <span class="next"><strong>+</strong></span>
             <span class="next">protocole <a href="https://github.com/letsencrypt/acme-spec"><abbr title="Automated Certificate Management Environment ">ACME</abbr></a> permettant l’attribution et la révocation de certificat</span>
             <span class="next"><strong>+</strong></span>
             <span class="next">un agent <abbr title="Open Source Software">OSS</abbr> sur votre serveur, valide le domaine, installe et renouvelle automatiquement un certificat gratuit (<abbr title="Domain Validation">DV</abbr>).</span>
         </p>
+
         <div class="next">
             <a href="https://www.mozilla.org/" class="clear"><img src="pictures/mozilla-logo.png" width="80" height="50" alt="mozilla" /></a>
             <a href="http://www.akamai.com/" class="clear"><img src="pictures/akamai-logo.png" width="80" height="50" alt="akamai" /></a>
@@ -647,10 +647,10 @@
 	<section id="pourquoi-attaquer-la-crypto" class="slide"><div>
         <slide-progression open="attaques"></slide-progression>
         <h2><i class="fa fa-wrench"></i> S’attaquer à la cryptographie ?</h2>
-        <p>Pourquoi s’attaquer à la cryptographie alors qu’il existe d’autres moyens ?</p>
+        <p>La cryptographie est <a href="#force-brute">solide</a> selon <a href="#doutes">Bruce Schneier &amp; Edward Snowden</a>.
         <figure class="center next">
             <a href="https://xkcd.com/538/" class="clear"><img src="pictures/security.png" alt="xkcd" /></a>
-            <figcaption>Plus d’infos sur <a href="#force-brute">l’attaque par force brute</a> ou l’avis de <a href="#doutes">Schneier &amp; Snowden</a></figcaption>
+            <figcaption>Pourquoi s’attaquer à la cryptographie alors qu’il existe d’autres moyens ?</figcaption>
         </figure>
     </div></section>
 
@@ -1024,7 +1024,7 @@
 
 	<section id="diffie-hellman-handshake-title" class="slide tell"><div>
         <slide-progression open="annexes"></slide-progression>
-        <h2><i class="handshake"></i> Poignée de main <small>via l’échange de clé Diffie-Hellman <small>(<a href="http://vincent.bernat.im/fr/blog/2011-ssl-perfect-forward-secrecy.html">détails</a>)</small></a></h2>
+        <h2><i class="handshake"></i> Poignée de main <small>via l’échange de clé Diffie-Hellman (<a href="http://vincent.bernat.im/fr/blog/2011-ssl-perfect-forward-secrecy.html">détails</a>)</small></a></h2>
 	</div></section>
 
 	<section id="diffie-hellman-handshake-client-hello" class="slide"><div>
