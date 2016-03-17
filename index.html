@@ -40,8 +40,8 @@
         </ul>
         <ul class="next icons">
             <li><img alt="Mappy" src="pictures/mappy-logo.png" class="logo" />
-            <li><i class="fa fa-star nomargin"></i> cartes, itinéraires, ~4 500 000 <abbr title="Point Of Interest">POI</abbr>, vues immersives <small>(en <a href="http://techblog.mappy.com/vues-360-en-webgl.html">webGL</a>)</small>
-            <li><i class="fa fa-line-chart nomargin"></i> ~ 700 000 visites par jour
+            <li><i class="fa fa-star nomargin"></i> <a href="https://fr.mappy.com/">cartes</a>, <a href="https://fr.mappy.com/itineraire">itinéraires</a>, <a href="https://fr.mappy.com/poi/5190c34184ae2d329f8f47ed">~4 500 000 <abbr title="Point Of Interest">POI</abbr></a>, <a href="https://fr.mappy.com/#/720/M1/THome/N-397.03335,1,2.29203,48.8608/Z15/">vues immersives</a> <small>(en <a href="http://techblog.mappy.com/vues-360-en-webgl.html">webGL</a>)</small>, <a href="https://shopping.mappy.com/">web2store</a>
+            <li><i class="fa fa-line-chart nomargin"></i> ~ 1 000 000 visites par jour
             <img class="mappy-home" alt="" src="pictures/mappy-home.png" />
             <img class="mappy-immersive" alt="" src="pictures/mappy-immersive.png" />
         </ul>
@@ -207,6 +207,7 @@
 
 	<section id="handshake-title" class="slide tell"><div>
         <slide-progression open="handshake"></slide-progression>
+        <h2><i class="handshake"></i> Poignée de main</h2>
 	</div></section>
 
 
@@ -377,7 +378,7 @@
 	<section id="cipher-suite" class="slide"><div>
         <slide-progression open="handshake"></slide-progression>
         <h2>Suites de chiffrement <small>(<a href="https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#tls-parameters-4">cipher suites</a>)</small></h2>
-        <p>Authentication <small>(asymétrique)</small>, chiffrement <small>(symétrique)</small>, MAC/HMAC et échange de clé</p>
+        <p>Échange de clé, authentication <small>(asymétrique)</small>, chiffrement <small>(symétrique)</small>, MAC/HMAC</p>
         <ul class="small">
             <li><abbr title="Elliptic Curve Ephemeral Diffie-Hellman">ECDHE</abbr>-<abbr title="du nom des créateurs : Ronald Rivest, Adi Shamir et Leonard Adleman">RSA</abbr>-<abbr title="Advanced Encryption Standard">AES</abbr>256-<abbr title="Galois/Counter Mode">GCM</abbr>-<abbr title="Secure Hash Algorithm">SHA</abbr>384
             <li>ECDHE-<abbr title="Elliptic Curve Digital Signature Algorithm">ECDSA</abbr>-AES256-GCM-SHA384
@@ -467,18 +468,16 @@
         <slide-progression open="handshake"></slide-progression>
         <h2><i class="fa fa-user-secret"></i> Confidentialité persistante parfaite (<a href="http://vincent.bernat.im/en/blog/2011-ssl-perfect-forward-secrecy.html"><abbr title="Perfect Forward Secrecy">PFS</abbr></a>)</h2>
         <figure class="sidebyside">
-            <figcaption>
-                La conversation reste secrête même si la clé privée a fuitée grâce à l’<a href="https://fr.wikipedia.org/wiki/%C3%89change_de_cl%C3%A9s_Diffie-Hellman">échange de clés Diffie-Hellman</a>.
-                <br/>
-                Suites "Ephemeral Diffie-Hellman" :
+            <img class="next" src="pictures/diffie-Hellman_key_exchange.png" alt="Algorithme de Diffie Hellman">
+            <figcaption class="next">
+                <p>La conversation reste secrête même si la clé privée a fuitée grâce à l’<a href="https://fr.wikipedia.org/wiki/%C3%89change_de_cl%C3%A9s_Diffie-Hellman">échange de clés Diffie-Hellman</a>.</p>
+                <p>Suites "Ephemeral Diffie-Hellman" :
                 <small><strong>DHE</strong>-RSA-AES128-SHA</small>,
                 <small><strong>EDH</strong>-RSA-DES-CBC-SHA</small>,
                 <small>EC<strong>DHE</strong>-RSA-AES128-SHA</small>,
-                ...
-                <br/>
-                La poignée de main est <a href="#diffie-hellman-handshake-title">légèrement différente</a>.
+                ... </p>
+                <p>La poignée de main est <a href="#diffie-hellman-handshake-title">légèrement différente</a>.</p>
             </figcaption>
-            <img src="pictures/diffie-Hellman_key_exchange.png" alt="Algorithme de Diffie Hellman">
         </figure>
     </div></section>
 
@@ -575,7 +574,7 @@
         </ul>
         <h3 class="next">Une réponse : <a href="http://www.certificate-transparency.org/">certificate transparency</a></h3>
         <ul>
-            <li class="next">Projet initié par Google, <abbr title="Open Source Software">OSS</abbr> : <a href="https://github.com/google/certificate-transparency">github.com/google/certificate-transparency</a>,
+            <li class="next">Projet <abbr title="Open Source Software">OSS</abbr> initié par Google : <a href="https://github.com/google/certificate-transparency">github.com/google/certificate-transparency</a>,
             <li class="next">Base de données permettant de savoir qui a signé quoi,
             <li class="next">Système opéré par Google (3 noeuds), Digicert et Symantec,
             <li class="next">Imposé pour les CA par Google Chome pour les EV.
@@ -585,31 +584,35 @@
 	<section id="lets-encrypt" class="slide"><div>
         <slide-progression open="authentification"></slide-progression>
         <h2><a href="https://letsencrypt.org/" class="clear"><img src="pictures/letsencrypt.svg" alt="Let’s encrypt" /></a></h2>
-        <p>Protocole <a href="https://github.com/letsencrypt/acme-spec"><abbr title="Automated Certificate Management Environment ">ACME</abbr></a> permettant l’attribution et la révocation de certificat.</p>
-        <p class="center"><strong>+</strong></p>
-        <p>Système qui, via un agent Open Source sur votre serveur, valide le domaine, installe et renouvelle automatiquement un certificat gratuit (<abbr title="Domain Validation">DV</abbr>).</p>
-
-        <a href="https://www.mozilla.org/" class="clear"><img src="pictures/mozilla-logo.png" width="80" height="50" alt="mozilla" /></a>
-        <a href="http://www.akamai.com/" class="clear"><img src="pictures/akamai-logo.png" width="80" height="50" alt="akamai" /></a>
-        <a href="http://www.cisco.com/" class="clear"><img src="pictures/cisco-logo.png" width="80" height="50" alt="cisco" /></a>
-        <a href="https://www.eff.org/" class="clear"><img src="pictures/eff-logo.png" width="80" height="50" alt="EFF" /></a>
-        <a href="https://www.identrustssl.com/" class="clear"><img src="pictures/identrust-logo.png" width="80" height="50" alt="identrust" /></a>
-        <a href="https://www.internetsociety.org/" class="clear"><img src="pictures/isoc.png" width="80" height="50" alt="ISOC" /></a>
-        <a href="https://automattic.com/" class="clear"><img src="pictures/automattic-logo.png" width="80" height="50" alt="automattic" /></a>
-        <a href="https://www.ovh.com/" class="clear"><img src="pictures/ovh-logo.png" alt="OVH" width="80" height="50"></a>
-        <a href="https://www.google.com/chrome/" class="clear"><img src="pictures/chrome-logo.png" alt="Google Chrome" width="80" height="50"></a>
-        <a href="https://www.facebook.com/" class="clear"><img src="pictures/facebook-logo.png" alt="Facebook" width="80" height="50"></a>
-
-        <p><a href="https://letsencrypt.org/2015/10/19/lets-encrypt-is-trusted.html">Supporté</a> par les principaux navigateurs depuis octobre 2015.</p>
-        <p><a href="https://letsencrypt.org/2015/10/29/phishing-and-malware.html">Exclus</a> les sites malveillants grâce à la <a href="https://developers.google.com/safe-browsing/">Safe Browsing API</a>.</p>
+        <p>
+            <span class="next">Autorité de certification
+            <span class="next"><strong>+</strong></span>
+            <span class="next">protocole <a href="https://github.com/letsencrypt/acme-spec"><abbr title="Automated Certificate Management Environment ">ACME</abbr></a> permettant l’attribution et la révocation de certificat</span>
+            <span class="next"><strong>+</strong></span>
+            <span class="next">un agent <abbr title="Open Source Software">OSS</abbr> sur votre serveur, valide le domaine, installe et renouvelle automatiquement un certificat gratuit (<abbr title="Domain Validation">DV</abbr>).</span>
+        </p>
+        <div class="next">
+            <a href="https://www.mozilla.org/" class="clear"><img src="pictures/mozilla-logo.png" width="80" height="50" alt="mozilla" /></a>
+            <a href="http://www.akamai.com/" class="clear"><img src="pictures/akamai-logo.png" width="80" height="50" alt="akamai" /></a>
+            <a href="http://www.cisco.com/" class="clear"><img src="pictures/cisco-logo.png" width="80" height="50" alt="cisco" /></a>
+            <a href="https://www.eff.org/" class="clear"><img src="pictures/eff-logo.png" width="80" height="50" alt="EFF" /></a>
+            <a href="https://www.identrustssl.com/" class="clear"><img src="pictures/identrust-logo.png" width="80" height="50" alt="identrust" /></a>
+            <a href="https://www.internetsociety.org/" class="clear"><img src="pictures/isoc.png" width="80" height="50" alt="ISOC" /></a>
+            <a href="https://automattic.com/" class="clear"><img src="pictures/automattic-logo.png" width="80" height="50" alt="automattic" /></a>
+            <a href="https://www.ovh.com/" class="clear"><img src="pictures/ovh-logo.png" alt="OVH" width="80" height="50"></a>
+            <a href="https://www.google.com/chrome/" class="clear"><img src="pictures/chrome-logo.png" alt="Google Chrome" width="80" height="50"></a>
+            <a href="https://www.facebook.com/" class="clear"><img src="pictures/facebook-logo.png" alt="Facebook" width="80" height="50"></a>
+        </div>
+        <p class="next"><a href="https://letsencrypt.org/2015/10/19/lets-encrypt-is-trusted.html">Supporté</a> par les principaux navigateurs depuis octobre 2015.</p>
+        <p class="next"><a href="https://letsencrypt.org/2015/10/29/phishing-and-malware.html">Exclus</a> les sites malveillants grâce à la <a href="https://developers.google.com/safe-browsing/">Safe Browsing API</a>.</p>
     </div></section>
 
 	<section id="revoquation" class="slide"><div>
         <slide-progression open="authentification"></slide-progression>
         <h2>Révocation : <a href="https://www.fir3net.com/Security/Concepts-and-Terminology/certificate-revocation.html">CRL</a>, <a href="https://www.fir3net.com/Security/Concepts-and-Terminology/certificate-revocation.html">OCSP</a> et <a href="https://www.imperialviolet.org/2012/02/05/crlsets.html">Chrome</a> <a href="https://www.grc.com/revocation/crlsets.htm">CRLSet</a></h2>
         <dl>
-            <dt><i class="fa fa-ban"></i>Certificate Revocation Lists (CRL) :
-            <dd>Liste de n° de certificat invalide ; fichier potentiellement conséquent ; mis à jour tous les 7~14 jours ; seulement pour les <abbr title="Extended validation">EV</abbr> ; inutile si <abbr title="Deny of Service">DOS</abbr> sur le service (navigateur accepte alors)
+            <dt class="next"><i class="fa fa-ban"></i>Certificate Revocation Lists (CRL) :
+            <dd class="next">Liste de n° de certificat invalide ; fichier potentiellement conséquent ; mis à jour tous les 7~14 jours ; seulement pour les <abbr title="Extended validation">EV</abbr> ; inutile si <abbr title="Deny of Service">DOS</abbr> sur le service (navigateur accepte alors)
             <dt class="next"><i class="fa fa-ban"></i>Online Certificate Status Protocol (OCSP) :
             <dd class="next">Requête par certificat ; seulement pour les <abbr title="Extended validation">EV</abbr> ;  inutile si DOS sur le service (navigateur accepte alors)
             <dt class="next"><i class="fa fa-bolt"></i>OSCP Stampling :
@@ -768,7 +771,7 @@
             <code>        integrity="sha384-oqVuAfX542FR..."&gt;&lt;script&gt;</code>
         </pre>
         <ul class="icons">
-            <li><i class="fa fa-certificate"></i> Permet de valider cryptographiqment le contenu d’un &lt;script&gt; ou &lt;link&gt;,
+            <li><i class="fa fa-certificate"></i> Permet de valider cryptographiquement le contenu d’un &lt;script&gt; ou &lt;link&gt;,
             <li class="next"><i class="fa fa-globe"></i> Intéressant pour les contenus hébérgés ailleurs (<abbr title="Content Delivery Network">CDN</abbr>),
             <!--<li class="next"><i class="fa fa-firefox"></i><i class="fa fa-chrome"></i> Depuis <a href="https://hacks.mozilla.org/2015/09/subresource-integrity-in-firefox-43/">Firefox 43</a> et <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=355467">Chrome 45</a>,-->
             <li class="next"><i class="fa fa-github"></i> Utilisé sur <a href="http://githubengineering.com/subresource-integrity/">github.com</a>.
@@ -1136,7 +1139,7 @@
         </ul>
     </div></section>
 
-	<section id="poddle" class="slide"><div>
+	<section id="poodle" class="slide"><div>
         <slide-progression open="annexes"></slide-progression>
         <h2><i class="fa fa-level-down"></i> <a href="https://www.openssl.org/~bodo/ssl-poodle.pdf">POODLE</a>: Padding Oracle On Downgraded Legacy Encryption</h2>
         <ul>
