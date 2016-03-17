@@ -45,6 +45,7 @@ header.caption                                      { color: white; }
 .slide .mark                                        { position: absolute; background-color: rgba(255, 225, 0, 0.24); border: 1px solid black; height: 10px; }
 .slide table td                                     { padding: 0.2em 0.25em; }
 
+.slide i.handshake.small,
 .slide ul.icons li i.handshake                      { display: inline-block; width: 28px; height: 28px; background: url(pictures/handshake.svg); background-size: 28px 28px; background-repeat: no-repeat; margin-left: 0px ; margin-right: 0 ; }
 .slide ul.icons li.red i.handshake                  { background: url(pictures/handshake-red.svg); background-size: 28px 28px; background-repeat: no-repeat; margin-right: 4px ; margin-bottom: -8px; }
 .slide i.handshake                                  { display: inline-block; width: 80px; height: 80px; background: url(pictures/handshake-grey.svg); background-size: 80px 80px; background-repeat: no-repeat; margin-left: 0px ; margin-right: 0 ; }

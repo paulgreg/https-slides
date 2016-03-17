@@ -277,8 +277,8 @@
         <figure class="sidebyside handshake">
             <figcaption>
                 <img src="pictures/handshake/1-handshake.png" alt="handshake : client hello" />
-                <code>TCP 443</code>
             </figcaption>
+            <code style="position: absolute; top: 100px; right: 330px;">TCP 443</code>
             <img src="pictures/handshake/1-client-hello.png" alt="wireshark : client hello" />
             <span class="mark hello"   style="top: 195px; left: 570px; width: 60px;"></span>
             <span class="mark version" style="top: 228px; left: 522px; width: 40px;"></span>
@@ -688,13 +688,13 @@
 		<h2><i class="fa fa-bomb"></i> Les attaques connues</h2>
         <ul class="icons">
             <li>en 2011 <i class="fa fa-optin-monster"></i> <a href="#beast">BEAST</a>: Browser Exploit Against SSL/TLS,
-            <li>en 2012 <i class="fa fa-bolt"></i> <a href="#crime">CRIME</a>: Compression Ratio Info-leak Made Easy,
-            <li>en 2013 <i class="fa fa-bolt"></i> <a href="#breach">BREACH</a>: Browser Reconnaissance and Exfiltration via Adaptive Compression of Hypertext,
-            <li>en 2014 <i class="fa fa-level-down"></i> <a href="#poodle">POODLE</a>: Padding Oracle On Downgraded Legacy Encryption,
-            <li>en 2015 <i class="fa fa-optin-monster"></i> <a href="#freak">FREAK</a>: Factoring RSA EXPORT Attack Keys,
-            <li>en 2015 <i class="fa fa-level-down"></i> <a href="#logjam">Logjam</a>: sur Diffie-Hellman,
-            <li>en 2016 <i class="fa fa-tint"></i> <a href="#drown">DROWN</a>: via SSLv2,
-            <li>sans parler de <a href="#collision">génération de certificats via des collisions</a> ou d’<a href="#attaques-pointues">attaques encore plus pointues</a>...
+            <li class="next">en 2012 <i class="fa fa-bolt"></i> <a href="#crime">CRIME</a>: Compression Ratio Info-leak Made Easy,
+            <li class="next">en 2013 <i class="fa fa-bolt"></i> <a href="#breach">BREACH</a>: Browser Reconnaissance and Exfiltration via Adaptive Compression of Hypertext,
+            <li class="next">en 2014 <i class="fa fa-level-down"></i> <a href="#poodle">POODLE</a>: Padding Oracle On Downgraded Legacy Encryption,
+            <li class="next">en 2015 <i class="fa fa-optin-monster"></i> <a href="#freak">FREAK</a>: Factoring RSA EXPORT Attack Keys,
+            <li class="next">en 2015 <i class="fa fa-level-down"></i> <a href="#logjam">Logjam</a>: sur Diffie-Hellman,
+            <li class="next">en 2016 <i class="fa fa-tint"></i> <a href="#drown">DROWN</a>: via SSLv2,
+            <li class="next">sans parler de <a href="#collision">génération de certificats via des collisions</a> ou d’<a href="#attaques-pointues">attaques encore plus pointues</a>...
         </ul>
     </div></section>
 
@@ -708,10 +708,10 @@
 		<h2>Mixed content</h2>
         <ul>
             <li>Mixed content : ressources chargées via HTTP depuis une page HTTPS <small>(<a href="https://developer.mozilla.org/en-US/docs/Security/Mixed_content"><abbr title="Mozilla Developer Network">MDN</abbr></a>)</small>
-            <li>Contenu <strong>passif</strong> dégradant l’icône de sécurité : <code>&lt;img&gt;</code>, <code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code>
-            <li>Contenu <strong>actif</strong> bloqué : <code>&lt;script&gt;</code>, <code>&lt;link&gt;</code>, <code>&lt;iframe&gt;</code>, <code>&lt;object&gt;</code>, <code>XMLHttpRequest</code>, propriétés <code>CSS</code>
+            <li class="next">Contenu <strong>passif</strong> dégradant l’icône de sécurité : <code>&lt;img&gt;</code>, <code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code>
+            <li class="next">Contenu <strong>actif</strong> bloqué : <code>&lt;script&gt;</code>, <code>&lt;link&gt;</code>, <code>&lt;iframe&gt;</code>, <code>&lt;object&gt;</code>, <code>XMLHttpRequest</code>, propriétés <code>CSS</code>
         </ul>
-        <figure class="center">
+        <figure class="next center">
             <img src="pictures/dubious-as-neutral.png" alt="Chrome page security icon" width="400"/>
             <figcaption><a href="https://googleonlinesecurity.blogspot.com.au/2015/10/simplifying-page-security-icon-in-chrome.html">Simplifying page security icon in Chrome</a></figcaption>
         </figure>
@@ -723,9 +723,9 @@
         <pre><code>Strict-Transport-Security: max-age=16070400; includeSubDomains</code></pre>
         <ul class="icons">
             <li><i class="fa fa-bolt"></i> Entête HTTP indiquant au navigateur de toujours se connecter sur <code>https://</code> (même si l’utilisateur tape explicitement <code>http://</code> ou si les liens pointent vers <code>http://</code> y compris les sous-domaines),
-            <li><i class="fa fa-user-secret"></i> Évite une interception future (ou sslstrip),
-            <li><i class="fa fa-gift"></i> Pré-chargement dans les navigateurs : <a href="https://code.google.com/p/chromium/codesearch#chromium/src/net/http/transport_security_state_static.json">transport_security_state_static.json</a>,
-            <li><i class="fa fa-exclamation-triangle"></i> Que se passe-t-il si votre certificat expire ou si le port 443 ne répond plus ?
+            <li class="next"><i class="fa fa-user-secret"></i> Évite une interception future (ou sslstrip),
+            <li class="next"><i class="fa fa-gift"></i> Pré-chargement dans les navigateurs : <a href="https://code.google.com/p/chromium/codesearch#chromium/src/net/http/transport_security_state_static.json">transport_security_state_static.json</a>,
+            <li class="next"><i class="fa fa-exclamation-triangle"></i> Que se passe-t-il si votre certificat expire ou si le port 443 ne répond plus ?
         </ul>
     </div></section>
 
@@ -735,11 +735,11 @@
         <pre><code>Public-Key-Pins: pin-sha256=""; pin-sha256=""; max-age=259200</code></pre>
         <ul class="icons">
             <li><i class="fa fa-thumb-tack"></i> Entête HTTP "épinglant" une liste de condensat (hash) de certificats (AC racine, AC intermédiaire ou feuille),
-            <li><i class="fa fa-cutlery"></i> Connexion uniquement si le condensat est trouvé dans la chaîne,
-            <li><i class="fa fa-user-secret"></i> Évite qu’une autre certification ne signe son certificat (<a href="https://www.nsa.gov/">www.nsa.gov</a> signé par <abbr title="China Internet Network Information Center">CNNIC</abbr>),
-            <li><i class="fa fa-gift"></i> Pré-chargement dans les navigateurs : <a href="https://code.google.com/p/chromium/codesearch#chromium/src/net/http/transport_security_state_static.h&amp;cl=GROK&amp;gsn=GetDynamicDomainState">transport_security_state_static.h</a>,
-            <li><i class="fa fa-flag-o"></i> <a href="https://developers.google.com/web/updates/2015/09/HPKP-reporting-with-chrome-46">Commencez par</a> : <code>Public-Key-Pins-Report-Only: report-uri</code>
-            <li><i class="fa fa-exclamation-triangle"></i> <a href="https://noncombatant.org/2015/05/01/about-http-public-key-pinning/">Plus</a> <a href="https://timtaubert.de/blog/2014/10/http-public-key-pinning-explained/">compliqué</a> à mettre en place et plus risqué ; à reserver aux sites sensibles.
+            <li class="next"><i class="fa fa-cutlery"></i> Connexion uniquement si le condensat est trouvé dans la chaîne,
+            <li class="next"><i class="fa fa-user-secret"></i> Évite qu’une autre certification ne signe son certificat (<a href="https://www.nsa.gov/">www.nsa.gov</a> signé par <abbr title="China Internet Network Information Center">CNNIC</abbr>),
+            <li class="next"><i class="fa fa-gift"></i> Pré-chargement dans les navigateurs : <a href="https://code.google.com/p/chromium/codesearch#chromium/src/net/http/transport_security_state_static.h&amp;cl=GROK&amp;gsn=GetDynamicDomainState">transport_security_state_static.h</a>,
+            <li class="next"><i class="fa fa-flag-o"></i> <a href="https://developers.google.com/web/updates/2015/09/HPKP-reporting-with-chrome-46">Commencez par</a> : <code>Public-Key-Pins-Report-Only: report-uri</code>
+            <li class="next"><i class="fa fa-exclamation-triangle"></i> <a href="https://noncombatant.org/2015/05/01/about-http-public-key-pinning/">Plus</a> <a href="https://timtaubert.de/blog/2014/10/http-public-key-pinning-explained/">compliqué</a> à mettre en place et plus risqué ; à reserver aux sites sensibles.
         </ul>
     </div></section>
 
@@ -753,10 +753,10 @@
         </pre>
         <ul class="icons">
             <li><i class="fa fa-thumb-tack"></i> Entête HTTP apportant des restrictions sur les types de contenu attendus et leur provenances,
-            <li><i class="fa fa-ban"></i> Système de liste blanche <small>(ce qui n’est pas listé est bloqué)</small>,
-            <li><i class="fa fa-bomb"></i> Très puissant car permet d’éviter des injections de code,
-            <li><i class="fa fa-exclamation-triangle"></i> Difficile <small>(impossible ?)</small> à mettre en place avec du contenu aggrégé <small>(publicité...)</small>,
-            <li><i class="fa fa-flag-o"></i> Activez les rapports : <code>report-uri</code> <small>(il existe des <a href="https://report-uri.io/home/generate/">générateurs</a> de CSP)</small>
+            <li class="next"><i class="fa fa-ban"></i> Système de liste blanche <small>(ce qui n’est pas listé est bloqué)</small>,
+            <li class="next"><i class="fa fa-bomb"></i> Très puissant car permet d’éviter des injections de code,
+            <li class="next"><i class="fa fa-exclamation-triangle"></i> Difficile <small>(impossible ?)</small> à mettre en place avec du contenu aggrégé <small>(publicité...)</small>,
+            <li class="next"><i class="fa fa-flag-o"></i> Activez les rapports : <code>report-uri</code> <small>(il existe des <a href="https://report-uri.io/home/generate/">générateurs</a> de CSP)</small>
         </ul>
     </div></section>
 
@@ -769,9 +769,9 @@
         </pre>
         <ul class="icons">
             <li><i class="fa fa-certificate"></i> Permet de valider cryptographiqment le contenu d’un &lt;script&gt; ou &lt;link&gt;,
-            <li><i class="fa fa-globe"></i> Intéressant pour les contenus hébérgés ailleurs (<abbr title="Content Delivery Network">CDN</abbr>),
-            <li><i class="fa fa-firefox"></i><i class="fa fa-chrome"></i> Depuis <a href="https://hacks.mozilla.org/2015/09/subresource-integrity-in-firefox-43/">Firefox 43</a> et <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=355467">Chrome 45</a>,
-            <li><i class="fa fa-github"></i> Utilisé sur <a href="http://githubengineering.com/subresource-integrity/">github.com</a>.
+            <li class="next"><i class="fa fa-globe"></i> Intéressant pour les contenus hébérgés ailleurs (<abbr title="Content Delivery Network">CDN</abbr>),
+            <!--<li class="next"><i class="fa fa-firefox"></i><i class="fa fa-chrome"></i> Depuis <a href="https://hacks.mozilla.org/2015/09/subresource-integrity-in-firefox-43/">Firefox 43</a> et <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=355467">Chrome 45</a>,-->
+            <li class="next"><i class="fa fa-github"></i> Utilisé sur <a href="http://githubengineering.com/subresource-integrity/">github.com</a>.
         </ul>
     </div></section>
 
@@ -809,7 +809,7 @@
 	<section id="performances-details-numbers" class="slide"><div>
         <slide-progression open="performances"></slide-progression>
 		<h2>Performances</h2>
-        <p><i class="fa fa-exchange"></i> Pour tester le nombre de "poignées de main/seconde" :</p>
+        <p><i class="handshake small"></i> Pour tester le nombre de "poignées de main/seconde" :</p>
         <pre><code>$ openssl speed rsa</code></pre>
         <p><i class="fa fa-laptop"></i> Sur ce <a href="http://shop.lenovo.com/fr/fr/laptops/thinkpad/t-series/t440s/">Thinkpad t440s</a> <small>(fin 2013 - Intel Core i7-4600U @ 2.10GHz)</small> :</p>
         <pre>
@@ -828,7 +828,7 @@
         <ul class="icons">
             <li><i class="fa fa-smile-o"></i> TLS a un impact faible sur le processeur et le réseau <strong>mais</strong> :
             <li><i class="fa fa-exclamation-circle"></i> La taille des clés du chiffrement asymétrique a un impact très fort <small>(2048 suffisant pour la majorité des usages)</small>,
-            <li><i class="fa fa-exclamation-triangle"></i> Cacher les sessions TLS est obligatoire !
+            <li><i class="fa fa-exclamation-triangle"></i> Cacher les sessions TLS est très important !
             <li><i class="fa fa-link"></i> <a href="https://istlsfastyet.com/">IsTlsFastYest.com</a>
         </ul>
     </div></section>
@@ -842,9 +842,9 @@
         <slide-progression open="conclusion"></slide-progression>
 		<h2>Conclusion</h2>
         <ul class="icons">
-            <li><i class="fa fa-bullhorn"></i> répétez après moi : TLS (<s>SSL</s>) !
-            <li class="next"><i class="fa fa-users"></i> TLS bientôt le &laquo; défaut &raquo;,
-            <li class="next"><i class="fa fa-code"></i> vos nouveaux projets en TLS dès à présent <small>(même en dev !)</small>,
+            <li><i class="fa fa-bullhorn"></i> dîtes TLS (<s>SSL</s>) !
+            <li class="next"><i class="fa fa-users"></i> HTTPS bientôt le &laquo; défaut &raquo;,
+            <li class="next"><i class="fa fa-code"></i> commencez vos nouveaux projets en HTTPS <small>(même en dev !)</small>,
             <li class="next"><i class="fa fa-server"></i> n’ayez pas peur <small>(pas si compliqué d’avoir une configuration solide)</small>,
             <li class="next"><i class="fa fa-bell-o"></i> tenez vous au courant, tester votre site régulièrement et mettez-la à jour,
             <li class="next"><i class="fa fa-wrench"></i> vive l’outillage pour automatiser TLS <small>(Let’s encrypt/ACME)</small>
