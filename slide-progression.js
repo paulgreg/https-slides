@@ -10,6 +10,7 @@
         var liToShow = clone.querySelector('.'+selection);
         liToShow.classList.remove('closed');
         liToShow.classList.remove('hidden');
+        liToShow.classList.add('red');
 
         this.appendChild(clone);
     };
