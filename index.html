@@ -26,6 +26,17 @@
         </p>
     </div></section>
 
+    <section id="precision" class="slide"><div>
+        <h2><abbr title="HyperText Transfer Protocol Secure ">HTTPS ?</h2>
+        <figure>
+            <div class="tls"><abbr title="Secure Socket Layer">SSL</abbr>/<abbr title="Transport Layerr Security">TLS</abbr>
+                <div class="http"><abbr title="HyperText Transfer Protocol">HTTP</abbr></div>
+                <br/>
+            </div>
+        </figure>
+    </div></section>
+
+
     <section id="presentation" class="slide"><div>
         <h2>Présentation</h2>
         <ul class="icons">
@@ -133,11 +144,11 @@
             <p><i class="fa fa-google"></i><a href="http://googleonlinesecurity.blogspot.fr/2014/08/https-as-ranking-signal_6.html">Google préfére un site en HTTPS</a>.</p>
             <p class="next"><i class="fa fa-html5"></i>Sans HTTPS, <a href="https://blog.mozilla.org/security/2015/04/30/deprecating-non-secure-http/">Firefox</a> et <a href="https://sites.google.com/a/chromium.org/dev/Home/chromium-security/deprecating-powerful-features-on-insecure-origins">Chrome</a> <small>(50)</small> bloquent certaines API JavaScript :</p>
             <ul class="inner next">
-                <li><code>device motion / orientation</code>,
-                <li><code>encrypted Media Extensions</code>,
                 <li><code>fullscreen</code>,
                 <li><code>geolocation</code>,
-                <li><code>getUserMedia</code>, ...
+                <li><code>device motion / orientation</code>,
+                <li><code>getUserMedia</code>,
+                <li><code>encrypted Media Extensions</code>, ...
             </ul>
             <p class="next"><i class="fa fa-apple"></i> Apple <a href="https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW28">force HTTPS avec AppTransportSecurity</a> depuis  iOS 9.0 et OS X v10.11.</p>
     </div></section>
@@ -278,7 +289,7 @@
             <figcaption>
                 <img src="pictures/handshake/1-handshake.png" alt="handshake : client hello" />
             </figcaption>
-            <code style="position: absolute; top: 100px; right: 330px;">TCP 443</code>
+            <code style="position: absolute; top: 320px; left: 195px;">TCP 443</code>
             <img src="pictures/handshake/1-client-hello.png" alt="wireshark : client hello" />
             <span class="mark hello"   style="top: 195px; left: 570px; width: 60px;"></span>
             <span class="mark version" style="top: 228px; left: 522px; width: 40px;"></span>

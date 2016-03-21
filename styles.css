@@ -63,6 +63,11 @@ header.caption                                      { color: white; }
 #cover p.link img                                   { width: 100px; position: relative; z-index: 10; margin: .5em .5em 0 .5em; }
 #cover p.link a                                     { display: block;  margin: .25em .5em .5em .5em; }
 #cover img.logo                                     { position: relative; z-index: 1; background-color: white; padding: .3em; }
+#precision figure                                   { width: 100%; margin-top: 2em; }
+#precision figure div                               { border: 4px solid black; width: 50%; text-align: center; margin: .5em auto; padding: .5em; }
+#precision .tls                                     { background-color: #82D27B; }
+#precision .http                                    { background-color: #F5E4B0; }
+
 #presentation ul                                    { display: inline-block; width: 50%;  }
 #presentation ul.next                               { float: right;}
 #presentation .mappy-home,
