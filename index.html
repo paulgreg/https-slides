@@ -26,17 +26,6 @@
         </p>
     </div></section>
 
-    <section id="precision" class="slide"><div>
-        <h2><abbr title="HyperText Transfer Protocol Secure ">HTTPS ?</h2>
-        <figure>
-            <div class="tls"><abbr title="Secure Socket Layer">SSL</abbr>/<abbr title="Transport Layerr Security">TLS</abbr>
-                <div class="http"><abbr title="HyperText Transfer Protocol">HTTP</abbr></div>
-                <br/>
-            </div>
-        </figure>
-    </div></section>
-
-
     <section id="presentation" class="slide"><div>
         <h2>Présentation</h2>
         <ul class="icons">
@@ -55,6 +44,16 @@
             <img class="mappy-home" alt="" src="pictures/mappy-home.png" />
             <img class="mappy-immersive" alt="" src="pictures/mappy-immersive.png" />
         </ul>
+    </div></section>
+
+    <section id="precision" class="slide"><div>
+        <h2><abbr title="HyperText Transfer Protocol Secure ">HTTPS ?</h2>
+        <figure>
+            <div class="tls"><abbr title="Secure Socket Layer">SSL</abbr>/<abbr title="Transport Layerr Security">TLS</abbr>
+                <div class="http"><abbr title="HyperText Transfer Protocol">HTTP</abbr></div>
+                <br/>
+            </div>
+        </figure>
     </div></section>
 
     <template id="slide-progression-tpl">
@@ -231,7 +230,7 @@
         <h2><i class="fa fa-key" style="color: green;"></i> Chiffrement symétrique</h2>
         <figure class="center">
             <img src="./pictures/symmetric-cipher.png" alt="chiffrement symétrique" />
-            <figcaption><abbr title="Data Encryption Standard">DES</abbr> (<span class="broken">56 bits</span>), 3DES (<span class="unsecure">112 bits</span>), <abbr title="Advanced Encryption Standard">AES</abbr> (<span class="safe">128</span>, <span class="safe">256 bits</span>)</figcaption>
+            <figcaption><abbr title="Data Encryption Standard">DES</abbr> (<span class="broken">56 bits</span>), 3DES (<span class="unsecure">112 bits</span>), <abbr title="Advanced Encryption Standard">AES</abbr> (<span class="safe">128</span>, <span class="safe">256 bits</span>), <a href="https://en.wikipedia.org/wiki/GOST_(block_cipher)">GOST</a> (<span class="safe">256 bits</span>)</figcaption>
         </figure>
     </div></section>
 
@@ -261,10 +260,20 @@
            <span class="safe"><a href="https://fr.wikipedia.org/wiki/SHA-2">SHA-2</a></span> <small>(SHA-224, SHA-256, SHA-384 et SHA-512)</small>,
            <span class="safe"><a href="https://fr.wikipedia.org/wiki/SHA-3">SHA3</a></span>.
        </p>
+    </div></section>
+
+    <section id="hmac" class="slide"><div>
+        <slide-progression open="handshake"></slide-progression>
+        <h2><i class="fa fa-cutlery"></i> <a href="https://fr.wikipedia.org/wiki/Keyed-Hash_Message_Authentication_Code"><abbr title="Keyed message authentification code">HMAC</abbr></a></h2>
+        <p>Influencé par une clé</p>
+        <pre>
+            <code>echo -n "Hello World" | openssl dgst -sha1 -hmac "key"</code>
+            <code><mark>cc24f1acdb06cf429bcf9861b6d708b6ec20a8fa</mark></code>
+       </pre>
        <p class="next">
-       <a href="https://fr.wikipedia.org/wiki/Message_Authentication_Code"><abbr title="Message authentification code">MAC</abbr></a> /
-       <a href="https://fr.wikipedia.org/wiki/Keyed-Hash_Message_Authentication_Code"><abbr title="Keyed message authentification code">HMAC</abbr></a> :
-        influencée par une clé, permet de vérifier simultanément l'intégrité et l'authenticité d’un message.
+           <span class="broken">HMAC_MD5</span>,
+           <span class="unsecure">HMAC_SHA1</span>,
+           <span class="safe">HMAC_SHA256</a></span>.
        </p>
     </div></section>
 
