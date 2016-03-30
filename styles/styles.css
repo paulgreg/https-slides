@@ -3,7 +3,7 @@ header.caption                                      { color: white; }
 .slide::after                                       { right: 60px; }
 
 .slide.shout h2                                     { font-size: 135px; }
-.slide h2                                           { margin: 0px 0px 20px}
+.slide h2                                           { margin: 0 0 20px}
 .slide img.svg                                      { max-width: 110%; }
 .slide video                                        { max-width: 90%; }
 .slide > div                                        { padding: 80px 80px 0px; height: 555px; width: 865px; }
@@ -22,13 +22,13 @@ header.caption                                      { color: white; }
 .slide pre                                          { margin-bottom: 1em;  }
 .slide pre code                                     { line-height: 175%; }
 .slide pre.small code                               { line-height: 110%; font-size: 12px; }
-.slide figcaption                                   { margin-top: -10px; }
 .slide small                                        { font-size: 80%; color: #666; }
 .slide small a                                      { color: #666; }
 .slide p                                            { margin-bottom: .25em; }
 .slide p,
 .slide li                                           { line-height: 150%; margin-bottom: .5em; }
 .slide blockquote + figcaption                      { margin-top: 0; }
+.slide figcaption                                   { margin-top: -10px; }
 .slide figure img                                   { max-height: 470px; }
 .slide figure.center                                { text-align: center; }
 .slide figure.sidebyside figcaption,
@@ -44,11 +44,12 @@ header.caption                                      { color: white; }
 .slide h3                                           { color: #666; font-size: 32px; }
 .slide .mark                                        { position: absolute; background-color: rgba(255, 225, 0, 0.24); border: 1px solid black; height: 10px; }
 .slide table td                                     { padding: 0.2em 0.25em; }
+.slide figure figcaption.narrow                     { margin-top: -24px; }
 
 .slide i.handshake.small,
-.slide ul.icons li i.handshake                      { display: inline-block; width: 28px; height: 28px; background: url(pictures/handshake.svg) no-repeat; background-size: 28px 28px; margin-left: 0px ; margin-right: 0; margin-bottom: -6px; }
-.slide ul.icons li.red i.handshake                  { background: url(pictures/handshake-red.svg) no-repeat; background-size: 28px 28px; margin-right: 4px;}
-.slide i.handshake                                  { display: inline-block; width: 80px; height: 80px; background: url(pictures/handshake-grey.svg) no-repeat; background-size: 80px 80px; margin-left: 0; margin-right: 0; }
+.slide ul.icons li i.handshake                      { display: inline-block; width: 28px; height: 28px; background: url(../pictures/handshake.svg) no-repeat; background-size: 28px 28px; margin-left: 0px ; margin-right: 0; margin-bottom: -6px; }
+.slide ul.icons li.red i.handshake                  { background: url(../pictures/handshake-red.svg) no-repeat; background-size: 28px 28px; margin-right: 4px;}
+.slide i.handshake                                  { display: inline-block; width: 80px; height: 80px; background: url(../pictures/handshake-grey.svg) no-repeat; background-size: 80px 80px; margin-left: 0; margin-right: 0; }
 
 .slide .broken, .broken a                           { color:red; }
 .slide .unsecure, .unsecure a                       { color:orange; }
@@ -63,6 +64,7 @@ header.caption                                      { color: white; }
 #cover p.link img                                   { width: 100px; position: relative; z-index: 10; margin: .5em .5em 0 .5em; }
 #cover p.link a                                     { display: block;  margin: .25em .5em .5em .5em; }
 #cover img.logo                                     { position: relative; z-index: 1; background-color: white; padding: .3em; }
+
 #precision figure                                   { width: 100%; margin-top: 2em; }
 #precision figure div                               { border: 4px solid black; width: 50%; text-align: center; margin: .5em auto; padding: .5em; }
 #precision .tls                                     { background-color: #82D27B; }
@@ -77,15 +79,14 @@ header.caption                                      { color: white; }
 #sommaire ul                                        { margin: .5em; }
 #sommaire ul li                                     { margin: .75em; }
 #interception-traffic-http figcaption               { width: 100%; text-align: right; margin-top: -60px;}
-#interception-traffic-http-video figcaption         { width: 100%; text-align: right; margin: -25px 0 0 -40px;}
 #html-seo p                                         { margin-top: 1em; }
 #chiffrement-symetrique figure                      { margin-top: 100px; }
 #handshake-certificate img.store                    { display: block; margin: auto; }
-#cipher-suites ul.small                              { column-count: 4; -moz-column-count: 4; -webkit-column-count: 4; font-size: 12px; font-family: monospace; }
-#cipher-suites ul.small li                           { margin: 0; }
+#cipher-suites ul.small                             { column-count: 4; -moz-column-count: 4; -webkit-column-count: 4; font-size: 12px; font-family: monospace; }
+#cipher-suites ul.small li                          { margin: 0; }
 #pfs img                                            { max-height: 380px; }
 #type-certificate img                               { display: block; margin: 1em auto 0 auto; }
-#lets-encrypt img                                   { padding: 0 80px 0 0; }
+#lets-encrypt h2 img                                { padding: .25em; }
 #doutes .portrait                                   { float: right; max-width: 100px; border: 1px solid black; }
 #pourquoi-attaquer-la-crypto p                      { margin: 2em 0; }
 #bugs img                                           { float: right; }
@@ -103,3 +104,13 @@ header.caption                                      { color: white; }
 .slide slide-progression ul.icons li.closed span    { font-size: 14px; }
 .slide slide-progression ul.icons li.hidden         { display: none; }
 
+.slide devoxx-footer                                { display: none; }
+.slide devoxx-footer                                { position: absolute; left: 0; bottom: 0; right: 0; height: 20px; background-color: rgba(16, 0, 26, .9); font-size: 15px; border-bottom: 1px solid black; }
+.slide devoxx-footer a                              { background: none; color: #eeeeee; }
+.slide devoxx-footer span                           { position:absolute; top: -6px; left: 10px; }
+.slide devoxx-footer a.devoxx                       { position: absolute; right: 0; left: auto; }
+.slide devoxx-footer img,
+.slide.cover devoxx-footer img                      { position: relative; height: 20px; z-index: 1; }
+
+.slide.cover devoxx-footer                          { display: block; }
+.slide devoxx-footer                                { display: none; }
