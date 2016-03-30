@@ -411,11 +411,11 @@
             <span class="mark encrypted-message"   style="top: 222px; left: 724px; width: 170px;"></span>
         </figure>
         <pre>
-            <code>masterSecret = <abbr title="pseudo random function">PRF</abbr>(client.preMasterSecret,</code>
+            <code>ms = masterSecret = <abbr title="pseudo random function">PRF</abbr>(client.preMasterSecret,</code>
             <code>                   client.random, server.random)</code>
             <code> </code>
-            <code>[ clientMAC, serverMAC ] = extractMACs(masterSecret)</code>
-            <code>[ clientKey, serverKey ] = extractKeys(masterSecret)</code>
+            <code>[ clientCipherKey, serverCipherKey ] = extractCipherKeys(ms)</code>
+            <code>[ clientHMACKey, serverHMACKey ] = extractHMACKeys(ms)</code>
         </pre>
         <devoxx-footer></devoxx-footer>
 	</div></section>
@@ -431,8 +431,10 @@
             <span class="mark encrypted-message"   style="top: 209px; left: 482px; width: 158px;"></span>
         </figure>
         <pre>
-            <code>encryptRequest(clientKey, clientMAC, message)</code>
-            <code>encryptResponse(serverKey, serverMAC, message)</code>
+            <code>encryptRequest(message, clientCipherKey, clientHMACKey)</code>
+            <code>decryptRequest(message, clientCipherKey, clientHMACKey)</code>
+            <code>encryptResponse(message, serverCipherKey, serverHMACKey)</code>
+            <code>decryptResponse(message, serverCipherKey, serverHMACKey)</code>
         </pre>
         <devoxx-footer></devoxx-footer>
 	</div></section>
@@ -599,7 +601,7 @@
             <li>2008 : <a href="https://www.schneier.com/blog/archives/2008/05/random_number_b.html">DSA-1571-1</a> : /dev/random sur Debian limité à 32768 valeurs,
             <li class="next">2014 : <a href="http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2014-1266">CVE-2014-1266</a> : <a href="https://opensource.apple.com/source/Security/Security-55471/libsecurity_ssl/lib/sslKeyExchange.c?txt">goto fail</a> chez Apple,
             <li class="next">2014 : <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0092">CVE-2014-0092</a> : <a href="https://www.gitorious.org/gnutls/gnutls/commit/6aa26f78150ccbdf0aec1878a41c17c41d358a3b">goto cleanup</a> sur GnuTLS,
-            <li class="next">2014 : <a href="https://www.bortzmeyer.org/7366.html">RFC 7366</a> : "MAC-then-encrypt" potentiellement dangereux, donc "Encrypt-then-MAC",
+            <li class="next">2014 : <a href="https://www.bortzmeyer.org/7366.html">RFC 7366</a> : "HMAC-then-encrypt" potentiellement dangereux, donc "Encrypt-then-HMAC",
             <li class="next">2015 : <a href="http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0160">CVE-2014-0160</a> : <i class="fa fa-heartbeat nomargin"></i> <a href="http://heartbleed.com/">heartbleed</a> : le serveur laisse fuiter quelques octets en RAM...
         </ul>
         <devoxx-footer></devoxx-footer>
