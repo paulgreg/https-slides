@@ -3,7 +3,7 @@ header.caption                                      { color: white; }
 .slide::after                                       { right: 60px; }
 
 .slide.shout h2                                     { font-size: 135px; }
-.slide h2                                           { margin: 0 0 20px}
+.slide h2                                           { margin: -10px 0 16px}
 .slide img.svg                                      { max-width: 110%; }
 .slide video                                        { max-width: 90%; }
 .slide > div                                        { padding: 80px 80px 0px; height: 555px; width: 865px; }
@@ -85,14 +85,18 @@ header.caption                                      { color: white; }
 #cipher-suites ul.small                             { column-count: 4; -moz-column-count: 4; -webkit-column-count: 4; font-size: 12px; font-family: monospace; }
 #cipher-suites ul.small li                          { margin: 0; }
 #pfs img                                            { max-height: 380px; }
-#type-certificate img                               { display: block; margin: 1em auto 0 auto; }
+#type-certificats img                               { display: block; margin: 1em auto 0 auto; }
 #lets-encrypt h2 img                                { padding: .25em; }
 #doutes .portrait                                   { float: right; max-width: 100px; border: 1px solid black; }
 #pourquoi-attaquer-la-crypto p                      { margin: 2em 0; }
 #bugs img                                           { float: right; }
-#conclusion-details p.link                          { display: block; position: absolute; top: 440px; right: 115px; text-align: right; }
-#conclusion-details p.link img                      { width: 100px; position: relative; }
+#qa p.link,
+#conclusion-details p.link                          { display: block; position: absolute; top: 380px; right: 115px; text-align: right; }
+#qa p.link img,
+#conclusion-details p.link img                      { width: 160px; position: relative; }
+#qa p.link a,
 #conclusion-details p.link a                        { display: block; }
+#qa figure i                                        { font-size: 300px; color: grey; }
 #resources .resources li                            { font-size: 24px; line-height: 110%; }
 
 .slide slide-progression                            { display: block; position: absolute; left: 0; top: 0; width: 100%; }

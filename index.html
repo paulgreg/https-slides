@@ -128,7 +128,7 @@
             <video controls preload="metadata">
                 <source src="videos/mitm-http.webm" type="video/webm" />
             </video>
-            <figcaption class="narrow"><a href="#interception-traffic-http-explications">détails</a> et <a href="https://hackaday.io/project/10338-pi-mitm">implémentation</a> de cet exemple ou sur le <a href="#vol-cookie">vol de cookie</a></figcaption>
+            <figcaption class="narrow"><a href="#interception-traffic-http-explications">détails</a> et <a href="https://hackaday.io/project/10338-pi-mitm">implémentation</a> de cet exemple, <a href="#vol-cookie">vol de cookie</a></figcaption>
         </figure>
         <devoxx-footer></devoxx-footer>
     </div></section>
@@ -331,12 +331,12 @@
                 <p style="margin-left: 60px;"><a href="#cipher-suites">suites de chifrement</a></p>
             </figcaption>
             <img src="pictures/handshake/1-client-hello.png" alt="wireshark : client hello" />
-            <span class="mark hello"   style="top: 195px; left: 570px; width: 60px;"></span>
-            <span class="mark version" style="top: 228px; left: 522px; width: 40px;"></span>
-            <span class="mark random"  style="top: 260px; left: 488px; width: 55px;"></span>
-            <span class="mark session" style="top: 272px; left: 482px; width: 50px;"></span>
-            <span class="mark suites"  style="top: 295px; left: 482px; width: 65px;"></span>
-            <span class="mark sni"     style="top: 565px; left: 488px; width: 105px;"></span>
+            <span class="mark hello"   style="top: 181px; left: 570px; width: 60px;"></span>
+            <span class="mark version" style="top: 214px; left: 522px; width: 40px;"></span>
+            <span class="mark random"  style="top: 246px; left: 488px; width: 55px;"></span>
+            <span class="mark session" style="top: 258px; left: 482px; width: 50px;"></span>
+            <span class="mark suites"  style="top: 281px; left: 482px; width: 65px;"></span>
+            <span class="mark sni"     style="top: 551px; left: 488px; width: 105px;"></span>
         </figure>
         <devoxx-footer></devoxx-footer>
 	</div></section>
@@ -347,11 +347,11 @@
         <figure class="sidebyside handshake">
             <figcaption><img src="pictures/handshake/2-handshake.png" alt="handshake : server hello" /></figcaption>
             <img src="pictures/handshake/2-server-hello.png" alt="server hello" />
-            <span class="mark hello"   style="top: 219px; left: 596px; width: 74px;"></span>
-            <span class="mark version" style="top: 260px; left: 538px; width: 48px;"></span>
-            <span class="mark random"  style="top: 302px; left: 496px; width: 70px;"></span>
-            <span class="mark session" style="top: 329px; left: 488px; width: 60px;"></span>
-            <span class="mark suite"   style="top: 342px; left: 488px; width: 72px;"></span>
+            <span class="mark hello"   style="top: 205px; left: 596px; width: 74px;"></span>
+            <span class="mark version" style="top: 246px; left: 538px; width: 48px;"></span>
+            <span class="mark random"  style="top: 288px; left: 496px; width: 70px;"></span>
+            <span class="mark session" style="top: 315px; left: 488px; width: 60px;"></span>
+            <span class="mark suite"   style="top: 328px; left: 488px; width: 72px;"></span>
         </figure>
         <devoxx-footer></devoxx-footer>
 	</div></section>
@@ -370,10 +370,10 @@
             </figcaption>
             <img src="pictures/handshake/3-certificates.png" alt="server certificates" />
             <img src="pictures/ca-store.png" alt="browser CA store" class="store" />
-            <span class="mark certificate"  style="top: 221px; left: 602px; width: 70px;"></span>
-            <span class="mark mappy"        style="top: 307px; left: 612px; width: 300px;"></span>
-            <span class="mark symatec"      style="top: 335px; left: 612px; width: 300px;"></span>
-            <span class="mark hello-done"   style="top: 420px; left: 603px; width: 105px;"></span>
+            <span class="mark certificate"  style="top: 207px; left: 602px; width: 70px;"></span>
+            <span class="mark mappy"        style="top: 293px; left: 612px; width: 300px;"></span>
+            <span class="mark symatec"      style="top: 321px; left: 612px; width: 300px;"></span>
+            <span class="mark hello-done"   style="top: 407px; left: 603px; width: 105px;"></span>
         </figure>
         <devoxx-footer></devoxx-footer>
 	</div></section>
@@ -392,9 +392,9 @@
                 </pre>
             </figcaption>
             <img src="pictures/handshake/5-key-exchange.png" alt="key exchange">
-            <span class="mark key-exchange"         style="top: 221px; left: 603px; width: 120px;"></span>
-            <span class="mark change-cipher-spec"   style="top: 236px; left: 784px; width: 110px;"></span>
-            <span class="mark encrypted-message"    style="top: 308px; left: 728px; width: 170px;"></span>
+            <span class="mark key-exchange"         style="top: 208px; left: 603px; width: 120px;"></span>
+            <span class="mark change-cipher-spec"   style="top: 222px; left: 784px; width: 110px;"></span>
+            <span class="mark encrypted-message"    style="top: 294px; left: 728px; width: 170px;"></span>
         </figure>
         <devoxx-footer></devoxx-footer>
 	</div></section>
@@ -407,8 +407,8 @@
                 <img src="pictures/handshake/6-handshake.png" alt="handshake : key exchange" />
             </figcaption>
             <img src="pictures/handshake/6-change-cipher-spec.png" alt="change cipher spec">
-            <span class="mark change-cipher-spec"  style="top: 164px; left: 782px; width: 112px;"></span>
-            <span class="mark encrypted-message"   style="top: 236px; left: 724px; width: 170px;"></span>
+            <span class="mark change-cipher-spec"  style="top: 150px; left: 782px; width: 112px;"></span>
+            <span class="mark encrypted-message"   style="top: 222px; left: 724px; width: 170px;"></span>
         </figure>
         <pre>
             <code>masterSecret = <abbr title="pseudo random function">PRF</abbr>(client.preMasterSecret,</code>
@@ -428,7 +428,7 @@
                 <img src="pictures/handshake/7-handshake.png" alt="poignée de main">
             </figcaption>
             <img src="pictures/handshake/7-encrypted-data.png" alt="encrypted data">
-            <span class="mark encrypted-message"   style="top: 223px; left: 482px; width: 158px;"></span>
+            <span class="mark encrypted-message"   style="top: 209px; left: 482px; width: 158px;"></span>
         </figure>
         <pre>
             <code>encryptRequest(clientKey, clientMAC, message)</code>
@@ -468,16 +468,16 @@
             <img src="pictures/ca_hierarchy.svg" alt="Hiérarchie des Autorités de Certifications" height="150" />
             <figcaption>
                 <dl>
-                    <dt><i class="fa fa-hospital-o"></i>Autorité de certification racine (root <abbr title="Certificate authority">CA</abbr>)
-                    <dd>Certificat auto-signé ; "cold storage" ; 200~400 CA présentes dans les navigateurs &amp; <abbr title="Operating System">OS</abbr> s’ils remplissent les critères de
+                    <dt><i class="fa fa-hospital-o"></i>Autorité de certification racine (<abbr title="Autorité de certification">AC</abbr> racine ou root <abbr title="Certificate authority">CA</abbr>)
+                    <dd>Certificat auto-signé ; 200~400 CA chez :
                         <a href="https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/">Mozilla</a>,
                         <a href="https://www.apple.com/certificateauthority/ca_program.html">Apple</a>,
                         <a href="http://social.technet.microsoft.com/wiki/contents/articles/31633.microsoft-trusted-root-program-requirements.aspx">Microsoft</a> ou
-                        <a href="https://www.chromium.org/Home/chromium-security/root-ca-policy">Google</a>.
+                        <a href="https://www.chromium.org/Home/chromium-security/root-ca-policy">Google</a> ; "cold storage".
                     <dt class="next"><i class="fa fa-building"></i>Autorité de certification intermédiaire (intermediate CA)
-                    <dd class="next">Utilisé pour signer les autorités d’enregistrements ; "cold storage"
                     <dt class="next"><i class="fa fa-building-o"></i>Autorité d’enregistrement (issuing CA)
-                    <dd class="next">Bureau signant les certificats au "grand public"
+                    <dt class="next"><i class="fa fa-question-circle"></i>Alternative
+                    <dd class="next"><a href="#DANE"><abbr title="DNS-based Authentication of Named Entities">DANE<abbr></a> : certificat dans DNSSEC.
                 </dl>
             </figcaption>
         </figure>
@@ -505,7 +505,7 @@
         <ul>
             <li class="next">des <a href="https://mozillacaprogram.secure.force.com/CA/IncludedCACertificateReport">centaines de CA</a> dans nos magasins (entreprises, gouvernements),
             <li class="next">n’importe quel CA peut signer un certificat pour n’importe quel domaine,
-            <li class="next">les CA, des cibles de choix <small>(<a href="#ca-breach">quelques attaques</a>, rogue CA)</small>.
+            <li class="next">les CA, des cibles très intéressantes <small>(<a href="#ca-breach">quelques attaques</a>, rogue CA)</small>.
         </ul>
         <h3 class="next">Une réponse : <a href="http://www.certificate-transparency.org/">certificate transparency</a></h3>
         <ul>
@@ -550,23 +550,6 @@
         <devoxx-footer></devoxx-footer>
     </div></section>
 
-	<section id="DANE" class="slide"><div>
-        <slide-progression open="authentification"></slide-progression>
-        <h2>DNS-based Authentication of Named Entities (<a href="http://www.bortzmeyer.org/6698.html">DANE</a>)</h2>
-        <ul>
-            <li>Certificat publié dans un enregistrement <a href="http://www.dnssec.net/">DNSSEC</a> (obligatoire) de type <code>TLSA</code>,
-            <li class="next">Support très limité (rien pour <a href="https://www.imperialviolet.org/2015/01/17/notdane.html">Google Chrome</a>, <a href="https://www.dnssec-validator.cz/">Addon</a> pour Firefox),
-        </ul>
-        <h3 class="next"><a href="https://www.iana.org/assignments/dane-parameters/dane-parameters.xml#certificate-usages">4 types</a> :</h3>
-        <ol>
-            <li class="next">PKIX-TA/ CA constraint : seule cette CA peut signer le certificat (complément),
-            <li class="next">PKIX-EE/ Service certificate constraint : force un certificat (complément),
-            <li class="next">DANE-TA/ Trust anchor assertion : certificat d’un CA (CA "maison"),
-            <li class="next">DANE-EE/ Domain-issued certificate : certificat pour un domaine (auto-signé).
-        </ol>
-        <devoxx-footer></devoxx-footer>
-    </div></section>
-
 	<section id="attaques" class="slide shout"><div>
         <slide-progression open="attaques"></slide-progression>
 		<h2><i class="fa fa-bomb"></i> Attaques</h2>
@@ -588,12 +571,12 @@
         <slide-progression open="attaques"></slide-progression>
 		<h2><i class="fa fa-keyboard-o"></i> Attaques &laquo; faciles &raquo;</h2>
         <ul>
-            <li>récupèrer les infos ailleurs que pendant le transport (chez l’hébergeur...),
-            <li class="next">via une attaque &laquo; <a href="https://en.wikipedia.org/wiki/Moxie_Marlinspike#SSL_stripping">SSLStrip</a> &raquo;, inventé par <a href="https://en.wikipedia.org/wiki/Moxie_Marlinspike">Moxie Marlinspike</a> (<abbr title="Man in the middle">MITM</abbr> remplaçant HTTPS par HTTP au sein des pages, d’où <abbr title="Http Strict Transport Security">HSTS</abbr>),
-            <li class="next">faire installer un <a href="https://fr.wikipedia.org/wiki/Enregistreur_de_frappe">enregistreur de frappe</a> (keylogger) ou demander la clé privée,
-            <li class="next">les gouvernements peuvent générer un certificat (<small>Government of /France|Hong Kong|Japan|Spain|Taiwan|Netherlands|Turkey/</small>, d’où le certificate pinning),
-            <li class="next">ou alors installer une CA &laquo; maison &raquo; pour faire de l’interception légale (recommandations de la <a href="http://www.cnil.fr/linstitution/actualite/article/article/analyse-de-flux-https-bonnes-pratiques-et-questions/">CNIL</a> et de l’<a href="http://www.ssi.gouv.fr/guide/recommandations-de-securite-concernant-lanalyse-des-flux-https/">ANSSI</a>) ou illégale...
-            <li class="next">même principe pour les antivirus (ou <a href="https://support.lenovo.com/us/en/product_security/superfish">superfish</a>, <a href="http://joenord.blogspot.fr/2015/11/new-dell-computer-comes-with-edellroot.html">eDellRoot</a>).
+            <li>récupèrer les infos ailleurs <small>(chez l’hébergeur)</small>,
+            <li class="next">via une attaque <abbr title="Man in the middle">MITM</abbr> &laquo; <a href="https://en.wikipedia.org/wiki/Moxie_Marlinspike#SSL_stripping">SSLStrip</a> &raquo;, <small>par <a href="https://en.wikipedia.org/wiki/Moxie_Marlinspike">Moxie Marlinspike</a></small>,
+            <li class="next">via un <a href="https://fr.wikipedia.org/wiki/Enregistreur_de_frappe">enregistreur de frappe</a> <small>(keylogger)</small>,
+            <li class="next">pour les gouvernements, demander la clé ou faire générer un certificat,
+            <li class="next">installer une CA &laquo; maison &raquo; pour faire de l’interception légale <small>(recommandations de la <a href="http://www.cnil.fr/linstitution/actualite/article/article/analyse-de-flux-https-bonnes-pratiques-et-questions/">CNIL</a> et de l’<a href="http://www.ssi.gouv.fr/guide/recommandations-de-securite-concernant-lanalyse-des-flux-https/">ANSSI</a>)</small> ou illégale...
+            <li class="next">ce que font les antivirus <small>(ou des mauvais logiciels : <a href="https://support.lenovo.com/us/en/product_security/superfish">superfish</a>, <a href="http://joenord.blogspot.fr/2015/11/new-dell-computer-comes-with-edellroot.html">eDellRoot</a>)</small>.
         </ul>
         <devoxx-footer></devoxx-footer>
     </div></section>
@@ -678,7 +661,7 @@
         <pre><code>Strict-Transport-Security: max-age=16070400; includeSubDomains</code></pre>
         <ul class="icons">
             <li><i class="fa fa-bolt"></i> Force <code>https://</code> (même si l’utilisateur tape <code>http://</code> ou si les liens pointent vers <code>http://</code>),
-            <li class="next"><i class="fa fa-user-secret"></i> Évite une interception future (ou sslstrip),
+            <li class="next"><i class="fa fa-user-secret"></i> Évite une interception future <small>(sslstrip)</small>,
             <li class="next"><i class="fa fa-gift"></i> Pré-chargement dans les navigateurs : <a href="https://code.google.com/p/chromium/codesearch#chromium/src/net/http/transport_security_state_static.json">transport_security_state_static.json</a>,
             <li class="next"><i class="fa fa-exclamation-triangle"></i> Que se passe-t-il si votre certificat expire ou si le port 443 ne répond plus ?
         </ul>
@@ -692,7 +675,7 @@
         <ul class="icons">
             <li><i class="fa fa-thumb-tack"></i> Entête HTTP "épinglant" une liste de condensat (hash) de certificats (AC racine, AC intermédiaire ou feuille),
             <li class="next"><i class="fa fa-cutlery"></i> Connexion uniquement si le condensat est trouvé dans la chaîne,
-            <li class="next"><i class="fa fa-user-secret"></i> Évite qu’une autre certification ne signe son certificat (<a href="https://www.nsa.gov/">www.nsa.gov</a> signé par <abbr title="China Internet Network Information Center">CNNIC</abbr>),
+            <li class="next"><i class="fa fa-user-secret"></i> Évite qu’une autre AC ne signe son certificat <small>(<a href="https://www.nsa.gov/">www.nsa.gov</a> signé par <abbr title="China Internet Network Information Center">CNNIC</abbr>)</small>,
             <li class="next"><i class="fa fa-gift"></i> Pré-chargement dans les navigateurs : <a href="https://code.google.com/p/chromium/codesearch#chromium/src/net/http/transport_security_state_static.h&amp;cl=GROK&amp;gsn=GetDynamicDomainState">transport_security_state_static.h</a>,
             <li class="next"><i class="fa fa-flag-o"></i> <a href="https://developers.google.com/web/updates/2015/09/HPKP-reporting-with-chrome-46">Commencez par</a> : <code>Public-Key-Pins-Report-Only: report-uri</code>
             <li class="next"><i class="fa fa-exclamation-triangle"></i> <a href="https://noncombatant.org/2015/05/01/about-http-public-key-pinning/">Plus</a> <a href="https://timtaubert.de/blog/2014/10/http-public-key-pinning-explained/">compliqué</a> à mettre en place et plus risqué ; à reserver aux sites sensibles.
@@ -797,10 +780,22 @@
             <li class="next"><i class="fa fa-users"></i> HTTPS bientôt le &laquo; défaut &raquo;,
             <li class="next"><i class="fa fa-code"></i> commencez vos nouveaux projets en HTTPS <small>(même en dev !)</small>,
             <li class="next"><i class="fa fa-server"></i> n’ayez pas peur <small>(pas si compliqué d’avoir une configuration solide)</small>,
-            <li class="next"><i class="fa fa-bell-o"></i> tenez vous au courant, tester votre site régulièrement et mettez-la à jour,
+            <li class="next"><i class="fa fa-bell-o"></i> tenez vous au courant, tester votre site régulièrement<br/>et mettez-la à jour,
             <li class="next"><i class="fa fa-wrench"></i> vive l’outillage pour automatiser TLS <small>(Let’s encrypt/ACME)</small>
             <li class="next"><i class="fa fa-ban"></i> la fin des révocations <small>(avec des certificats pour quelques jours)</small> ?
         </ul>
+        <p class="link">
+            <img src="pictures/qrcode.svg" alt="" />
+            <a href="https://paulgreg.me/https-slides/">https://paulgreg.me/https-slides/</a>
+        </p>
+        <devoxx-footer></devoxx-footer>
+    </div></section>
+
+    <section id="qa" class="slide"><div>
+        <h2>Questions &amp; réponses</h2>
+        <figure class="center">
+            <i class="fa fa-comment"></i>
+        </figure>
         <p class="link">
             <img src="pictures/qrcode.svg" alt="" />
             <a href="https://paulgreg.me/https-slides/">https://paulgreg.me/https-slides/</a>
@@ -1185,6 +1180,23 @@
             <code>     58:67:fd:72:b2:6a:d7:7c:61:96:19:7e:d9:43:46:d1:26:7d:...</code>
         </pre>
 	</div></section>
+
+	<section id="DANE" class="slide"><div>
+        <slide-progression open="authentification"></slide-progression>
+        <h2>DNS-based Authentication of Named Entities (<a href="http://www.bortzmeyer.org/6698.html">DANE</a>)</h2>
+        <ul>
+            <li>Certificat publié dans un enregistrement <a href="http://www.dnssec.net/">DNSSEC</a> (obligatoire) de type <code>TLSA</code>,
+            <li class="next">Support très limité (rien pour <a href="https://www.imperialviolet.org/2015/01/17/notdane.html">Google Chrome</a>, <a href="https://www.dnssec-validator.cz/">Addon</a> pour Firefox),
+        </ul>
+        <h3 class="next"><a href="https://www.iana.org/assignments/dane-parameters/dane-parameters.xml#certificate-usages">4 types</a> :</h3>
+        <ol>
+            <li class="next">PKIX-TA/ CA constraint : seule cette CA peut signer le certificat (complément),
+            <li class="next">PKIX-EE/ Service certificate constraint : force un certificat (complément),
+            <li class="next">DANE-TA/ Trust anchor assertion : certificat d’un CA (CA "maison"),
+            <li class="next">DANE-EE/ Domain-issued certificate : certificat pour un domaine (auto-signé).
+        </ol>
+        <devoxx-footer></devoxx-footer>
+    </div></section>
 
 	<section id="beast" class="slide"><div>
         <slide-progression open="annexes"></slide-progression>
