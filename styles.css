@@ -81,8 +81,8 @@ header.caption                                      { color: white; }
 #html-seo p                                         { margin-top: 1em; }
 #chiffrement-symetrique figure                      { margin-top: 100px; }
 #handshake-certificate img.store                    { display: block; margin: auto; }
-#cipher-suite ul.small                              { column-count: 4; -moz-column-count: 4; -webkit-column-count: 4; font-size: 12px; font-family: monospace; }
-#cipher-suite ul.small li                           { margin: 0; }
+#cipher-suites ul.small                              { column-count: 4; -moz-column-count: 4; -webkit-column-count: 4; font-size: 12px; font-family: monospace; }
+#cipher-suites ul.small li                           { margin: 0; }
 #pfs img                                            { max-height: 380px; }
 #type-certificate img                               { display: block; margin: 1em auto 0 auto; }
 #lets-encrypt img                                   { padding: 0 80px 0 0; }

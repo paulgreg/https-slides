@@ -121,7 +121,7 @@
 
     <section id="protection-fai-schema" class="slide"><div>
         <slide-progression open="pourquoi"></slide-progression>
-        <h2>Pour se protéger des <abbr title="Fournisseur d’Accès Internet">FAI</abbr> malveillant</h2>
+        <h2>Pour se protéger des <abbr title="Fournisseurs d’Accès Internet">FAI</abbr> malveillants</h2>
         <figure>
             <img src="pictures/https_fai_injection.svg" class="svg" alt="Réseau anormal au niveau du FAI" />
             <figcaption><a href="#protection-fai">exemples de modifications de contenu par des FAI</a></figcaption>
@@ -140,7 +140,7 @@
     <section id="html5-seo" class="slide"><div>
         <slide-progression open="pourquoi"></slide-progression>
             <h2>Pour le <abbr title="Search engine optimization">SEO</abbr>, HTML5 et iOS/OS X</h2>
-            <p><i class="fa fa-google"></i><a href="http://googleonlinesecurity.blogspot.fr/2014/08/https-as-ranking-signal_6.html">Google préfére un site en HTTPS</a>.</p>
+            <p><i class="fa fa-google"></i><a href="http://googleonlinesecurity.blogspot.fr/2014/08/https-as-ranking-signal_6.html">Google préfère un site en HTTPS</a>.</p>
             <p class="next"><i class="fa fa-html5"></i>Sans HTTPS, <a href="https://blog.mozilla.org/security/2015/04/30/deprecating-non-secure-http/">Firefox</a> et <a href="https://sites.google.com/a/chromium.org/dev/Home/chromium-security/deprecating-powerful-features-on-insecure-origins">Chrome</a> <small>(50)</small> bloquent certaines API JavaScript :</p>
             <ul class="inner next">
                 <li><code>fullscreen</code>,
@@ -178,7 +178,7 @@
             <dt><i class="fa fa-lock"></i>Confidentialité :
             <dd>Les données échangées sont chiffrées par une clé et ne peuvent être déchiffrées que par les 2 parties.
             <dt class="next"><i class="fa fa-users"></i>Authentification :
-            <dd class="next">Le client vérifie que le serveur à qui il s’adresse est bien celui qu’il prétend être (évite les <a href="https://fr.wikipedia.org/wiki/Attaque_de_l'homme_du_milieu">attaques d’homme du milieu</a>). Éventuellement, le client peut s’authentifier auprès du serveur.
+            <dd class="next">Le client vérifie que le serveur à qui il s’adresse est bien celui qu’il prétend être (cela évite les <a href="https://fr.wikipedia.org/wiki/Attaque_de_l'homme_du_milieu">attaques d’homme du milieu</a>). Éventuellement, le client peut s’authentifier auprès du serveur.
             <dt class="next"><i class="fa fa-balance-scale"></i>Intégrité :
             <dd class="next">Les parties vérifient que les données reçues n’ont pas été altérées.
             <dt class="next"><i class="fa fa-diamond"></i>Transparence :
@@ -293,12 +293,13 @@
 
 	<section id="handshake-client-hello" class="slide"><div>
         <slide-progression open="handshake"></slide-progression>
-        <h2>1. Client hello</h2>
+        <h2>1. &laquo; Client hello &raquo;</h2>
         <figure class="sidebyside handshake">
             <figcaption>
                 <img src="pictures/handshake/1-handshake.png" alt="handshake : client hello" />
+                <code style="display: inline-block; margin: 20px 0 20px 110px;">TCP 443</code>
+                <p style="margin-left: 60px;"><a href="#cipher-suites">suites de chifrement</a></p>
             </figcaption>
-            <code style="position: absolute; top: 320px; left: 195px;">TCP 443</code>
             <img src="pictures/handshake/1-client-hello.png" alt="wireshark : client hello" />
             <span class="mark hello"   style="top: 195px; left: 570px; width: 60px;"></span>
             <span class="mark version" style="top: 228px; left: 522px; width: 40px;"></span>
@@ -311,7 +312,7 @@
 
 	<section id="handshake-server-hello" class="slide"><div>
         <slide-progression open="handshake"></slide-progression>
-        <h2>2. Server hello</h2>
+        <h2>2. &laquo; Server hello &raquo;</h2>
         <figure class="sidebyside handshake">
             <figcaption><img src="pictures/handshake/2-handshake.png" alt="handshake : server hello" /></figcaption>
             <img src="pictures/handshake/2-server-hello.png" alt="server hello" />
@@ -325,9 +326,16 @@
 
 	<section id="handshake-certificate" class="slide"><div>
         <slide-progression open="handshake"></slide-progression>
-        <h2>2. Server hello (certificats + done)</h2>
+        <h2>2. Certificat(s) &amp; &laquo; Server hello done &raquo;</h2>
         <figure class="sidebyside handshake">
-            <figcaption><img src="pictures/handshake/4-handshake.png" alt="handshake : server certificates" /></figcaption>
+            <figcaption>
+                <img src="pictures/handshake/4-handshake.png" alt="handshake : server certificates" />
+                <p>
+                    <a href="#certificat-x509">Certificat X.509</a><br/>
+                    Wildcard <small>(*.mappy.com)</small> ou <br/>
+                    Subject Alternative Name <small>(fr.mappy.com, en.mappy.com,...)</small>
+                </p>
+            </figcaption>
             <img src="pictures/handshake/3-certificates.png" alt="server certificates" />
             <img src="pictures/ca-store.png" alt="browser CA store" class="store" />
             <span class="mark certificate"  style="top: 221px; left: 602px; width: 70px;"></span>
@@ -335,7 +343,6 @@
             <span class="mark symatec"      style="top: 335px; left: 612px; width: 300px;"></span>
             <span class="mark hello-done"   style="top: 420px; left: 603px; width: 105px;"></span>
         </figure>
-        <p>Wildcard <small>(*.mappy.com)</small> ou Subject Alternative Name <small>(fr.mappy.com, en.mappy.com,...)</small></p>
 	</div></section>
 
 	<section id="handshake-key-exchange" class="slide"><div>
@@ -392,95 +399,6 @@
             <code>encryptRequest(clientKey, clientMAC, message)</code>
             <code>encryptResponse(serverKey, serverMAC, message)</code>
         </pre>
-	</div></section>
-
-	<section id="cipher-suite" class="slide"><div>
-        <slide-progression open="handshake"></slide-progression>
-        <h2>Suites de chiffrement <small>(<a href="https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#tls-parameters-4">cipher suites</a>)</small></h2>
-        <p>Échange de clé, authentication <small>(asymétrique)</small>, chiffrement <small>(symétrique)</small>, MAC/HMAC</p>
-        <ul class="small">
-            <li><abbr title="Elliptic Curve Ephemeral Diffie-Hellman">ECDHE</abbr>-<abbr title="du nom des créateurs : Ronald Rivest, Adi Shamir et Leonard Adleman">RSA</abbr>-<abbr title="Advanced Encryption Standard">AES</abbr>256-<abbr title="Galois/Counter Mode">GCM</abbr>-<abbr title="Secure Hash Algorithm">SHA</abbr>384
-            <li>ECDHE-<abbr title="Elliptic Curve Digital Signature Algorithm">ECDSA</abbr>-AES256-GCM-SHA384
-            <li>ECDHE-RSA-AES256-SHA384
-            <li>ECDHE-ECDSA-AES256-SHA384
-            <li>ECDHE-RSA-AES256-SHA
-            <li>ECDHE-ECDSA-AES256-SHA
-            <li><abbr title="Secure Remote Password">SRP</abbr>-<abbr title="Digital Signature Standard">DSS</abbr>-AES-256-<abbr title="Cipher Block Chaining">CBC</abbr>-SHA
-            <li>SRP-RSA-AES-256-CBC-SHA
-            <li>SRP-AES-256-CBC-SHA
-            <li><abbr title="Ephemeral Diffie-Hellman">DHE</abbr>-DSS-AES256-GCM-SHA384
-            <li>DHE-RSA-AES256-GCM-SHA384
-            <li>DHE-RSA-AES256-SHA256
-            <li>DHE-DSS-AES256-SHA256
-            <li>DHE-RSA-AES256-SHA
-            <li>DHE-DSS-AES256-SHA
-            <li>DHE-RSA-CAMELLIA256-SHA
-            <li>DHE-DSS-CAMELLIA256-SHA
-            <li>ECDH-RSA-AES256-GCM-SHA384
-            <li>ECDH-ECDSA-AES256-GCM-SHA384
-            <li>ECDH-RSA-AES256-SHA384
-            <li>ECDH-ECDSA-AES256-SHA384
-            <li>ECDH-RSA-AES256-SHA
-            <li>ECDH-ECDSA-AES256-SHA
-            <li>AES256-GCM-SHA384
-            <li>AES256-SHA256
-            <li>AES256-SHA
-            <li>CAMELLIA256-SHA
-            <li><abbr title="Pre-shared key">PSK</abbr>-AES256-CBC-SHA
-            <li>ECDHE-RSA-<abbr title="Data Encryption Standard">DES</abbr>-CBC3-SHA
-            <li>ECDHE-ECDSA-DES-CBC3-SHA
-            <li>SRP-DSS-3DES-EDE-CBC-SHA
-            <li>SRP-RSA-3DES-EDE-CBC-SHA
-            <li>SRP-3DES-EDE-CBC-SHA
-            <li>EDH-RSA-DES-CBC3-SHA
-            <li>EDH-DSS-DES-CBC3-SHA
-            <li>ECDH-RSA-DES-CBC3-SHA
-            <li>ECDH-ECDSA-DES-CBC3-SHA
-            <li>DES-CBC3-SHA
-            <li>PSK-3DES-EDE-CBC-SHA
-            <li>ECDHE-RSA-AES128-GCM-SHA256
-            <li>ECDHE-ECDSA-AES128-GCM-SHA256
-            <li>ECDHE-RSA-AES128-SHA256
-            <li>ECDHE-ECDSA-AES128-SHA256
-            <li>ECDHE-RSA-AES128-SHA
-            <li>ECDHE-ECDSA-AES128-SHA
-            <li>SRP-DSS-AES-128-CBC-SHA
-            <li>SRP-RSA-AES-128-CBC-SHA
-            <li>SRP-AES-128-CBC-SHA
-            <li>DHE-DSS-AES128-GCM-SHA256
-            <li>DHE-RSA-AES128-GCM-SHA256
-            <li>DHE-RSA-AES128-SHA256
-            <li>DHE-DSS-AES128-SHA256
-            <li>DHE-RSA-AES128-SHA
-            <li>DHE-DSS-AES128-SHA
-            <li>DHE-RSA-SEED-SHA
-            <li>DHE-DSS-SEED-SHA
-            <li>DHE-RSA-CAMELLIA128-SHA
-            <li>DHE-DSS-CAMELLIA128-SHA
-            <li>ECDH-RSA-AES128-GCM-SHA256
-            <li>ECDH-ECDSA-AES128-GCM-SHA256
-            <li>ECDH-RSA-AES128-SHA256
-            <li>ECDH-ECDSA-AES128-SHA256
-            <li>ECDH-RSA-AES128-SHA
-            <li>ECDH-ECDSA-AES128-SHA
-            <li>AES128-GCM-SHA256
-            <li>AES128-SHA256
-            <li>AES128-SHA
-            <li>SEED-SHA
-            <li>CAMELLIA128-SHA
-            <li>PSK-AES128-CBC-SHA
-            <li>ECDHE-RSA-<abbr title="Rivest Cipher 4">RC4</abbr>-SHA
-            <li>ECDHE-ECDSA-RC4-SHA
-            <li>ECDH-RSA-RC4-SHA
-            <li>ECDH-ECDSA-RC4-SHA
-            <li>RC4-SHA
-            <li>RC4-MD5
-            <li>PSK-RC4-SHA
-            <li>EDH-RSA-DES-CBC-SHA
-            <li>EDH-DSS-DES-CBC-SHA
-            <li>DES-CBC-SHA
-            <li>etc.
-        </ul>
 	</div></section>
 
 	<section id="pfs" class="slide"><div>
@@ -540,48 +458,6 @@
         </dl>
     </div></section>
 
-	<section id="certificat-x509" class="slide"><div>
-        <slide-progression open="authentification"></slide-progression>
-        <h2>Un certificat <a href="https://openssl.org/docs/manmaster/apps/x509v3_config.html">X.509</a></h2>
-        <pre class="small">
-            <code>$ openssl x509 -in <a href="https://www.gandi.net/static/CAs/GandiStandardSSLCA2.pem">GandiStandardSSLCA2.pem</a> -inform pem -noout -text</code>
-            <code>Certificate:</code>
-            <code>Data:</code>
-            <code>    <strong>Version</strong>: 3 (0x2)</code>
-            <code>    <strong>Serial Number</strong>: 05:e4:dc:3b:94:38:ab:3b:85:97:cb:a6:a1:98:50:e3</code>
-            <code><strong>Signature Algorithm</strong>: sha384WithRSAEncryption</code>
-            <code>    <strong>Issuer</strong>: C=US, ST=New Jersey, L=Jersey City, O=The USERTRUST Network, CN=USERTrust RSA Certification Authority</code>
-            <code>    <strong>Validity</strong> Not Before: Sep 12 00:00:00 2014 GMT   Not After : Sep 11 23:59:59 2024 GMT</code>
-            <code>    <strong>Subject</strong>: C=FR, ST=Paris, L=Paris, O=Gandi, CN=Gandi Standard SSL CA 2</code>
-            <code>    Subject Public Key Info:</code>
-            <code>        <strong>Public Key Algorithm</strong>: rsaEncryption</code>
-            <code>            <strong>Public-Key</strong>: (2048 bit)</code>
-            <code>            <strong>Modulus</strong>: 00:94:04:2d:a6:79:95:74:ff:d5:00:3c:f5:ae:d8:...</code>
-            <code>            <strong>Exponent</strong>: 65537 (0x10001)</code>
-            <code>    X509v3 <strong>extensions</strong>:</code>
-            <code>        X509v3 <strong>Authority Key Identifier</strong>:</code>
-            <code>            keyid:53:79:BF:5A:AA:2B:4A:CF:54:80:E1:D8:9B:C0:9D:F2:B2:03:66:CB</code>
-            <code>        X509v3 <strong>Subject Key Identifier</strong>:</code>
-            <code>            B3:90:A7:D8:C9:AF:4E:CD:61:3C:9F:7C:AD:5D:7F:41:FD:69:30:EA</code>
-            <code>        X509v3 <strong>Key Usage</strong>: critical</code>
-            <code>            <strong>Digital Signature, Certificate Sign, CRL Sign</strong></code>
-            <code>        X509v3 Basic Constraints: critical</code>
-            <code>            <strong>CA:TRUE</strong>, pathlen:0</code>
-            <code>        X509v3 <strong>Extended Key Usage</strong>:</code>
-            <code>            TLS Web Server Authentication, TLS Web Client Authentication</code>
-            <code>        X509v3 Certificate Policies:</code>
-            <code>            Policy: 1.3.6.1.4.1.6449.1.2.2.26</code>
-            <code>            Policy: 2.23.140.1.2.1</code>
-            <code>        X509v3 <strong>CRL Distribution Points</strong>:</code>
-            <code>            Full Name: URI:http://crl.usertrust.com/USERTrustRSACertificationAuthority.crl</code>
-            <code>        Authority Information Access:</code>
-            <code>            CA Issuers - URI:http://crt.usertrust.com/USERTrustRSAAddTrustCA.crt</code>
-            <code>            <strong>OCSP</strong> - URI:http://ocsp.usertrust.com</code>
-            <code><strong>Signature Algorithm</strong>: sha384WithRSAEncryption</code>
-            <code>     58:67:fd:72:b2:6a:d7:7c:61:96:19:7e:d9:43:46:d1:26:7d:...</code>
-        </pre>
-	</div></section>
-
 	<section id="certificate-transparency" class="slide"><div>
         <slide-progression open="authentification"></slide-progression>
         <h2><i class="fa fa-book"></i> Certificate Transparency</h2>
@@ -637,7 +513,6 @@
         <ul>
             <li>Certificat publié dans un enregistrement <a href="http://www.dnssec.net/">DNSSEC</a> (obligatoire) de type <code>TLSA</code>,
             <li class="next">Support très limité (rien pour <a href="https://www.imperialviolet.org/2015/01/17/notdane.html">Google Chrome</a>, <a href="https://www.dnssec-validator.cz/">Addon</a> pour Firefox),
-            <li class="next">Permet de <a href="https://ripe70.ripe.net/presentations/183-dane-ripe.pdf">sécuriser SMTP, OpenPGP, S/MIME</a>,...
         </ul>
         <h3 class="next"><a href="https://www.iana.org/assignments/dane-parameters/dane-parameters.xml#certificate-usages">4 types</a> :</h3>
         <ol>
@@ -715,6 +590,19 @@
 		<h2><i class="fa fa-cogs"></i> Après HTTPS</h2>
 	</div></section>
 
+	<section id="expiration" class="slide"><div>
+        <slide-progression open="apres"></slide-progression>
+		<h2><i class="fa fa-calendar-times-o"></i> Pensez à renouveller vos certificats !</h2>
+        <p>Quelques fails :</p>
+        <ul class="icons">
+            <li><i class="fa fa-windows"></i>  Microsoft <a href="http://www.techweekeurope.co.uk/workspace/microsoft-windows-azure-cloud-fails-over-expired-ssl-certificate-108444">Azure</a> (2013),
+            <li><i class="fa fa-apple"></i> Mac <a href="http://betanews.com/2014/05/25/apples-ssl-fail-allows-certificate-to-expire-scares-os-x-users/">App Store</a> (2014),
+            <li><i class="fa fa-google"></i> <a href="http://www.ibtimes.com/google-gmail-glitch-outages-caused-failure-update-security-certificate-1870416">GMail</a> (2015),
+            <li><i class="fa fa-apple"></i> Mac <a href="http://techcrunch.com/2015/11/12/all-mac-store-apps-stopped-working-due-to-expired-security-certificate/">App Store</a> (encore en 2015) !
+        </ul>
+    </div></section>
+
+
 	<section id="mixed-content" class="slide"><div>
         <slide-progression open="apres"></slide-progression>
 		<h2>Mixed content</h2>
@@ -734,7 +622,7 @@
 		<h2>HSTS : Http Strict Transport Security <a href="https://tools.ietf.org/html/rfc6797">RFC6797</a></h2>
         <pre><code>Strict-Transport-Security: max-age=16070400; includeSubDomains</code></pre>
         <ul class="icons">
-            <li><i class="fa fa-bolt"></i> Entête HTTP indiquant au navigateur de toujours se connecter sur <code>https://</code> (même si l’utilisateur tape explicitement <code>http://</code> ou si les liens pointent vers <code>http://</code> y compris les sous-domaines),
+            <li><i class="fa fa-bolt"></i> Force <code>https://</code> (même si l’utilisateur tape <code>http://</code> ou si les liens pointent vers <code>http://</code>),
             <li class="next"><i class="fa fa-user-secret"></i> Évite une interception future (ou sslstrip),
             <li class="next"><i class="fa fa-gift"></i> Pré-chargement dans les navigateurs : <a href="https://code.google.com/p/chromium/codesearch#chromium/src/net/http/transport_security_state_static.json">transport_security_state_static.json</a>,
             <li class="next"><i class="fa fa-exclamation-triangle"></i> Que se passe-t-il si votre certificat expire ou si le port 443 ne répond plus ?
@@ -784,19 +672,6 @@
             <li class="next"><i class="fa fa-globe"></i> Intéressant pour les contenus hébérgés ailleurs (<abbr title="Content Delivery Network">CDN</abbr>),
             <!--<li class="next"><i class="fa fa-firefox"></i><i class="fa fa-chrome"></i> Depuis <a href="https://hacks.mozilla.org/2015/09/subresource-integrity-in-firefox-43/">Firefox 43</a> et <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=355467">Chrome 45</a>,-->
             <li class="next"><i class="fa fa-github"></i> Utilisé sur <a href="http://githubengineering.com/subresource-integrity/">github.com</a>.
-        </ul>
-    </div></section>
-
-	<section id="expiration" class="slide"><div>
-        <slide-progression open="apres"></slide-progression>
-		<h2><i class="fa fa-calendar-times-o"></i> Pensez à renouveller vos certificats !</h2>
-        <p>Avec HSTS, cela ne pardonne pas <small>(et je ne parle même pas de du Certificate Pinning)</small></p>
-        <p class="next">Quelques fails :</p>
-        <ul class="icons">
-            <li class="next"><i class="fa fa-windows"></i>  Microsoft <a href="http://www.techweekeurope.co.uk/workspace/microsoft-windows-azure-cloud-fails-over-expired-ssl-certificate-108444">Azure</a> (2013),
-            <li class="next"><i class="fa fa-apple"></i> Mac <a href="http://betanews.com/2014/05/25/apples-ssl-fail-allows-certificate-to-expire-scares-os-x-users/">App Store</a> (2014),
-            <li class="next"><i class="fa fa-google"></i> <a href="http://www.ibtimes.com/google-gmail-glitch-outages-caused-failure-update-security-certificate-1870416">GMail</a> (2015),
-            <li class="next"><i class="fa fa-apple"></i> Mac <a href="http://techcrunch.com/2015/11/12/all-mac-store-apps-stopped-working-due-to-expired-security-certificate/">App Store</a> (encore en 2015) !
         </ul>
     </div></section>
 
@@ -1032,6 +907,95 @@
         </figure>
     </div></section>
 
+	<section id="cipher-suites" class="slide"><div>
+        <slide-progression open="annexes"></slide-progression>
+        <h2>Suites de chiffrement <small>(<a href="https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#tls-parameters-4">cipher suites</a>)</small></h2>
+        <p>Échange de clé, authentication <small>(asymétrique)</small>, chiffrement <small>(symétrique)</small>, MAC/HMAC</p>
+        <ul class="small">
+            <li><abbr title="Elliptic Curve Ephemeral Diffie-Hellman">ECDHE</abbr>-<abbr title="du nom des créateurs : Ronald Rivest, Adi Shamir et Leonard Adleman">RSA</abbr>-<abbr title="Advanced Encryption Standard">AES</abbr>256-<abbr title="Galois/Counter Mode">GCM</abbr>-<abbr title="Secure Hash Algorithm">SHA</abbr>384
+            <li>ECDHE-<abbr title="Elliptic Curve Digital Signature Algorithm">ECDSA</abbr>-AES256-GCM-SHA384
+            <li>ECDHE-RSA-AES256-SHA384
+            <li>ECDHE-ECDSA-AES256-SHA384
+            <li>ECDHE-RSA-AES256-SHA
+            <li>ECDHE-ECDSA-AES256-SHA
+            <li><abbr title="Secure Remote Password">SRP</abbr>-<abbr title="Digital Signature Standard">DSS</abbr>-AES-256-<abbr title="Cipher Block Chaining">CBC</abbr>-SHA
+            <li>SRP-RSA-AES-256-CBC-SHA
+            <li>SRP-AES-256-CBC-SHA
+            <li><abbr title="Ephemeral Diffie-Hellman">DHE</abbr>-DSS-AES256-GCM-SHA384
+            <li>DHE-RSA-AES256-GCM-SHA384
+            <li>DHE-RSA-AES256-SHA256
+            <li>DHE-DSS-AES256-SHA256
+            <li>DHE-RSA-AES256-SHA
+            <li>DHE-DSS-AES256-SHA
+            <li>DHE-RSA-CAMELLIA256-SHA
+            <li>DHE-DSS-CAMELLIA256-SHA
+            <li>ECDH-RSA-AES256-GCM-SHA384
+            <li>ECDH-ECDSA-AES256-GCM-SHA384
+            <li>ECDH-RSA-AES256-SHA384
+            <li>ECDH-ECDSA-AES256-SHA384
+            <li>ECDH-RSA-AES256-SHA
+            <li>ECDH-ECDSA-AES256-SHA
+            <li>AES256-GCM-SHA384
+            <li>AES256-SHA256
+            <li>AES256-SHA
+            <li>CAMELLIA256-SHA
+            <li><abbr title="Pre-shared key">PSK</abbr>-AES256-CBC-SHA
+            <li>ECDHE-RSA-<abbr title="Data Encryption Standard">DES</abbr>-CBC3-SHA
+            <li>ECDHE-ECDSA-DES-CBC3-SHA
+            <li>SRP-DSS-3DES-EDE-CBC-SHA
+            <li>SRP-RSA-3DES-EDE-CBC-SHA
+            <li>SRP-3DES-EDE-CBC-SHA
+            <li>EDH-RSA-DES-CBC3-SHA
+            <li>EDH-DSS-DES-CBC3-SHA
+            <li>ECDH-RSA-DES-CBC3-SHA
+            <li>ECDH-ECDSA-DES-CBC3-SHA
+            <li>DES-CBC3-SHA
+            <li>PSK-3DES-EDE-CBC-SHA
+            <li>ECDHE-RSA-AES128-GCM-SHA256
+            <li>ECDHE-ECDSA-AES128-GCM-SHA256
+            <li>ECDHE-RSA-AES128-SHA256
+            <li>ECDHE-ECDSA-AES128-SHA256
+            <li>ECDHE-RSA-AES128-SHA
+            <li>ECDHE-ECDSA-AES128-SHA
+            <li>SRP-DSS-AES-128-CBC-SHA
+            <li>SRP-RSA-AES-128-CBC-SHA
+            <li>SRP-AES-128-CBC-SHA
+            <li>DHE-DSS-AES128-GCM-SHA256
+            <li>DHE-RSA-AES128-GCM-SHA256
+            <li>DHE-RSA-AES128-SHA256
+            <li>DHE-DSS-AES128-SHA256
+            <li>DHE-RSA-AES128-SHA
+            <li>DHE-DSS-AES128-SHA
+            <li>DHE-RSA-SEED-SHA
+            <li>DHE-DSS-SEED-SHA
+            <li>DHE-RSA-CAMELLIA128-SHA
+            <li>DHE-DSS-CAMELLIA128-SHA
+            <li>ECDH-RSA-AES128-GCM-SHA256
+            <li>ECDH-ECDSA-AES128-GCM-SHA256
+            <li>ECDH-RSA-AES128-SHA256
+            <li>ECDH-ECDSA-AES128-SHA256
+            <li>ECDH-RSA-AES128-SHA
+            <li>ECDH-ECDSA-AES128-SHA
+            <li>AES128-GCM-SHA256
+            <li>AES128-SHA256
+            <li>AES128-SHA
+            <li>SEED-SHA
+            <li>CAMELLIA128-SHA
+            <li>PSK-AES128-CBC-SHA
+            <li>ECDHE-RSA-<abbr title="Rivest Cipher 4">RC4</abbr>-SHA
+            <li>ECDHE-ECDSA-RC4-SHA
+            <li>ECDH-RSA-RC4-SHA
+            <li>ECDH-ECDSA-RC4-SHA
+            <li>RC4-SHA
+            <li>RC4-MD5
+            <li>PSK-RC4-SHA
+            <li>EDH-RSA-DES-CBC-SHA
+            <li>EDH-DSS-DES-CBC-SHA
+            <li>DES-CBC-SHA
+            <li>etc.
+        </ul>
+	</div></section>
+
 	<section id="diffie-hellman-handshake-title" class="slide tell"><div>
         <slide-progression open="annexes"></slide-progression>
         <h2><i class="handshake"></i> Poignée de main <small>via l’échange de clé Diffie-Hellman (<a href="http://vincent.bernat.im/fr/blog/2011-ssl-perfect-forward-secrecy.html">détails</a>)</small></a></h2>
@@ -1039,7 +1003,7 @@
 
 	<section id="diffie-hellman-handshake-client-hello" class="slide"><div>
         <slide-progression open="annexes"></slide-progression>
-        <h2>1. Client hello</h2>
+        <h2>1. &laquo; Client hello &raquo;</h2>
         <figure class="sidebyside handshake">
             <figcaption>
                 <img src="pictures/diffie-hellman-handshake/1-handshake.png" alt="handshake : client hello" />
@@ -1050,7 +1014,7 @@
 
 	<section id="diffie-hellman-handshake-server-hello" class="slide"><div>
         <slide-progression open="annexes"></slide-progression>
-        <h2>2. Server hello</h2>
+        <h2>2. &laquo; Server hello &raquo;</h2>
         <figure class="sidebyside handshake">
             <figcaption><img src="pictures/diffie-hellman-handshake/2-handshake.png" alt="handshake : server hello" /></figcaption>
             <img src="pictures/diffie-hellman-handshake/2-server-hello.png" alt="server hello" />
@@ -1059,7 +1023,7 @@
 
 	<section id="diffie-hellman-handshake-server-certificate" class="slide"><div>
         <slide-progression open="annexes"></slide-progression>
-        <h2>2. Server hello (certificats)</h2>
+        <h2>2. Certificat(s)</h2>
         <figure class="sidebyside handshake">
             <figcaption><img src="pictures/diffie-hellman-handshake/3-handshake.png" alt="handshake : server certificates" /></figcaption>
             <img src="pictures/diffie-hellman-handshake/3-certificates.png" alt="server certificates" />
@@ -1068,7 +1032,7 @@
 
 	<section id="diffie-hellman-handshake-server-hello-done" class="slide"><div>
         <slide-progression open="annexes"></slide-progression>
-        <h2>3. Server hello done </h2>
+        <h2>3. &laquo; Server Key Exchange &raquo; &amp; &laquo; hello done &raquo;</h2>
         <figure class="sidebyside handshake">
             <figcaption>
                 <img src="pictures/diffie-hellman-handshake/4-handshake.png" alt="handshake : key exchange" />
@@ -1110,6 +1074,48 @@
         </figure>
         <pre>
             <code></code>
+        </pre>
+	</div></section>
+
+	<section id="certificat-x509" class="slide"><div>
+        <slide-progression open="annexes"></slide-progression>
+        <h2>Un certificat <a href="https://openssl.org/docs/manmaster/apps/x509v3_config.html">X.509</a></h2>
+        <pre class="small">
+            <code>$ openssl x509 -in <a href="https://www.gandi.net/static/CAs/GandiStandardSSLCA2.pem">GandiStandardSSLCA2.pem</a> -inform pem -noout -text</code>
+            <code>Certificate:</code>
+            <code>Data:</code>
+            <code>    <strong>Version</strong>: 3 (0x2)</code>
+            <code>    <strong>Serial Number</strong>: 05:e4:dc:3b:94:38:ab:3b:85:97:cb:a6:a1:98:50:e3</code>
+            <code><strong>Signature Algorithm</strong>: sha384WithRSAEncryption</code>
+            <code>    <strong>Issuer</strong>: C=US, ST=New Jersey, L=Jersey City, O=The USERTRUST Network, CN=USERTrust RSA Certification Authority</code>
+            <code>    <strong>Validity</strong> Not Before: Sep 12 00:00:00 2014 GMT   Not After : Sep 11 23:59:59 2024 GMT</code>
+            <code>    <strong>Subject</strong>: C=FR, ST=Paris, L=Paris, O=Gandi, CN=Gandi Standard SSL CA 2</code>
+            <code>    Subject Public Key Info:</code>
+            <code>        <strong>Public Key Algorithm</strong>: rsaEncryption</code>
+            <code>            <strong>Public-Key</strong>: (2048 bit)</code>
+            <code>            <strong>Modulus</strong>: 00:94:04:2d:a6:79:95:74:ff:d5:00:3c:f5:ae:d8:...</code>
+            <code>            <strong>Exponent</strong>: 65537 (0x10001)</code>
+            <code>    X509v3 <strong>extensions</strong>:</code>
+            <code>        X509v3 <strong>Authority Key Identifier</strong>:</code>
+            <code>            keyid:53:79:BF:5A:AA:2B:4A:CF:54:80:E1:D8:9B:C0:9D:F2:B2:03:66:CB</code>
+            <code>        X509v3 <strong>Subject Key Identifier</strong>:</code>
+            <code>            B3:90:A7:D8:C9:AF:4E:CD:61:3C:9F:7C:AD:5D:7F:41:FD:69:30:EA</code>
+            <code>        X509v3 <strong>Key Usage</strong>: critical</code>
+            <code>            <strong>Digital Signature, Certificate Sign, CRL Sign</strong></code>
+            <code>        X509v3 Basic Constraints: critical</code>
+            <code>            <strong>CA:TRUE</strong>, pathlen:0</code>
+            <code>        X509v3 <strong>Extended Key Usage</strong>:</code>
+            <code>            TLS Web Server Authentication, TLS Web Client Authentication</code>
+            <code>        X509v3 Certificate Policies:</code>
+            <code>            Policy: 1.3.6.1.4.1.6449.1.2.2.26</code>
+            <code>            Policy: 2.23.140.1.2.1</code>
+            <code>        X509v3 <strong>CRL Distribution Points</strong>:</code>
+            <code>            Full Name: URI:http://crl.usertrust.com/USERTrustRSACertificationAuthority.crl</code>
+            <code>        Authority Information Access:</code>
+            <code>            CA Issuers - URI:http://crt.usertrust.com/USERTrustRSAAddTrustCA.crt</code>
+            <code>            <strong>OCSP</strong> - URI:http://ocsp.usertrust.com</code>
+            <code><strong>Signature Algorithm</strong>: sha384WithRSAEncryption</code>
+            <code>     58:67:fd:72:b2:6a:d7:7c:61:96:19:7e:d9:43:46:d1:26:7d:...</code>
         </pre>
 	</div></section>
 
