@@ -46,15 +46,15 @@ header.caption                                      { color: white; }
 .slide table td                                     { padding: 0.2em 0.25em; }
 
 .slide i.handshake.small,
-.slide ul.icons li i.handshake                      { display: inline-block; width: 28px; height: 28px; background: url(pictures/handshake.svg); background-size: 28px 28px; background-repeat: no-repeat; margin-left: 0px ; margin-right: 0; margin-bottom: -6px; }
-.slide ul.icons li.red i.handshake                  { background: url(pictures/handshake-red.svg); background-size: 28px 28px; background-repeat: no-repeat; margin-right: 4px;}
-.slide i.handshake                                  { display: inline-block; width: 80px; height: 80px; background: url(pictures/handshake-grey.svg); background-size: 80px 80px; background-repeat: no-repeat; margin-left: 0; margin-right: 0; }
+.slide ul.icons li i.handshake                      { display: inline-block; width: 28px; height: 28px; background: url(pictures/handshake.svg) no-repeat; background-size: 28px 28px; margin-left: 0px ; margin-right: 0; margin-bottom: -6px; }
+.slide ul.icons li.red i.handshake                  { background: url(pictures/handshake-red.svg) no-repeat; background-size: 28px 28px; margin-right: 4px;}
+.slide i.handshake                                  { display: inline-block; width: 80px; height: 80px; background: url(pictures/handshake-grey.svg) no-repeat; background-size: 80px 80px; margin-left: 0; margin-right: 0; }
 
-.broken, .broken a                                  { color:red; }
-.unsecure, .unsecure a                              { color:orange; }
-.safe, .safe a                                      { color:green; }
-.center                                             { width: 100%; text-align: center; }
-.logo                                               { width: 110px; vertical-align: middle; margin: .25em; }
+.slide .broken, .broken a                           { color:red; }
+.slide .unsecure, .unsecure a                       { color:orange; }
+.slide .safe, .safe a                               { color:green; }
+.slide .center                                      { width: 100%; text-align: center; }
+.slide .logo                                        { width: 110px; vertical-align: middle; margin: .25em; padding: .25em; background-color: white; }
 
 #cover *                                            { color: #FFF; }
 #cover h2                                           { margin:30px 0 0; background-color: rgba(0, 0, 0, .5); text-align: center; font-size: 70px; }

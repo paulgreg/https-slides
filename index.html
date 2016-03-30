@@ -19,7 +19,7 @@
     <section id="cover" class="slide cover"><div>
         <h2><abbr title="HyperText Transfer Protocol Secure">HTTPS</abbr> n’aura plus de secret<br/>pour vous</h2>
         <p>par <a href="https://paulgreg.me/">Grégory Paul</a> - <a href="http://fr.mappy.com/" class="clear"><img alt="Mappy" src="pictures/mappy-logo.png" class="logo" /></a></p>
-        <img src="pictures/cables.jpg" alt="" />
+        <img class="front" src="pictures/cables.jpg" alt="" />
         <p class="link">
             <img src="pictures/qrcode.svg" alt="" />
             <a href="https://paulgreg.me/https-slides/">https://paulgreg.me/https-slides/</a>
@@ -1229,6 +1229,17 @@
 
 	<p class="badge"><a href="https://github.com/paulgreg/https-slides">Fork me on Github</a></p>
 	<div class="progress"><div></div></div>
+    <script>
+    if (document.location.search && document.location.search === '?devoxx') {
+        var head = document.head || document.getElementsByTagName('head')[0],
+            devoxxStyle = document.createElement('link');
+        devoxxStyle.rel = 'stylesheet';
+        devoxxStyle.href = 'devoxx.css';
+        head.appendChild(devoxxStyle);
+
+        document.querySelector('#cover img.front').setAttribute('src', 'pictures/devoxx-background-light.jpg');
+    }
+    </script>
 	<script src="node_modules/shower-core/shower.min.js"></script>
 </body>
 </html>

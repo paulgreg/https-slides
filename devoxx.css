@@ -1,0 +1,30 @@
+.slide,                                     { color: #eeeeee; }
+.slide h2                                   { color: #eeeeee; }
+.slide h3                                   { color: #eeeeee; }
+.slide a                                    { color: #eeeeee; }
+.slide small                                { color: #eeeeee; }
+.slide small a                              { color: #eeeeee; }
+.slide abbr                                 { color: #eeeeee; }
+.slide div                                  { color: #eeeeee; }
+.slide pre code                             { color: #eeeeee; }
+.slide dl dd                                { color: #eeeeee; }
+.slide code                                 { background-color: rgba(232, 164, 51, 0.75); }
+.slide                                      { background: rgba(56,11,75,1); background: linear-gradient(to bottom, rgba(56,11,75,1) 0%, rgba(23,3,37,1) 100%); }
+
+.slide.shout                                { background: url(pictures/devoxx-background-light.jpg); }
+#precision figure div                       { color: black; }
+#precision figure div abbr                  { color: black; }
+
+#pfs figure img                             { background: #eeeeee; }
+#lets-encrypt h2 img,
+.slide figure.handshake img                 { background: #eeeeee; }
+
+.slide slide-progression                    { color: #b10142; }
+.slide slide-progression ul                 { background: #10001a; }
+.slide slide-progression ul.icons li.closed { color: #eeeeee; }
+
+.slide i.handshake.small,
+.slide ul.icons li i.handshake              { background: url(pictures/handshake-white.svg) no-repeat; background-size: 28px 28px; }
+.slide i.handshake                          { background: url(pictures/handshake-white.svg) no-repeat; background-size: 80px 80px; }
+
+.slide:after                                { background: url(pictures/ribbon-pink.svg) no-repeat; }
