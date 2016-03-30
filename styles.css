@@ -57,8 +57,8 @@ header.caption                                      { color: white; }
 .logo                                               { width: 110px; vertical-align: middle; margin: .25em; }
 
 #cover *                                            { color: #FFF; }
-#cover h2                                           { margin:30px 0 0; background-color: rgba(0, 0, 0, .5); text-align:center; font-size:70px; }
-#cover p                                            { margin:10px 0 0; text-align:center; background-color: rgba(0, 0, 0, .5); font-style:italic; font-size:20px; }
+#cover h2                                           { margin:30px 0 0; background-color: rgba(0, 0, 0, .5); text-align: center; font-size: 70px; }
+#cover p                                            { margin:40px 0 0; text-align:center; background-color: rgba(0, 0, 0, .5); font-style: italic; font-size: 40px; }
 #cover p.link                                       { display: inline-block; float: right; margin-top: 8em; }
 #cover p.link img                                   { width: 100px; position: relative; z-index: 10; margin: .5em .5em 0 .5em; }
 #cover p.link a                                     { display: block;  margin: .25em .5em .5em .5em; }
