@@ -463,6 +463,21 @@
         <devoxx-footer></devoxx-footer>
 	</div></section>
 
+	<section id="type-certificats" class="slide"><div>
+        <slide-progression open="authentification"></slide-progression>
+		<h2>Domain, Organization et Extended Validation</h2>
+        <dl>
+            <dt><i class="fa fa-certificate"></i>Domain validation
+            <dd>Simple vérification sur l’appartenance du domaine
+            <dt class="next"><i class="fa fa-building"></i>Organization validation
+            <dd class="next">Vérification de l’identité du propriétaire (carte d’identité, SIRET, etc)
+            <dt class="next"><i class="fa fa-star"></i>Extended validation
+            <dd class="next">Enquête sur le propriétaire (<a href="https://www.verisign.com/en_US/domain-names/web-presence/website-optimization/ssl-certificates/index.xhtml?loc=en_US#a7">vérification d’une précense physique, opérationnelle et juridique</a>), permet l’affichage du propriétaire dans la barre d’adresse : <img src="pictures/greenbar.png" alt="barre verte" />
+        </dl>
+        <devoxx-footer></devoxx-footer>
+    </div></section>
+
+
 	<section id="ca" class="slide"><div>
         <slide-progression open="authentification"></slide-progression>
         <h2>Infrastructure de clé publique (<abbr title="Public key infrastructure">PKI</abbr>)</h2>
@@ -483,20 +498,6 @@
                 </dl>
             </figcaption>
         </figure>
-        <devoxx-footer></devoxx-footer>
-    </div></section>
-
-	<section id="type-certificats" class="slide"><div>
-        <slide-progression open="authentification"></slide-progression>
-		<h2>Domain, Organization et Extended Validation</h2>
-        <dl>
-            <dt><i class="fa fa-certificate"></i>Domain validation
-            <dd>Simple vérification sur l’appartenance du domaine
-            <dt class="next"><i class="fa fa-building"></i>Organization validation
-            <dd class="next">Vérification de l’identité du propriétaire (carte d’identité, SIRET, etc)
-            <dt class="next"><i class="fa fa-star"></i>Extended validation
-            <dd class="next">Enquête sur le propriétaire (<a href="https://www.verisign.com/en_US/domain-names/web-presence/website-optimization/ssl-certificates/index.xhtml?loc=en_US#a7">vérification d’une précense physique, opérationnelle et juridique</a>), permet l’affichage du propriétaire dans la barre d’adresse : <img src="pictures/greenbar.png" alt="barre verte" />
-        </dl>
         <devoxx-footer></devoxx-footer>
     </div></section>
 
@@ -761,9 +762,11 @@
 		<h2>Performances</h2>
         <ul class="icons">
             <li><i class="fa fa-smile-o"></i> TLS a un impact faible sur le processeur et le réseau <strong>mais</strong> :
-            <li><i class="fa fa-exclamation-circle"></i> La taille des clés du chiffrement asymétrique a un impact très fort <small>(2048 suffisant pour la majorité des usages)</small>,
-            <li><i class="fa fa-exclamation-triangle"></i> Cacher les sessions TLS est très important !
-            <li><i class="fa fa-link"></i> <a href="https://istlsfastyet.com/">IsTlsFastYest.com</a>
+            <li><i class="fa fa-exclamation-circle"></i> La taille des clés du chiffrement asymétrique a un impact fort<br/><small>(2048 suffisant pour la majorité des usages)</small>,
+            <li class="next"><i class="fa fa-exclamation-circle"></i> L’échange de clé <a href="#pfs">PFS</a> est plus coûteux que sans,
+            <li class="next"><i class="fa fa-exclamation-circle"></i> RSA est plus coûteux que <abbr title="Elliptic Curve">EC</abbr>,
+            <li class="next"><i class="fa fa-exclamation-triangle"></i> Cacher les sessions TLS est très important !
+            <li class="next"><i class="fa fa-link"></i> <a href="https://istlsfastyet.com/">IsTlsFastYest.com</a>
         </ul>
         <devoxx-footer></devoxx-footer>
     </div></section>
