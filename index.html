@@ -384,11 +384,11 @@
         <figure class="sidebyside handshake">
             <figcaption>
                 <img src="pictures/handshake/5-handshake.png" alt="handshake : key exchange" />
+                <br/>
                 <pre>
-                    <code>preMasterSecret=random()</code>
-                    <code> </code>
-                    <code>encrypt(certicate.pubKey,</code>
-                    <code>preMasterSecret)</code>
+                    <code>// pms = preMasterSecret</code>
+                    <code>pms = random()</code>
+                    <code>encrypt(certicate.pubKey, pms)</code>
                 </pre>
             </figcaption>
             <img src="pictures/handshake/5-key-exchange.png" alt="key exchange">
@@ -411,8 +411,8 @@
             <span class="mark encrypted-message"   style="top: 222px; left: 724px; width: 170px;"></span>
         </figure>
         <pre>
-            <code>ms = masterSecret = <abbr title="pseudo random function">PRF</abbr>(client.preMasterSecret,</code>
-            <code>                   client.random, server.random)</code>
+            <code>// ms = masterSecret</code>
+            <code>ms = <abbr title="pseudo random function">PRF</abbr>(client.preMasterSecret, client.random, server.random)</code>
             <code> </code>
             <code>[ clientCipherKey, serverCipherKey ] = extractCipherKeys(ms)</code>
             <code>[ clientHMACKey, serverHMACKey ] = extractHMACKeys(ms)</code>
@@ -490,7 +490,7 @@
                         <a href="https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/">Mozilla</a>,
                         <a href="https://www.apple.com/certificateauthority/ca_program.html">Apple</a>,
                         <a href="http://social.technet.microsoft.com/wiki/contents/articles/31633.microsoft-trusted-root-program-requirements.aspx">Microsoft</a> ou
-                        <a href="https://www.chromium.org/Home/chromium-security/root-ca-policy">Google</a> ; "cold storage".
+                        <a href="https://www.chromium.org/Home/chromium-security/root-ca-policy">Google</a>
                     <dt class="next"><i class="fa fa-building"></i>Autorité de certification intermédiaire (intermediate CA)
                     <dt class="next"><i class="fa fa-building-o"></i>Autorité d’enregistrement (issuing CA)
                     <dt class="next"><i class="fa fa-question-circle"></i>Alternative
@@ -513,9 +513,7 @@
         <h3 class="next">Une réponse : <a href="http://www.certificate-transparency.org/">certificate transparency</a></h3>
         <ul>
             <li class="next">Projet <abbr title="Open Source Software">OSS</abbr> initié par Google : <a href="https://github.com/google/certificate-transparency">github.com/google/certificate-transparency</a>,
-            <li class="next">Base de données permettant de savoir qui a signé quoi,
-            <li class="next">Système opéré par Google (3 noeuds), Digicert et Symantec,
-            <li class="next">Imposé pour les CA par Google Chome pour les EV.
+            <li class="next">Base de données distribuée permettant de savoir qui a signé quoi
         </ul>
         <devoxx-footer></devoxx-footer>
     </div></section>
@@ -542,13 +540,13 @@
         <h2>Révocation : <a href="https://www.fir3net.com/Security/Concepts-and-Terminology/certificate-revocation.html">CRL</a>, <a href="https://www.fir3net.com/Security/Concepts-and-Terminology/certificate-revocation.html">OCSP</a> et <a href="https://www.imperialviolet.org/2012/02/05/crlsets.html">Chrome</a> <a href="https://www.grc.com/revocation/crlsets.htm">CRLSet</a></h2>
         <dl>
             <dt class="next"><i class="fa fa-ban"></i>Certificate Revocation Lists (CRL) :
-            <dd class="next">Liste de n° de certificat invalide ; fichier potentiellement conséquent ; mis à jour tous les 7~14 jours ; seulement pour les <abbr title="Extended validation">EV</abbr> ; inutile si <abbr title="Deny of Service">DOS</abbr> sur le service (navigateur accepte alors)
+            <dd class="next">Liste de n° de certificat invalide ; fichier potentiellement conséquent ; mis à jour tous les 7~14 jours ; confiance &quot;par défaut&quot;
             <dt class="next"><i class="fa fa-ban"></i>Online Certificate Status Protocol (OCSP) :
-            <dd class="next">Requête par certificat ; seulement pour les <abbr title="Extended validation">EV</abbr> ;  inutile si DOS sur le service (navigateur accepte alors)
+            <dd class="next">Requête par certificat ; confiance &quot;par défaut&quot;
             <dt class="next"><i class="fa fa-bolt"></i>OSCP Stampling :
-            <dd class="next">Le serveur joint une validation OSCP valable pour quelques minutes à chaque connexion TLS ; TLS 1.2 seulement ; Pas compatible sur tous les navigateurs
+            <dd class="next">Le serveur joint une preuve valable quelques minutes avec son certificat ; TLS 1.2 seulement
             <dt class="next"><i class="fa fa-ban"></i>Google Chrome CRLSet :
-            <dd class="next">Liste de 256 Ko de n° de certificat invalide ; régulièrement mise à jour par Chrome ; ne contient qu’une infime partie des certificats révoqués...
+            <dd class="next">Liste de 250 Ko de n° de certificat invalide ; régulièrement mise à jour par Chrome ; ne contient qu’une infime partie des certificats révoqués...
         </dl>
         <devoxx-footer></devoxx-footer>
     </div></section>
@@ -575,7 +573,7 @@
 		<h2><i class="fa fa-keyboard-o"></i> Attaques &laquo; faciles &raquo;</h2>
         <ul>
             <li>récupèrer les infos ailleurs <small>(chez l’hébergeur)</small>,
-            <li class="next">via une attaque <abbr title="Man in the middle">MITM</abbr> &laquo; <a href="https://en.wikipedia.org/wiki/Moxie_Marlinspike#SSL_stripping">SSLStrip</a> &raquo;, <small>par <a href="https://en.wikipedia.org/wiki/Moxie_Marlinspike">Moxie Marlinspike</a></small>,
+            <li class="next">via une attaque <abbr title="Man in the middle">MITM</abbr> &laquo; <a href="https://en.wikipedia.org/wiki/Moxie_Marlinspike#SSL_stripping">SSLStrip</a> &raquo;, <small>par <a href="https://en.wikipedia.org/wiki/Moxie_Marlinspike">Moxie Marlinspike</a></small>, <small>(bonus : en affichant <i class="fa fa-lock nomargin"></i> comme favicon)</small>,
             <li class="next">via un <a href="https://fr.wikipedia.org/wiki/Enregistreur_de_frappe">enregistreur de frappe</a> <small>(keylogger)</small>,
             <li class="next">pour les gouvernements, demander la clé ou faire générer un certificat,
             <li class="next">installer une CA &laquo; maison &raquo; pour faire de l’interception légale <small>(recommandations de la <a href="http://www.cnil.fr/linstitution/actualite/article/article/analyse-de-flux-https-bonnes-pratiques-et-questions/">CNIL</a> et de l’<a href="http://www.ssi.gouv.fr/guide/recommandations-de-securite-concernant-lanalyse-des-flux-https/">ANSSI</a>)</small> ou illégale...
@@ -602,7 +600,6 @@
             <li>2008 : <a href="https://www.schneier.com/blog/archives/2008/05/random_number_b.html">DSA-1571-1</a> : /dev/random sur Debian limité à 32768 valeurs,
             <li class="next">2014 : <a href="http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2014-1266">CVE-2014-1266</a> : <a href="https://opensource.apple.com/source/Security/Security-55471/libsecurity_ssl/lib/sslKeyExchange.c?txt">goto fail</a> chez Apple,
             <li class="next">2014 : <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0092">CVE-2014-0092</a> : <a href="https://www.gitorious.org/gnutls/gnutls/commit/6aa26f78150ccbdf0aec1878a41c17c41d358a3b">goto cleanup</a> sur GnuTLS,
-            <li class="next">2014 : <a href="https://www.bortzmeyer.org/7366.html">RFC 7366</a> : "HMAC-then-encrypt" potentiellement dangereux, donc "Encrypt-then-HMAC",
             <li class="next">2015 : <a href="http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0160">CVE-2014-0160</a> : <i class="fa fa-heartbeat nomargin"></i> <a href="http://heartbleed.com/">heartbleed</a> : le serveur laisse fuiter quelques octets en RAM...
         </ul>
         <devoxx-footer></devoxx-footer>
