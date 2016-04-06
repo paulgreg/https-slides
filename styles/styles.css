@@ -78,9 +78,11 @@ header.caption                                      { color: white; }
 #presentation .mappy-immersive                      { left: 510px; }
 #sommaire ul                                        { margin: .5em; }
 #sommaire ul li                                     { margin: .75em; }
-#interception-traffic-http figcaption               { width: 100%; text-align: right; margin-top: -60px;}
+#interception-traffic-http figcaption,
+#interception-traffic-http-bis figcaption           { margin-top: -480px; margin-left: 72px; }
 #html-seo p                                         { margin-top: 1em; }
 #chiffrement-symetrique figure                      { margin-top: 100px; }
+#chiffrement-symetrique figure ul                   { text-align: left; width: 580px; margin: auto; }
 #handshake-certificate img.store                    { display: block; margin: auto; }
 #cipher-suites ul.small                             { column-count: 4; -moz-column-count: 4; -webkit-column-count: 4; font-size: 12px; font-family: monospace; }
 #cipher-suites ul.small li                          { margin: 0; }

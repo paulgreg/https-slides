@@ -133,6 +133,16 @@
         <devoxx-footer></devoxx-footer>
     </div></section>
 
+    <section id="interception-traffic-http-bis" class="slide"><div>
+        <slide-progression open="pourquoi"></slide-progression>
+        <h2>Pour éviter l’interception de traffic</h2>
+        <figure>
+            <img src="pictures/https_rogue_ap.svg" class="svg" alt="Réseau anormal au niveau du point d’accès" />
+            <figcaption><kbd>donotbeevil</kbd></figcaption>
+        </figure>
+        <devoxx-footer></devoxx-footer>
+    </div></section>
+
     <section id="protection-fai-schema" class="slide"><div>
         <slide-progression open="pourquoi"></slide-progression>
         <h2>Pour se protéger des <abbr title="Fournisseurs d’Accès Internet">FAI</abbr> malveillants</h2>
@@ -254,7 +264,12 @@
         <h2><i class="fa fa-key" style="color: green;"></i> Chiffrement symétrique</h2>
         <figure class="center">
             <img src="./pictures/symmetric-cipher.png" alt="chiffrement symétrique" />
-            <figcaption><abbr title="Data Encryption Standard">DES</abbr> (<span class="broken">56 bits</span>), 3DES (<span class="unsecure">112 bits</span>), <abbr title="Advanced Encryption Standard">AES</abbr> (<span class="safe">128</span>, <span class="safe">256 bits</span>), <a href="https://en.wikipedia.org/wiki/GOST_(block_cipher)">GOST</a> (<span class="safe">256 bits</span>)</figcaption>
+            <figcaption>
+                <ul class="icons">
+                    <li class="next"><abbr title="Data Encryption Standard">DES</abbr> (<span class="broken">56 bits</span>), 3DES (<span class="unsecure">112 bits</span>), <abbr title="Advanced Encryption Standard">AES</abbr> (<span class="safe">128</span>, <span class="safe">256 bits</span>)
+                    <li class="next"><i class="fa fa-plus"></i>rapide, performant&nbsp;<i class="fa fa-minus"></i>problème d’échange de clé
+                </ul>
+            </figcaption>
         </figure>
         <devoxx-footer></devoxx-footer>
     </div></section>
@@ -264,7 +279,12 @@
         <h2><i class="fa fa-key" style="color: blue;"></i><i class="fa fa-key" style="color: orange"></i>  Chiffrement asymétrique</h2>
         <figure class="center">
             <img src="./pictures/asymmetric-cipher.png" alt="chiffrement asymétrique" />
-            <figcaption>nombres premiers via <a href="https://fr.wikipedia.org/wiki/Chiffrement_RSA">RSA</a> (<span class="unsecure">1024</span>, <span class="safe">2048</span>, <span class="safe">4096 bits</span>) et courbes elliptiques (<a href="https://fr.wikipedia.org/wiki/Cryptographie_sur_les_courbes_elliptiques">EC</a>)</figcaption>
+            <figcaption>
+                <ul class="icons">
+                    <li>nombres premiers via <a href="https://fr.wikipedia.org/wiki/Chiffrement_RSA">RSA</a> (<span class="unsecure">1024</span>, <span class="safe">2048</span>, <span class="safe">4096 bits</span>) et courbes elliptiques (<a href="https://fr.wikipedia.org/wiki/Cryptographie_sur_les_courbes_elliptiques">EC</a>)
+                    <li class="next"><i class="fa fa-plus"></i>permet de transmettre une clé symétrique &nbsp;<i class="fa fa-minus"></i>lent, coûteux
+                 </ul>
+            </figcaption>
         </figure>
         <devoxx-footer></devoxx-footer>
     </div></section>
@@ -679,24 +699,6 @@
             <li class="next"><i class="fa fa-gift"></i> Pré-chargement dans les navigateurs : <a href="https://code.google.com/p/chromium/codesearch#chromium/src/net/http/transport_security_state_static.h&amp;cl=GROK&amp;gsn=GetDynamicDomainState">transport_security_state_static.h</a>,
             <li class="next"><i class="fa fa-flag-o"></i> <a href="https://developers.google.com/web/updates/2015/09/HPKP-reporting-with-chrome-46">Commencez par</a> : <code>Public-Key-Pins-Report-Only: report-uri</code>
             <li class="next"><i class="fa fa-exclamation-triangle"></i> <a href="https://noncombatant.org/2015/05/01/about-http-public-key-pinning/">Plus</a> <a href="https://timtaubert.de/blog/2014/10/http-public-key-pinning-explained/">compliqué</a> à mettre en place et plus risqué ; à reserver aux sites sensibles.
-        </ul>
-        <devoxx-footer></devoxx-footer>
-    </div></section>
-
-	<section id="CSP" class="slide"><div>
-        <slide-progression open="apres"></slide-progression>
-        <h2><a href="https://diogomonica.com/2015/12/30/deep-into-csp/">CSP</a> : Content Security Policy</h2>
-        <pre>
-            <code>Content-Security-Policy:default-src 'none';</code>
-            <code>     script-src 'self'; style-src 'self';</code>
-            <code>     upgrade-insecure-requests; block-all-mixed-content;</code>
-        </pre>
-        <ul class="icons">
-            <li><i class="fa fa-thumb-tack"></i> Entête HTTP apportant des restrictions sur les types de contenu attendus et leur provenances,
-            <li class="next"><i class="fa fa-ban"></i> Système de liste blanche <small>(ce qui n’est pas listé est bloqué)</small>,
-            <li class="next"><i class="fa fa-bomb"></i> Très puissant car permet d’éviter des injections de code,
-            <li class="next"><i class="fa fa-exclamation-triangle"></i> Difficile <small>(impossible ?)</small> à mettre en place avec du contenu aggrégé <small>(publicité...)</small>,
-            <li class="next"><i class="fa fa-flag-o"></i> Activez les rapports : <code>report-uri</code> <small>(il existe des <a href="https://report-uri.io/home/generate/">générateurs</a> de CSP)</small>
         </ul>
         <devoxx-footer></devoxx-footer>
     </div></section>
@@ -1307,6 +1309,25 @@
             <li>en 2015, <a href="https://www.youtube.com/watch?v=hkw9tFnJk8k">Attaque sur <abbr title="Network Time Protocol">NTP</abbr></a> pour réinitialiser HSTS puis craquer de &laquo; vieux &raquo; certificats 512 bits.
         </ul>
     </div></section>
+
+	<section id="CSP" class="slide"><div>
+        <slide-progression open="annexes"></slide-progression>
+        <h2><a href="https://diogomonica.com/2015/12/30/deep-into-csp/">CSP</a> : Content Security Policy</h2>
+        <pre>
+            <code>Content-Security-Policy:default-src 'none';</code>
+            <code>     script-src 'self'; style-src 'self';</code>
+            <code>     upgrade-insecure-requests; block-all-mixed-content;</code>
+        </pre>
+        <ul class="icons">
+            <li><i class="fa fa-thumb-tack"></i> Entête HTTP apportant des restrictions sur les types de contenu attendus et leur provenances,
+            <li><i class="fa fa-ban"></i> Système de liste blanche <small>(ce qui n’est pas listé est bloqué)</small>,
+            <li><i class="fa fa-bomb"></i> Très puissant car permet d’éviter des injections de code,
+            <li><i class="fa fa-exclamation-triangle"></i> Difficile <small>(impossible ?)</small> à mettre en place avec du contenu aggrégé <small>(publicité...)</small>,
+            <li><i class="fa fa-flag-o"></i> Activez les rapports : <code>report-uri</code> <small>(il existe des <a href="https://report-uri.io/home/generate/">générateurs</a> de CSP)</small>
+        </ul>
+        <devoxx-footer></devoxx-footer>
+    </div></section>
+
 
 	<p class="badge"><a href="https://github.com/paulgreg/https-slides">Fork me on Github</a></p>
 	<div class="progress"><div></div></div>
