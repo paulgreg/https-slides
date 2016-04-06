@@ -1311,7 +1311,7 @@
 	<p class="badge"><a href="https://github.com/paulgreg/https-slides">Fork me on Github</a></p>
 	<div class="progress"><div></div></div>
     <script>
-    if (document.location.search && document.location.search === '?devoxx') {
+    if (document.location.search && (document.location.search.indexOf('?devoxx') === 0)) {
         var head = document.head || document.getElementsByTagName('head')[0],
             devoxxStyle = document.createElement('link');
         devoxxStyle.rel = 'stylesheet';
