@@ -328,7 +328,7 @@
             <figcaption>
                 <img src="pictures/handshake/1-handshake.png" alt="handshake : client hello" />
                 <code style="display: inline-block; margin: 20px 0 20px 110px;">TCP 443</code>
-                <p style="margin-left: 60px;"><a href="#cipher-suites">suites de chifrement</a></p>
+                <p style="margin-left: 60px;"><a href="#cipher-suites">suites de chiffrement</a></p>
             </figcaption>
             <img src="pictures/handshake/1-client-hello.png" alt="wireshark : client hello" />
             <span class="mark hello"   style="top: 181px; left: 570px; width: 60px;"></span>
@@ -422,7 +422,7 @@
 
 	<section id="handshake-encrypted-data" class="slide"><div>
         <slide-progression open="handshake"></slide-progression>
-        <h2>5. Place au trafic chiffré</h2>
+        <h2>5. Place au traffic chiffré</h2>
         <figure class="sidebyside handshake">
             <figcaption>
                 <img src="pictures/handshake/7-handshake.png" alt="poignée de main">
@@ -445,7 +445,7 @@
         <figure class="sidebyside">
             <img class="next" src="pictures/diffie-Hellman_key_exchange.png" alt="Algorithme de Diffie Hellman">
             <figcaption class="next">
-                <p>La conversation reste secrête même si la clé privée a fuitée grâce à l’<a href="https://fr.wikipedia.org/wiki/%C3%89change_de_cl%C3%A9s_Diffie-Hellman">échange de clés Diffie-Hellman</a>.</p>
+                <p>La conversation reste secrête même si la clé privée a fuité grâce à l’<a href="https://fr.wikipedia.org/wiki/%C3%89change_de_cl%C3%A9s_Diffie-Hellman">échange de clés Diffie-Hellman</a>.</p>
                 <p>Suites "Ephemeral Diffie-Hellman" :
                 <small><strong>DHE</strong>-RSA-AES128-SHA</small>,
                 <small><strong>EDH</strong>-RSA-DES-CBC-SHA</small>,
@@ -782,7 +782,7 @@
             <li class="next"><i class="fa fa-users"></i> HTTPS bientôt le &laquo; défaut &raquo;,
             <li class="next"><i class="fa fa-code"></i> commencez vos nouveaux projets en HTTPS <small>(même en dev !)</small>,
             <li class="next"><i class="fa fa-server"></i> n’ayez pas peur <small>(pas si compliqué d’avoir une configuration solide)</small>,
-            <li class="next"><i class="fa fa-bell-o"></i> tenez vous au courant, tester votre site régulièrement<br/>et mettez-la à jour,
+            <li class="next"><i class="fa fa-bell-o"></i> tenez vous au courant, tester votre site régulièrement<br/>et mettez la à jour,
             <li class="next"><i class="fa fa-wrench"></i> vive l’outillage pour automatiser TLS <small>(Let’s encrypt/ACME)</small>
             <li class="next"><i class="fa fa-ban"></i> la fin des révocations <small>(avec des certificats pour quelques jours)</small> ?
         </ul>
@@ -807,7 +807,7 @@
 
 	<section id="resources" class="slide"><div>
         <slide-progression open="annexes"></slide-progression>
-		<h2><i class="fa fa-book"></i> Resources</h2>
+		<h2><i class="fa fa-book"></i> Ressources</h2>
         <ul class="resources">
             <li><a href="https://www.imperialviolet.org/">ImperialViolet</a>, le blog Adam Langley (Google),
             <li><a href="https://www.schneier.com/">Schneier on Security</a>, le blog de Bruce Schneier,
@@ -900,9 +900,9 @@
         <h2><i class="fa fa-exclamation-triangle"></i> La vie des CA n’est pas un long fleuve tranquille...</h2>
         <ul>
             <li>en 2011, <a href="https://www.comodo.com/Comodo-Fraud-Incident-2011-03-23.html">Comodo</a> signe 9 certificats incluant  mail.google.com, login.yahoo.com, login.skype.com, addons.mozilla.org, login.live.com,
-            <li>en 2011, <a href="https://www.vasco.com/company/about_vasco/press_room/news_archive/2011/news_diginotar_reports_security_incident.aspx">Diginotar</a> signe des certificats utilisés pour intercepter le trafic gmail en Iran ; l’entreprise <a href="https://www.vasco.com/company/about_vasco/press_room/news_archive/2011/news_vasco_announces_bankruptcy_filing_by_diginotar_bv.aspx">ferme</a> quelques jours après,
+            <li>en 2011, <a href="https://www.vasco.com/company/about_vasco/press_room/news_archive/2011/news_diginotar_reports_security_incident.aspx">Diginotar</a> signe des certificats utilisés pour intercepter le traffic gmail en Iran ; l’entreprise <a href="https://www.vasco.com/company/about_vasco/press_room/news_archive/2011/news_vasco_announces_bankruptcy_filing_by_diginotar_bv.aspx">ferme</a> quelques jours après,
             <li>en 2013, l’<a href="http://googleonlinesecurity.blogspot.fr/2013/12/further-improving-digital-certificate.html">ANSSI</a> génère des certificats pour des domaines de google ; ils sont détectés aussitôt par Chrome,
-            <li>en 2015, <a href="https://googleonlinesecurity.blogspot.sg/2015/03/maintaining-digital-certificate-security.html">Google</a> exclue les certificats signés par l’AC Chinoise <a href="https://en.wikipedia.org/wiki/China_Internet_Network_Information_Center">CNNIC</a> car ils ont signés des certificats Google, le <a href="http://www1.cnnic.cn/AU/MediaC/Announcement/201504/t20150402_52049.htm">CNNIC répond</a>,
+            <li>en 2015, <a href="https://googleonlinesecurity.blogspot.sg/2015/03/maintaining-digital-certificate-security.html">Google</a> exclue les certificats signés par l’AC Chinoise <a href="https://en.wikipedia.org/wiki/China_Internet_Network_Information_Center">CNNIC</a> car ils ont signé des certificats Google, le <a href="http://www1.cnnic.cn/AU/MediaC/Announcement/201504/t20150402_52049.htm">CNNIC répond</a>,
             <li>en 2015, Symantec <a href="http://www.symantec.com/connect/blogs/tough-day-leaders">annonce une fuite de quelques certificats</a>,
                 Google <a href="https://googleonlinesecurity.blogspot.fr/2015/10/sustaining-digital-certificate-security.html">en découvre 2522</a> et leur impose Certificate Transparency.
         </ul>
@@ -1129,7 +1129,7 @@
 
 	<section id="diffie-hellman-handshake-encrypted-data" class="slide"><div>
         <slide-progression open="annexes"></slide-progression>
-        <h2>6. Place au trafic chiffré</h2>
+        <h2>6. Place au traffic chiffré</h2>
         <figure class="sidebyside handshake">
             <figcaption>
                 <img src="pictures/diffie-hellman-handshake/7-handshake.png" alt="poignée de main">
@@ -1217,7 +1217,7 @@
         <h2><i class="fa fa-bolt"></i> <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">CRIME</a>: Compression Ratio Info-leak Made Easy</h2>
         <ul>
             <li>Faille utilisant la compression offerte par SSL/TLS (et aussi SPDY),
-            <li>l’idée consiste à injecter du trafic vers le serveur cible en inspectant la taille, si celle-ci diminue (grâce à la compression), on a deviné une chaîne de caractère (par exemple le cookie),
+            <li>l’idée consiste à injecter du traffic vers le serveur cible en inspectant la taille, si celle-ci diminue (grâce à la compression), on a deviné une chaîne de caractère (par exemple le cookie),
             <li>Juliano Rizzo et Thai Duong (encore) <a href="https://docs.google.com/presentation/d/11eBmGiHbYcHR9gL5nDyZChu_-lCa2GizeuOfaLU2HOU/edit?pli=1">démontrent un POC</a> en 2012 (principe <a href="https://www.iacr.org/cryptodb/data/paper.php?pubkey=3091">découvert</a> par John Kelsey en 2002),
             <li>nécessite de choisir le contenu à envoyer + MITM,
             <li>solution : désactiver la compression sur TLS.
