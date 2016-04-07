@@ -50,6 +50,7 @@ header.caption                                      { color: white; }
 .slide ul.icons li i.handshake                      { display: inline-block; width: 28px; height: 28px; background: url(../pictures/handshake.svg) no-repeat; background-size: 28px 28px; margin-left: 0px ; margin-right: 0; margin-bottom: -6px; }
 .slide ul.icons li.red i.handshake                  { background: url(../pictures/handshake-red.svg) no-repeat; background-size: 28px 28px; margin-right: 4px;}
 .slide i.handshake                                  { display: inline-block; width: 80px; height: 80px; background: url(../pictures/handshake-grey.svg) no-repeat; background-size: 80px 80px; margin-left: 0; margin-right: 0; }
+.slide ul.icons li i.marginleft                     { margin-left: 2.5em; }
 
 .slide .broken, .broken a                           { color:red; }
 .slide .unsecure, .unsecure a                       { color:orange; }
@@ -81,9 +82,11 @@ header.caption                                      { color: white; }
 #interception-traffic-http figcaption,
 #interception-traffic-http-bis figcaption           { margin-top: -480px; margin-left: 72px; }
 #html-seo p                                         { margin-top: 1em; }
-#chiffrement-symetrique figure                      { margin-top: 100px; }
+#chiffrement-symetrique figure img                  { margin: 40px 0 20px 0; }
 #chiffrement-symetrique figure ul                   { text-align: left; width: 580px; margin: auto; }
-#handshake-certificate img.store                    { display: block; margin: auto; }
+#chiffrement-symetrique figure img,
+#chiffrement-asymetrique figure img                 { width: 600px; }
+#handshake-certificate img.store                    { display: block; border: 1px solid black; position: absolute; top: 450px; left: 460px; width: 460px; }
 #cipher-suites ul.small                             { column-count: 4; -moz-column-count: 4; -webkit-column-count: 4; font-size: 12px; font-family: monospace; }
 #cipher-suites ul.small li                          { margin: 0; }
 #pfs img                                            { max-height: 380px; }

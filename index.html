@@ -146,7 +146,7 @@
     <section id="protection-fai-schema" class="slide"><div>
         <slide-progression open="pourquoi"></slide-progression>
         <h2>Pour se protéger des <abbr title="Fournisseurs d’Accès Internet">FAI</abbr> malveillants</h2>
-        <figure>
+        <figure class="center">
             <img src="pictures/https_fai_injection.svg" class="svg" alt="Réseau anormal au niveau du FAI" />
             <figcaption class="narrow"><a href="#protection-fai">exemples de modifications de contenu par des FAI</a></figcaption>
         </figure>
@@ -156,7 +156,7 @@
     <section id="grand-canon" class="slide"><div>
         <slide-progression open="pourquoi"></slide-progression>
         <h2>Pour se protéger du <a href="https://citizenlab.org/2015/04/chinas-great-cannon/">Grand Canon Chinois</a></h2>
-        <figure>
+        <figure class="center">
             <img src="pictures/https_great_cannon.svg" class="svg" alt="grand canon"/>
             <figcaption class="narrow">en avril 2015</figcaption>
         </figure>
@@ -212,9 +212,9 @@
             <dt class="next"><i class="fa fa-balance-scale"></i>Intégrité :
             <dd class="next">Les parties vérifient que les données reçues n’ont pas été altérées.
             <dt class="next"><i class="fa fa-diamond"></i>Transparence :
-            <dd class="next">Aucun changement nécessaire dans le protocole applicatif englobé
+            <dd class="next">Aucun changement nécessaire dans le protocole applicatif englobé.
             <dt class="next"><i class="fa fa-bolt"></i>Spontanéité :
-            <dd class="next">Un client peut spontanément se connecter à un serveur (pas de pré-requis)
+            <dd class="next">Un client peut spontanément se connecter à un serveur (pas de pré-requis).
         </dl>
         <devoxx-footer></devoxx-footer>
     </div></section>
@@ -230,7 +230,7 @@
 		<h2>Versions</h2>
         <ul class="icons">
             <li><i class="fa fa-code-fork"></i><span class="broken"><abbr title="Secure Socket Layer">SSL</abbr> 1.0</span> (jamais publié) par <a href="https://en.wikipedia.org/wiki/Netscape">Netscape</a>,
-            <li class="next"><i class="fa fa-code-fork"></i><span class="broken">SSL 2.0</span> en 1995, <small>déprécié en 2011 par la <a href="https://tools.ietf.org/html/rfc6176"><abbr title="Request for comment">RFC</abbr> 6176</a></small>.
+            <li class="next"><i class="fa fa-code-fork"></i><span class="broken">SSL 2.0</span> en 1995, <small>déprécié en 2011 par la <a href="https://tools.ietf.org/html/rfc6176"><abbr title="Request for comment">RFC</abbr> 6176</a></small>,
                 <li class="next"><i class="fa fa-code-fork"></i><span class="broken">SSL 3.0</span> / <a href="https://tools.ietf.org/html/rfc6101">RFC 6101</a> en 1996 <small>(refonte)</small>, <small>déprécié en 2015 par la <a href="https://tools.ietf.org/html/rfc7568">RFC 7568</a></small>,
                 <li class="next"><i class="fa fa-code-fork"></i><span class="unsecure"><abbr title="Transport Layerr Security">TLS</abbr> 1.0</span> / <a href="https://tools.ietf.org/html/rfc2246">RFC 2246</a> en 1999 <small>(modifications mineures)</small>,
                 <li class="next"><i class="fa fa-code-fork"></i><span class="unsecure">TLS 1.1</span> / <a href="https://tools.ietf.org/html/rfc4346">RFC 4346</a> en 2006 <small>(<i class="fa fa-plus-circle nomargin"></i> protections contre les attaques sur <abbr title="Cipher Block Chaining">CBC</abbr>)</small>,
@@ -263,11 +263,11 @@
         <slide-progression open="handshake"></slide-progression>
         <h2><i class="fa fa-key" style="color: green;"></i> Chiffrement symétrique</h2>
         <figure class="center">
-            <img src="./pictures/symmetric-cipher.png" alt="chiffrement symétrique" />
+            <img src="./pictures/symetric-cipher.png" alt="chiffrement symétrique" />
             <figcaption>
                 <ul class="icons">
                     <li class="next"><abbr title="Data Encryption Standard">DES</abbr> (<span class="broken">56 bits</span>), 3DES (<span class="unsecure">112 bits</span>), <abbr title="Advanced Encryption Standard">AES</abbr> (<span class="safe">128</span>, <span class="safe">256 bits</span>)
-                    <li class="next"><i class="fa fa-plus"></i>rapide, performant&nbsp;<i class="fa fa-minus"></i>problème d’échange de clé
+                    <li class="next"><i class="fa fa-plus"></i>rapide, performant&nbsp;<i class="fa fa-minus marginleft"></i>problème d’échange de clé
                 </ul>
             </figcaption>
         </figure>
@@ -278,11 +278,11 @@
         <slide-progression open="handshake"></slide-progression>
         <h2><i class="fa fa-key" style="color: blue;"></i><i class="fa fa-key" style="color: orange"></i>  Chiffrement asymétrique</h2>
         <figure class="center">
-            <img src="./pictures/asymmetric-cipher.png" alt="chiffrement asymétrique" />
+            <img src="./pictures/asymetric-cipher.png" alt="chiffrement asymétrique" />
             <figcaption>
                 <ul class="icons">
                     <li>nombres premiers via <a href="https://fr.wikipedia.org/wiki/Chiffrement_RSA">RSA</a> (<span class="unsecure">1024</span>, <span class="safe">2048</span>, <span class="safe">4096 bits</span>) et courbes elliptiques (<a href="https://fr.wikipedia.org/wiki/Cryptographie_sur_les_courbes_elliptiques">EC</a>)
-                    <li class="next"><i class="fa fa-plus"></i>permet de transmettre une clé symétrique &nbsp;<i class="fa fa-minus"></i>lent, coûteux
+                    <li class="next"><i class="fa fa-plus"></i>permet de transmettre une clé symétrique &nbsp;<i class="fa fa-minus marginleft"></i>lent, coûteux
                  </ul>
             </figcaption>
         </figure>
@@ -322,6 +322,9 @@
            <span class="unsecure">HMAC_SHA1</span>,
            <span class="safe">HMAC_SHA256</span>.
        </p>
+       <p class="next">
+           Permet de vérifier l’intégrité des données.
+       </p>
         <devoxx-footer></devoxx-footer>
     </div></section>
 
@@ -348,7 +351,12 @@
             <figcaption>
                 <img src="pictures/handshake/1-handshake.png" alt="handshake : client hello" />
                 <code style="display: inline-block; margin: 20px 0 20px 110px;">TCP 443</code>
-                <p style="margin-left: 60px;"><a href="#cipher-suites">suites de chiffrement</a></p>
+                <ul style="margin-left: 50px;">
+                    <li class="next">version
+                    <li class="next">session ID
+                    <li class="next"><a href="#cipher-suites">suites de chiffrement</a>
+                    <li class="next">Server Name Indication (SNI)
+                </ul>
             </figcaption>
             <img src="pictures/handshake/1-client-hello.png" alt="wireshark : client hello" />
             <span class="mark hello"   style="top: 181px; left: 570px; width: 60px;"></span>
@@ -365,7 +373,14 @@
         <slide-progression open="handshake"></slide-progression>
         <h2>2. &laquo; Server hello &raquo;</h2>
         <figure class="sidebyside handshake">
-            <figcaption><img src="pictures/handshake/2-handshake.png" alt="handshake : server hello" /></figcaption>
+            <figcaption>
+                <img src="pictures/handshake/2-handshake.png" alt="handshake : server hello" />
+                <ul style="margin-left: 50px;">
+                    <li class="next">version
+                    <li class="next">session ID
+                    <li class="next">suite de chiffrement choisie
+                </ul>
+            </figcaption>
             <img src="pictures/handshake/2-server-hello.png" alt="server hello" />
             <span class="mark hello"   style="top: 205px; left: 596px; width: 74px;"></span>
             <span class="mark version" style="top: 246px; left: 538px; width: 48px;"></span>
@@ -382,14 +397,16 @@
         <figure class="sidebyside handshake">
             <figcaption>
                 <img src="pictures/handshake/4-handshake.png" alt="handshake : server certificates" />
-                <p>
-                    <a href="#certificat-x509">Certificat X.509</a><br/>
-                    Wildcard <small>(*.mappy.com)</small> ou <br/>
-                    Subject Alternative Name <small>(fr.mappy.com, en.mappy.com,...)</small>
-                </p>
+                    <ul>
+                        <li>certificat du domaine (<a href="#certificat-x509"><small>X.509</small></a>)
+                        <li class="next">certificat intermédiaire
+                        <li class="next">magasin de certificat
+                            <img class="next store" src="pictures/ca-store.png" alt="browser CA store" />
+                        <li class="next">wildcard <small>(*.mappy.com)</small>
+                        <li class="next">Subject Alternative Name <small>(fr.mappy.com, en.mappy.com,...)</small>
+                    </ul>
             </figcaption>
             <img src="pictures/handshake/3-certificates.png" alt="server certificates" />
-            <img src="pictures/ca-store.png" alt="browser CA store" class="store" />
             <span class="mark certificate"  style="top: 207px; left: 602px; width: 70px;"></span>
             <span class="mark mappy"        style="top: 293px; left: 612px; width: 300px;"></span>
             <span class="mark symatec"      style="top: 321px; left: 612px; width: 300px;"></span>
@@ -404,11 +421,9 @@
         <figure class="sidebyside handshake">
             <figcaption>
                 <img src="pictures/handshake/5-handshake.png" alt="handshake : key exchange" />
-                <br/>
-                <pre>
-                    <code>// pms = preMasterSecret</code>
-                    <code>pms = random()</code>
-                    <code>encrypt(certicate.pubKey, pms)</code>
+                <pre style="margin-top: 80px;">
+                    <code>secret = random()</code>
+                    <code>encrypt(certicate.publicKey, secret)</code>
                 </pre>
             </figcaption>
             <img src="pictures/handshake/5-key-exchange.png" alt="key exchange">
@@ -430,12 +445,15 @@
             <span class="mark change-cipher-spec"  style="top: 150px; left: 782px; width: 112px;"></span>
             <span class="mark encrypted-message"   style="top: 222px; left: 724px; width: 170px;"></span>
         </figure>
-        <pre>
+        <pre style="margin-top: 40px;">
+<!--
             <code>// ms = masterSecret</code>
             <code>ms = <abbr title="pseudo random function">PRF</abbr>(client.preMasterSecret, client.random, server.random)</code>
             <code> </code>
             <code>[ clientCipherKey, serverCipherKey ] = extractCipherKeys(ms)</code>
             <code>[ clientHMACKey, serverHMACKey ] = extractHMACKeys(ms)</code>
+-->
+            <code>key = deriveKey(client.secret)</code>
         </pre>
         <devoxx-footer></devoxx-footer>
 	</div></section>
@@ -450,11 +468,17 @@
             <img src="pictures/handshake/7-encrypted-data.png" alt="encrypted data">
             <span class="mark encrypted-message"   style="top: 209px; left: 482px; width: 158px;"></span>
         </figure>
-        <pre>
+        <pre style="margin-top: 40px;">
+<!--
             <code>encryptRequest(message, clientCipherKey, clientHMACKey)</code>
             <code>decryptRequest(message, clientCipherKey, clientHMACKey)</code>
             <code>encryptResponse(message, serverCipherKey, serverHMACKey)</code>
             <code>decryptResponse(message, serverCipherKey, serverHMACKey)</code>
+-->
+            <code>encryptRequest(message, key) // client</code>
+            <code>decryptRequest(message, key) // server </code>
+            <code>encryptResponse(message, key) // server</code>
+            <code>decryptResponse(message, key) // client</code>
         </pre>
         <devoxx-footer></devoxx-footer>
 	</div></section>
@@ -605,7 +629,7 @@
 	<section id="interception-https" class="slide"><div>
         <slide-progression open="attaques"></slide-progression>
 		<h2><i class="fa fa-user-secret"></i> Interception via un point d’accès malveillant</h2>
-        <figure>
+        <figure class="center">
             <video controls preload="metadata" src="videos/mitm-https.webm"></video>
             <figcaption class="narrow"><a href="#interception-traffic-http-explications">détails</a> et <a href="https://hackaday.io/project/10338-pi-mitm">implémentation</a> de cet exemple</figcaption>
         </figure>
