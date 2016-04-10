@@ -44,7 +44,7 @@ header.caption                                      { color: white; }
 .slide h3                                           { color: #666; font-size: 32px; }
 .slide .mark                                        { position: absolute; background-color: rgba(255, 225, 0, 0.24); border: 1px solid black; height: 10px; }
 .slide table td                                     { padding: 0.2em 0.25em; }
-.slide figure figcaption.narrow                     { margin-top: -24px; }
+.slide figure figcaption.narrow                     { margin-top: -25px; }
 
 .slide i.handshake.small,
 .slide ul.icons li i.handshake                      { display: inline-block; width: 28px; height: 28px; background: url(../pictures/handshake.svg) no-repeat; background-size: 28px 28px; margin-left: 0px ; margin-right: 0; margin-bottom: -6px; }
@@ -57,6 +57,11 @@ header.caption                                      { color: white; }
 .slide .safe, .safe a                               { color:green; }
 .slide .center                                      { width: 100%; text-align: center; }
 .slide .logo                                        { width: 110px; vertical-align: middle; margin: .25em; padding: .25em; background-color: white; }
+
+.slide .legend                                      { background-color: white; border-radius: 10px; position: absolute; padding: 0 5px; line-height: 25px; }
+.slide .legend.plain                                { top: 210px; left: 210px; border: 1px solid #2020FF; color: #2020FF; }
+.slide .legend.asymetric                            { top: 260px; left: 120px; border: 1px solid #9B0B0B; color: #9B0B0B; }
+.slide .legend.symetric                             { top: 280px; left: 120px; border: 1px solid #547345; color: #547345; }
 
 #cover *                                            { color: #FFF; }
 #cover h2                                           { margin:30px 0 0; background-color: rgba(0, 0, 0, .5); text-align: center; font-size: 70px; }
