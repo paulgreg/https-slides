@@ -1,0 +1,13 @@
+Préparation en amont :
+- PI : changer de branche sur /etc
+ou
+- PI : changer /etc/network/interfaces
+- PI : éventuellement changer les DNS du point d’accès
+
+Préparation juste avant la présentation :
+- PHONE : téléphone en point d’accès (si pas de wifi)
+- PI : démarrer
+- PC : supprimer certificat mitm.it du/des navigateur(s)
+- PC : charger présentation
+- PC : test MITM http
+- PC : brancher écran
