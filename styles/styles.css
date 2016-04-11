@@ -85,7 +85,8 @@ header.caption                                      { color: white; }
 #sommaire ul                                        { margin: .5em; }
 #sommaire ul li                                     { margin: .75em; }
 #interception-traffic-http figcaption,
-#interception-traffic-http-bis figcaption           { margin-top: -480px; margin-left: 72px; }
+#interception-traffic-http-bis figcaption,
+#interception-traffic-https figcaption              { margin-top: -480px; margin-left: 72px; }
 #html-seo p                                         { margin-top: 1em; }
 #chiffrement-symetrique figure img                  { margin: 40px 0 20px 0; }
 #chiffrement-symetrique figure ul                   { text-align: left; width: 580px; margin: auto; }
