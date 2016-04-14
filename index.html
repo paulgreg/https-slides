@@ -38,8 +38,10 @@
         <h2>Présentation</h2>
         <ul class="icons">
             <li><i class="fa fa-user nomargin"> </i>Grégory Paul
-            <li><i class="fa fa-briefcase nomargin"></i> Développeur Web
-            <br>(<a href="https://twitter.com/search?q=%23javascript%20from%3Apaulgreg&src=typd">JavaScript</a>, <a href="https://twitter.com/search?q=%23security%20from%3Apaulgreg&src=typd">sécurité</a>, <a href="https://twitter.com/search?q=%23hack%20from%3Apaulgreg&src=typd">bidouillage</a>)
+            <li><i class="fa fa-briefcase nomargin"></i> Développeur Web<br>
+                (<a href="https://twitter.com/search?q=%23javascript%20from%3Apaulgreg&src=typd">JavaScript</a>,
+                <a href="https://twitter.com/search?q=%23security%20from%3Apaulgreg&src=typd">sécurité</a>,
+                <a href="https://twitter.com/search?q=%23hack%20from%3Apaulgreg&src=typd">hack</a>)
             <li>
                 <a href="https://paulgreg.me/" rel="me">https://paulgreg.me</a>
                 <a href="https://twitter.com/paulgreg" rel="me"><i class="fa fa-twitter nomargin"></i></a>
@@ -162,6 +164,7 @@
         <ul>
             <li><a href="http://www.webrankinfo.com/dossiers/webmastering/blocage-publicite-free">blocage de pub Google par Free</a> en mai 2013,
             <li><a href="http://arstechnica.com/tech-policy/2014/09/why-comcasts-javascript-ad-injections-threaten-security-net-neutrality/">ajout de pub par Comcast</a> en septembre 2014,
+<!-- devoxx simplification
             <li><a href="http://arstechnica.com/business/2015/08/atts-free-wi-fi-hotspot-injects-extra-ads-on-non-att-websites/">ajout de pub en échange de wifi gratuit</a><br/>
                 <span><small>(depuis 2009, des pubs malicieuses ont déjà été servies depuis
                     <a href="http://www.pcworld.com/article/2604480/malicious-advertising-hits-amazon-youtube-and-yahoo-cisco-says.html">Amazon</a>,
@@ -173,6 +176,7 @@
                     <a href="http://www.nextinpact.com/news/99079-de-grands-sites-ont-diffuse-ransomware-via-publicites-contaminees.htm">theweathernetwork</a>,
                     etc,
                 )</small>,</span>
+-->
         <li>ajout de cookie ou d’entêtes HTTP par <a href="https://www.eff.org/fr/deeplinks/2014/11/verizon-x-uidh">Verizon</a> en novembre 2014 <small>(<a href="https://www.nextinpact.com/news/98954-verizon-paiera-135-million-dollars-damende-pour-ses-cookies-zombies.htm">condammé en 2016</a>)</small>, <a href="http://www.bortzmeyer.org/enrichir-qui.html">Orange Jordanie, Vodafone Afrique du Sud</a>, mais aussi <a href="http://www.bortzmeyer.org/enrichir-qui.html">SFR &amp; Bouygues</a> en 2015.
         </ul>
     </div></section>
@@ -183,7 +187,7 @@
         <h2>Pour se protéger du <a href="https://citizenlab.org/2015/04/chinas-great-cannon/">Grand Canon Chinois</a></h2>
         <figure class="center">
             <img src="pictures/https_great_cannon.svg" class="svg" alt="grand canon"/>
-            <figcaption><p style="position:absolute; right: 60px; top: 550px;"><small>en avril 2015</small></p></figcaption>
+            <figcaption><p style="position:absolute; right: 60px; top: 550px;">en avril 2015</p></figcaption>
         </figure>
         <devoxx-footer></devoxx-footer>
     </div></section>
@@ -477,7 +481,7 @@
         </figure>
         <pre style="margin-top: 40px;">
             <code>[ cipherKey, hmacKey ] = deriveKeys(client.secret)</code>
-<!--
+<!-- devoxx simplification
             <code>// ms = masterSecret</code>
             <code>ms = <abbr title="pseudo random function">PRF</abbr>(client.preMasterSecret, client.random, server.random)</code>
             <code> </code>
@@ -500,7 +504,7 @@
             <span class="mark encrypted-message"   style="top: 209px; left: 482px; width: 158px;"></span>
         </figure>
         <pre style="margin-top: 40px;">
-<!--
+<!-- deoxx siplification
             <code>encryptRequest(message, clientCipherKey, clientHMACKey)</code>
             <code>decryptRequest(message, clientCipherKey, clientHMACKey)</code>
             <code>encryptResponse(message, serverCipherKey, serverHMACKey)</code>
@@ -605,7 +609,7 @@
             <span><strong>=</strong></span>
             <span>Certificat <abbr title="Domain Validation">DV</abbr> à jour</span>
         </p>
-        <figure class="next center"><a href="https://pbs.twimg.com/media/CdOW4eEW8AABgka.jpg" class="clear"><img src="pictures/letsencrypt-influence.jpg" alt="influence de letsencrypt" width="500"></a></figure>
+        <figure class="next center"><a href="https://letsencrypt.org/2016/04/12/leaving-beta-new-sponsors.html" class="clear"><img src="pictures/letsencrypt-certs.png" alt="Nombre de certificats issus par letsencrypt" width="500"></a></figure>
         <p class="next">
             <a href="https://letsencrypt.org/2015/10/29/phishing-and-malware.html">filtre</a> les domaines <small>(<a href="https://developers.google.com/safe-browsing/">Safe Browsing API</a>)</small>
             et soumission dans <a href="https://www.facebook.com/notes/protect-the-graph/early-impacts-of-certificate-transparency/1709731569266987/">Certificate Transparency</a>
@@ -618,9 +622,15 @@
         <h2>Révocation : <a href="https://www.fir3net.com/Security/Concepts-and-Terminology/certificate-revocation.html">CRL</a>, <a href="https://www.fir3net.com/Security/Concepts-and-Terminology/certificate-revocation.html">OCSP</a> et <a href="https://www.imperialviolet.org/2012/02/05/crlsets.html">Chrome</a> <a href="https://www.grc.com/revocation/crlsets.htm">CRLSet</a></h2>
         <dl>
             <dt class="next"><i class="fa fa-ban"></i>Certificate Revocation Lists (CRL) :
-            <dd class="next">Liste de n° de certificat invalide ; fichier potentiellement conséquent ; mis à jour tous les 7~14 jours ; confiance &quot;par défaut&quot;
+            <dd class="next">Liste de n° de certificat invalide ; fichier potentiellement conséquent ; mis à jour tous les 7~14 jours
+            <!-- devoxx simplification
+            ; confiance &quot;par défaut&quot;
+            -->
             <dt class="next"><i class="fa fa-ban"></i>Online Certificate Status Protocol (OCSP) :
-            <dd class="next">Requête par certificat ; confiance &quot;par défaut&quot;
+            <dd class="next">Requête par certificat
+            <!-- deoxx siplification
+            ; confiance &quot;par défaut&quot;
+            -->
             <dt class="next"><i class="fa fa-bolt"></i>OSCP Stampling :
             <dd class="next">Le serveur joint une preuve valable quelques minutes avec son certificat ; TLS 1.2 seulement
             <dt class="next"><i class="fa fa-ban"></i>Google Chrome CRLSet :
@@ -651,7 +661,7 @@
 		<h2><i class="fa fa-keyboard-o"></i> Attaques &laquo; faciles &raquo;</h2>
         <ul>
             <li>récupèrer les infos ailleurs <small>(chez l’hébergeur)</small>,
-            <li class="next">via une attaque <abbr title="Man in the middle">MITM</abbr> &laquo; <a href="https://en.wikipedia.org/wiki/Moxie_Marlinspike#SSL_stripping">SSLStrip</a> &raquo;, <small>par <a href="https://en.wikipedia.org/wiki/Moxie_Marlinspike">Moxie Marlinspike</a></small>, <small>(bonus : en affichant <i class="fa fa-lock nomargin"></i> comme favicon)</small>,
+            <li class="next">via une attaque <abbr title="Man in the middle">MITM</abbr> &laquo; <a href="https://en.wikipedia.org/wiki/Moxie_Marlinspike#SSL_stripping">SSLStrip</a> &raquo;, <small>par <a href="https://en.wikipedia.org/wiki/Moxie_Marlinspike">Moxie Marlinspike</a></small>,<br><small>(bonus : en affichant <i class="fa fa-lock nomargin"></i> comme favicon)</small>,
             <li class="next">via un <a href="https://fr.wikipedia.org/wiki/Enregistreur_de_frappe">enregistreur de frappe</a> <small>(keylogger)</small>,
             <li class="next">pour les gouvernements, demander la clé ou faire générer un certificat,
             <li class="next">installer une CA &laquo; maison &raquo; pour faire de l’interception légale <small>(recommandations de la <a href="http://www.cnil.fr/linstitution/actualite/article/article/analyse-de-flux-https-bonnes-pratiques-et-questions/">CNIL</a> et de l’<a href="http://www.ssi.gouv.fr/guide/recommandations-de-securite-concernant-lanalyse-des-flux-https/">ANSSI</a>)</small> ou illégale...
@@ -705,7 +715,11 @@
             <li class="next">en 2015 <i class="fa fa-optin-monster"></i> <a href="#freak">FREAK</a>: Factoring RSA EXPORT Attack Keys,
             <li class="next">en 2015 <i class="fa fa-level-down"></i> <a href="#logjam">Logjam</a>: sur Diffie-Hellman,
             <li class="next">en 2016 <i class="fa fa-tint"></i> <a href="#drown">DROWN</a>: via SSLv2,
-            <li class="next">sans parler de <a href="#collision">génération de certificats via des collisions</a> ou d’<a href="#attaques-pointues">attaques encore plus pointues</a>...
+            <li class="next">sans parler de <a href="#collision">génération de certificats via des collisions</a>
+            <!--
+            ou d’<a href="#attaques-pointues">attaques encore plus pointues</a>
+            -->
+            ...
         </ul>
         <devoxx-footer></devoxx-footer>
     </div></section>
@@ -737,10 +751,12 @@
             <li class="next">Contenu <strong>passif</strong> dégradant l’icône de sécurité : <code>&lt;img&gt;</code>, <code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code>
             <li class="next">Contenu <strong>actif</strong> bloqué : <code>&lt;script&gt;</code>, <code>&lt;link&gt;</code>, <code>&lt;iframe&gt;</code>, <code>&lt;object&gt;</code>, <code>XMLHttpRequest</code>, propriétés <code>CSS</code>
         </ul>
+        <!--
         <figure class="next center">
             <img src="pictures/dubious-as-neutral.png" alt="Chrome page security icon" width="400"/>
             <figcaption><a href="https://googleonlinesecurity.blogspot.com.au/2015/10/simplifying-page-security-icon-in-chrome.html">Simplifying page security icon in Chrome</a></figcaption>
         </figure>
+        -->
         <devoxx-footer></devoxx-footer>
     </div></section>
 
@@ -768,22 +784,6 @@
             <li class="next"><i class="fa fa-gift"></i> Pré-chargement dans les navigateurs : <a href="https://code.google.com/p/chromium/codesearch#chromium/src/net/http/transport_security_state_static.h&amp;cl=GROK&amp;gsn=GetDynamicDomainState">transport_security_state_static.h</a>,
             <li class="next"><i class="fa fa-flag-o"></i> <a href="https://developers.google.com/web/updates/2015/09/HPKP-reporting-with-chrome-46">Commencez par</a> : <code>Public-Key-Pins-Report-Only: report-uri</code>
             <li class="next"><i class="fa fa-exclamation-triangle"></i> <a href="https://noncombatant.org/2015/05/01/about-http-public-key-pinning/">Plus</a> <a href="https://timtaubert.de/blog/2014/10/http-public-key-pinning-explained/">compliqué</a> à mettre en place et plus risqué ; à reserver aux sites sensibles.
-        </ul>
-        <devoxx-footer></devoxx-footer>
-    </div></section>
-
-	<section id="subresource-integrity" class="slide"><div>
-        <slide-progression open="apres"></slide-progression>
-		<h2>Subresource integrity</h2>
-        <pre>
-            <code>&lt;script src="https://example.com/jquery.js"</code>
-            <code>        integrity="sha384-oqVuAfX542FR..."&gt;&lt;script&gt;</code>
-        </pre>
-        <ul class="icons">
-            <li><i class="fa fa-certificate"></i> Permet de valider cryptographiquement le contenu d’un &lt;script&gt; ou &lt;link&gt;,
-            <li class="next"><i class="fa fa-globe"></i> Intéressant pour les contenus hébérgés ailleurs (<abbr title="Content Delivery Network">CDN</abbr>),
-            <!--<li class="next"><i class="fa fa-firefox"></i><i class="fa fa-chrome"></i> Depuis <a href="https://hacks.mozilla.org/2015/09/subresource-integrity-in-firefox-43/">Firefox 43</a> et <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=355467">Chrome 45</a>,-->
-            <li class="next"><i class="fa fa-github"></i> Utilisé sur <a href="http://githubengineering.com/subresource-integrity/">github.com</a>.
         </ul>
         <devoxx-footer></devoxx-footer>
     </div></section>
@@ -1356,6 +1356,22 @@
             <li>en 2013, <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">Lucky13</a>, <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf"><abbr title="Timing Info-leak Made Easy">TIME</abbr></a> et attaques sur <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">RC4</a> (désactivé par Microsoft, Google et Mozilla en 2016),
             <li>en 2015, <a href="https://www.youtube.com/watch?v=hkw9tFnJk8k">Attaque sur <abbr title="Network Time Protocol">NTP</abbr></a> pour réinitialiser HSTS puis craquer de &laquo; vieux &raquo; certificats 512 bits.
         </ul>
+    </div></section>
+
+	<section id="subresource-integrity" class="slide"><div>
+        <slide-progression open="annexes"></slide-progression>
+		<h2>Subresource integrity</h2>
+        <pre>
+            <code>&lt;script src="https://example.com/jquery.js"</code>
+            <code>        integrity="sha384-oqVuAfX542FR..."&gt;&lt;script&gt;</code>
+        </pre>
+        <ul class="icons">
+            <li><i class="fa fa-certificate"></i> Permet de valider cryptographiquement le contenu d’un &lt;script&gt; ou &lt;link&gt;,
+            <li class="next"><i class="fa fa-globe"></i> Intéressant pour les contenus hébérgés ailleurs (<abbr title="Content Delivery Network">CDN</abbr>),
+            <!--<li class="next"><i class="fa fa-firefox"></i><i class="fa fa-chrome"></i> Depuis <a href="https://hacks.mozilla.org/2015/09/subresource-integrity-in-firefox-43/">Firefox 43</a> et <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=355467">Chrome 45</a>,-->
+            <li class="next"><i class="fa fa-github"></i> Utilisé sur <a href="http://githubengineering.com/subresource-integrity/">github.com</a>.
+        </ul>
+        <devoxx-footer></devoxx-footer>
     </div></section>
 
 	<section id="CSP" class="slide"><div>
