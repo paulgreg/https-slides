@@ -40,8 +40,7 @@
             <li><i class="fa fa-user nomargin"> </i>Grégory Paul
             <li><i class="fa fa-briefcase nomargin"></i> Développeur Web<br>
                 (<a href="https://twitter.com/search?q=%23javascript%20from%3Apaulgreg&src=typd">JavaScript</a>,
-                <a href="https://twitter.com/search?q=%23security%20from%3Apaulgreg&src=typd">sécurité</a>,
-                <a href="https://twitter.com/search?q=%23hack%20from%3Apaulgreg&src=typd">pi, arduino</a>)
+                <a href="https://twitter.com/search?q=%23security%20from%3Apaulgreg&src=typd">sécurité</a>)
             <li>
                 <a href="https://paulgreg.me/" rel="me">https://paulgreg.me</a>
                 <a href="https://twitter.com/paulgreg" rel="me"><i class="fa fa-twitter nomargin"></i></a>
@@ -187,7 +186,7 @@
         <h2>Pour se protéger du <a href="https://citizenlab.org/2015/04/chinas-great-cannon/">Grand Canon Chinois</a></h2>
         <figure class="center">
             <img src="pictures/https_great_cannon.svg" class="svg" alt="grand canon"/>
-            <figcaption><p style="position:absolute; right: 60px; top: 550px;">en avril 2015</p></figcaption>
+            <figcaption><p style="position:absolute; right: 60px; top: 550px; color: black;">en avril 2015</p></figcaption>
         </figure>
         <devoxx-footer></devoxx-footer>
     </div></section>
@@ -551,7 +550,7 @@
             <dt class="next"><i class="fa fa-building"></i>Organization validation
             <dd class="next">Vérification de l’identité du propriétaire (carte d’identité, SIRET, etc)
             <dt class="next"><i class="fa fa-star"></i>Extended validation
-            <dd class="next">Enquête sur le propriétaire (<a href="https://www.verisign.com/en_US/domain-names/web-presence/website-optimization/ssl-certificates/index.xhtml?loc=en_US#a7">vérification d’une précense physique, opérationnelle et juridique</a>), permet l’affichage du propriétaire dans la barre d’adresse : <img src="pictures/greenbar.png" alt="barre verte" />
+            <dd class="next">Enquête sur le propriétaire (<a href="https://www.verisign.com/en_US/domain-names/web-presence/website-optimization/ssl-certificates/index.xhtml?loc=en_US#a7">vérification d’une présence physique, opérationnelle et juridique</a>), permet l’affichage du propriétaire dans la barre d’adresse : <img src="pictures/greenbar.png" alt="barre verte" />
         </dl>
         <devoxx-footer></devoxx-footer>
     </div></section>
@@ -694,10 +693,11 @@
 	<section id="bugs" class="slide"><div>
         <slide-progression open="attaques"></slide-progression>
         <h2><i class="fa fa-bug"></i> Bugs</h2>
-        <a href="https://xkcd.com/221/" class="clear"><img src="pictures/random_number.png" alt="xkcd" /></a>
+        <a href="https://xkcd.com/221/" class="clear"><img class="xkcd-random" src="pictures/random_number.png" alt="xkcd" /></a>
         <ul>
             <li>2008 : <a href="https://www.schneier.com/blog/archives/2008/05/random_number_b.html">DSA-1571-1</a> : /dev/random sur Debian limité à 32768 valeurs,
-            <li class="next">2014 : <a href="http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2014-1266">CVE-2014-1266</a> : <a href="https://opensource.apple.com/source/Security/Security-55471/libsecurity_ssl/lib/sslKeyExchange.c?txt">goto fail</a> chez Apple,
+            <li class="next">2014 : <a href="http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2014-1266">CVE-2014-1266</a> : <a href="https://opensource.apple.com/source/Security/Security-55471/libsecurity_ssl/lib/sslKeyExchange.c?txt">goto fail</a>,
+            <a href="https://opensource.apple.com/source/Security/Security-55471/libsecurity_ssl/lib/sslKeyExchange.c" class="clear"><img class="gotofail" src="pictures/gotofail.png" alt="" /></a>
             <li class="next">2014 : <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0092">CVE-2014-0092</a> : <a href="https://www.gitorious.org/gnutls/gnutls/commit/6aa26f78150ccbdf0aec1878a41c17c41d358a3b">goto cleanup</a> sur GnuTLS,
             <li class="next">2015 : <a href="http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0160">CVE-2014-0160</a> : <i class="fa fa-heartbeat nomargin"></i> <a href="http://heartbleed.com/">heartbleed</a> : le serveur laisse fuiter quelques octets en RAM...
         </ul>
@@ -733,7 +733,7 @@
 	<section id="expiration" class="slide"><div>
         <slide-progression open="apres"></slide-progression>
 		<h2><i class="fa fa-calendar-times-o"></i> Pensez à renouveller vos certificats !</h2>
-        <p>Quelques fails :</p>
+        <p>Quelques échecs :</p>
         <ul class="icons">
             <li><i class="fa fa-windows"></i>  Microsoft <a href="http://www.techweekeurope.co.uk/workspace/microsoft-windows-azure-cloud-fails-over-expired-ssl-certificate-108444">Azure</a> (2013),
             <li><i class="fa fa-apple"></i> Mac <a href="http://betanews.com/2014/05/25/apples-ssl-fail-allows-certificate-to-expire-scares-os-x-users/">App Store</a> (2014),
