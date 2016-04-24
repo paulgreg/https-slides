@@ -99,7 +99,7 @@ header.caption                                      { color: white; }
 #type-certificats img                               { display: block; margin: 1em auto 0 auto; }
 #lets-encrypt h2 img                                { padding: .25em; }
 #doutes .portrait                                   { float: right; max-width: 100px; border: 1px solid black; }
-#pourquoi-attaquer-la-crypto p                      { margin: 2em 0; }
+#pourquoi-attaquer-la-crypto figure                 { margin: 2em 0; }
 #bugs img.xkcd-random                               { float: right; margin-top: -25px; }
 #bugs img.gotofail                                  { border: 1px solid black; display: inline-black; margin-top: 5px; }
 #qa p.link,

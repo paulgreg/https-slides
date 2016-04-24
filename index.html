@@ -148,6 +148,15 @@
         <devoxx-footer></devoxx-footer>
     </div></section>
 
+    <section id="vol-cookie" class="slide"><div>
+        <slide-progression open="pourquoi"></slide-progression>
+        <h2>Pour éviter de se faire voler ses cookies</h2>
+        <figure class="center">
+            <img src="pictures/firesheep.png" alt="Logiciel Firesheep" />
+            <figcaption><a href="http://codebutler.com/firesheep/">Firesheep</a> en octobre 2010</figcaption>
+        </figure>
+    </div></section>
+
     <section id="protection-fai-schema" class="slide"><div>
         <slide-progression open="pourquoi"></slide-progression>
         <h2>Pour se protéger des <abbr title="Fournisseurs d’Accès Internet">FAI</abbr> malveillants</h2>
@@ -163,7 +172,6 @@
         <ul>
             <li><a href="http://www.webrankinfo.com/dossiers/webmastering/blocage-publicite-free">blocage de pub Google par Free</a> en mai 2013,
             <li><a href="http://arstechnica.com/tech-policy/2014/09/why-comcasts-javascript-ad-injections-threaten-security-net-neutrality/">ajout de pub par Comcast</a> en septembre 2014,
-<!-- devoxx simplification
             <li><a href="http://arstechnica.com/business/2015/08/atts-free-wi-fi-hotspot-injects-extra-ads-on-non-att-websites/">ajout de pub en échange de wifi gratuit</a><br/>
                 <span><small>(depuis 2009, des pubs malicieuses ont déjà été servies depuis
                     <a href="http://www.pcworld.com/article/2604480/malicious-advertising-hits-amazon-youtube-and-yahoo-cisco-says.html">Amazon</a>,
@@ -175,11 +183,9 @@
                     <a href="http://www.nextinpact.com/news/99079-de-grands-sites-ont-diffuse-ransomware-via-publicites-contaminees.htm">theweathernetwork</a>,
                     etc,
                 )</small>,</span>
--->
         <li>ajout de cookie ou d’entêtes HTTP par <a href="https://www.eff.org/fr/deeplinks/2014/11/verizon-x-uidh">Verizon</a> en novembre 2014 <small>(<a href="https://www.nextinpact.com/news/98954-verizon-paiera-135-million-dollars-damende-pour-ses-cookies-zombies.htm">condammé en 2016</a>)</small>, <a href="http://www.bortzmeyer.org/enrichir-qui.html">Orange Jordanie, Vodafone Afrique du Sud</a>, mais aussi <a href="http://www.bortzmeyer.org/enrichir-qui.html">SFR &amp; Bouygues</a> en 2015.
         </ul>
     </div></section>
-
 
     <section id="grand-canon" class="slide"><div>
         <slide-progression open="pourquoi"></slide-progression>
@@ -199,6 +205,7 @@
             <ul class="inner next">
                 <li><code>fullscreen</code>,
                 <li><code>geolocation</code>,
+                <li><code>service worker</code>,
                 <li><code>device motion / orientation</code>,
                 <li><code>getUserMedia</code>,
                 <li><code>encrypted Media Extensions</code>, ...
@@ -216,6 +223,15 @@
         </figure>
         <devoxx-footer></devoxx-footer>
     </div></section>
+
+	<section id="droit-vie-prive" class="slide"><div>
+        <slide-progression open="pourquoi"></slide-progression>
+		<h2>Pour respecter la vie privée de vos utilisateurs</h2>
+        <figure>
+            <blockquote><p>Dire que vous vous n'en avez rien à faire de la vie privée parce que vous n'avez rien à cacher, c'est comme dire que vous n'en avez rien à faire de la liberté d'expression parce que vous n'avez rien à dire.</p></blockquote>
+            <figcaption>Edward Snowden : <a href="https://www.youtube.com/watch?v=bpO3GeXTceM">about Privacy</a></figcaption>
+        </figure>
+	</div></section>
 
 	<section id="convaincu" class="slide tell"><div>
         <slide-progression open="pourquoi"></slide-progression>
@@ -388,7 +404,7 @@
             <img src="pictures/handshake/1-client-hello.png" alt="wireshark : client hello" />
             <span class="mark hello"   style="top: 181px; left: 570px; width: 60px;"></span>
             <span class="mark version" style="top: 214px; left: 522px; width: 40px;"></span>
-            <!--span class="mark random"  style="top: 246px; left: 488px; width: 55px;"></span-->
+            <span class="mark random"  style="top: 246px; left: 488px; width: 55px;"></span>
             <span class="mark session" style="top: 258px; left: 482px; width: 50px;"></span>
             <span class="mark suites"  style="top: 281px; left: 482px; width: 65px;"></span>
             <span class="mark sni"     style="top: 551px; left: 488px; width: 105px;"></span>
@@ -412,7 +428,7 @@
             <img src="pictures/handshake/2-server-hello.png" alt="server hello" />
             <span class="mark hello"   style="top: 205px; left: 596px; width: 74px;"></span>
             <span class="mark version" style="top: 246px; left: 538px; width: 48px;"></span>
-            <!--span class="mark random"  style="top: 288px; left: 496px; width: 70px;"></span-->
+            <span class="mark random"  style="top: 288px; left: 496px; width: 70px;"></span>
             <span class="mark session" style="top: 315px; left: 488px; width: 60px;"></span>
             <span class="mark suite"   style="top: 328px; left: 488px; width: 72px;"></span>
         </figure>
@@ -452,8 +468,8 @@
                 <img src="pictures/handshake/5-handshake.png" alt="handshake : key exchange" />
                 <p class="legend asymetric">chiffrement asymétrique</p>
                 <pre style="margin-top: 80px;">
-                    <code>secret = random()</code>
-                    <code>encrypt(certicate.publicKey, secret)</code>
+                    <code>preMasterSecret = random()</code>
+                    <code>encrypt(certicate.publicKey, preMasterSecret)</code>
                 </pre>
             </figcaption>
             <img src="pictures/handshake/5-key-exchange.png" alt="key exchange">
@@ -477,14 +493,11 @@
             <span class="mark encrypted-message"   style="top: 222px; left: 724px; width: 170px;"></span>
         </figure>
         <pre style="margin-top: 40px;">
-            <code>[ cipherKey, hmacKey ] = deriveKeys(client.secret)</code>
-<!-- devoxx simplification
-            <code>// ms = masterSecret</code>
             <code>ms = <abbr title="pseudo random function">PRF</abbr>(client.preMasterSecret, client.random, server.random)</code>
+            <code>// ms = masterSecret</code>
             <code> </code>
             <code>[ clientCipherKey, serverCipherKey ] = extractCipherKeys(ms)</code>
             <code>[ clientHMACKey, serverHMACKey ] = extractHMACKeys(ms)</code>
--->
         </pre>
         <devoxx-footer></devoxx-footer>
 	</div></section>
@@ -501,19 +514,103 @@
             <span class="mark encrypted-message"   style="top: 209px; left: 482px; width: 158px;"></span>
         </figure>
         <pre style="margin-top: 40px;">
-<!-- deoxx siplification
-            <code>encryptRequest(message, clientCipherKey, clientHMACKey)</code>
-            <code>decryptRequest(message, clientCipherKey, clientHMACKey)</code>
-            <code>encryptResponse(message, serverCipherKey, serverHMACKey)</code>
-            <code>decryptResponse(message, serverCipherKey, serverHMACKey)</code>
--->
-            <code>encrypt( request,  cipherKey, hmacKey) // client</code>
-            <code>decrypt( request,  cipherKey, hmacKey) // server </code>
-            <code>encrypt( response, cipherKey, hmacKey) // server</code>
-            <code>decrypt( response, cipherKey, hmacKey) // client</code>
+            <code>encrypt(request, clientCipherKey, clientHMACKey) // client</code>
+            <code>decrypt(request, clientCipherKey, clientHMACKey) // server</code>
+            <code>encrypt(response, serverCipherKey, serverHMACKey) // server</code>
+            <code>decrypt(response, serverCipherKey, serverHMACKey) // client</code>
         </pre>
         <devoxx-footer></devoxx-footer>
 	</div></section>
+
+	<section id="cipher-suites" class="slide"><div>
+        <slide-progression open="handshake"></slide-progression>
+        <h2>Suites de chiffrement <small>(<a href="https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#tls-parameters-4">cipher suites</a>)</small></h2>
+        <p>Échange de clé, authentication <small>(asymétrique)</small>, chiffrement <small>(symétrique)</small>, MAC/HMAC</p>
+        <ul class="small">
+            <li><abbr title="Elliptic Curve Ephemeral Diffie-Hellman">ECDHE</abbr>-<abbr title="du nom des créateurs : Ronald Rivest, Adi Shamir et Leonard Adleman">RSA</abbr>-<abbr title="Advanced Encryption Standard">AES</abbr>256-<abbr title="Galois/Counter Mode">GCM</abbr>-<abbr title="Secure Hash Algorithm">SHA</abbr>384
+            <li>ECDHE-<abbr title="Elliptic Curve Digital Signature Algorithm">ECDSA</abbr>-AES256-GCM-SHA384
+            <li>ECDHE-RSA-AES256-SHA384
+            <li>ECDHE-ECDSA-AES256-SHA384
+            <li>ECDHE-RSA-AES256-SHA
+            <li>ECDHE-ECDSA-AES256-SHA
+            <li><abbr title="Secure Remote Password">SRP</abbr>-<abbr title="Digital Signature Standard">DSS</abbr>-AES-256-<abbr title="Cipher Block Chaining">CBC</abbr>-SHA
+            <li>SRP-RSA-AES-256-CBC-SHA
+            <li>SRP-AES-256-CBC-SHA
+            <li><abbr title="Ephemeral Diffie-Hellman">DHE</abbr>-DSS-AES256-GCM-SHA384
+            <li>DHE-RSA-AES256-GCM-SHA384
+            <li>DHE-RSA-AES256-SHA256
+            <li>DHE-DSS-AES256-SHA256
+            <li>DHE-RSA-AES256-SHA
+            <li>DHE-DSS-AES256-SHA
+            <li>DHE-RSA-CAMELLIA256-SHA
+            <li>DHE-DSS-CAMELLIA256-SHA
+            <li>ECDH-RSA-AES256-GCM-SHA384
+            <li>ECDH-ECDSA-AES256-GCM-SHA384
+            <li>ECDH-RSA-AES256-SHA384
+            <li>ECDH-ECDSA-AES256-SHA384
+            <li>ECDH-RSA-AES256-SHA
+            <li>ECDH-ECDSA-AES256-SHA
+            <li>AES256-GCM-SHA384
+            <li>AES256-SHA256
+            <li>AES256-SHA
+            <li>CAMELLIA256-SHA
+            <li><abbr title="Pre-shared key">PSK</abbr>-AES256-CBC-SHA
+            <li>ECDHE-RSA-<abbr title="Data Encryption Standard">DES</abbr>-CBC3-SHA
+            <li>ECDHE-ECDSA-DES-CBC3-SHA
+            <li>SRP-DSS-3DES-EDE-CBC-SHA
+            <li>SRP-RSA-3DES-EDE-CBC-SHA
+            <li>SRP-3DES-EDE-CBC-SHA
+            <li>EDH-RSA-DES-CBC3-SHA
+            <li>EDH-DSS-DES-CBC3-SHA
+            <li>ECDH-RSA-DES-CBC3-SHA
+            <li>ECDH-ECDSA-DES-CBC3-SHA
+            <li>DES-CBC3-SHA
+            <li>PSK-3DES-EDE-CBC-SHA
+            <li>ECDHE-RSA-AES128-GCM-SHA256
+            <li>ECDHE-ECDSA-AES128-GCM-SHA256
+            <li>ECDHE-RSA-AES128-SHA256
+            <li>ECDHE-ECDSA-AES128-SHA256
+            <li>ECDHE-RSA-AES128-SHA
+            <li>ECDHE-ECDSA-AES128-SHA
+            <li>SRP-DSS-AES-128-CBC-SHA
+            <li>SRP-RSA-AES-128-CBC-SHA
+            <li>SRP-AES-128-CBC-SHA
+            <li>DHE-DSS-AES128-GCM-SHA256
+            <li>DHE-RSA-AES128-GCM-SHA256
+            <li>DHE-RSA-AES128-SHA256
+            <li>DHE-DSS-AES128-SHA256
+            <li>DHE-RSA-AES128-SHA
+            <li>DHE-DSS-AES128-SHA
+            <li>DHE-RSA-SEED-SHA
+            <li>DHE-DSS-SEED-SHA
+            <li>DHE-RSA-CAMELLIA128-SHA
+            <li>DHE-DSS-CAMELLIA128-SHA
+            <li>ECDH-RSA-AES128-GCM-SHA256
+            <li>ECDH-ECDSA-AES128-GCM-SHA256
+            <li>ECDH-RSA-AES128-SHA256
+            <li>ECDH-ECDSA-AES128-SHA256
+            <li>ECDH-RSA-AES128-SHA
+            <li>ECDH-ECDSA-AES128-SHA
+            <li>AES128-GCM-SHA256
+            <li>AES128-SHA256
+            <li>AES128-SHA
+            <li>SEED-SHA
+            <li>CAMELLIA128-SHA
+            <li>PSK-AES128-CBC-SHA
+            <li>ECDHE-RSA-<abbr title="Rivest Cipher 4">RC4</abbr>-SHA
+            <li>ECDHE-ECDSA-RC4-SHA
+            <li>ECDH-RSA-RC4-SHA
+            <li>ECDH-ECDSA-RC4-SHA
+            <li>RC4-SHA
+            <li>RC4-MD5
+            <li>PSK-RC4-SHA
+            <li>EDH-RSA-DES-CBC-SHA
+            <li>EDH-DSS-DES-CBC-SHA
+            <li>DES-CBC-SHA
+            <li>etc.
+        </ul>
+	</div></section>
+
 
 	<section id="pfs" class="slide"><div>
         <slide-progression open="handshake"></slide-progression>
@@ -539,20 +636,47 @@
         <devoxx-footer></devoxx-footer>
 	</div></section>
 
-	<section id="type-certificats" class="slide"><div>
+	<section id="certificat-x509" class="slide"><div>
         <slide-progression open="authentification"></slide-progression>
-		<h2>Domain, Organization et Extended Validation</h2>
-        <dl>
-            <dt><i class="fa fa-certificate"></i>Domain validation
-            <dd>Simple vérification sur l’appartenance du domaine
-            <dt class="next"><i class="fa fa-building"></i>Organization validation
-            <dd class="next">Vérification de l’identité du propriétaire (carte d’identité, SIRET, etc)
-            <dt class="next"><i class="fa fa-star"></i>Extended validation
-            <dd class="next">Enquête sur le propriétaire (<a href="https://www.verisign.com/en_US/domain-names/web-presence/website-optimization/ssl-certificates/index.xhtml?loc=en_US#a7">vérification d’une présence physique, opérationnelle et juridique</a>), permet l’affichage du propriétaire dans la barre d’adresse : <img src="pictures/greenbar.png" alt="barre verte" />
-        </dl>
-        <devoxx-footer></devoxx-footer>
-    </div></section>
-
+        <h2>Un certificat <a href="https://openssl.org/docs/manmaster/apps/x509v3_config.html">X.509</a></h2>
+        <pre class="small">
+            <code>$ openssl x509 -in <a href="https://www.gandi.net/static/CAs/GandiStandardSSLCA2.pem">GandiStandardSSLCA2.pem</a> -inform pem -noout -text</code>
+            <code>Certificate:</code>
+            <code>Data:</code>
+            <code>    <strong>Version</strong>: 3 (0x2)</code>
+            <code>    <strong>Serial Number</strong>: 05:e4:dc:3b:94:38:ab:3b:85:97:cb:a6:a1:98:50:e3</code>
+            <code><strong>Signature Algorithm</strong>: sha384WithRSAEncryption</code>
+            <code>    <strong>Issuer</strong>: C=US, ST=New Jersey, L=Jersey City, O=The USERTRUST Network, CN=USERTrust RSA Certification Authority</code>
+            <code>    <strong>Validity</strong> Not Before: Sep 12 00:00:00 2014 GMT   Not After : Sep 11 23:59:59 2024 GMT</code>
+            <code>    <strong>Subject</strong>: C=FR, ST=Paris, L=Paris, O=Gandi, CN=Gandi Standard SSL CA 2</code>
+            <code>    Subject Public Key Info:</code>
+            <code>        <strong>Public Key Algorithm</strong>: rsaEncryption</code>
+            <code>            <strong>Public-Key</strong>: (2048 bit)</code>
+            <code>            <strong>Modulus</strong>: 00:94:04:2d:a6:79:95:74:ff:d5:00:3c:f5:ae:d8:...</code>
+            <code>            <strong>Exponent</strong>: 65537 (0x10001)</code>
+            <code>    X509v3 <strong>extensions</strong>:</code>
+            <code>        X509v3 <strong>Authority Key Identifier</strong>:</code>
+            <code>            keyid:53:79:BF:5A:AA:2B:4A:CF:54:80:E1:D8:9B:C0:9D:F2:B2:03:66:CB</code>
+            <code>        X509v3 <strong>Subject Key Identifier</strong>:</code>
+            <code>            B3:90:A7:D8:C9:AF:4E:CD:61:3C:9F:7C:AD:5D:7F:41:FD:69:30:EA</code>
+            <code>        X509v3 <strong>Key Usage</strong>: critical</code>
+            <code>            <strong>Digital Signature, Certificate Sign, CRL Sign</strong></code>
+            <code>        X509v3 Basic Constraints: critical</code>
+            <code>            <strong>CA:TRUE</strong>, pathlen:0</code>
+            <code>        X509v3 <strong>Extended Key Usage</strong>:</code>
+            <code>            TLS Web Server Authentication, TLS Web Client Authentication</code>
+            <code>        X509v3 Certificate Policies:</code>
+            <code>            Policy: 1.3.6.1.4.1.6449.1.2.2.26</code>
+            <code>            Policy: 2.23.140.1.2.1</code>
+            <code>        X509v3 <strong>CRL Distribution Points</strong>:</code>
+            <code>            Full Name: URI:http://crl.usertrust.com/USERTrustRSACertificationAuthority.crl</code>
+            <code>        Authority Information Access:</code>
+            <code>            CA Issuers - URI:http://crt.usertrust.com/USERTrustRSAAddTrustCA.crt</code>
+            <code>            <strong>OCSP</strong> - URI:http://ocsp.usertrust.com</code>
+            <code><strong>Signature Algorithm</strong>: sha384WithRSAEncryption</code>
+            <code>     58:67:fd:72:b2:6a:d7:7c:61:96:19:7e:d9:43:46:d1:26:7d:...</code>
+        </pre>
+	</div></section>
 
 	<section id="ca" class="slide"><div>
         <slide-progression open="authentification"></slide-progression>
@@ -574,6 +698,32 @@
                 </dl>
             </figcaption>
         </figure>
+        <devoxx-footer></devoxx-footer>
+    </div></section>
+
+	<section id="ca-breach" class="slide"><div>
+        <slide-progression open="authentification"></slide-progression>
+        <h2><i class="fa fa-exclamation-triangle"></i> La vie des CA n’est pas un long fleuve tranquille...</h2>
+        <ul>
+            <li>en 2011, <a href="https://www.comodo.com/Comodo-Fraud-Incident-2011-03-23.html">Comodo</a> signe 9 certificats incluant  mail.google.com, login.yahoo.com, login.skype.com, addons.mozilla.org, login.live.com,
+            <li>en 2011, <a href="https://www.vasco.com/company/about_vasco/press_room/news_archive/2011/news_diginotar_reports_security_incident.aspx">Diginotar</a> signe des certificats utilisés pour intercepter le traffic gmail en Iran ; l’entreprise <a href="https://www.vasco.com/company/about_vasco/press_room/news_archive/2011/news_vasco_announces_bankruptcy_filing_by_diginotar_bv.aspx">ferme</a> quelques jours après,
+            <li>en 2013, l’<a href="http://googleonlinesecurity.blogspot.fr/2013/12/further-improving-digital-certificate.html">ANSSI</a> génère des certificats pour des domaines de google ; ils sont détectés aussitôt par Chrome,
+            <li>en 2015, <a href="https://googleonlinesecurity.blogspot.sg/2015/03/maintaining-digital-certificate-security.html">Google</a> exclue les certificats signés par l’AC Chinoise <a href="https://en.wikipedia.org/wiki/China_Internet_Network_Information_Center">CNNIC</a> car ils ont signé des certificats Google, le <a href="http://www1.cnnic.cn/AU/MediaC/Announcement/201504/t20150402_52049.htm">CNNIC répond</a>,
+            <li>en 2015, Symantec <a href="http://www.symantec.com/connect/blogs/tough-day-leaders">annonce une fuite de quelques certificats</a>,
+                Google <a href="https://googleonlinesecurity.blogspot.fr/2015/10/sustaining-digital-certificate-security.html">en découvre 2522</a> et leur impose Certificate Transparency.
+        </ul>
+    </div></section>
+	<section id="type-certificats" class="slide"><div>
+        <slide-progression open="authentification"></slide-progression>
+		<h2>Domain, Organization et Extended Validation</h2>
+        <dl>
+            <dt><i class="fa fa-certificate"></i>Domain validation
+            <dd>Simple vérification sur l’appartenance du domaine
+            <dt class="next"><i class="fa fa-building"></i>Organization validation
+            <dd class="next">Vérification de l’identité du propriétaire (carte d’identité, SIRET, etc)
+            <dt class="next"><i class="fa fa-star"></i>Extended validation
+            <dd class="next">Enquête sur le propriétaire (<a href="https://www.verisign.com/en_US/domain-names/web-presence/website-optimization/ssl-certificates/index.xhtml?loc=en_US#a7">vérification d’une présence physique, opérationnelle et juridique</a>), permet l’affichage du propriétaire dans la barre d’adresse : <img src="pictures/greenbar.png" alt="barre verte" />
+        </dl>
         <devoxx-footer></devoxx-footer>
     </div></section>
 
@@ -619,15 +769,9 @@
         <h2>Révocation : <a href="https://www.fir3net.com/Security/Concepts-and-Terminology/certificate-revocation.html">CRL</a>, <a href="https://www.fir3net.com/Security/Concepts-and-Terminology/certificate-revocation.html">OCSP</a> et <a href="https://www.imperialviolet.org/2012/02/05/crlsets.html">Chrome</a> <a href="https://www.grc.com/revocation/crlsets.htm">CRLSet</a></h2>
         <dl>
             <dt class="next"><i class="fa fa-ban"></i>Certificate Revocation Lists (CRL) :
-            <dd class="next">Liste de n° de certificat invalide ; fichier potentiellement conséquent ; mis à jour tous les 7~14 jours
-            <!-- devoxx simplification
-            ; confiance &quot;par défaut&quot;
-            -->
+            <dd class="next">Liste de n° de certificat invalide ; fichier potentiellement conséquent ; mis à jour tous les 7~14 jours ; confiance &quot;par défaut&quot;
             <dt class="next"><i class="fa fa-ban"></i>Online Certificate Status Protocol (OCSP) :
-            <dd class="next">Requête par certificat
-            <!-- deoxx siplification
-            ; confiance &quot;par défaut&quot;
-            -->
+            <dd class="next">Requête par certificat ; confiance &quot;par défaut&quot;
             <dt class="next"><i class="fa fa-bolt"></i>OSCP Stampling :
             <dd class="next">Le serveur joint une preuve valable quelques minutes avec son certificat ; TLS 1.2 seulement
             <dt class="next"><i class="fa fa-ban"></i>Google Chrome CRLSet :
@@ -642,11 +786,73 @@
         <devoxx-footer></devoxx-footer>
 	</div></section>
 
+	<section id="doutes" class="slide"><div>
+        <slide-progression open="attaques"></slide-progression>
+		<h2>Le chiffrement, c’est solide ?</h2>
+        <figure>
+            <img src="pictures/Schneier.jpg" alt="Bruce Scheier" class="portrait" />
+            <blockquote><p>Can the NSA break AES? My guess is that they can't.</p></blockquote>
+            <blockquote><p>Still, I trust the mathematics.</p></blockquote>
+            <figcaption>Bruce Schneier : <a href="https://www.schneier.com/blog/archives/2012/03/can_the_nsa_bre.html">Can the NSA Break AES?</a>, <a href="https://www.schneier.com/blog/archives/2013/09/the_nsas_crypto_1.html">The NSA's Cryptographic Capabilities</a></figcaption>
+        </figure>
+        <figure>
+            <img src="pictures/Snowden.jpeg" alt="Edward Snowden" class="portrait" />
+            <blockquote><p>Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on. Unfortunately, endpoint security is so terrifically weak that NSA can frequently find ways around it.</p></blockquote>
+            <figcaption>Edward Snowden : <a href="http://techcrunch.com/2013/06/17/encrypting-your-email-works-says-nsa-whistleblower-edward-snowden/">Encrypting Your Email Works</a></figcaption>
+        </figure>
+    </div></section>
+
+	<section id="force-brute" class="slide"><div>
+        <slide-progression open="attaques"></slide-progression>
+        <h2><i class="fa fa-server"></i> Pure <a href="https://fr.wikipedia.org/wiki/Attaque_par_force_brute">force brute</a> ?</h2>
+        <table>
+            <tr>
+                <th>type
+                <th>algo
+                <th>crack
+                <th>et aujourd’hui ?
+            <tr class="broken">
+                <td><i class="fa fa-key" style="color: blue;"></i><i class="fa fa-key" style="color: orange"></i>
+                <td>RSA 512
+                <td><a href="https://en.wikipedia.org/wiki/RSA_numbers#RSA-155">1999</a>
+                <td>entre <a href="https://eprint.iacr.org/2015/1000.pdf">7 heures</a> et <a href="https://www.youtube.com/watch?v=hkw9tFnJk8k">2,5 jours</a> via <a href="https://aws.amazon.com/fr/ec2/">EC2</a>
+            <tr class="broken">
+                <td><i class="fa fa-key" style="color: blue;"></i><i class="fa fa-key" style="color: orange"></i>
+                <td>RSA 768
+                <td><a href="https://en.wikipedia.org/wiki/RSA_numbers#RSA-768">2009</a>
+                <td>
+            <tr class="unsecure">
+                <td><i class="fa fa-key" style="color: blue;"></i><i class="fa fa-key" style="color: orange"></i>
+                <td>RSA 1024
+                <td>
+                    <td><a href="http://cr.yp.to/talks/2012.12.28/slides.pdf">1 an via Conficker</a> <small>(<a href="https://en.wikipedia.org/wiki/Conficker">9~15M PC</a>, <a href="https://en.wikipedia.org/wiki/RSA_numbers#RSA-1024">100 000 $ à la clé</a>)</small>
+            <tr class="safe">
+                <td><i class="fa fa-key" style="color: blue;"></i><i class="fa fa-key" style="color: orange"></i>
+                <td>RSA 2048
+                <td>
+                <td><a href="https://www.digicert.com/TimeTravel/math.htm">2<sup>32</sup> plus</a> <small>(<a href="https://en.wikipedia.org/wiki/RSA_numbers#RSA-2048">200 000 $ à la clé</a>)</small>
+            <tr class="broken">
+                <td><i class="fa fa-key" style="color: green;"></i>
+                <td>DES 56
+                <td><a href="http://cs-exhibitions.uni-klu.ac.at/index.php?id=263">1997</a>
+                <td><a href="https://en.wikipedia.org/wiki/Data_Encryption_Standard#Brute_force_attack">&lt; 24 heures</a>
+            <tr class="safe">
+                <td><i class="fa fa-key" style="color: green;"></i>
+                <td>AES 128
+                <td> <small>(2304 bits)</small>
+                <td><a href="https://blog.cloudflare.com/why-are-some-keys-small/">avec 1 000 000 000 PC, 660 x l’age de l’univers</a>
+            <tr class="safe">
+                <td><i class="fa fa-key" style="color: green;"></i>
+                <td>AES 256
+                <td>
+                <td><a href="https://crypto.stackexchange.com/questions/1145/how-much-would-it-cost-in-u-s-dollars-to-brute-force-a-256-bit-key-in-a-year">8 octodecillion $</a> <small>(ou 10<sup>44</sup> le PIB mondial)</small>
+        </table>
+    </div></section>
+
 	<section id="pourquoi-attaquer-la-crypto" class="slide"><div>
         <slide-progression open="attaques"></slide-progression>
         <h2><i class="fa fa-wrench"></i> S’attaquer à la cryptographie ?</h2>
-        <p>La cryptographie est <a href="#force-brute">solide</a> selon <a href="#doutes">Bruce Schneier &amp; Edward Snowden</a>.
-        <figure class="center next">
+        <figure class="center">
             <a href="https://xkcd.com/538/" class="clear"><img src="pictures/security.png" alt="xkcd" /></a>
             <figcaption>Pourquoi s’attaquer à la cryptographie alors qu’il existe d’autres moyens ?</figcaption>
         </figure>
@@ -676,7 +882,6 @@
         </figure>
         <devoxx-footer></devoxx-footer>
     </div></section>
-
 
 	<section id="interception-https" class="slide"><div>
         <slide-progression open="attaques"></slide-progression>
@@ -712,14 +917,35 @@
             <li class="next">en 2014 <i class="fa fa-level-down"></i> <a href="#poodle">POODLE</a>: Padding Oracle On Downgraded Legacy Encryption,
             <li class="next">en 2015 <i class="fa fa-optin-monster"></i> <a href="#freak">FREAK</a>: Factoring RSA EXPORT Attack Keys,
             <li class="next">en 2015 <i class="fa fa-level-down"></i> <a href="#logjam">Logjam</a>: sur Diffie-Hellman,
-            <li class="next">en 2016 <i class="fa fa-tint"></i> <a href="#drown">DROWN</a>: via SSLv2,
-            <li class="next">sans parler de <a href="#collision">génération de certificats via des collisions</a>
-            <!--
-            ou d’<a href="#attaques-pointues">attaques encore plus pointues</a>
-            -->
-            ...
+            <li class="next">en 2016 <i class="fa fa-tint"></i> <a href="#drown">DROWN</a>: via SSLv2.
         </ul>
         <devoxx-footer></devoxx-footer>
+    </div></section>
+
+	<section id="collision" class="slide"><div>
+        <slide-progression open="attaques"></slide-progression>
+		<h2><i class="fa fa-user-secret"></i> Générer des faux certificats</h2>
+        <ul>
+            <li>avec les collisions : on joue sur le contenu pour que la signature corresponde,
+            <li>en 2008 avec <a href="https://www.win.tue.nl/hashclash/rogue-ca/">MD5</a>,
+            <li>en 2015, &laquo; <a href="https://sites.google.com/site/itstheshappening/">The SHAppening</a> &raquo; : collision sur une partie de SHA1 (compression) ; on estime une <a href="https://www.schneier.com/blog/archives/2012/10/when_will_we_se.html">attaque possible pour 700 000 $</a>,
+            <li>d’abord <a href="http://googleonlinesecurity.blogspot.fr/2014/09/gradually-sunsetting-sha-1.html">Google</a>,
+                puis <a href="http://blogs.windows.com/msedgedev/2015/11/04/sha-1-deprecation-update/">Microsoft</a>
+                et <a href="https://blog.mozilla.org/security/2014/09/23/phasing-out-certificates-with-sha-1-based-signature-algorithms/">Mozilla</a>
+                <a href="https://blog.filippo.io/the-unofficial-chrome-sha1-faq/">bloquent</a> les certificats et CA signés avec SHA1 en 2016.
+        </ul>
+    </div></section>
+
+	<section id="attaques-pointues" class="slide"><div>
+        <slide-progression open="attaques"></slide-progression>
+        <h2><i class="fa fa-fighter-jet"></i> Quelques autres attaques</h2>
+        <ul>
+            <li>en 2010, analyse de la <a href="http://www.infosecurity-magazine.com/news/researchers-crack-rsa-encryption-via-power-supply/">consommation électrique</a> d’un ordinateur pour retrouver une clé privée (canal auxiliaire ou &laquo; side channel &raquo;),
+            <li>en 2013, analyse du <a href="http://www.forbes.com/sites/timworstall/2013/12/21/researchers-break-rsa-4096-encryption-with-just-a-microphone-and-a-couple-of-emails/">bruit des composants</a> pour la retrouver,
+            <li>en 2013, <a href="http://blog.cryptographyengineering.com/2013/09/the-many-flaws-of-dualecdrbg.html">Dual_EC_DRBG</a> par RSA Security avec une porte dérobé pour la NSA,
+            <li>en 2013, <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">Lucky13</a>, <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf"><abbr title="Timing Info-leak Made Easy">TIME</abbr></a> et attaques sur <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">RC4</a> (désactivé par Microsoft, Google et Mozilla en 2016),
+            <li>en 2015, <a href="https://www.youtube.com/watch?v=hkw9tFnJk8k">Attaque sur <abbr title="Network Time Protocol">NTP</abbr></a> pour réinitialiser HSTS puis craquer de &laquo; vieux &raquo; certificats 512 bits.
+        </ul>
     </div></section>
 
 	<section id="apres-HTTPS" class="slide shout"><div>
@@ -749,12 +975,10 @@
             <li class="next">Contenu <strong>passif</strong> dégradant l’icône de sécurité : <code>&lt;img&gt;</code>, <code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code>
             <li class="next">Contenu <strong>actif</strong> bloqué : <code>&lt;script&gt;</code>, <code>&lt;link&gt;</code>, <code>&lt;iframe&gt;</code>, <code>&lt;object&gt;</code>, <code>XMLHttpRequest</code>, propriétés <code>CSS</code>
         </ul>
-        <!--
         <figure class="next center">
             <img src="pictures/dubious-as-neutral.png" alt="Chrome page security icon" width="400"/>
             <figcaption><a href="https://googleonlinesecurity.blogspot.com.au/2015/10/simplifying-page-security-icon-in-chrome.html">Simplifying page security icon in Chrome</a></figcaption>
         </figure>
-        -->
         <devoxx-footer></devoxx-footer>
     </div></section>
 
@@ -782,6 +1006,40 @@
             <li class="next"><i class="fa fa-gift"></i> Pré-chargement dans les navigateurs : <a href="https://code.google.com/p/chromium/codesearch#chromium/src/net/http/transport_security_state_static.h&amp;cl=GROK&amp;gsn=GetDynamicDomainState">transport_security_state_static.h</a>,
             <li class="next"><i class="fa fa-flag-o"></i> <a href="https://developers.google.com/web/updates/2015/09/HPKP-reporting-with-chrome-46">Commencez par</a> : <code>Public-Key-Pins-Report-Only: report-uri</code>
             <li class="next"><i class="fa fa-exclamation-triangle"></i> <a href="https://noncombatant.org/2015/05/01/about-http-public-key-pinning/">Plus</a> <a href="https://timtaubert.de/blog/2014/10/http-public-key-pinning-explained/">compliqué</a> à mettre en place et plus risqué ; à reserver aux sites sensibles.
+        </ul>
+        <devoxx-footer></devoxx-footer>
+    </div></section>
+
+	<section id="subresource-integrity" class="slide"><div>
+        <slide-progression open="apres"></slide-progression>
+		<h2>Subresource integrity</h2>
+        <pre>
+            <code>&lt;script src="https://example.com/jquery.js"</code>
+            <code>        integrity="sha384-oqVuAfX542FR..."&gt;&lt;script&gt;</code>
+        </pre>
+        <ul class="icons">
+            <li><i class="fa fa-certificate"></i> Permet de valider cryptographiquement le contenu d’un &lt;script&gt; ou &lt;link&gt;,
+            <li class="next"><i class="fa fa-globe"></i> Intéressant pour les contenus hébérgés ailleurs (<abbr title="Content Delivery Network">CDN</abbr>),
+            <li class="next"><i class="fa fa-firefox"></i><i class="fa fa-chrome"></i> Depuis <a href="https://hacks.mozilla.org/2015/09/subresource-integrity-in-firefox-43/">Firefox 43</a> et <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=355467">Chrome 45</a>,
+            <li class="next"><i class="fa fa-github"></i> Utilisé sur <a href="http://githubengineering.com/subresource-integrity/">github.com</a>.
+        </ul>
+        <devoxx-footer></devoxx-footer>
+    </div></section>
+
+	<section id="CSP" class="slide"><div>
+        <slide-progression open="apres"></slide-progression>
+        <h2><a href="https://diogomonica.com/2015/12/30/deep-into-csp/">CSP</a> : Content Security Policy</h2>
+        <pre>
+            <code>Content-Security-Policy:default-src 'none';</code>
+            <code>     script-src 'self'; style-src 'self';</code>
+            <code>     upgrade-insecure-requests; block-all-mixed-content;</code>
+       </pre>
+        <ul class="icons">
+            <li><i class="fa fa-thumb-tack"></i> Entête HTTP apportant des restrictions sur les types de contenu attendus et leur provenances,
+            <li><i class="fa fa-ban"></i> Système de liste blanche <small>(ce qui n’est pas listé est bloqué)</small>,
+            <li><i class="fa fa-bomb"></i> Très puissant car permet d’éviter des injections de code,
+            <li><i class="fa fa-exclamation-triangle"></i> Difficile <small>(impossible ?)</small> à mettre en place avec du contenu aggrégé <small>(publicité...)</small>,
+            <li><i class="fa fa-flag-o"></i> Activez les rapports : <code>report-uri</code> <small>(il existe des <a href="https://report-uri.io/home/generate/">générateurs</a> de CSP)</small>
         </ul>
         <devoxx-footer></devoxx-footer>
     </div></section>
@@ -925,189 +1183,6 @@
         </figure>
     </div></section>
 
-    <section id="vol-cookie" class="slide"><div>
-        <slide-progression open="annexes"></slide-progression>
-        <h2>Pour éviter de se faire voler ses cookies</h2>
-        <figure class="center">
-            <img src="pictures/firesheep.png" alt="Logiciel Firesheep" />
-            <figcaption><a href="http://codebutler.com/firesheep/">Firesheep</a> en octobre 2010</figcaption>
-        </figure>
-    </div></section>
-
-	<section id="droit-vie-prive" class="slide"><div>
-        <slide-progression open="annexes"></slide-progression>
-		<h2>Pour respecter la vie privée de vos utilisateurs</h2>
-        <figure>
-            <blockquote><p>Dire que vous vous n'en avez rien à faire de la vie privée parce que vous n'avez rien à cacher, c'est comme dire que vous n'en avez rien à faire de la liberté d'expression parce que vous n'avez rien à dire.</p></blockquote>
-            <figcaption>Edward Snowden : <a href="https://www.youtube.com/watch?v=bpO3GeXTceM">about Privacy</a></figcaption>
-        </figure>
-	</div></section>
-
-	<section id="ca-breach" class="slide"><div>
-        <slide-progression open="annexes"></slide-progression>
-        <h2><i class="fa fa-exclamation-triangle"></i> La vie des CA n’est pas un long fleuve tranquille...</h2>
-        <ul>
-            <li>en 2011, <a href="https://www.comodo.com/Comodo-Fraud-Incident-2011-03-23.html">Comodo</a> signe 9 certificats incluant  mail.google.com, login.yahoo.com, login.skype.com, addons.mozilla.org, login.live.com,
-            <li>en 2011, <a href="https://www.vasco.com/company/about_vasco/press_room/news_archive/2011/news_diginotar_reports_security_incident.aspx">Diginotar</a> signe des certificats utilisés pour intercepter le traffic gmail en Iran ; l’entreprise <a href="https://www.vasco.com/company/about_vasco/press_room/news_archive/2011/news_vasco_announces_bankruptcy_filing_by_diginotar_bv.aspx">ferme</a> quelques jours après,
-            <li>en 2013, l’<a href="http://googleonlinesecurity.blogspot.fr/2013/12/further-improving-digital-certificate.html">ANSSI</a> génère des certificats pour des domaines de google ; ils sont détectés aussitôt par Chrome,
-            <li>en 2015, <a href="https://googleonlinesecurity.blogspot.sg/2015/03/maintaining-digital-certificate-security.html">Google</a> exclue les certificats signés par l’AC Chinoise <a href="https://en.wikipedia.org/wiki/China_Internet_Network_Information_Center">CNNIC</a> car ils ont signé des certificats Google, le <a href="http://www1.cnnic.cn/AU/MediaC/Announcement/201504/t20150402_52049.htm">CNNIC répond</a>,
-            <li>en 2015, Symantec <a href="http://www.symantec.com/connect/blogs/tough-day-leaders">annonce une fuite de quelques certificats</a>,
-                Google <a href="https://googleonlinesecurity.blogspot.fr/2015/10/sustaining-digital-certificate-security.html">en découvre 2522</a> et leur impose Certificate Transparency.
-        </ul>
-    </div></section>
-
-	<section id="force-brute" class="slide"><div>
-        <slide-progression open="annexes"></slide-progression>
-        <h2><i class="fa fa-server"></i> Pure <a href="https://fr.wikipedia.org/wiki/Attaque_par_force_brute">force brute</a> ?</h2>
-        <table>
-            <tr>
-                <th>type
-                <th>algo
-                <th>crack
-                <th>et aujourd’hui ?
-            <tr class="broken">
-                <td><i class="fa fa-key" style="color: blue;"></i><i class="fa fa-key" style="color: orange"></i>
-                <td>RSA 512
-                <td><a href="https://en.wikipedia.org/wiki/RSA_numbers#RSA-155">1999</a>
-                <td>entre <a href="https://eprint.iacr.org/2015/1000.pdf">7 heures</a> et <a href="https://www.youtube.com/watch?v=hkw9tFnJk8k">2,5 jours</a> via <a href="https://aws.amazon.com/fr/ec2/">EC2</a>
-            <tr class="broken">
-                <td><i class="fa fa-key" style="color: blue;"></i><i class="fa fa-key" style="color: orange"></i>
-                <td>RSA 768
-                <td><a href="https://en.wikipedia.org/wiki/RSA_numbers#RSA-768">2009</a>
-                <td>
-            <tr class="unsecure">
-                <td><i class="fa fa-key" style="color: blue;"></i><i class="fa fa-key" style="color: orange"></i>
-                <td>RSA 1024
-                <td>
-                    <td><a href="http://cr.yp.to/talks/2012.12.28/slides.pdf">1 an via Conficker</a> <small>(<a href="https://en.wikipedia.org/wiki/Conficker">9~15M PC</a>, <a href="https://en.wikipedia.org/wiki/RSA_numbers#RSA-1024">100 000 $ à la clé</a>)</small>
-            <tr class="safe">
-                <td><i class="fa fa-key" style="color: blue;"></i><i class="fa fa-key" style="color: orange"></i>
-                <td>RSA 2048
-                <td>
-                <td><a href="https://www.digicert.com/TimeTravel/math.htm">2<sup>32</sup> plus</a> <small>(<a href="https://en.wikipedia.org/wiki/RSA_numbers#RSA-2048">200 000 $ à la clé</a>)</small>
-            <tr class="broken">
-                <td><i class="fa fa-key" style="color: green;"></i>
-                <td>DES 56
-                <td><a href="http://cs-exhibitions.uni-klu.ac.at/index.php?id=263">1997</a>
-                <td><a href="https://en.wikipedia.org/wiki/Data_Encryption_Standard#Brute_force_attack">&lt; 24 heures</a>
-            <tr class="safe">
-                <td><i class="fa fa-key" style="color: green;"></i>
-                <td>AES 128
-                <td> <small>(2304 bits)</small>
-                <td><a href="https://blog.cloudflare.com/why-are-some-keys-small/">avec 1 000 000 000 PC, 660 x l’age de l’univers</a>
-            <tr class="safe">
-                <td><i class="fa fa-key" style="color: green;"></i>
-                <td>AES 256
-                <td>
-                <td><a href="https://crypto.stackexchange.com/questions/1145/how-much-would-it-cost-in-u-s-dollars-to-brute-force-a-256-bit-key-in-a-year">8 octodecillion $</a> <small>(ou 10<sup>44</sup> le PIB mondial)</small>
-        </table>
-    </div></section>
-
-	<section id="doutes" class="slide"><div>
-        <slide-progression open="annexes"></slide-progression>
-		<h2>Le chiffrement, c’est solide ?</h2>
-        <figure>
-            <img src="pictures/Schneier.jpg" alt="Bruce Scheier" class="portrait" />
-            <blockquote><p>Can the NSA break AES? My guess is that they can't.</p></blockquote>
-            <blockquote><p>Still, I trust the mathematics.</p></blockquote>
-            <figcaption>Bruce Schneier : <a href="https://www.schneier.com/blog/archives/2012/03/can_the_nsa_bre.html">Can the NSA Break AES?</a>, <a href="https://www.schneier.com/blog/archives/2013/09/the_nsas_crypto_1.html">The NSA's Cryptographic Capabilities</a></figcaption>
-        </figure>
-        <figure>
-            <img src="pictures/Snowden.jpeg" alt="Edward Snowden" class="portrait" />
-            <blockquote><p>Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on. Unfortunately, endpoint security is so terrifically weak that NSA can frequently find ways around it.</p></blockquote>
-            <figcaption>Edward Snowden : <a href="http://techcrunch.com/2013/06/17/encrypting-your-email-works-says-nsa-whistleblower-edward-snowden/">Encrypting Your Email Works</a></figcaption>
-        </figure>
-    </div></section>
-
-	<section id="cipher-suites" class="slide"><div>
-        <slide-progression open="annexes"></slide-progression>
-        <h2>Suites de chiffrement <small>(<a href="https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#tls-parameters-4">cipher suites</a>)</small></h2>
-        <p>Échange de clé, authentication <small>(asymétrique)</small>, chiffrement <small>(symétrique)</small>, MAC/HMAC</p>
-        <ul class="small">
-            <li><abbr title="Elliptic Curve Ephemeral Diffie-Hellman">ECDHE</abbr>-<abbr title="du nom des créateurs : Ronald Rivest, Adi Shamir et Leonard Adleman">RSA</abbr>-<abbr title="Advanced Encryption Standard">AES</abbr>256-<abbr title="Galois/Counter Mode">GCM</abbr>-<abbr title="Secure Hash Algorithm">SHA</abbr>384
-            <li>ECDHE-<abbr title="Elliptic Curve Digital Signature Algorithm">ECDSA</abbr>-AES256-GCM-SHA384
-            <li>ECDHE-RSA-AES256-SHA384
-            <li>ECDHE-ECDSA-AES256-SHA384
-            <li>ECDHE-RSA-AES256-SHA
-            <li>ECDHE-ECDSA-AES256-SHA
-            <li><abbr title="Secure Remote Password">SRP</abbr>-<abbr title="Digital Signature Standard">DSS</abbr>-AES-256-<abbr title="Cipher Block Chaining">CBC</abbr>-SHA
-            <li>SRP-RSA-AES-256-CBC-SHA
-            <li>SRP-AES-256-CBC-SHA
-            <li><abbr title="Ephemeral Diffie-Hellman">DHE</abbr>-DSS-AES256-GCM-SHA384
-            <li>DHE-RSA-AES256-GCM-SHA384
-            <li>DHE-RSA-AES256-SHA256
-            <li>DHE-DSS-AES256-SHA256
-            <li>DHE-RSA-AES256-SHA
-            <li>DHE-DSS-AES256-SHA
-            <li>DHE-RSA-CAMELLIA256-SHA
-            <li>DHE-DSS-CAMELLIA256-SHA
-            <li>ECDH-RSA-AES256-GCM-SHA384
-            <li>ECDH-ECDSA-AES256-GCM-SHA384
-            <li>ECDH-RSA-AES256-SHA384
-            <li>ECDH-ECDSA-AES256-SHA384
-            <li>ECDH-RSA-AES256-SHA
-            <li>ECDH-ECDSA-AES256-SHA
-            <li>AES256-GCM-SHA384
-            <li>AES256-SHA256
-            <li>AES256-SHA
-            <li>CAMELLIA256-SHA
-            <li><abbr title="Pre-shared key">PSK</abbr>-AES256-CBC-SHA
-            <li>ECDHE-RSA-<abbr title="Data Encryption Standard">DES</abbr>-CBC3-SHA
-            <li>ECDHE-ECDSA-DES-CBC3-SHA
-            <li>SRP-DSS-3DES-EDE-CBC-SHA
-            <li>SRP-RSA-3DES-EDE-CBC-SHA
-            <li>SRP-3DES-EDE-CBC-SHA
-            <li>EDH-RSA-DES-CBC3-SHA
-            <li>EDH-DSS-DES-CBC3-SHA
-            <li>ECDH-RSA-DES-CBC3-SHA
-            <li>ECDH-ECDSA-DES-CBC3-SHA
-            <li>DES-CBC3-SHA
-            <li>PSK-3DES-EDE-CBC-SHA
-            <li>ECDHE-RSA-AES128-GCM-SHA256
-            <li>ECDHE-ECDSA-AES128-GCM-SHA256
-            <li>ECDHE-RSA-AES128-SHA256
-            <li>ECDHE-ECDSA-AES128-SHA256
-            <li>ECDHE-RSA-AES128-SHA
-            <li>ECDHE-ECDSA-AES128-SHA
-            <li>SRP-DSS-AES-128-CBC-SHA
-            <li>SRP-RSA-AES-128-CBC-SHA
-            <li>SRP-AES-128-CBC-SHA
-            <li>DHE-DSS-AES128-GCM-SHA256
-            <li>DHE-RSA-AES128-GCM-SHA256
-            <li>DHE-RSA-AES128-SHA256
-            <li>DHE-DSS-AES128-SHA256
-            <li>DHE-RSA-AES128-SHA
-            <li>DHE-DSS-AES128-SHA
-            <li>DHE-RSA-SEED-SHA
-            <li>DHE-DSS-SEED-SHA
-            <li>DHE-RSA-CAMELLIA128-SHA
-            <li>DHE-DSS-CAMELLIA128-SHA
-            <li>ECDH-RSA-AES128-GCM-SHA256
-            <li>ECDH-ECDSA-AES128-GCM-SHA256
-            <li>ECDH-RSA-AES128-SHA256
-            <li>ECDH-ECDSA-AES128-SHA256
-            <li>ECDH-RSA-AES128-SHA
-            <li>ECDH-ECDSA-AES128-SHA
-            <li>AES128-GCM-SHA256
-            <li>AES128-SHA256
-            <li>AES128-SHA
-            <li>SEED-SHA
-            <li>CAMELLIA128-SHA
-            <li>PSK-AES128-CBC-SHA
-            <li>ECDHE-RSA-<abbr title="Rivest Cipher 4">RC4</abbr>-SHA
-            <li>ECDHE-ECDSA-RC4-SHA
-            <li>ECDH-RSA-RC4-SHA
-            <li>ECDH-ECDSA-RC4-SHA
-            <li>RC4-SHA
-            <li>RC4-MD5
-            <li>PSK-RC4-SHA
-            <li>EDH-RSA-DES-CBC-SHA
-            <li>EDH-DSS-DES-CBC-SHA
-            <li>DES-CBC-SHA
-            <li>etc.
-        </ul>
-	</div></section>
-
 	<section id="diffie-hellman-handshake-title" class="slide tell"><div>
         <slide-progression open="annexes"></slide-progression>
         <h2><i class="handshake"></i> Poignée de main <small>via l’échange de clé Diffie-Hellman (<a href="http://vincent.bernat.im/fr/blog/2011-ssl-perfect-forward-secrecy.html">détails</a>)</small></h2>
@@ -1186,48 +1261,6 @@
         </figure>
         <pre>
             <code></code>
-        </pre>
-	</div></section>
-
-	<section id="certificat-x509" class="slide"><div>
-        <slide-progression open="annexes"></slide-progression>
-        <h2>Un certificat <a href="https://openssl.org/docs/manmaster/apps/x509v3_config.html">X.509</a></h2>
-        <pre class="small">
-            <code>$ openssl x509 -in <a href="https://www.gandi.net/static/CAs/GandiStandardSSLCA2.pem">GandiStandardSSLCA2.pem</a> -inform pem -noout -text</code>
-            <code>Certificate:</code>
-            <code>Data:</code>
-            <code>    <strong>Version</strong>: 3 (0x2)</code>
-            <code>    <strong>Serial Number</strong>: 05:e4:dc:3b:94:38:ab:3b:85:97:cb:a6:a1:98:50:e3</code>
-            <code><strong>Signature Algorithm</strong>: sha384WithRSAEncryption</code>
-            <code>    <strong>Issuer</strong>: C=US, ST=New Jersey, L=Jersey City, O=The USERTRUST Network, CN=USERTrust RSA Certification Authority</code>
-            <code>    <strong>Validity</strong> Not Before: Sep 12 00:00:00 2014 GMT   Not After : Sep 11 23:59:59 2024 GMT</code>
-            <code>    <strong>Subject</strong>: C=FR, ST=Paris, L=Paris, O=Gandi, CN=Gandi Standard SSL CA 2</code>
-            <code>    Subject Public Key Info:</code>
-            <code>        <strong>Public Key Algorithm</strong>: rsaEncryption</code>
-            <code>            <strong>Public-Key</strong>: (2048 bit)</code>
-            <code>            <strong>Modulus</strong>: 00:94:04:2d:a6:79:95:74:ff:d5:00:3c:f5:ae:d8:...</code>
-            <code>            <strong>Exponent</strong>: 65537 (0x10001)</code>
-            <code>    X509v3 <strong>extensions</strong>:</code>
-            <code>        X509v3 <strong>Authority Key Identifier</strong>:</code>
-            <code>            keyid:53:79:BF:5A:AA:2B:4A:CF:54:80:E1:D8:9B:C0:9D:F2:B2:03:66:CB</code>
-            <code>        X509v3 <strong>Subject Key Identifier</strong>:</code>
-            <code>            B3:90:A7:D8:C9:AF:4E:CD:61:3C:9F:7C:AD:5D:7F:41:FD:69:30:EA</code>
-            <code>        X509v3 <strong>Key Usage</strong>: critical</code>
-            <code>            <strong>Digital Signature, Certificate Sign, CRL Sign</strong></code>
-            <code>        X509v3 Basic Constraints: critical</code>
-            <code>            <strong>CA:TRUE</strong>, pathlen:0</code>
-            <code>        X509v3 <strong>Extended Key Usage</strong>:</code>
-            <code>            TLS Web Server Authentication, TLS Web Client Authentication</code>
-            <code>        X509v3 Certificate Policies:</code>
-            <code>            Policy: 1.3.6.1.4.1.6449.1.2.2.26</code>
-            <code>            Policy: 2.23.140.1.2.1</code>
-            <code>        X509v3 <strong>CRL Distribution Points</strong>:</code>
-            <code>            Full Name: URI:http://crl.usertrust.com/USERTrustRSACertificationAuthority.crl</code>
-            <code>        Authority Information Access:</code>
-            <code>            CA Issuers - URI:http://crt.usertrust.com/USERTrustRSAAddTrustCA.crt</code>
-            <code>            <strong>OCSP</strong> - URI:http://ocsp.usertrust.com</code>
-            <code><strong>Signature Algorithm</strong>: sha384WithRSAEncryption</code>
-            <code>     58:67:fd:72:b2:6a:d7:7c:61:96:19:7e:d9:43:46:d1:26:7d:...</code>
         </pre>
 	</div></section>
 
@@ -1328,66 +1361,6 @@
             <li>permet d’utiliser un autre serveur que celui cible s’il partage la clé privée,
             <li>pour s’en prémunir, il faut utiliser une version d’OpenSSL compilée sans le support de SSLv2.
         </ul>
-    </div></section>
-
-	<section id="collision" class="slide"><div>
-        <slide-progression open="annexes"></slide-progression>
-		<h2><i class="fa fa-user-secret"></i> Générer des faux certificats</h2>
-        <ul>
-            <li>avec les collisions : on joue sur le contenu pour que la signature corresponde,
-            <li>en 2008 avec <a href="https://www.win.tue.nl/hashclash/rogue-ca/">MD5</a>,
-            <li>en 2015, &laquo; <a href="https://sites.google.com/site/itstheshappening/">The SHAppening</a> &raquo; : collision sur une partie de SHA1 (compression) ; on estime une <a href="https://www.schneier.com/blog/archives/2012/10/when_will_we_se.html">attaque possible pour 700 000 $</a>,
-            <li>d’abord <a href="http://googleonlinesecurity.blogspot.fr/2014/09/gradually-sunsetting-sha-1.html">Google</a>,
-                puis <a href="http://blogs.windows.com/msedgedev/2015/11/04/sha-1-deprecation-update/">Microsoft</a>
-                et <a href="https://blog.mozilla.org/security/2014/09/23/phasing-out-certificates-with-sha-1-based-signature-algorithms/">Mozilla</a>
-                <a href="https://blog.filippo.io/the-unofficial-chrome-sha1-faq/">bloquent</a> les certificats et CA signés avec SHA1 en 2016.
-        </ul>
-    </div></section>
-
-	<section id="attaques-pointues" class="slide"><div>
-        <slide-progression open="annexes"></slide-progression>
-        <h2><i class="fa fa-fighter-jet"></i> Quelques autres attaques</h2>
-        <ul>
-            <li>en 2010, analyse de la <a href="http://www.infosecurity-magazine.com/news/researchers-crack-rsa-encryption-via-power-supply/">consommation électrique</a> d’un ordinateur pour retrouver une clé privée (canal auxiliaire ou &laquo; side channel &raquo;),
-            <li>en 2013, analyse du <a href="http://www.forbes.com/sites/timworstall/2013/12/21/researchers-break-rsa-4096-encryption-with-just-a-microphone-and-a-couple-of-emails/">bruit des composants</a> pour la retrouver,
-            <li>en 2013, <a href="http://blog.cryptographyengineering.com/2013/09/the-many-flaws-of-dualecdrbg.html">Dual_EC_DRBG</a> par RSA Security avec une porte dérobé pour la NSA,
-            <li>en 2013, <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">Lucky13</a>, <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf"><abbr title="Timing Info-leak Made Easy">TIME</abbr></a> et attaques sur <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">RC4</a> (désactivé par Microsoft, Google et Mozilla en 2016),
-            <li>en 2015, <a href="https://www.youtube.com/watch?v=hkw9tFnJk8k">Attaque sur <abbr title="Network Time Protocol">NTP</abbr></a> pour réinitialiser HSTS puis craquer de &laquo; vieux &raquo; certificats 512 bits.
-        </ul>
-    </div></section>
-
-	<section id="subresource-integrity" class="slide"><div>
-        <slide-progression open="annexes"></slide-progression>
-		<h2>Subresource integrity</h2>
-        <pre>
-            <code>&lt;script src="https://example.com/jquery.js"</code>
-            <code>        integrity="sha384-oqVuAfX542FR..."&gt;&lt;script&gt;</code>
-        </pre>
-        <ul class="icons">
-            <li><i class="fa fa-certificate"></i> Permet de valider cryptographiquement le contenu d’un &lt;script&gt; ou &lt;link&gt;,
-            <li class="next"><i class="fa fa-globe"></i> Intéressant pour les contenus hébérgés ailleurs (<abbr title="Content Delivery Network">CDN</abbr>),
-            <!--<li class="next"><i class="fa fa-firefox"></i><i class="fa fa-chrome"></i> Depuis <a href="https://hacks.mozilla.org/2015/09/subresource-integrity-in-firefox-43/">Firefox 43</a> et <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=355467">Chrome 45</a>,-->
-            <li class="next"><i class="fa fa-github"></i> Utilisé sur <a href="http://githubengineering.com/subresource-integrity/">github.com</a>.
-        </ul>
-        <devoxx-footer></devoxx-footer>
-    </div></section>
-
-	<section id="CSP" class="slide"><div>
-        <slide-progression open="annexes"></slide-progression>
-        <h2><a href="https://diogomonica.com/2015/12/30/deep-into-csp/">CSP</a> : Content Security Policy</h2>
-        <pre>
-            <code>Content-Security-Policy:default-src 'none';</code>
-            <code>     script-src 'self'; style-src 'self';</code>
-            <code>     upgrade-insecure-requests; block-all-mixed-content;</code>
-        </pre>
-        <ul class="icons">
-            <li><i class="fa fa-thumb-tack"></i> Entête HTTP apportant des restrictions sur les types de contenu attendus et leur provenances,
-            <li><i class="fa fa-ban"></i> Système de liste blanche <small>(ce qui n’est pas listé est bloqué)</small>,
-            <li><i class="fa fa-bomb"></i> Très puissant car permet d’éviter des injections de code,
-            <li><i class="fa fa-exclamation-triangle"></i> Difficile <small>(impossible ?)</small> à mettre en place avec du contenu aggrégé <small>(publicité...)</small>,
-            <li><i class="fa fa-flag-o"></i> Activez les rapports : <code>report-uri</code> <small>(il existe des <a href="https://report-uri.io/home/generate/">générateurs</a> de CSP)</small>
-        </ul>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
 
