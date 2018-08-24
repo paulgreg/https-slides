@@ -40,7 +40,8 @@
             <li><i class="fa fa-user nomargin"> </i>Grégory Paul
             <li><i class="fa fa-briefcase nomargin"></i> Développeur Web<br>
                 (<a href="https://twitter.com/search?q=%23javascript%20from%3Apaulgreg&src=typd">JavaScript</a>,
-                <a href="https://twitter.com/search?q=%23security%20from%3Apaulgreg&src=typd">sécurité</a>)
+                <a href="https://twitter.com/search?q=%23security%20from%3Apaulgreg&src=typd">sécurité</a>,
+                <a href="https://twitter.com/search?l=&q=%23diy%20OR%20%23hack%20from%3Apaulgreg&src=typd">hack/DIY</a>)
             <li>
                 <a href="https://paulgreg.me/" rel="me">https://paulgreg.me</a>
                 <a href="https://twitter.com/paulgreg" rel="me"><i class="fa fa-twitter nomargin"></i></a>
@@ -280,13 +281,17 @@
                 <li class="next"><i class="fa fa-code-fork"></i><span class="unsecure">TLS 1.1</span> / <a href="https://tools.ietf.org/html/rfc4346">RFC 4346</a> en 2006 <small>(<i class="fa fa-plus-circle nomargin"></i> protections contre les attaques sur <abbr title="Cipher Block Chaining">CBC</abbr>)</small>,
                 <li class="next"><i class="fa fa-code-fork"></i><span class="safe">TLS 1.2</span> / <a href="https://tools.ietf.org/html/rfc5246">RFC 5246</a> en 2008 <small>(<i class="fa fa-plus-circle nomargin"></i> améliorations de sécurité)</small>,
             <li class="next"><i class="fa fa-code-fork"></i>Mise à jour sur TLS 1.2 en 2011/ <a href="https://tools.ietf.org/html/rfc6176">RFC 6176</a> <small>(<i class="fa fa-ban nomargin"></i> compatibilité SSL)</small>,
-            <li class="next"><i class="fa fa-code-fork"></i><span class="safe">TLS 1.3</span> / <a href="https://tools.ietf.org/html/draft-ietf-tls-tls13-10">brouillon</a> en cours
+            <li class="next"><i class="fa fa-code-fork"></i><span class="safe">TLS 1.3</span> / <a href="http://www.rfc-editor.org/rfc/rfc8446.txt">RFC 8446</a> en 2018
                 <small>(<i class="fa fa-ban nomargin"></i> compression,
                 <i class="fa fa-ban nomargin"></i> renégociation,
                 <i class="fa fa-ban nomargin"></i> MD5,
+                <i class="fa fa-ban nomargin"></i> SHA1,
                 <i class="fa fa-ban nomargin"></i> RC4,
-                <i class="fa fa-plus-circle nomargin"></i> optimisation réseau,
-                <i class="fa fa-plus-circle nomargin"></i> SHA-224)</small>.
+                <i class="fa fa-plus-circle nomargin"></i> <abbr title="Perfect Forward Secrecy">PFS</abbr> obligatoire,
+                <i class="fa fa-plus-circle nomargin"></i> optimisation réseau (<abbr title="zero round trip time">0-RTT</abbr>),
+                <i class="fa fa-plus-circle nomargin"></i> SHA-256,
+                <i class="fa fa-plus-circle nomargin"></i> Courbe elliptique 25519 &amp; 448)</small>.
+
         </ul>
         <devoxx-footer></devoxx-footer>
 	</div></section>
@@ -382,7 +387,7 @@
 
 	<section id="handshake-title-bis" class="slide tell"><div>
         <slide-progression open="handshake"></slide-progression>
-        <h2><i class="handshake"></i> Poignée de main<br/><small>(<a href="http://www.moserware.com/2009/06/first-few-milliseconds-of-https.html">en détails</a>)</small></h2>
+        <h2><i class="handshake"></i> Poignée de main<br/><small>TLS 1.2 (<a href="http://www.moserware.com/2009/06/first-few-milliseconds-of-https.html">en détails</a>)</small></h2>
         <devoxx-footer></devoxx-footer>
 	</div></section>
 
@@ -462,7 +467,7 @@
 
 	<section id="handshake-key-exchange" class="slide"><div>
         <slide-progression open="handshake"></slide-progression>
-        <h2>3. Pré-clé chiffré avec la clé publique du serveur</h2>
+        <h2>3. Pré-clé chiffrée <small>avec la clé publique du serveur</small></h2>
         <figure class="sidebyside handshake">
             <figcaption>
                 <img src="pictures/handshake/5-handshake.png" alt="handshake : key exchange" />
@@ -903,7 +908,8 @@
             <li class="next">2014 : <a href="http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2014-1266">CVE-2014-1266</a> : <a href="https://opensource.apple.com/source/Security/Security-55471/libsecurity_ssl/lib/sslKeyExchange.c?txt">goto fail</a>,
             <a href="https://opensource.apple.com/source/Security/Security-55471/libsecurity_ssl/lib/sslKeyExchange.c" class="clear"><img class="gotofail" src="pictures/gotofail.png" alt="" /></a>
             <li class="next">2014 : <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0092">CVE-2014-0092</a> : <a href="https://www.gitorious.org/gnutls/gnutls/commit/6aa26f78150ccbdf0aec1878a41c17c41d358a3b">goto cleanup</a> sur GnuTLS,
-            <li class="next">2015 : <a href="http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0160">CVE-2014-0160</a> : <i class="fa fa-heartbeat nomargin"></i> <a href="http://heartbleed.com/">heartbleed</a> : le serveur laisse fuiter quelques octets en RAM...
+            <li class="next">2015 : <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0160">CVE-2014-0160</a> : <i class="fa fa-heartbeat nomargin"></i> <a href="http://heartbleed.com/">heartbleed</a> : fuitle de quelques octets en RAM,
+            <li class="next">2018 : <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5753">CVE-2017-5753</a>, <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5715">CVE-2017-5715</a> : <a href="https://meltdownattack.com/">Spectre &amp; Meltdown</a> : fuite de la mémoire cache du processeur...
         </ul>
         <devoxx-footer></devoxx-footer>
     </div></section>
@@ -992,21 +998,6 @@
             <li class="next"><i class="fa fa-user-secret"></i> Évite une interception future <small>(sslstrip)</small>,
             <li class="next"><i class="fa fa-gift"></i> Pré-chargement dans les navigateurs : <a href="https://code.google.com/p/chromium/codesearch#chromium/src/net/http/transport_security_state_static.json">transport_security_state_static.json</a>,
             <li class="next"><i class="fa fa-exclamation-triangle"></i> Que se passe-t-il si votre certificat expire ou si le port 443 ne répond plus ?
-        </ul>
-        <devoxx-footer></devoxx-footer>
-    </div></section>
-
-	<section id="certificate-public-key-pinning" class="slide"><div>
-        <slide-progression open="apres"></slide-progression>
-		<h2>CPKP : Certificate Public Key Pinning <a href="http://tools.ietf.org/html/rfc7469">RFC7469</a></h2>
-        <pre><code>Public-Key-Pins: pin-sha256=""; pin-sha256=""; max-age=259200</code></pre>
-        <ul class="icons">
-            <li><i class="fa fa-thumb-tack"></i> Entête HTTP "épinglant" une liste de condensat (hash) de certificats (AC racine, AC intermédiaire ou feuille),
-            <li class="next"><i class="fa fa-cutlery"></i> Connexion uniquement si le condensat est trouvé dans la chaîne,
-            <li class="next"><i class="fa fa-user-secret"></i> Évite qu’une autre AC ne signe son certificat <small>(<a href="https://www.nsa.gov/">www.nsa.gov</a> signé par <abbr title="China Internet Network Information Center">CNNIC</abbr>)</small>,
-            <li class="next"><i class="fa fa-gift"></i> Pré-chargement dans les navigateurs : <a href="https://code.google.com/p/chromium/codesearch#chromium/src/net/http/transport_security_state_static.h&amp;cl=GROK&amp;gsn=GetDynamicDomainState">transport_security_state_static.h</a>,
-            <li class="next"><i class="fa fa-flag-o"></i> <a href="https://developers.google.com/web/updates/2015/09/HPKP-reporting-with-chrome-46">Commencez par</a> : <code>Public-Key-Pins-Report-Only: report-uri</code>
-            <li class="next"><i class="fa fa-exclamation-triangle"></i> <a href="https://noncombatant.org/2015/05/01/about-http-public-key-pinning/">Plus</a> <a href="https://timtaubert.de/blog/2014/10/http-public-key-pinning-explained/">compliqué</a> à mettre en place et plus risqué ; à reserver aux sites sensibles.
         </ul>
         <devoxx-footer></devoxx-footer>
     </div></section>
@@ -1364,6 +1355,21 @@
         </ul>
     </div></section>
 
+	<section id="http-public-key-pinning" class="slide"><div>
+        <slide-progression open="annexes"></slide-progression>
+		<h2>HPKP : HTTP Public Key Pinning <a href="http://tools.ietf.org/html/rfc7469">RFC7469</a></h2>
+        <pre><code>Public-Key-Pins: pin-sha256=""; pin-sha256=""; max-age=259200</code></pre>
+        <ul class="icons">
+            <li><i class="fa fa-warning"></i> <a href="https://raymii.org/s/blog/Chrome_68_is_deprecating_HPKP.html">déprécié depuis Chrome 68</a>,
+            <li class="next"><i class="fa fa-thumb-tack"></i> Entête HTTP "épinglant" une liste de condensat (hash) de certificats (AC racine, AC intermédiaire ou feuille),
+            <li class="next"><i class="fa fa-cutlery"></i> Connexion uniquement si le condensat est trouvé dans la chaîne,
+            <li class="next"><i class="fa fa-user-secret"></i> Évite qu’une autre AC ne signe son certificat <small>(<a href="https://www.nsa.gov/">www.nsa.gov</a> signé par <abbr title="China Internet Network Information Center">CNNIC</abbr>)</small>,
+            <li class="next"><i class="fa fa-gift"></i> Pré-chargement dans les navigateurs : <a href="https://code.google.com/p/chromium/codesearch#chromium/src/net/http/transport_security_state_static.h&amp;cl=GROK&amp;gsn=GetDynamicDomainState">transport_security_state_static.h</a>,
+            <li class="next"><i class="fa fa-flag-o"></i> <a href="https://developers.google.com/web/updates/2015/09/HPKP-reporting-with-chrome-46">Commencez par</a> : <code>Public-Key-Pins-Report-Only: report-uri</code>
+            <li class="next"><i class="fa fa-exclamation-triangle"></i> <a href="https://noncombatant.org/2015/05/01/about-http-public-key-pinning/">Plus</a> <a href="https://timtaubert.de/blog/2014/10/http-public-key-pinning-explained/">compliqué</a> à mettre en place et plus risqué ; à reserver aux sites sensibles.
+        </ul>
+        <devoxx-footer></devoxx-footer>
+    </div></section>
 
 	<p class="badge"><a href="https://github.com/paulgreg/https-slides">Fork me on Github</a></p>
 	<div class="progress"><div></div></div>
