@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="fr">
 <head>
     <title>HTTPS n’aura plus de secret pour vous</title>
     <meta charset="utf-8" />
@@ -202,8 +202,8 @@
         <slide-progression open="pourquoi"></slide-progression>
             <h2>Pour le <abbr title="Search engine optimization">SEO</abbr>, HTML5 et iOS/OS X</h2>
             <p><i class="fa fa-google"></i><a href="http://googleonlinesecurity.blogspot.fr/2014/08/https-as-ranking-signal_6.html">Google préfère un site en HTTPS</a>.</p>
-            <p class="next"><i class="fa fa-html5"></i>Sans HTTPS, <a href="https://blog.mozilla.org/security/2015/04/30/deprecating-non-secure-http/">Firefox</a> et <a href="https://sites.google.com/a/chromium.org/dev/Home/chromium-security/deprecating-powerful-features-on-insecure-origins">Chrome</a> <small>(50)</small> bloquent certaines API JavaScript :</p>
-            <ul class="inner next">
+            <p><i class="fa fa-html5"></i>Sans HTTPS, <a href="https://blog.mozilla.org/security/2015/04/30/deprecating-non-secure-http/">Firefox</a> et <a href="https://sites.google.com/a/chromium.org/dev/Home/chromium-security/deprecating-powerful-features-on-insecure-origins">Chrome</a> <small>(50)</small> bloquent certaines API JavaScript :</p>
+            <ul class="inner">
                 <li><code>fullscreen</code>,
                 <li><code>geolocation</code>,
                 <li><code>service worker</code>,
@@ -211,7 +211,7 @@
                 <li><code>getUserMedia</code>,
                 <li><code>encrypted Media Extensions</code>, ...
             </ul>
-            <p class="next"><i class="fa fa-apple"></i> Apple <a href="https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW28">force HTTPS avec AppTransportSecurity</a> depuis  iOS 9.0 et OS X v10.11.</p>
+            <p><i class="fa fa-apple"></i> Apple <a href="https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW28">force HTTPS avec AppTransportSecurity</a> depuis  iOS 9.0 et OS X v10.11.</p>
         <devoxx-footer></devoxx-footer>
     </div></section>
 
@@ -316,8 +316,8 @@
             <img src="./pictures/symetric-cipher.png" alt="chiffrement symétrique" />
             <figcaption>
                 <ul class="icons">
-                    <li class="next"><abbr title="Data Encryption Standard">DES</abbr> (<span class="broken">56 bits</span>), 3DES (<span class="unsecure">112 bits</span>), <abbr title="Advanced Encryption Standard">AES</abbr> (<span class="safe">128</span>, <span class="safe">256 bits</span>)
-                    <li class="next"><i class="fa fa-plus"></i>rapide, performant&nbsp;<i class="fa fa-minus marginleft"></i>problème d’échange de clé
+                    <li><abbr title="Data Encryption Standard">DES</abbr> (<span class="broken">56 bits</span>), 3DES (<span class="unsecure">112 bits</span>), <abbr title="Advanced Encryption Standard">AES</abbr> (<span class="safe">128</span>, <span class="safe">256 bits</span>)
+                    <li><i class="fa fa-plus"></i>rapide, performant&nbsp;<i class="fa fa-minus marginleft"></i>problème d’échange de clé
                 </ul>
             </figcaption>
         </figure>
@@ -332,7 +332,7 @@
             <figcaption>
                 <ul class="icons">
                     <li>nombres premiers via <a href="https://fr.wikipedia.org/wiki/Chiffrement_RSA">RSA</a> (<span class="unsecure">1024</span>, <span class="safe">2048</span>, <span class="safe">4096 bits</span>) et courbes elliptiques (<a href="https://fr.wikipedia.org/wiki/Cryptographie_sur_les_courbes_elliptiques">EC</a>)
-                    <li class="next"><i class="fa fa-plus"></i>permet de transmettre une clé symétrique &nbsp;<i class="fa fa-minus marginleft"></i>lent, coûteux
+                    <li><i class="fa fa-plus"></i>permet de transmettre une clé symétrique &nbsp;<i class="fa fa-minus marginleft"></i>lent, coûteux
                  </ul>
             </figcaption>
         </figure>
@@ -350,7 +350,7 @@
             <code>$ sha1sum ubuntu-12.04.3-desktop-amd64.iso</code>
             <code><mark>0c06d876dabb4403cede1245e3b0bf1d81afd497</mark></code>
        </pre>
-       <p class="next">
+       <p>
            <span class="broken"><a href="https://fr.wikipedia.org/wiki/MD5">MD5</a></span>,
            <span class="unsecure"><a href="https://fr.wikipedia.org/wiki/SHA-1">SHA-1</a></span>,
            <span class="safe"><a href="https://fr.wikipedia.org/wiki/SHA-2">SHA-2</a></span> <small>(SHA-224, SHA-256, SHA-384 et SHA-512)</small>,
@@ -367,8 +367,8 @@
             <code>echo -n "Hello World" | openssl dgst -sha1 -hmac "key"</code>
             <code><mark>cc24f1acdb06cf429bcf9861b6d708b6ec20a8fa</mark></code>
        </pre>
-       <p class="next"><i class="fa fa-plus"></i>Permet de vérifier l’intégrité des données.</p>
-       <p class="next">
+       <p><i class="fa fa-plus"></i>Permet de vérifier l’intégrité des données.</p>
+       <p>
            <span class="broken">HMAC_MD5</span>,
            <span class="unsecure">HMAC_SHA1</span>,
            <span class="safe">HMAC_SHA256</span>.
@@ -398,13 +398,13 @@
         <figure class="sidebyside handshake">
             <figcaption>
                 <img src="pictures/handshake/1-handshake.png" alt="handshake : client hello" />
-                <p class="next legend plain">en clair</p>
+                <p class="legend plain">en clair</p>
                 <code style="display: inline-block; margin: 20px 0 20px 110px;">TCP 443</code>
                 <ul style="margin-left: 30px;">
-                    <li class="next">version
-                    <li class="next">session ID
-                    <li class="next"><a href="#cipher-suites">suites de chiffrement</a>
-                    <li class="next">Server Name Indication (SNI)
+                    <li>version
+                    <li>session ID
+                    <li><a href="#cipher-suites">suites de chiffrement</a>
+                    <li>Server Name Indication (SNI)
                 </ul>
             </figcaption>
             <img src="pictures/handshake/1-client-hello.png" alt="wireshark : client hello" />
@@ -426,9 +426,9 @@
                 <img src="pictures/handshake/2-handshake.png" alt="handshake : server hello" />
                 <p class="legend plain">en clair</p>
                 <ul style="margin-left: 50px;">
-                    <li class="next">version
-                    <li class="next">session ID
-                    <li class="next">suite de chiffrement choisie
+                    <li>version
+                    <li>session ID
+                    <li>suite de chiffrement choisie
                 </ul>
             </figcaption>
             <img src="pictures/handshake/2-server-hello.png" alt="server hello" />
@@ -450,11 +450,11 @@
                 <p class="legend plain">en clair</p>
                     <ul>
                         <li>certificat du domaine (<a href="#certificat-x509"><small>X.509</small></a>)
-                        <li class="next">wildcard <small>(*.mappy.com)</small>
-                        <li class="next">magasin de certificat
-                            <img class="next store" src="pictures/ca-store.png" alt="browser CA store" />
-                        <li class="next">certificat intermédiaire
-                        <li class="next">Subject Alternative Name <small>(fr.mappy.com, en.mappy.com,...)</small>
+                        <li>wildcard <small>(*.mappy.com)</small>
+                        <li>magasin de certificat
+                            <img class="store" src="pictures/ca-store.png" alt="browser CA store" />
+                        <li>certificat intermédiaire
+                        <li>Subject Alternative Name <small>(fr.mappy.com, en.mappy.com,...)</small>
                     </ul>
             </figcaption>
             <img src="pictures/handshake/3-certificates.png" alt="server certificates" />
@@ -622,8 +622,8 @@
         <slide-progression open="handshake"></slide-progression>
         <h2><i class="fa fa-user-secret"></i> Confidentialité persistante parfaite (<a href="http://vincent.bernat.im/en/blog/2011-ssl-perfect-forward-secrecy.html"><abbr title="Perfect Forward Secrecy">PFS</abbr></a>)</h2>
         <figure class="sidebyside">
-            <img class="next" src="pictures/diffie-Hellman_key_exchange.png" alt="Algorithme de Diffie Hellman">
-            <figcaption class="next">
+            <img src="pictures/diffie-Hellman_key_exchange.png" alt="Algorithme de Diffie Hellman">
+            <figcaption>
                 <p>La conversation reste secrête même si la clé privée a fuité grâce à l’<a href="https://fr.wikipedia.org/wiki/%C3%89change_de_cl%C3%A9s_Diffie-Hellman">échange de clés Diffie-Hellman</a>.</p>
                 <p>Suites "Ephemeral Diffie-Hellman" :
                 <small><strong>DHE</strong>-RSA-AES128-SHA</small>,
@@ -763,8 +763,8 @@
             <span><strong>=</strong></span>
             <span>Certificat <abbr title="Domain Validation">DV</abbr> à jour</span>
         </p>
-        <figure class="next center"><a href="https://letsencrypt.org/2016/04/12/leaving-beta-new-sponsors.html" class="clear"><img src="pictures/letsencrypt-certs.png" alt="Nombre de certificats issus par letsencrypt" width="500"></a></figure>
-        <p class="next">
+        <figure class="center"><a href="https://letsencrypt.org/2016/04/12/leaving-beta-new-sponsors.html" class="clear"><img src="pictures/letsencrypt-certs.png" alt="Nombre de certificats issus par letsencrypt" width="500"></a></figure>
+        <p>
             <a href="https://letsencrypt.org/2015/10/29/phishing-and-malware.html">filtre</a> les domaines <small>(<a href="https://developers.google.com/safe-browsing/">Safe Browsing API</a>)</small>
             et soumission dans <a href="https://www.facebook.com/notes/protect-the-graph/early-impacts-of-certificate-transparency/1709731569266987/">Certificate Transparency</a>
         </p>
@@ -981,10 +981,10 @@
         <h2>Mixed content</h2>
         <ul>
             <li>Mixed content : ressources chargées via HTTP depuis une page HTTPS <small>(<a href="https://developer.mozilla.org/en-US/docs/Security/Mixed_content"><abbr title="Mozilla Developer Network">MDN</abbr></a>)</small>
-            <li class="next">Contenu <strong>passif</strong> dégradant l’icône de sécurité : <code>&lt;img&gt;</code>, <code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code>
-            <li class="next">Contenu <strong>actif</strong> bloqué : <code>&lt;script&gt;</code>, <code>&lt;link&gt;</code>, <code>&lt;iframe&gt;</code>, <code>&lt;object&gt;</code>, <code>XMLHttpRequest</code>, propriétés <code>CSS</code>
+            <li>Contenu <strong>passif</strong> dégradant l’icône de sécurité : <code>&lt;img&gt;</code>, <code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code>
+            <li>Contenu <strong>actif</strong> bloqué : <code>&lt;script&gt;</code>, <code>&lt;link&gt;</code>, <code>&lt;iframe&gt;</code>, <code>&lt;object&gt;</code>, <code>XMLHttpRequest</code>, propriétés <code>CSS</code>
         </ul>
-        <figure class="next center">
+        <figure class="center">
             <img src="pictures/dubious-as-neutral.png" alt="Chrome page security icon" width="400"/>
             <figcaption><a href="https://googleonlinesecurity.blogspot.com.au/2015/10/simplifying-page-security-icon-in-chrome.html">Simplifying page security icon in Chrome</a></figcaption>
         </figure>
@@ -993,13 +993,27 @@
 
     <section id="HSTS" class="slide"><div>
         <slide-progression open="apres"></slide-progression>
-        <h2>HSTS : Http Strict Transport Security <a href="https://tools.ietf.org/html/rfc6797">RFC6797</a></h2>
+        <h2>HSTS : HTTP Strict Transport Security <a href="https://tools.ietf.org/html/rfc6797">RFC6797</a></h2>
         <pre><code>Strict-Transport-Security: max-age=16070400; includeSubDomains</code></pre>
         <ul class="icons">
             <li><i class="fa fa-bolt"></i> Force <code>https://</code> (même si l’utilisateur tape <code>http://</code> ou si les liens pointent vers <code>http://</code>),
-            <li class="next"><i class="fa fa-user-secret"></i> Évite une interception future <small>(sslstrip)</small>,
-            <li class="next"><i class="fa fa-gift"></i> Pré-chargement dans les navigateurs : <a href="https://code.google.com/p/chromium/codesearch#chromium/src/net/http/transport_security_state_static.json">transport_security_state_static.json</a>,
-            <li class="next"><i class="fa fa-exclamation-triangle"></i> Que se passe-t-il si votre certificat expire ou si le port 443 ne répond plus ?
+            <li><i class="fa fa-user-secret"></i> Évite une interception future <small>(sslstrip)</small>,
+            <li><i class="fa fa-gift"></i> Pré-chargement dans les navigateurs : <a href="https://code.google.com/p/chromium/codesearch#chromium/src/net/http/transport_security_state_static.json">transport_security_state_static.json</a>,
+            <li><i class="fa fa-exclamation-triangle"></i> Que se passe-t-il si votre certificat expire ou si le port 443 ne répond plus ?
+        </ul>
+        <devoxx-footer></devoxx-footer>
+    </div></section>
+
+    <section id="caa" class="slide"><div>
+        <slide-progression open="apres"></slide-progression>
+        <h2><a href="https://www.ssl.com/article/certification-authority-authorization-caa/">CAA</a> : Certificate Authority Authorization <a href="https://tools.ietf.org/html/rfc6844">RFC6844</a></h2>
+<pre><code>example.com. IN CAA 0 issue "letsencrypt.org"
+example.com. IN CAA 0 iodef "mailto:security@example.com"
+example.com. IN CAA 128 future "digicert.com"</code></pre>
+        <ul class="icons">
+            <li><i class="fa fa-thumb-tack"></i> Entrée <abbr title="Domain Name Service">DNS</abbr> précisant qui a le droit d’émettre un certificat pour un domaine,
+            <li><i class="fa fa-exclamation-triangle"></i> On peut préciser un email ou URL en cas d’incident (<abbr title="Incident Object Description Exchange Format">IODEF</abbr>),
+            <li><i class="fa fa-truck"></i> On peut préciser une autre CA si l’on prévoit d’en changer.
         </ul>
         <devoxx-footer></devoxx-footer>
     </div></section>
@@ -1013,9 +1027,9 @@
         </pre>
         <ul class="icons">
             <li><i class="fa fa-certificate"></i> Permet de valider cryptographiquement le contenu d’un &lt;script&gt; ou &lt;link&gt;,
-            <li class="next"><i class="fa fa-globe"></i> Intéressant pour les contenus hébérgés ailleurs (<abbr title="Content Delivery Network">CDN</abbr>),
-            <li class="next"><i class="fa fa-firefox"></i><i class="fa fa-chrome"></i> Depuis <a href="https://hacks.mozilla.org/2015/09/subresource-integrity-in-firefox-43/">Firefox 43</a> et <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=355467">Chrome 45</a>,
-            <li class="next"><i class="fa fa-github"></i> Utilisé sur <a href="http://githubengineering.com/subresource-integrity/">github.com</a>.
+            <li><i class="fa fa-globe"></i> Très intéressant pour les contenus hébérgés ailleurs (<abbr title="Content Delivery Network">CDN</abbr>),
+            <li><i class="fa fa-firefox"></i><i class="fa fa-chrome"></i> Depuis <a href="https://hacks.mozilla.org/2015/09/subresource-integrity-in-firefox-43/">Firefox 43</a> et <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=355467">Chrome 45</a>,
+            <li><i class="fa fa-github"></i> Utilisé sur <a href="http://githubengineering.com/subresource-integrity/">github.com</a>.
         </ul>
         <devoxx-footer></devoxx-footer>
     </div></section>
@@ -1034,6 +1048,37 @@
             <li><i class="fa fa-bomb"></i> Très puissant car permet d’éviter des injections de code,
             <li><i class="fa fa-exclamation-triangle"></i> Difficile <small>(impossible ?)</small> à mettre en place avec du contenu aggrégé <small>(publicité...)</small>,
             <li><i class="fa fa-flag-o"></i> Activez les rapports : <code>report-uri</code> <small>(il existe des <a href="https://report-uri.io/home/generate/">générateurs</a> de CSP)</small>
+        </ul>
+        <devoxx-footer></devoxx-footer>
+    </div></section>
+
+    <section id="Feature-Policy" class="slide"><div>
+        <slide-progression open="apres"></slide-progression>
+        <h2><a href="https://scotthelme.co.uk/a-new-security-header-feature-policy/">Feature Policy</a></h2>
+<pre><code>Feature-Policy: vibrate 'none'; speaker *;
+   geolocation 'self' https://example.com</code></pre>
+        <ul class="icons">
+            <li><i class="fa fa-toggle-on"></i> Permet d’activer, de désactiver des fonctionnalités
+                (<small>
+                    <code>geolocation</code>,
+                    <code>midi</code>,
+                    <code>notifications</code>,
+                    <code>push</code>,
+                    <code>vr</code>,
+                    <code>usb</code>,
+                    <code>sync-xhr</code>,
+                    <code>microphone</code>,
+                    <code>camera</code>,
+                    <code>magnetometer</code>,
+                    <code>gyroscope</code>,
+                    <code>speaker</code>,
+                    <code>vibrate</code>,
+                    <code>fullscreen</code>,
+                    <code>payment</code>,
+                    ...
+                </small>),
+            <li><i class="fa fa-globe"></i> pour son site mais surtout pour les <code>iframe</code>,
+            <li><i class="fa fa-chrome"></i><i class="fa fa-safari"></i> Partiellement supporté depuis <a href="https://caniuse.com/#feat=feature-policy">Chrome 63 et Safari 11.1</a>.
         </ul>
         <devoxx-footer></devoxx-footer>
     </div></section>
@@ -1387,7 +1432,7 @@
     }
     </script>
     <script src="node_modules/shower-core/shower.min.js"></script>
-    <script defer="defer">
+    <script>
     if ('serviceWorker' in navigator) {
           navigator.serviceWorker.register('./sw.js').then(function() {
               console.log('service worker registration complete');
