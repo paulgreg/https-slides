@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen.css" />
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="styles/styles.css" />
-    <script src="webcomponents/slide-progression.js"></script>
-    <script src="webcomponents/devoxx-footer.js"></script>
 </head>
 <body class="list">
     <header class="caption">
@@ -31,7 +29,6 @@
             <img src="pictures/qrcode.svg" alt="" />
             <a href="https://paulgreg.me/https-slides/">https://paulgreg.me/https-slides/</a>
         </p>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="presentation" class="slide"><div>
@@ -58,7 +55,6 @@
             <img class="mappy-home" alt="" src="pictures/mappy-home.png" />
             <img class="mappy-immersive" alt="" src="pictures/mappy-immersive.png" />
         </ul>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="precision" class="slide"><div>
@@ -69,7 +65,6 @@
                 <br/>
             </div>
         </figure>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <template id="slide-progression-tpl">
@@ -98,37 +93,29 @@
             <li><i class="fa fa-tachometer"></i> Performances
             <li><i class="fa fa-hourglass-end"></i> Conclusion
         </ul>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="pourquoi-https" class="slide shout"><div>
-        <slide-progression open="pourquoi"></slide-progression>
         <h2>Pourquoi<br>HTTPS <i class="fa fa-question-circle"></i></h2>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="reseau-typique" class="slide"><div>
-        <slide-progression open="pourquoi"></slide-progression>
         <h2>Dans un réseau typique...</h2>
         <figure>
             <img src="pictures/https_network.svg" class="svg" alt="Réseau normal" />
             <figcaption></figcaption>
         </figure>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="interception-traffic-http" class="slide"><div>
-        <slide-progression open="pourquoi"></slide-progression>
         <h2>Pour éviter l’interception de traffic</h2>
         <figure>
             <img src="pictures/https_rogue_ap.svg" class="svg" alt="Réseau anormal au niveau du point d’accès" />
             <figcaption><kbd>donotbeevil</kbd></figcaption>
         </figure>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="interception-traffic-http-video" class="slide"><div>
-        <slide-progression open="pourquoi"></slide-progression>
         <h2>Pour éviter l’interception de traffic</h2>
         <figure class="center">
             <video controls preload="metadata">
@@ -136,21 +123,17 @@
             </video>
             <figcaption class="narrow"><a href="#interception-traffic-http-explications">détails</a> et <a href="https://hackaday.io/project/10338-pi-mitm">implémentation</a> de cet exemple, <a href="#vol-cookie">vol de cookie</a></figcaption>
         </figure>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="interception-traffic-http-bis" class="slide"><div>
-        <slide-progression open="pourquoi"></slide-progression>
         <h2>Pour éviter l’interception de traffic</h2>
         <figure>
             <img src="pictures/https_rogue_ap.svg" class="svg" alt="Réseau anormal au niveau du point d’accès" />
             <figcaption><kbd>donotbeevil</kbd></figcaption>
         </figure>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="vol-cookie" class="slide"><div>
-        <slide-progression open="pourquoi"></slide-progression>
         <h2>Pour éviter de se faire voler ses cookies</h2>
         <figure class="center">
             <img src="pictures/firesheep.png" alt="Logiciel Firesheep" />
@@ -159,16 +142,13 @@
     </div></section>
 
     <section id="protection-fai-schema" class="slide"><div>
-        <slide-progression open="pourquoi"></slide-progression>
         <h2>Pour se protéger des <abbr title="Fournisseurs d’Accès Internet">FAI</abbr> malveillants</h2>
         <figure class="center">
             <img src="pictures/https_fai_injection.svg" class="svg" alt="Réseau anormal au niveau du FAI" />
         </figure>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="protection-fai" class="slide"><div>
-        <slide-progression open="pourquoi"></slide-progression>
         <h2>Pour se protéger des <abbr title="Fournisseur d’Accès Internet">FAI</abbr> malveillants</h2>
         <ul>
             <li><a href="http://www.webrankinfo.com/dossiers/webmastering/blocage-publicite-free">blocage de pub Google par Free</a> en mai 2013,
@@ -189,17 +169,14 @@
     </div></section>
 
     <section id="grand-canon" class="slide"><div>
-        <slide-progression open="pourquoi"></slide-progression>
         <h2>Pour se protéger du <a href="https://citizenlab.org/2015/04/chinas-great-cannon/">Grand Canon Chinois</a></h2>
         <figure class="center">
             <img src="pictures/https_great_cannon.svg" class="svg" alt="grand canon"/>
             <figcaption><p style="position:absolute; right: 60px; top: 550px; color: black;">en avril 2015</p></figcaption>
         </figure>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="html5-seo" class="slide"><div>
-        <slide-progression open="pourquoi"></slide-progression>
             <h2>Pour le <abbr title="Search engine optimization">SEO</abbr>, HTML5 et iOS/OS X</h2>
             <p><i class="fa fa-google"></i><a href="http://googleonlinesecurity.blogspot.fr/2014/08/https-as-ranking-signal_6.html">Google préfère un site en HTTPS</a>.</p>
             <p><i class="fa fa-html5"></i>Sans HTTPS, <a href="https://blog.mozilla.org/security/2015/04/30/deprecating-non-secure-http/">Firefox</a> et <a href="https://sites.google.com/a/chromium.org/dev/Home/chromium-security/deprecating-powerful-features-on-insecure-origins">Chrome</a> <small>(50)</small> bloquent certaines API JavaScript :</p>
@@ -212,21 +189,17 @@
                 <li><code>encrypted Media Extensions</code>, ...
             </ul>
             <p><i class="fa fa-apple"></i> Apple <a href="https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW28">force HTTPS avec AppTransportSecurity</a> depuis  iOS 9.0 et OS X v10.11.</p>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="http2" class="slide"><div>
-        <slide-progression open="pourquoi"></slide-progression>
         <h2>Pour bénéficier de <a href="https://www.bortzmeyer.org/7540.html" title="RFC 7540: Hypertext Transfer Protocol version 2">HTTP/2.0</a></h2>
         <figure>
             <blockquote><p>It looks like major browsers (Firefox &amp; Chrome) may be limiting the HTTP/2 support for TLS connections only, in order to push for a more secure web (SSL/TLS everywhere).</p></blockquote>
             <figcaption><a href="https://ma.ttias.be/architecting-websites-http2-era/#tls">Architecting Websites For The HTTP/2 Era</a>, <a href="http://daniel.haxx.se/blog/2015/03/06/tls-in-http2/">TLS in HTTP/2</a></figcaption>
         </figure>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="droit-vie-prive" class="slide"><div>
-        <slide-progression open="pourquoi"></slide-progression>
         <h2>Pour respecter la vie privée de vos utilisateurs</h2>
         <figure>
             <blockquote><p>Dire que vous vous n'en avez rien à faire de la vie privée parce que vous n'avez rien à cacher, c'est comme dire que vous n'en avez rien à faire de la liberté d'expression parce que vous n'avez rien à dire.</p></blockquote>
@@ -235,19 +208,14 @@
     </div></section>
 
     <section id="convaincu" class="slide tell"><div>
-        <slide-progression open="pourquoi"></slide-progression>
         <h2>Convaincu <i class="fa fa-question-circle"></i></h2>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="objectifs-https" class="slide shout"><div>
-        <slide-progression open="objectifs"></slide-progression>
         <h2><i class="fa fa-bullseye"></i> Objectifs<br/>d’HTTPS</h2>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="objectifs-https-details" class="slide"><div>
-        <slide-progression open="objectifs"></slide-progression>
         <h2>Objectifs</h2>
         <dl>
             <dt><i class="fa fa-lock"></i>Confidentialité :
@@ -261,17 +229,13 @@
             <dt class="next"><i class="fa fa-bolt"></i>Spontanéité :
             <dd class="next">Un client peut spontanément se connecter à un serveur (pas de pré-requis).
         </dl>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="version" class="slide tell"><div>
-        <slide-progression open="objectifs"></slide-progression>
         <h2><i class="fa fa-code-fork"></i> Versions</h2>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="versions-details" class="slide"><div>
-        <slide-progression open="objectifs"></slide-progression>
         <h2>Versions</h2>
         <ul class="icons">
             <li><i class="fa fa-code-fork"></i><span class="broken"><abbr title="Secure Socket Layer">SSL</abbr> 1.0</span> (jamais publié) par <a href="https://en.wikipedia.org/wiki/Netscape">Netscape</a>,
@@ -294,23 +258,17 @@
                 <i class="fa fa-plus-circle nomargin"></i> Courbe elliptique 25519 &amp; 448)</small>.
 
         </ul>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="handshake-title" class="slide tell"><div>
-        <slide-progression open="handshake"></slide-progression>
         <h2><i class="handshake"></i> Poignée de main</h2>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="rappels-cryptographiques" class="slide tell"><div>
-        <slide-progression open="handshake"></slide-progression>
         <h2><i class="fa fa-lock"></i> Quelques rappels cryptographiques...</h2>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="chiffrement-symetrique" class="slide symetric"><div>
-        <slide-progression open="handshake"></slide-progression>
         <h2><i class="fa fa-key" style="color: green;"></i> Chiffrement symétrique</h2>
         <figure class="center">
             <img src="./pictures/symetric-cipher.png" alt="chiffrement symétrique" />
@@ -321,11 +279,9 @@
                 </ul>
             </figcaption>
         </figure>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="chiffrement-asymetrique" class="slide asymetric"><div>
-        <slide-progression open="handshake"></slide-progression>
         <h2><i class="fa fa-key" style="color: blue;"></i><i class="fa fa-key" style="color: orange"></i>  Chiffrement asymétrique</h2>
         <figure class="center">
             <img src="./pictures/asymetric-cipher.png" alt="chiffrement asymétrique" />
@@ -336,11 +292,9 @@
                  </ul>
             </figcaption>
         </figure>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="fonction-hachage" class="slide"><div>
-        <slide-progression open="handshake"></slide-progression>
         <h2><i class="fa fa-cutlery"></i> Fonction de hachage</h2>
         <pre>
             <code>$ echo -n "Hello World" | sha1sum</code>
@@ -356,11 +310,9 @@
            <span class="safe"><a href="https://fr.wikipedia.org/wiki/SHA-2">SHA-2</a></span> <small>(SHA-224, SHA-256, SHA-384 et SHA-512)</small>,
            <span class="safe"><a href="https://fr.wikipedia.org/wiki/SHA-3">SHA3</a></span>.
        </p>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="hmac" class="slide"><div>
-        <slide-progression open="handshake"></slide-progression>
         <h2><i class="fa fa-cutlery"></i> <a href="https://fr.wikipedia.org/wiki/Keyed-Hash_Message_Authentication_Code"><abbr title="Keyed message authentification code">HMAC</abbr></a></h2>
         <p>Influencé par une clé</p>
         <pre>
@@ -373,27 +325,21 @@
            <span class="unsecure">HMAC_SHA1</span>,
            <span class="safe">HMAC_SHA256</span>.
        </p>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="signature-numerique" class="slide signature"><div>
-        <slide-progression open="handshake"></slide-progression>
         <h2><i class="fa fa-certificate"></i> Signature numérique</h2>
         <figure class="center">
             <img src="./pictures/signature.png" alt="signature numérique" />
             <figcaption></figcaption>
         </figure>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="handshake-title-bis" class="slide tell"><div>
-        <slide-progression open="handshake"></slide-progression>
         <h2><i class="handshake"></i> Poignée de main<br/><small>TLS 1.2 (<a href="http://www.moserware.com/2009/06/first-few-milliseconds-of-https.html">en détails</a>)</small></h2>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="handshake-client-hello" class="slide"><div>
-        <slide-progression open="handshake"></slide-progression>
         <h2>1. &laquo; Client hello &raquo;</h2>
         <figure class="sidebyside handshake">
             <figcaption>
@@ -415,11 +361,9 @@
             <span class="mark suites"  style="top: 281px; left: 482px; width: 65px;"></span>
             <span class="mark sni"     style="top: 551px; left: 488px; width: 105px;"></span>
         </figure>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="handshake-server-hello" class="slide"><div>
-        <slide-progression open="handshake"></slide-progression>
         <h2>2. &laquo; Server hello &raquo;</h2>
         <figure class="sidebyside handshake">
             <figcaption>
@@ -438,11 +382,9 @@
             <span class="mark session" style="top: 315px; left: 488px; width: 60px;"></span>
             <span class="mark suite"   style="top: 328px; left: 488px; width: 72px;"></span>
         </figure>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="handshake-certificate" class="slide"><div>
-        <slide-progression open="handshake"></slide-progression>
         <h2>2. Certificat(s) &amp; &laquo; Server hello done &raquo;</h2>
         <figure class="sidebyside handshake">
             <figcaption>
@@ -463,11 +405,9 @@
             <span class="mark symatec"      style="top: 321px; left: 612px; width: 300px;"></span>
             <span class="mark hello-done"   style="top: 407px; left: 603px; width: 105px;"></span>
         </figure>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="handshake-key-exchange" class="slide"><div>
-        <slide-progression open="handshake"></slide-progression>
         <h2>3. Pré-clé chiffrée <small>avec la clé publique du serveur</small></h2>
         <figure class="sidebyside handshake">
             <figcaption>
@@ -483,11 +423,9 @@
             <span class="mark change-cipher-spec"   style="top: 222px; left: 784px; width: 110px;"></span>
             <span class="mark encrypted-message"    style="top: 294px; left: 728px; width: 170px;"></span>
         </figure>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="handshake-change-cipher-spec" class="slide"><div>
-        <slide-progression open="handshake"></slide-progression>
         <h2>4. Échange terminé</h2>
         <figure class="sidebyside handshake">
             <figcaption>
@@ -505,11 +443,9 @@
             <code>[ clientCipherKey, serverCipherKey ] = extractCipherKeys(ms)</code>
             <code>[ clientHMACKey, serverHMACKey ] = extractHMACKeys(ms)</code>
         </pre>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="handshake-encrypted-data" class="slide"><div>
-        <slide-progression open="handshake"></slide-progression>
         <h2>5. Place au traffic chiffré</h2>
         <figure class="sidebyside handshake">
             <figcaption>
@@ -525,11 +461,9 @@
             <code>encrypt(response, serverCipherKey, serverHMACKey) // server</code>
             <code>decrypt(response, serverCipherKey, serverHMACKey) // client</code>
         </pre>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="cipher-suites" class="slide"><div>
-        <slide-progression open="handshake"></slide-progression>
         <h2>Suites de chiffrement <small>(<a href="https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#tls-parameters-4">cipher suites</a>)</small></h2>
         <p>Échange de clé, authentication <small>(asymétrique)</small>, chiffrement <small>(symétrique)</small>, MAC/HMAC</p>
         <ul class="small">
@@ -619,7 +553,6 @@
 
 
     <section id="pfs" class="slide"><div>
-        <slide-progression open="handshake"></slide-progression>
         <h2><i class="fa fa-user-secret"></i> Confidentialité persistante parfaite (<a href="http://vincent.bernat.im/en/blog/2011-ssl-perfect-forward-secrecy.html"><abbr title="Perfect Forward Secrecy">PFS</abbr></a>)</h2>
         <figure class="sidebyside">
             <img src="pictures/diffie-Hellman_key_exchange.png" alt="Algorithme de Diffie Hellman">
@@ -633,17 +566,13 @@
                 <p>La poignée de main est <a href="#diffie-hellman-handshake-title">légèrement différente</a>.</p>
             </figcaption>
         </figure>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="authentification" class="slide shout"><div>
-        <slide-progression open="authentification"></slide-progression>
         <h2><i class="fa fa-key"></i> Authentification</h2>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="type-certificats" class="slide"><div>
-        <slide-progression open="authentification"></slide-progression>
         <h2>Domain, Organization et Extended Validation</h2>
         <dl>
             <dt><i class="fa fa-certificate"></i>Domain validation
@@ -653,11 +582,9 @@
             <dt class="next"><i class="fa fa-star"></i>Extended validation
             <dd class="next">Enquête sur le propriétaire (<a href="https://www.verisign.com/en_US/domain-names/web-presence/website-optimization/ssl-certificates/index.xhtml?loc=en_US#a7">vérification d’une présence physique, opérationnelle et juridique</a>), permet l’affichage du propriétaire dans la barre d’adresse : <img src="pictures/greenbar.png" alt="barre verte" />
         </dl>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="certificat-x509" class="slide"><div>
-        <slide-progression open="authentification"></slide-progression>
         <h2>Un certificat <a href="https://openssl.org/docs/manmaster/apps/x509v3_config.html">X.509</a></h2>
         <pre class="small">
             <code>$ openssl x509 -in <a href="https://www.gandi.net/static/CAs/GandiStandardSSLCA2.pem">GandiStandardSSLCA2.pem</a> -inform pem -noout -text</code>
@@ -699,7 +626,6 @@
     </div></section>
 
     <section id="ca" class="slide"><div>
-        <slide-progression open="authentification"></slide-progression>
         <h2>Infrastructure de clé publique (<abbr title="Public key infrastructure">PKI</abbr>)</h2>
         <figure>
             <img src="pictures/ca_hierarchy.svg" alt="Hiérarchie des Autorités de Certifications" height="150" />
@@ -718,11 +644,9 @@
                 </dl>
             </figcaption>
         </figure>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="ca-breach" class="slide"><div>
-        <slide-progression open="authentification"></slide-progression>
         <h2><i class="fa fa-exclamation-triangle"></i> La vie des CA n’est pas un long fleuve tranquille...</h2>
         <ul>
             <li>en 2011, <a href="https://www.comodo.com/Comodo-Fraud-Incident-2011-03-23.html">Comodo</a> signe 9 certificats incluant  mail.google.com, login.yahoo.com, login.skype.com, addons.mozilla.org, login.live.com,
@@ -735,7 +659,6 @@
     </div></section>
 
     <section id="certificate-transparency" class="slide"><div>
-        <slide-progression open="authentification"></slide-progression>
         <h2><i class="fa fa-book"></i> Certificate Transparency</h2>
         <h3>Problèmes :</h3>
         <ul>
@@ -748,11 +671,9 @@
             <li class="next">Projet <abbr title="Open Source Software">OSS</abbr> initié par Google : <a href="https://github.com/google/certificate-transparency">github.com/google/certificate-transparency</a>,
             <li class="next">Base de données distribuée permettant de savoir qui a signé quoi
         </ul>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="lets-encrypt" class="slide"><div>
-        <slide-progression open="authentification"></slide-progression>
         <h2><a href="https://letsencrypt.org/" class="clear"><img src="pictures/letsencrypt.svg" alt="Let’s encrypt" /></a></h2>
         <p>
             <span>Autorité de certification</span>
@@ -768,11 +689,9 @@
             <a href="https://letsencrypt.org/2015/10/29/phishing-and-malware.html">filtre</a> les domaines <small>(<a href="https://developers.google.com/safe-browsing/">Safe Browsing API</a>)</small>
             et soumission dans <a href="https://www.facebook.com/notes/protect-the-graph/early-impacts-of-certificate-transparency/1709731569266987/">Certificate Transparency</a>
         </p>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="revoquation" class="slide"><div>
-        <slide-progression open="authentification"></slide-progression>
         <h2>Révocation : <a href="https://www.fir3net.com/Security/Concepts-and-Terminology/certificate-revocation.html">CRL</a>, <a href="https://www.fir3net.com/Security/Concepts-and-Terminology/certificate-revocation.html">OCSP</a> et <a href="https://www.imperialviolet.org/2012/02/05/crlsets.html">Chrome</a> <a href="https://www.grc.com/revocation/crlsets.htm">CRLSet</a></h2>
         <dl>
             <dt class="next"><i class="fa fa-ban"></i>Certificate Revocation Lists (CRL) :
@@ -784,17 +703,13 @@
             <dt class="next"><i class="fa fa-ban"></i>Google Chrome CRLSet :
             <dd class="next">Liste de 250 Ko de n° de certificat invalide ; régulièrement mise à jour par Chrome ; ne contient qu’une infime partie des certificats révoqués...
         </dl>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="attaques" class="slide shout"><div>
-        <slide-progression open="attaques"></slide-progression>
         <h2><i class="fa fa-bomb"></i> Attaques</h2>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="doutes" class="slide"><div>
-        <slide-progression open="attaques"></slide-progression>
         <h2>Le chiffrement, c’est solide ?</h2>
         <figure>
             <img src="pictures/Schneier.jpg" alt="Bruce Scheier" class="portrait" />
@@ -810,7 +725,6 @@
     </div></section>
 
     <section id="force-brute" class="slide"><div>
-        <slide-progression open="attaques"></slide-progression>
         <h2><i class="fa fa-server"></i> Pure <a href="https://fr.wikipedia.org/wiki/Attaque_par_force_brute">force brute</a> ?</h2>
         <table>
             <tr>
@@ -857,17 +771,14 @@
     </div></section>
 
     <section id="pourquoi-attaquer-la-crypto" class="slide"><div>
-        <slide-progression open="attaques"></slide-progression>
         <h2><i class="fa fa-wrench"></i> S’attaquer à la cryptographie ?</h2>
         <figure class="center">
             <a href="https://xkcd.com/538/" class="clear"><img src="pictures/security.png" alt="xkcd" /></a>
             <figcaption>Pourquoi s’attaquer à la cryptographie alors qu’il existe d’autres moyens ?</figcaption>
         </figure>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="attaques-faciles" class="slide"><div>
-        <slide-progression open="attaques"></slide-progression>
         <h2><i class="fa fa-keyboard-o"></i> Attaques &laquo; faciles &raquo;</h2>
         <ul>
             <li>récupèrer les infos ailleurs <small>(chez l’hébergeur)</small>,
@@ -877,31 +788,25 @@
             <li class="next">installer une CA &laquo; maison &raquo; pour faire de l’interception légale <small>(recommandations de la <a href="http://www.cnil.fr/linstitution/actualite/article/article/analyse-de-flux-https-bonnes-pratiques-et-questions/">CNIL</a> et de l’<a href="http://www.ssi.gouv.fr/guide/recommandations-de-securite-concernant-lanalyse-des-flux-https/">ANSSI</a>)</small> ou illégale...
             <li class="next">ce que font les antivirus <small>(ou des mauvais logiciels : <a href="https://support.lenovo.com/us/en/product_security/superfish">superfish</a>, <a href="http://joenord.blogspot.fr/2015/11/new-dell-computer-comes-with-edellroot.html">eDellRoot</a>)</small>.
         </ul>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="interception-traffic-https" class="slide"><div>
-        <slide-progression open="attaques"></slide-progression>
         <h2>Pour éviter l’interception de traffic</h2>
         <figure>
             <img src="pictures/https_rogue_ap.svg" class="svg" alt="Réseau anormal au niveau du point d’accès" />
             <figcaption><kbd>donotbeevil</kbd></figcaption>
         </figure>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="interception-https" class="slide"><div>
-        <slide-progression open="attaques"></slide-progression>
         <h2><i class="fa fa-user-secret"></i> Interception via un point d’accès malveillant</h2>
         <figure class="center">
             <video controls preload="metadata" src="videos/mitm-https.webm"></video>
             <figcaption class="narrow"><a href="#interception-traffic-http-explications">détails</a> et <a href="https://hackaday.io/project/10338-pi-mitm">implémentation</a> de cet exemple</figcaption>
         </figure>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="bugs" class="slide"><div>
-        <slide-progression open="attaques"></slide-progression>
         <h2><i class="fa fa-bug"></i> Bugs</h2>
         <a href="https://xkcd.com/221/" class="clear"><img class="xkcd-random" src="pictures/random_number.png" alt="xkcd" /></a>
         <ul>
@@ -912,11 +817,9 @@
             <li class="next">2015 : <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0160">CVE-2014-0160</a> : <i class="fa fa-heartbeat nomargin"></i> <a href="http://heartbleed.com/">heartbleed</a> : fuitle de quelques octets en RAM,
             <li class="next">2018 : <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5753">CVE-2017-5753</a>, <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5715">CVE-2017-5715</a> : <a href="https://meltdownattack.com/">Spectre &amp; Meltdown</a> : fuite de la mémoire cache du processeur...
         </ul>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="attacks-summary" class="slide"><div>
-        <slide-progression open="attaques"></slide-progression>
         <h2><i class="fa fa-bomb"></i> Les attaques connues</h2>
         <ul class="icons">
             <li>en 2011 <i class="fa fa-optin-monster"></i> <a href="#beast">BEAST</a>: Browser Exploit Against SSL/TLS,
@@ -928,11 +831,9 @@
             <li class="next">en 2016 <i class="fa fa-tint"></i> <a href="#drown">DROWN</a>: via SSLv2,
             <li class="next">en 2016 <i class="fa fa-birthday-cake"></i> <a href="https://sweet32.info/">SWEET32</a>: sur 3DES.
         </ul>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="collision" class="slide"><div>
-        <slide-progression open="attaques"></slide-progression>
         <h2><i class="fa fa-user-secret"></i> Générer des faux certificats</h2>
         <ul>
             <li>avec les collisions : on joue sur le contenu pour que la signature corresponde,
@@ -946,7 +847,6 @@
     </div></section>
 
     <section id="attaques-pointues" class="slide"><div>
-        <slide-progression open="attaques"></slide-progression>
         <h2><i class="fa fa-fighter-jet"></i> Quelques autres attaques</h2>
         <ul>
             <li>en 2010, analyse de la <a href="http://www.infosecurity-magazine.com/news/researchers-crack-rsa-encryption-via-power-supply/">consommation électrique</a> d’un ordinateur pour retrouver une clé privée (canal auxiliaire ou &laquo; side channel &raquo;),
@@ -958,13 +858,10 @@
     </div></section>
 
     <section id="apres-HTTPS" class="slide shout"><div>
-        <slide-progression open="apres"></slide-progression>
         <h2><i class="fa fa-cogs"></i> Après HTTPS</h2>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="expiration" class="slide"><div>
-        <slide-progression open="apres"></slide-progression>
         <h2><i class="fa fa-calendar-times-o"></i> Pensez à renouveler vos certificats !</h2>
         <p>Quelques échecs :</p>
         <ul class="icons">
@@ -973,11 +870,9 @@
             <li><i class="fa fa-google"></i> <a href="http://www.ibtimes.com/google-gmail-glitch-outages-caused-failure-update-security-certificate-1870416">GMail</a> (2015),
             <li><i class="fa fa-apple"></i> Mac <a href="http://techcrunch.com/2015/11/12/all-mac-store-apps-stopped-working-due-to-expired-security-certificate/">App Store</a> (encore en 2015) !
         </ul>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="mixed-content" class="slide"><div>
-        <slide-progression open="apres"></slide-progression>
         <h2>Mixed content</h2>
         <ul>
             <li>Mixed content : ressources chargées via HTTP depuis une page HTTPS <small>(<a href="https://developer.mozilla.org/en-US/docs/Security/Mixed_content"><abbr title="Mozilla Developer Network">MDN</abbr></a>)</small>
@@ -988,11 +883,9 @@
             <img src="pictures/dubious-as-neutral.png" alt="Chrome page security icon" width="400"/>
             <figcaption><a href="https://googleonlinesecurity.blogspot.com.au/2015/10/simplifying-page-security-icon-in-chrome.html">Simplifying page security icon in Chrome</a></figcaption>
         </figure>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="HSTS" class="slide"><div>
-        <slide-progression open="apres"></slide-progression>
         <h2>HSTS : HTTP Strict Transport Security <a href="https://tools.ietf.org/html/rfc6797">RFC6797</a></h2>
         <pre><code>Strict-Transport-Security: max-age=16070400; includeSubDomains</code></pre>
         <ul class="icons">
@@ -1001,11 +894,9 @@
             <li><i class="fa fa-gift"></i> Pré-chargement dans les navigateurs : <a href="https://code.google.com/p/chromium/codesearch#chromium/src/net/http/transport_security_state_static.json">transport_security_state_static.json</a>,
             <li><i class="fa fa-exclamation-triangle"></i> Que se passe-t-il si votre certificat expire ou si le port 443 ne répond plus ?
         </ul>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="caa" class="slide"><div>
-        <slide-progression open="apres"></slide-progression>
         <h2><a href="https://www.ssl.com/article/certification-authority-authorization-caa/">CAA</a> : Certificate Authority Authorization <a href="https://tools.ietf.org/html/rfc6844">RFC6844</a></h2>
 <pre><code>example.com. IN CAA 0 issue "letsencrypt.org"
 example.com. IN CAA 0 iodef "mailto:security@example.com"
@@ -1015,11 +906,9 @@ example.com. IN CAA 128 future "digicert.com"</code></pre>
             <li><i class="fa fa-exclamation-triangle"></i> On peut préciser un email ou URL en cas d’incident (<abbr title="Incident Object Description Exchange Format">IODEF</abbr>),
             <li><i class="fa fa-truck"></i> On peut préciser une autre CA si l’on prévoit d’en changer.
         </ul>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="subresource-integrity" class="slide"><div>
-        <slide-progression open="apres"></slide-progression>
         <h2>Subresource integrity</h2>
         <pre>
             <code>&lt;script src="https://example.com/jquery.js"</code>
@@ -1031,11 +920,9 @@ example.com. IN CAA 128 future "digicert.com"</code></pre>
             <li><i class="fa fa-firefox"></i><i class="fa fa-chrome"></i> Depuis <a href="https://hacks.mozilla.org/2015/09/subresource-integrity-in-firefox-43/">Firefox 43</a> et <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=355467">Chrome 45</a>,
             <li><i class="fa fa-github"></i> Utilisé sur <a href="http://githubengineering.com/subresource-integrity/">github.com</a>.
         </ul>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="CSP" class="slide"><div>
-        <slide-progression open="apres"></slide-progression>
         <h2><a href="https://diogomonica.com/2015/12/30/deep-into-csp/">CSP</a> : Content Security Policy</h2>
         <pre>
             <code>Content-Security-Policy:default-src 'none';</code>
@@ -1049,11 +936,9 @@ example.com. IN CAA 128 future "digicert.com"</code></pre>
             <li><i class="fa fa-exclamation-triangle"></i> Difficile <small>(impossible ?)</small> à mettre en place avec du contenu aggrégé <small>(publicité...)</small>,
             <li><i class="fa fa-flag-o"></i> Activez les rapports : <code>report-uri</code> <small>(il existe des <a href="https://report-uri.io/home/generate/">générateurs</a> de CSP)</small>
         </ul>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="Feature-Policy" class="slide"><div>
-        <slide-progression open="apres"></slide-progression>
         <h2><a href="https://scotthelme.co.uk/a-new-security-header-feature-policy/">Feature Policy</a></h2>
 <pre><code>Feature-Policy: vibrate 'none'; speaker *;
    geolocation 'self' https://example.com</code></pre>
@@ -1080,17 +965,13 @@ example.com. IN CAA 128 future "digicert.com"</code></pre>
             <li><i class="fa fa-globe"></i> pour son site mais surtout pour les <code>iframe</code>,
             <li><i class="fa fa-chrome"></i><i class="fa fa-safari"></i> Partiellement supporté depuis <a href="https://caniuse.com/#feat=feature-policy">Chrome 63 et Safari 11.1</a>.
         </ul>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="performances" class="slide shout"><div>
-        <slide-progression open="performances"></slide-progression>
         <h2><i class="fa fa-tachometer"></i> Performances</h2>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="performances-details-quotes" class="slide"><div>
-        <slide-progression open="performances"></slide-progression>
         <h2>Performances</h2>
         <figure>
             <blockquote><p>SSL/TLS accounts for less than 1% of the CPU load, less than 10KB of memory per connection and less than 2% of network overhead</p></blockquote>
@@ -1100,11 +981,9 @@ example.com. IN CAA 128 future "digicert.com"</code></pre>
             <blockquote><p>We have found that modern software-based TLS implementations running on commodity CPUs are fast enough to handle heavy HTTPS traffic</p></blockquote>
             <figcaption>Doug Beaver (Facebook)</figcaption>
         </figure>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="performances-details-numbers" class="slide"><div>
-        <slide-progression open="performances"></slide-progression>
         <h2>Performances</h2>
         <p><i class="handshake small"></i> Pour tester le nombre de "poignées de main/seconde" :</p>
         <pre><code>$ openssl speed rsa</code></pre>
@@ -1117,11 +996,9 @@ example.com. IN CAA 128 future "digicert.com"</code></pre>
             <code><strong>rsa 4096</strong> bits 0.009250s 0.000145s    <strong>108.1</strong>   6889.3</code>
         </pre>
         <p><i class="fa fa-bolt"></i> Facteur 7 entre 1024 et 2048, 2048 et 4096 <i class="fa fa-exclamation"></i></p>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="performances-details-conclusion" class="slide"><div>
-        <slide-progression open="performances"></slide-progression>
         <h2>Performances</h2>
         <ul class="icons">
             <li><i class="fa fa-smile-o"></i> TLS a un impact faible sur le processeur et le réseau <strong>mais</strong> :
@@ -1131,17 +1008,13 @@ example.com. IN CAA 128 future "digicert.com"</code></pre>
             <li class="next"><i class="fa fa-exclamation-triangle"></i> Cacher les sessions TLS est très important !
             <li class="next"><i class="fa fa-link"></i> <a href="https://istlsfastyet.com/">IsTlsFastYest.com</a>
         </ul>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="conclusion" class="slide shout"><div>
-        <slide-progression open="conclusion"></slide-progression>
         <h2><i class="fa fa-hourglass-end"></i> Conclusion</h2>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="conclusion-details" class="slide"><div>
-        <slide-progression open="conclusion"></slide-progression>
         <h2>Conclusion</h2>
         <ul class="icons">
             <li><i class="fa fa-bullhorn"></i> dîtes TLS (<s>SSL</s>) !
@@ -1156,7 +1029,6 @@ example.com. IN CAA 128 future "digicert.com"</code></pre>
             <img src="pictures/qrcode.svg" alt="" />
             <a href="https://paulgreg.me/https-slides/">https://paulgreg.me/https-slides/</a>
         </p>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="qa" class="slide"><div>
@@ -1168,11 +1040,9 @@ example.com. IN CAA 128 future "digicert.com"</code></pre>
             <img src="pictures/qrcode.svg" alt="" />
             <a href="https://paulgreg.me/https-slides/">https://paulgreg.me/https-slides/</a>
         </p>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="resources" class="slide"><div>
-        <slide-progression open="annexes"></slide-progression>
         <h2><i class="fa fa-book"></i> Ressources</h2>
         <ul class="resources">
             <li><a href="https://openweb.eu.org/articles/https-de-ssl-a-tls-1-3">HTTPS : de SSL à TLS 1.3</a>,
@@ -1188,11 +1058,9 @@ example.com. IN CAA 128 future "digicert.com"</code></pre>
             <li>Mes flux RSS sur <a href="https://rsstodolist.appspot.com/?n=https&amp;l=100">HTTPS</a>, <a href="https://rsstodolist.appspot.com/?n=tls&amp;l=100">TLS</a> &amp; <a href="https://rsstodolist.appspot.com/?n=ssl&amp;l=100">SSL</a>,
             <li><a href="https://paulgreg.me/cours-du-soir-http/">Si vous voulez creuser HTTP</a>.
         </ul>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="references" class="slide"><div>
-        <slide-progression open="annexes"></slide-progression>
         <h2><i class="fa fa-book"></i> Références</h2>
         <ul>
             <li>Présentation construite avec <a href="https://github.com/shower/shower">github.com/shower/shower</a>,
@@ -1205,16 +1073,13 @@ example.com. IN CAA 128 future "digicert.com"</code></pre>
             <li>Icônes via <a href="http://fortawesome.github.io/Font-Awesome/icons/">Font-Awesome</a>,
             <li>Schémas construits sur <a href="https://www.gliffy.com/">gliffy.com</a>.
         </ul>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="annexes" class="slide shout"><div>
-        <slide-progression open="annexes"></slide-progression>
         <h2><i class="fa fa-book"></i> Annexes</h2>
     </div></section>
 
     <section id="interception-traffic-http-explications" class="slide"><div>
-        <slide-progression open="annexes"></slide-progression>
         <h2>Fonctionnement de l’attaque (<a href="http://blog.philippheckel.com/2013/07/01/how-to-use-mitmproxy-to-read-and-modify-https-traffic-of-your-phone/">mitmproxy</a>)</h2>
         <figure class="center">
             <img src="pictures/https_raspberry.svg" class="svg" alt="Fonctionnement de l’interception" />
@@ -1223,12 +1088,10 @@ example.com. IN CAA 128 future "digicert.com"</code></pre>
     </div></section>
 
     <section id="diffie-hellman-handshake-title" class="slide tell"><div>
-        <slide-progression open="annexes"></slide-progression>
         <h2><i class="handshake"></i> Poignée de main <small>via l’échange de clé Diffie-Hellman (<a href="http://vincent.bernat.im/fr/blog/2011-ssl-perfect-forward-secrecy.html">détails</a>)</small></h2>
     </div></section>
 
     <section id="diffie-hellman-handshake-client-hello" class="slide"><div>
-        <slide-progression open="annexes"></slide-progression>
         <h2>1. &laquo; Client hello &raquo;</h2>
         <figure class="sidebyside handshake">
             <figcaption>
@@ -1239,7 +1102,6 @@ example.com. IN CAA 128 future "digicert.com"</code></pre>
     </div></section>
 
     <section id="diffie-hellman-handshake-server-hello" class="slide"><div>
-        <slide-progression open="annexes"></slide-progression>
         <h2>2. &laquo; Server hello &raquo;</h2>
         <figure class="sidebyside handshake">
             <figcaption><img src="pictures/diffie-hellman-handshake/2-handshake.png" alt="handshake : server hello" /></figcaption>
@@ -1248,7 +1110,6 @@ example.com. IN CAA 128 future "digicert.com"</code></pre>
     </div></section>
 
     <section id="diffie-hellman-handshake-server-certificate" class="slide"><div>
-        <slide-progression open="annexes"></slide-progression>
         <h2>2. Certificat(s)</h2>
         <figure class="sidebyside handshake">
             <figcaption><img src="pictures/diffie-hellman-handshake/3-handshake.png" alt="handshake : server certificates" /></figcaption>
@@ -1257,7 +1118,6 @@ example.com. IN CAA 128 future "digicert.com"</code></pre>
     </div></section>
 
     <section id="diffie-hellman-handshake-server-hello-done" class="slide"><div>
-        <slide-progression open="annexes"></slide-progression>
         <h2>3. &laquo; Server Key Exchange &raquo; &amp; &laquo; hello done &raquo;</h2>
         <figure class="sidebyside handshake">
             <figcaption>
@@ -1268,7 +1128,6 @@ example.com. IN CAA 128 future "digicert.com"</code></pre>
     </div></section>
 
     <section id="diffie-hellman-handshake-key-exchange" class="slide"><div>
-        <slide-progression open="annexes"></slide-progression>
         <h2>4. Échange de clé</h2>
         <figure class="sidebyside handshake">
             <figcaption>
@@ -1279,7 +1138,6 @@ example.com. IN CAA 128 future "digicert.com"</code></pre>
     </div></section>
 
     <section id="diffie-hellman-handshake-change-cipher-spec" class="slide"><div>
-        <slide-progression open="annexes"></slide-progression>
         <h2>5. Fin de l’échange de clé</h2>
         <figure class="sidebyside handshake">
             <figcaption>
@@ -1290,7 +1148,6 @@ example.com. IN CAA 128 future "digicert.com"</code></pre>
     </div></section>
 
     <section id="diffie-hellman-handshake-encrypted-data" class="slide"><div>
-        <slide-progression open="annexes"></slide-progression>
         <h2>6. Place au traffic chiffré</h2>
         <figure class="sidebyside handshake">
             <figcaption>
@@ -1304,7 +1161,6 @@ example.com. IN CAA 128 future "digicert.com"</code></pre>
     </div></section>
 
     <section id="DANE" class="slide"><div>
-        <slide-progression open="annexes"></slide-progression>
         <h2>DNS-based Authentication of Named Entities (<a href="http://www.bortzmeyer.org/6698.html">DANE</a>)</h2>
         <ul>
             <li>Certificat publié dans un enregistrement <a href="http://www.dnssec.net/">DNSSEC</a> (obligatoire) de type <code>TLSA</code>,
@@ -1317,11 +1173,9 @@ example.com. IN CAA 128 future "digicert.com"</code></pre>
             <li class="next">DANE-TA/ Trust anchor assertion : certificat d’un CA (CA "maison"),
             <li class="next">DANE-EE/ Domain-issued certificate : certificat pour un domaine (auto-signé).
         </ol>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <section id="beast" class="slide"><div>
-        <slide-progression open="annexes"></slide-progression>
         <h2><i class="fa fa-optin-monster"></i> <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">BEAST</a>: Browser Exploit Against SSL/TLS</h2>
         <ul>
             <li>Faille dans certains algorithmes de chiffrement symétrique en mode <abbr title="Cipher Block Chaining">CBC</abbr> (sur les <abbr title="Initialization Vector">IV</abbr>) sur SSL 3.0 et TLS 1.0,
@@ -1333,7 +1187,6 @@ example.com. IN CAA 128 future "digicert.com"</code></pre>
     </div></section>
 
     <section id="crime" class="slide"><div>
-        <slide-progression open="annexes"></slide-progression>
         <h2><i class="fa fa-bolt"></i> <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">CRIME</a>: Compression Ratio Info-leak Made Easy</h2>
         <ul>
             <li>Faille utilisant la compression offerte par SSL/TLS (et aussi SPDY),
@@ -1345,7 +1198,6 @@ example.com. IN CAA 128 future "digicert.com"</code></pre>
     </div></section>
 
     <section id="breach" class="slide"><div>
-        <slide-progression open="annexes"></slide-progression>
         <h2><i class="fa fa-bolt"></i> <a href="https://www.isecpartners.com/media/106031/ssl_attacks_survey.pdf">BREACH</a>: Browser Reconnaissance and Exfiltration via Adaptive Compression of Hypertext</h2>
         <ul>
             <li>découverte par Angelo Prado, Neal Harris et Yoel Gluck en 2013,
@@ -1357,7 +1209,6 @@ example.com. IN CAA 128 future "digicert.com"</code></pre>
     </div></section>
 
     <section id="poodle" class="slide"><div>
-        <slide-progression open="annexes"></slide-progression>
         <h2><i class="fa fa-level-down"></i> <a href="https://www.openssl.org/~bodo/ssl-poodle.pdf">POODLE</a>: Padding Oracle On Downgraded Legacy Encryption</h2>
         <ul>
             <li>Faille <a href="https://www.openssl.org/~bodo/ssl-poodle.pdf">découverte par Bodo Möller, Thai Duong et Krzysztof Kotowicz</a> (Google) en 2014 sur SSL 3.0,
@@ -1367,7 +1218,6 @@ example.com. IN CAA 128 future "digicert.com"</code></pre>
     </div></section>
 
     <section id="freak" class="slide"><div>
-        <slide-progression open="annexes"></slide-progression>
         <h2><i class="fa fa-optin-monster"></i> <a href="https://freakattack.com/">FREAK</a>: Factoring RSA EXPORT Attack Keys</h2>
         <ul>
             <li>Faille <a href="https://www.smacktls.com/">découverte</a> par l’<a href="https://www.inria.fr/">INRIA</a>, <a href="http://research.microsoft.com/">Microsoft Research</a> et <a href="http://www.imdea.org/">IMDEA</a> en 2015,
@@ -1379,7 +1229,6 @@ example.com. IN CAA 128 future "digicert.com"</code></pre>
     </div></section>
 
     <section id="logjam" class="slide"><div>
-        <slide-progression open="annexes"></slide-progression>
         <h2><i class="fa fa-level-down"></i> <a href="https://weakdh.org/imperfect-forward-secrecy-ccs15.pdf">Logjam</a></h2>
         <ul>
             <li>Faille <a href="https://weakdh.org/imperfect-forward-secrecy-ccs15.pdf">découverte</a> par l’INRIA, Microsoft Research, Johns Hopkins, l’Université du Michigan et celle de Pennsylvanie en 2015,
@@ -1391,7 +1240,6 @@ example.com. IN CAA 128 future "digicert.com"</code></pre>
     </div></section>
 
     <section id="drown" class="slide"><div>
-        <slide-progression open="annexes"></slide-progression>
         <h2><i class="fa fa-tint"></i> <a href="https://drownattack.com/">DROWN: Breaking TLS using SSLv2</a></h2>
         <ul>
             <li>Faille <a href="https://drownattack.com/drown-attack-paper.pdf">découverte</a> en 2016 par plusieurs universités et entreprises,
@@ -1403,7 +1251,6 @@ example.com. IN CAA 128 future "digicert.com"</code></pre>
     </div></section>
 
     <section id="http-public-key-pinning" class="slide"><div>
-        <slide-progression open="annexes"></slide-progression>
         <h2>HPKP : HTTP Public Key Pinning <a href="http://tools.ietf.org/html/rfc7469">RFC7469</a></h2>
         <pre><code>Public-Key-Pins: pin-sha256=""; pin-sha256=""; max-age=259200</code></pre>
         <ul class="icons">
@@ -1415,7 +1262,6 @@ example.com. IN CAA 128 future "digicert.com"</code></pre>
             <li class="next"><i class="fa fa-flag-o"></i> <a href="https://developers.google.com/web/updates/2015/09/HPKP-reporting-with-chrome-46">Commencez par</a> : <code>Public-Key-Pins-Report-Only: report-uri</code>
             <li class="next"><i class="fa fa-exclamation-triangle"></i> <a href="https://noncombatant.org/2015/05/01/about-http-public-key-pinning/">Plus</a> <a href="https://timtaubert.de/blog/2014/10/http-public-key-pinning-explained/">compliqué</a> à mettre en place et plus risqué ; à reserver aux sites sensibles.
         </ul>
-        <devoxx-footer></devoxx-footer>
     </div></section>
 
     <p class="badge"><a href="https://github.com/paulgreg/https-slides">Fork me on Github</a></p>
