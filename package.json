@@ -10,6 +10,6 @@
   "devDependencies": {
     "shower-core": "^1.0.7",
     "shower-ribbon": "^1.0.11",
-    "http-server": "0.9.0"
+    "http-server": "14.1.1"
   }
 }
